@@ -31,6 +31,13 @@
             </select>
             <label>Meeting Date : </label>
             <input id="meeting" type="date" value="2016-07-01"/>
+            <label>If you would require the facility for more than one day tick this box</label>
+            <?php
+                echo "<input type='checkbox' name='enddate' value='yes'/>";
+                if ($POST_['enddate'] == 'yes'){
+                    echo "<input id='meeting' type='date' value='2016-07-01'/>";
+            }
+            ?>
         </form>
     </div>
 

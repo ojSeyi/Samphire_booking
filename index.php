@@ -8,7 +8,7 @@
 <body>
     <div>
         <form>
-            <Lable>Please select a facility</Lable>
+            <Lablel>Please select a facility</Lablel>
             <select name="facility" size="1" required>
                 <?php
                 $getfacilities = "SELECT name FROM samphire_facilities";

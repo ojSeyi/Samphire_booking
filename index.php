@@ -19,7 +19,7 @@
 </head>
 <body>
     <div>
-        <form>
+        <form method="post" action="reservationcheck.php">
             <Lablel>Please select a facility</Lablel>
             <select name="facility" size="1" required>
                 <?php
@@ -28,6 +28,9 @@
                 while ($row = mysqli_fetch_array($result))
                 echo "<option>". $row['name'] . "</option>";
                 ?>
+            </select>
+            <label>Meeting Date : </label>
+            <input id="meeting" type="date" value="2016-07-01"/>
         </form>
     </div>
 

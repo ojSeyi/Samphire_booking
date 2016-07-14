@@ -19,8 +19,7 @@
 </head>
 <body>
     <div>
-        <?php $action = array("http://samphire-subseafba.azurewebsites.net/reservationcheck.php", "http://samphire-subseafba.azurewebsites.net/index.php"); ?>
-        <form method="post" action="<?php while ($link = mysqli_fetch_array($action)){echo $link;}; ?>">
+        <form method="post" action="reservationcheck.php">
             <Lablel>Please select a facility</Lablel>
             <select name="facility" size="1" required>
                 <?php
@@ -33,16 +32,8 @@
             <label>Meeting Date : </label>
             <input id="meeting" type="date" value="2016-07-01"/>
             <label>If you would require the facility for more than one day tick this box</label>
-            <?php
-                $meeting = "meeting";
-                $type = "date";
-                $date = "2016-07-02";
-                echo "<input type='checkbox' name='enddate' value='yes'/>";
-                echo "<input type='submit' value='submit'/>";
-                if (isset($_POST['enddate']) && $_POST['enddate'] == 'yes'){
-                    echo "<input id=".$meeting." type=".$type." value=".$date." />";
-                }
-            ?>
+            <input type='checkbox' name='enddate' value='yes'/>
+            <input type='submit' value='submit'/>
         </form>
     </div>
 

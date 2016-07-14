@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include ("db_connection.php"); ?>
 <head>
     <meta charset="UTF-8">
     <title>Samphire-Subsea: Facility Reservation</title>
@@ -12,7 +13,6 @@
           minimum-scale=1,
           maximum-scale=1"/>
 </head>
-<?php include ("db_connection.php"); ?>
 <head>
     <meta charset="UTF-8">
     <title>Samphire Subsea Facilities Booking</title>

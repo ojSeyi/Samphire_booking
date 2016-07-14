@@ -37,7 +37,7 @@
                 $meeting = "meeting";
                 $type = "date";
                 $date = "2016-07-02";
-                echo "<input type='checkbox' name='enddate' value='submit'/>";
+                echo "<input type='checkbox' name='enddate' value='yes'/>";
                 echo "<input type='submit' value='submit'/>";
                 if (isset($_POST['enddate']) && $_POST['enddate'] == 'yes'){
                     echo "<input id=".$meeting." type=".$type." value=".$date." />";

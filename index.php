@@ -20,7 +20,7 @@
 <body>
     <div>
         <?php $action = array("http://samphire-subseafba.azurewebsites.net/reservationcheck.php", "http://samphire-subseafba.azurewebsites.net/index.php"); ?>
-        <form method="post" action="<?php echo $action; ?>">
+        <form method="post" action="<?php while ($link = mysqli_fetch_array($action)){echo $link;}; ?>">
             <Lablel>Please select a facility</Lablel>
             <select name="facility" size="1" required>
                 <?php

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bug Tracker</title>
+    <title>Samphire-Subsea: Facility Reservation</title>
     <link rel="stylesheet" href="assets/stylesheet.css">
     <link rel="stylesheet" href="assets/unsemantic-grid-responsive-tablet.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>

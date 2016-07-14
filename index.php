@@ -19,7 +19,8 @@
 </head>
 <body>
     <div>
-        <form method="post" action="reservationcheck.php">
+        <?php $action = array("http://samphire-subseafba.azurewebsites.net/reservationcheck.php", "http://samphire-subseafba.azurewebsites.net/index.php"); ?>
+        <form method="post" action="<?php echo $action; ?>">
             <Lablel>Please select a facility</Lablel>
             <select name="facility" size="1" required>
                 <?php
@@ -34,7 +35,7 @@
             <label>If you would require the facility for more than one day tick this box</label>
             <?php
                 echo "<input type='checkbox' name='enddate' value='yes'/>";
-                if ($POST_['enddate'] == 'yes'){
+                if ($_POST['enddate'] == 'yes'){
                     echo "<input id='meeting' type='date' value='2016-07-01'/>";
             }
             ?>

@@ -31,7 +31,7 @@
             </select>
             <label>Meeting Date : </label>
             <input id="meeting" type="date" value="2016-07-01" required/>
-            <label>If you would require the facility for more than one day tick this box</label>
+            <label>How many days would you like to reserve the facility for?</label>
             <input type="number" name="daycount" size="1" required/>
             <input type='submit' value='submit'/>
         </form>

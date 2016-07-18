@@ -21,7 +21,7 @@
     <div>
         <form method="post" action="reservationcheck.php">
             <Lablel>Please select a facility</Lablel>
-            <select name="facility" size="1" required>
+            <select name="facility" id="facility" size="1" required>
                 <?php
                     $getfacilities = "SELECT name FROM samphire_facilities";
                     $result = mysqli_query($db, $getfacilities);
@@ -30,9 +30,9 @@
                 ?>
             </select>
             <label>Meeting Date : </label>
-            <input id="meeting" type="date" value="2016-07-01" required/>
+            <input id="rsvDate" name="rsvDate" type="date" value="2016-07-01" required/>
             <label>How many days would you like to reserve the facility for?</label>
-            <input type="number" name="daycount" size="1" required/>
+            <input type="number" id="daycount" name="daycount" size="1" required/>
             <input type='submit' value='submit'/>
         </form>
     </div>

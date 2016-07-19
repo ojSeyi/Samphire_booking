@@ -7,5 +7,4 @@ $noDays = $_POST['daycount'];
 if ($noDays > 1){
     $LastReservationDay = $reservationDay + $noDays ;
     echo "&$reservationDay  $LastReservationDay";
-    header("Location: index.php");
 }

@@ -6,5 +6,6 @@ $noDays = $_POST['daycount'];
 
 if ($noDays > 1){
     $LastReservationDay = $reservationDay + $noDays ;
-    echo "&$reservationDay  $LastReservationDay";
+    $LastReservationDay = date("Y-m-d",strtotime($LastReservationDay));
+    echo "$reservationDay  $LastReservationDay";
 }

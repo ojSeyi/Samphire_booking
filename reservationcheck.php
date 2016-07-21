@@ -26,17 +26,17 @@
         $startdate = date("d-m-Y",strtotime($_SESSION['startdate']));
         $enddate = $_POST['enddate'];
         $enddate = date("d-m-Y",strtotime($enddate));
-        $type = $_SESSION['facility'];
+        $facility = $_SESSION['facility'];
 
         if(isset($enddate)) {
             echo "<div id='reservationdetails'>
-                <label>Facility: " . $type . "</label><br><br><br>
+                <label>Facility: " . $facility . "</label><br><br><br>
                 <label>Start Date: " . $startdate . "</label><br><br><br>
                 <label>End Date: " . $enddate . "</label><br><br><br>
             </div>";
         }else{
             echo "<div id='reservationdetails'>
-                <label>Facility: " . $type . "</label><br><br><br>
+                <label>Facility: " . $facility . "</label><br><br><br>
                 <label>Start Date: " . $startdate . "</label><br><br><br>
             </div>";
         }

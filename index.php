@@ -28,12 +28,12 @@
                 while ($row = mysqli_fetch_array($result))
                     echo "<option>". $row['name'] . "</option>";
                 ?>
-            </select>
+            </select><br><br>
             <label>Meeting Date : </label>
-            <input id="startdate" name="startdate" type="date" value="2016-07-01"/>
+            <input id="startdate" name="startdate" type="date" value="2016-07-01"/><br><br>
             <p>If you would require the facility for more than one day tick this box</p>
-            <input type="checkbox" id="enddate" name="enddate" value="yes"/>
-            <input type="submit" value="submit"/>
+            <input type="checkbox" id="enddate" name="enddate" value="yes"/><br><br>
+            <input type="submit" value="submit"/><br><br>
         </form>
 
     </div>

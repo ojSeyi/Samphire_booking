@@ -35,8 +35,8 @@
                 $_SESSION['facility'] = $facility;
 
                 echo "<div id='reservationdetails'>
-                <p>Facility: " .$facility. "</p>
-                <p>Start Date: " .$startdate. "</p>
+                <label>Facility: " .$facility. "</label>
+                <label>Start Date: " .$startdate. "</label>
                 </div>";
 
                 echo "<form method='post' action='reservationcheck.php'>"."

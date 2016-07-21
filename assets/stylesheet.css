@@ -12,8 +12,9 @@ body{
 
 form {
     position: relative;
-    margin: auto;
-    background: #FFF url(background.jpg);
+    margin-left: auto;
+    margin-right: auto;
+    background: #FFF;
 }
 
 input[type=date]{
@@ -25,6 +26,7 @@ input[type=date]{
 }
 input[type=date]:focus {
     border: 3px solid lightskyblue;
+    background-color: aliceblue;
 }
 
 select{

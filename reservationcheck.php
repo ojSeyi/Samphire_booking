@@ -18,7 +18,7 @@
     <title>Samphire Subsea Facilities Booking</title>
 </head>
 <body>
-    
+
         <?php
             $reservation = $_POST['rsvDate'];
             $reservation = date("Y-m-d",strtotime($reservation));
@@ -31,8 +31,8 @@
                 $type = "date";
                 $date = "2016-07-02";
                 echo "<form method='post' action='reservationcheck.php'>";
-                echo "<input id='meeting' type='date' value='2016-07-02'/>";
-                echo "<input type='submit' value='submit'/>";
+                echo "<input id='meeting' type='date' value='2016-07-02'/><br><br>";
+                echo "<input type='submit' value='submit'/><br><br>";
                 echo "</form>";
             }
         ?>

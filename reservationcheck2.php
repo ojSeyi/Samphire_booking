@@ -39,7 +39,10 @@
                 <input type='submit' value='submit'/><br><br>
                 </form>";
             }else{
-                header('Location: reservationcheck.php');
+                echo "<form method='post' action='reservationcheck.php'>
+                <input type='hidden' value=. $startdate . id='startdate' ./>
+                <input type='hidden' value=. $type . id='facility'/>
+                </form>";
             }
 
         ?>

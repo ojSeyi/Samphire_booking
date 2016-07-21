@@ -8,14 +8,14 @@ body{
     width:960px;
     margin-left: auto;
     margin-right: auto;
+    background-color: aliceblue;
+    padding: 20px;
 }
 
 form {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    background-color: aliceblue;
-    padding: 20px;
 }
 
 input[type=date]{

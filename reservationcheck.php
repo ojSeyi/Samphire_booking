@@ -22,9 +22,9 @@
     <?php
     session_start();
 
-    $startdate = date("Y-m-d",strtotime($_SESSION['startdate']));
+    $startdate = date("d-m-Y",strtotime($_SESSION['startdate']));
     $enddate = $_POST['enddate'];
-    $enddate = date("Y-m-d",strtotime($enddate));
+    $enddate = date("d-m-Y",strtotime($enddate));
     $type = $_SESSION['facility'];
 
     echo "<div id='reservationdetails'>

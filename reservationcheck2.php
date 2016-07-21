@@ -23,7 +23,7 @@
             session_start();
 
             $startdate = $_POST['startdate'];
-            $startdate = date("Y-m-d",strtotime($startdate));
+            $startdate = date("d-m-Y",strtotime($startdate));
             $facility = $_POST['facility'];
 
 

@@ -31,4 +31,5 @@ select{
 label{
     width: 40%;
     display: block;
+    float: left;
 }

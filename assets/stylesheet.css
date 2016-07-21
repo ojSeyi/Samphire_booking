@@ -9,7 +9,7 @@ body{
 }
 
 input[type=date]{
-    width: 60%;
+    width: 480px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 1px solid #999;
@@ -18,7 +18,7 @@ input[type=date]{
 }
 
 select{
-    width: 60%;
+    width: 480px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 1px solid #999;
@@ -27,7 +27,7 @@ select{
 }
 
 label{
-    width: 40%;
+    width: 288px;
     display: block;
     float: left;
 }

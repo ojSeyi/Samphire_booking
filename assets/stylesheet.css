@@ -14,7 +14,7 @@ form {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    background: #FFF;
+    background-color: aliceblue;
 }
 
 input[type=date]{

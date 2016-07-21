@@ -47,7 +47,7 @@ input[type=submit] {
     text-decoration: none;
     cursor: pointer;
     width: 350px;
-    margin: auto;
+    margin-right: 192px;
     float: right;
 }
 

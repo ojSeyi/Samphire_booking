@@ -41,8 +41,8 @@
                 </form>";
             }else{
                 echo "<form method='post' action='reservationcheck.php'>
-                <input type='hidden' value=. $startdate . id='startdate' name='startdate'./>
-                <input type='hidden' value=. $type . id='facility' name='facility'/>
+                <input type='hidden' value= ". $startdate ." id='startdate' name='startdate'./>
+                <input type='hidden' value= ". $type . " id='facility' name='facility'/>
                 </form>";
                 header('Location: reservationcheck.php');
             }

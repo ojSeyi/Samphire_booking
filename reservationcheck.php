@@ -33,9 +33,7 @@
             </div>";
 
 
-    if (isset($_POST['enddate']) && $_POST['enddate'] == 'yes'){
 
-    }
     ?>
 </div>
 </body>

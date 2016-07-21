@@ -13,11 +13,6 @@ body{
     padding-left: 40px;
 }
 
-h6{
-    font-size: 12pt;
-    font-stretch: semi-expanded;
-}
-
 form {
     position: relative;
     margin-left: auto;

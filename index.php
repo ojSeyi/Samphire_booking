@@ -19,8 +19,8 @@
 </head>
 <body>
     <div id="syscon">
-        <?php $links = array('reservationcheck.php', 'reservationcheck2.php')?>
-        <form method="post" action="<?php foreach($links as $link){echo $link;}  ?>">
+
+        <form method="post" action=reservationcheck2.php">
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>
                 <?php

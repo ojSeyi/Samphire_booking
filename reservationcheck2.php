@@ -37,7 +37,10 @@
                 <input id='enddate' type='date' value='2016-07-02'/><br><br>
                 <input type='submit' value='submit'/><br><br>
                 </form>";
+            }else{
+                header('Location: reservationcheck.php');
             }
+
         ?>
     </div>
 </body>

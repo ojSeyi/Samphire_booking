@@ -31,3 +31,7 @@ label{
     display: block;
     float: left;
 }
+
+#nextdate{
+    width: 800px;
+}

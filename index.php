@@ -21,19 +21,27 @@
     <div>
         <form method="post" action="reservationcheck.php">
             <Lablel>Please select a facility</Lablel>
-            <select name="facility" id="facility" size="1" required>
+            <select name="facility" size="1" required>
                 <?php
-                    $getfacilities = "SELECT name FROM samphire_facilities";
-                    $result = mysqli_query($db, $getfacilities);
-                    while ($row = mysqli_fetch_array($result))
-                    echo "<option>". $row['name'] . "</option>";
+                $getfacilities = "SELECT name FROM samphire_facilities";
+                $result = mysqli_query($db, $getfacilities);
+                while ($row = mysqli_fetch_array($result))
+                echo "<option>". $row['name'] . "</option>";
                 ?>
             </select>
             <label>Meeting Date : </label>
-            <input id="rsvDate" name="rsvDate" type="date" value="2016-07-01" required/>
-            <label>How many days would you like to reserve the facility for?</label>
-            <input type="number" id="daycount" name="daycount" size="1" required/>
-            <input type='submit' value='submit'/>
+            <input id="meeting" type="date" value="2016-07-01"/>
+            <label>If you would require the facility for more than one day tick this box</label>
+            <?php
+                $meeting = "meeting";
+                $type = "date";
+                $date = "2016-07-02";
+                echo "<input type='checkbox' name='enddate' value='yes'/>";
+                echo "<input type='submit' value='submit'/>";
+                if (isset($_POST['enddate']) && $_POST['enddate'] == 'yes'){
+                    echo "<input id=".$meeting." type=".$type." value=".$date." />";
+                }
+            ?>
         </form>
     </div>
 

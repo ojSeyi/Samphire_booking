@@ -1,10 +1,9 @@
 <?php
-$reservationDay = $_POST['rsvDate'];
-$reservationDay = date("Y-m-d",strtotime($reservationDay));
+$reservation = $_POST['rsvDate'];
+$reservation = date("Y-m-d",strtotime($reservation));
 $type = $_POST['facility'];
 $noDays = $_POST['daycount'];
 
-if ($noDays > 1){
-    $LastReservationDay = date("Y-m-d",strtotime($LastReservationDay)) + $noDays;
-    echo "$reservationDay  $LastReservationDay";
+if ($noDays < 1){
+    $reservation ++ ;
 }

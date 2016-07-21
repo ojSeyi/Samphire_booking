@@ -20,7 +20,7 @@
 <body>
     <div id="syscon">
         <form method="post" action="reservationcheck.php">
-            <Lablel>Please select a facility</Lablel>
+            <Label>Please select a facility</Label>
             <select name="facility" size="1" required>
                 <?php
                 $getfacilities = "SELECT name FROM samphire_facilities";

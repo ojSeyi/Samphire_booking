@@ -30,7 +30,7 @@
                     echo "<option>". $row['name'] . "</option>";
                 ?>
             </select><br><br>
-            <label>Meeting Date : </label>
+            <label>Reservation Date : </label>
             <input id="startdate" name="startdate" type="date" value="2016-07-01"/><br><br>
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddate" value="yes"/><br><br><br>

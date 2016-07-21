@@ -32,12 +32,12 @@
             echo "<div id='reservationdetails'>
                 <label>Facility: " . $facility . "</label><br><br><br>
                 <label>Start Date: " . $startdate . "</label><br><br><br>
-                <label>End Date: " . $enddate . "</label><br><br><br>
+                <label>Reservation End Date: " . $enddate . "</label><br><br><br>
             </div>";
         }else{
             echo "<div id='reservationdetails'>
                 <label>Facility: " . $facility . "</label><br><br><br>
-                <label>Start Date: " . $startdate . "</label><br><br><br>
+                <label>Reservation Date: " . $startdate . "</label><br><br><br>
             </div>";
         }
     ?>

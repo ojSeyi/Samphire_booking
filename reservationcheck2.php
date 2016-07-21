@@ -40,7 +40,7 @@
                 </div>";
 
                 echo "<form method='post' action='reservationcheck.php'>"."
-                <label>Meeting Date : </label>
+                <label>Reservation End Date : </label>
                 <input id='enddate' name='enddate' type='date' value='2016-07-02'/><br><br>
                 <input type='submit' value='submit'/><br><br>
                 </form>";

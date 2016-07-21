@@ -22,7 +22,7 @@
     <?php
     $startdate = $_POST['startdate'];
     $startdate = date("Y-m-d",strtotime($enddate));
-    $enddate = $_POST['startdate'];
+    $enddate = $_POST['enddate'];
     $enddate = date("Y-m-d",strtotime($enddate));
     $type = $_POST['facility'];
 

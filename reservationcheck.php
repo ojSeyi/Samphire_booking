@@ -30,11 +30,11 @@
                 $meeting = "meeting";
                 $type = "date";
                 $date = "2016-07-02";
-                echo "<form method='post' action='reservationcheck.php'>";
-                echo "<label>Meeting Date : </label>";
-                echo "<input id='meeting' type='date' value='2016-07-02'/><br><br>";
-                echo "<input type='submit' value='submit'/><br><br>";
-                echo "</form>";
+                echo "<form method='post' action='reservationcheck.php'>
+                <label>Meeting Date : </label>
+                <input id='meeting' type='date' value='2016-07-02'/><br><br>
+                <input type='submit' value='submit'/><br><br>
+                </form>";
             }
         ?>
 

@@ -18,7 +18,7 @@
     <title>Samphire Subsea Facilities Booking</title>
 </head>
 <body>
-    <div>
+    <div id="syscon">
         <form method="post" action="reservationcheck.php">
             <Lablel>Please select a facility</Lablel>
             <select name="facility" size="1" required>

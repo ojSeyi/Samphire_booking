@@ -33,13 +33,7 @@
             </div>";
 
 
-    if (isset($_POST['enddate']) && $_POST['enddate'] == 'yes'){
-        echo "<form method='post' action='reservationcheck2.php'>
-                <label>Meeting Date : </label>
-                <input id='enddate' type='date' value='2016-07-02'/><br><br>
-                <input type='submit' value='submit'/><br><br>
-                </form>";
-    }
+
     ?>
 </div>
 </body>

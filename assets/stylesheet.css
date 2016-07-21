@@ -13,6 +13,15 @@ body{
     padding-left: 40px;
 }
 
+#reservationdetails{
+    width:960px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: aliceblue;
+    padding: 20px;
+    padding-left: 40px;
+}
+
 form {
     position: relative;
     margin-left: auto;

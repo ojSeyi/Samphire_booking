@@ -20,11 +20,11 @@
 <body>
 <div id="syscon">
     <?php
-    $startdate = $_POST['startdate'];
+    $startdate = $_SESSION['startdate'];
     $startdate = date("Y-m-d",strtotime($enddate));
     $enddate = $_POST['enddate'];
     $enddate = date("Y-m-d",strtotime($enddate));
-    $type = $_POST['facility'];
+    $type = $_SESSION['facility'];
 
     echo "<div id='reservationdetails'>
                 <p>Facility: " .$type. "</p>

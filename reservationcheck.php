@@ -23,17 +23,23 @@
     <?php
     session_start();
 
-    $startdate = date("d-m-Y",strtotime($_SESSION['startdate']));
-    $enddate = $_POST['enddate'];
-    $enddate = date("d-m-Y",strtotime($enddate));
-    $type = $_SESSION['facility'];
+        $startdate = date("d-m-Y",strtotime($_SESSION['startdate']));
+        $enddate = $_POST['enddate'];
+        $enddate = date("d-m-Y",strtotime($enddate));
+        $type = $_SESSION['facility'];
 
-    echo "<div id='reservationdetails'>
-                <label>Facility: " .$type. "</label><br><br><br>
-                <label>Start Date: " .$startdate. "</label><br><br><br>
-                <label>End Date: " .$enddate. "</label><br><br><br>
-          </div>";
-
+        if(isset($enddate)) {
+            echo "<div id='reservationdetails'>
+                <label>Facility: " . $type . "</label><br><br><br>
+                <label>Start Date: " . $startdate . "</label><br><br><br>
+                <label>End Date: " . $enddate . "</label><br><br><br>
+            </div>";
+        }else{
+            echo "<div id='reservationdetails'>
+                <label>Facility: " . $type . "</label><br><br><br>
+                <label>Start Date: " . $startdate . "</label><br><br><br>
+            </div>";
+        }
     ?>
 
 </div>

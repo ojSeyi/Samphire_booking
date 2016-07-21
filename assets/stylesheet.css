@@ -17,11 +17,13 @@ body{
     width:650px;
     margin-left: auto;
     margin-right: auto;
+
 }
-#details{
-    display: block;
-    width: 480px;
+h6{
+    font-size: 12em;
+    font-stretch: semi-expanded;
 }
+
 form {
     position: relative;
     margin-left: auto;

@@ -23,7 +23,6 @@
             $startdate = $_POST['startdate'];
             $startdate = date("Y-m-d",strtotime($startdate));
             $type = $_POST['facility'];
-            $noDays = $_POST['daycount'];
 
             echo "<div id='reservationdetails'>
                 <p>Facility: " .$type. "</p>

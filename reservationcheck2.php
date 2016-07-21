@@ -27,12 +27,13 @@
 
 
         <?php
-            if (isset($_POST['enddate']) && $_POST['enddate'] == 'yes'){
+            if (isset($_POST['enddate']) && $_POST['enddate'] == 'yes') {
 
                 echo "<div id='reservationdetails'>
-                <p>Facility: " .$type. "</p>
-                <p>Start Date: " .$startdate. "</p>
+                <p>Facility: " . $type . "</p>
+                <p>Start Date: " . $startdate . "</p>
                 </div>";
+            }
         ?>
                 <form method="post" action="reservationcheck.php">
                 <input type="hidden" value=<?php $startdate ?> id="startdate" ./>

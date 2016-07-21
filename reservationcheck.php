@@ -29,9 +29,9 @@
     $type = $_SESSION['facility'];
 
     echo "<div id='reservationdetails'>
-                <label>Facility: " .$type. "</label><br>
-                <label>Start Date: " .$startdate. "</label><br>
-                <label>End Date: " .$enddate. "</label><br>
+                <label>Facility: " .$type. "</label><br><br>
+                <label>Start Date: " .$startdate. "</label><br><br>
+                <label>End Date: " .$enddate. "</label><br><br>
           </div>";
 
     ?>

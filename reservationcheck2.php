@@ -25,16 +25,14 @@
             $type = $_POST['facility'];
 
 
-            $link= "reservationcheck.php";
+
 
             if (isset($_POST['enddate']) && $_POST['enddate'] == 'yes'){
                 echo "<div id='reservationdetails'>
                 <p>Facility: " .$type. "</p>
                 <p>Start Date: " .$startdate. "</p>
                 </div>";
-                echo "<form method='post' action=".$link.">
-                <input type='hidden' value=. $startdate . id='startdate' ./>
-                <input type='hidden' value=. $type . id='facility'/>
+                echo "<form method='post' action='reservationcheck.php'>"."
                 <label>Meeting Date : </label>
                 <input id='enddate' type='date' value='2016-07-02'/><br><br>
                 <input type='submit' value='submit'/><br><br>

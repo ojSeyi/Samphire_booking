@@ -20,6 +20,7 @@
 <body>
      <div id="syscon">
         <?php
+            session_start();
             $startdate = $_POST['startdate'];
             $startdate = date("Y-m-d",strtotime($startdate));
             $facility = $_POST['facility'];
@@ -28,10 +29,9 @@
 
 
             if (isset($_POST['enddate']) && $_POST['enddate'] == 'yes'){
-                session_start();
+
                 $_SESSION['startdate'] = $startdate;
                 $_SESSION['facility'] = $facility;
-                header('Location: reservationcheck.php');
 
                 echo "<div id='reservationdetails'>
                 <p>Facility: " .$facility. "</p>
@@ -44,7 +44,6 @@
                 <input type='submit' value='submit'/><br><br>
                 </form>";
             }else{
-                session_start();
                 $_SESSION['startdate'] = $startdate;
                 $_SESSION['facility'] = $facility;
                 header('Location: reservationcheck.php');

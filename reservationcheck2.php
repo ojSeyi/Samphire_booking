@@ -33,14 +33,16 @@
                 <p>Start Date: " .$startdate. "</p>
                 </div>";
                 echo "<form method='post' action='reservationcheck.php'>"."
+                <input type='hidden' value=. $startdate . id='startdate' name='startdate' ./>
+                <input type='hidden' value=. $type . id='facility' name='facility'/>
                 <label>Meeting Date : </label>
-                <input id='enddate' type='date' value='2016-07-02'/><br><br>
+                <input id='enddate' name='enddate' type='date' value='2016-07-02'/><br><br>
                 <input type='submit' value='submit'/><br><br>
                 </form>";
             }else{
                 echo "<form method='post' action='reservationcheck.php'>
-                <input type='hidden' value=. $startdate . id='startdate' ./>
-                <input type='hidden' value=. $type . id='facility'/>
+                <input type='hidden' value=. $startdate . id='startdate' name='startdate'./>
+                <input type='hidden' value=. $type . id='facility' name='facility'/>
                 </form>";
             }
 

@@ -15,8 +15,8 @@ input[type=date]{
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 1px dotted #999;
-    border-radius: 30%;
+    border: 1px #999;
+    border-radius: 10%;
 }
 
 select{
@@ -26,8 +26,8 @@ select{
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 1px dotted #999;
-    border-radius: 30%;
+    border: 1px #999;
+    border-radius: 10%;
 }
 
 label{

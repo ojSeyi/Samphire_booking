@@ -18,29 +18,27 @@
     <title>Samphire Subsea Facilities Booking</title>
 </head>
 <body>
-<div id="syscon">
-    <?php
-    $startdate = $_POST['startdate'];
-    $startdate = date("Y-m-d",strtotime($enddate));
-    $enddate = $_POST['startdate'];
-    $enddate = date("Y-m-d",strtotime($enddate));
-    $type = $_POST['facility'];
+     <div id="syscon">
+        <?php
+            $startdate = $_POST['startdate'];
+            $startdate = date("Y-m-d",strtotime($startdate));
+            $type = $_POST['facility'];
+            $noDays = $_POST['daycount'];
 
-    echo "<div id='reservationdetails'>
+            echo "<div id='reservationdetails'>
                 <p>Facility: " .$type. "</p>
                 <p>Start Date: " .$startdate. "</p>
-                <p>End Date: " .$type. "</p>
             </div>";
 
 
-    if (isset($_POST['enddate']) && $_POST['enddate'] == 'yes'){
-        echo "<form method='post' action='reservationcheck2.php'>
+            if (isset($_POST['enddate']) && $_POST['enddate'] == 'yes'){
+                echo "<form method='post' action='reservationcheck.php'>
                 <label>Meeting Date : </label>
                 <input id='enddate' type='date' value='2016-07-02'/><br><br>
                 <input type='submit' value='submit'/><br><br>
                 </form>";
-    }
-    ?>
-</div>
+            }
+        ?>
+    </div>
 </body>
 </html>

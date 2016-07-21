@@ -10,3 +10,4 @@ if(!$db){
     echo "Can't connect to Database" . mysqli_error();
 }
 ?>
+

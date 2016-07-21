@@ -12,7 +12,7 @@ body{
 
 form {
     position: relative;
-    margin : 0 auto;
+    margin: auto;
     background: #FFF url(background.jpg);
 }
 
@@ -47,6 +47,7 @@ input[type=submit] {
     text-decoration: none;
     cursor: pointer;
     width: 350px;
+    margin: auto;
     float: right;
 }
 

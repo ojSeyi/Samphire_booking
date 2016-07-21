@@ -29,7 +29,7 @@
     echo "<div id='reservationdetails'>
                 <p>Facility: " .$type. "</p>
                 <p>Start Date: " .$startdate. "</p>
-                <p>End Date: " .$type. "</p>
+                <p>End Date: " .$enddate. "</p>
             </div>";
 
 

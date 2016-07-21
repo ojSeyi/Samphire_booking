@@ -13,8 +13,6 @@ input[type=date]{
     padding: 12px 20px;
     box-sizing: border-box;
     border: 1px solid #999;
-    border-radius: 10%;
-
 }
 
 select{
@@ -22,8 +20,6 @@ select{
     padding: 12px 20px;
     box-sizing: border-box;
     border: 1px solid #999;
-    border-radius: 10%;
-
 }
 
 label{

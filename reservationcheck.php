@@ -20,19 +20,21 @@
 <body>
      <div id="syscon">
         <?php
-            $reservation = $_POST['rsvDate'];
-            $reservation = date("Y-m-d",strtotime($reservation));
+            $startdate = $_POST['startdate'];
+            $startdate = date("Y-m-d",strtotime($startdate));
             $type = $_POST['facility'];
             $noDays = $_POST['daycount'];
 
+            echo "<div id='reservationdetails'>
+                <p>Facility: </p>" .$type. "<br> <br>
+                <p>Start Date: </p>" .$startdate. "
+            </div>";
+
 
             if (isset($_POST['enddate']) && $_POST['enddate'] == 'yes'){
-                $meeting = "meeting";
-                $type = "date";
-                $date = "2016-07-02";
                 echo "<form method='post' action='reservationcheck.php'>
                 <label>Meeting Date : </label>
-                <input id='meeting' type='date' value='2016-07-02'/><br><br>
+                <input id='enddate' type='date' value='2016-07-02'/><br><br>
                 <input type='submit' value='submit'/><br><br>
                 </form>";
             }

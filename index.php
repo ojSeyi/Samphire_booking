@@ -30,18 +30,10 @@
                 ?>
             </select>
             <label>Meeting Date : </label>
-            <input id="meeting" type="date" value="2016-07-01"/>
+            <input id="startdate" name="startdate" type="date" value="2016-07-01"/>
             <label>If you would require the facility for more than one day tick this box</label>
-            <?php
-                $meeting = "meeting";
-                $type = "date";
-                $date = "2016-07-02";
-                echo "<input type='checkbox' name='enddate' value='yes'/>";
-                echo "<input type='submit' value='submit'/>";
-                if (isset($_POST['enddate']) && $_POST['enddate'] == 'yes'){
-                    echo "<input id=".$meeting." type=".$type." value=".$date." />";
-                }
-            ?>
+            <input type="checkbox" id="enddate" name="enddate" value="yes"/>;
+            <input type="submit" value="submit"/>;
         </form>
     </div>
 

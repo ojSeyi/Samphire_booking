@@ -35,7 +35,7 @@
                 $_SESSION['facility'] = $facility;
 
                 echo "<div id='reservationdetails'>
-                <label>Facility: " .$type. "</label><br><br><br>
+                <label>Facility: " .$facility. "</label><br><br><br>
                 <label>Start Date: " .$startdate. "</label><br><br><br>
                 </div>";
 

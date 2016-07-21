@@ -26,7 +26,7 @@
             $noDays = $_POST['daycount'];
 
             echo "<div id='reservationdetails'>
-                <p>Facility: " .$type. "</p> <br> <br>
+                <p>Facility: " .$type. "</p> <br>
                 <p>Start Date: " .$startdate. "</p>
             </div>";
 

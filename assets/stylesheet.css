@@ -10,11 +10,18 @@ body{
     margin-right: auto;
 }
 
+form {
+    position: relative;
+    margin : 0 auto;
+    background: #FFF url(background.jpg);
+}
+
 input[type=date]{
     width: 480px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 1px solid #999;
+    border-radius: 10%;
 }
 
 select{
@@ -22,6 +29,7 @@ select{
     padding: 12px 20px;
     box-sizing: border-box;
     border: 1px solid #999;
+    border-radius: 10%;
 }
 
 label{
@@ -29,6 +37,17 @@ label{
     display: block;
     float: left;
     padding-top: 20px;
+}
+
+input[type=submit] {
+    background-color: lightskyblue;
+    border: none;
+    color: darkslategray;
+    padding: 16px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 350px;
+    float: right;
 }
 
 

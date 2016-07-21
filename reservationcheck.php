@@ -20,6 +20,8 @@
 <body>
 <div id="syscon">
     <?php
+    session_start();
+
     $startdate = $_SESSION['startdate'];
     $startdate = date("Y-m-d",strtotime($enddate));
     $enddate = $_POST['enddate'];

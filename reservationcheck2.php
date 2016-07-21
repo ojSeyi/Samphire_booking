@@ -21,6 +21,7 @@
      <div id="syscon">
         <?php
             session_start();
+
             $startdate = $_POST['startdate'];
             $startdate = date("Y-m-d",strtotime($startdate));
             $facility = $_POST['facility'];

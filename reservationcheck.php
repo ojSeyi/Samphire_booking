@@ -18,7 +18,7 @@
     <title>Samphire Subsea Facilities Booking</title>
 </head>
 <body>
-
+     <div id="syscon">
         <?php
             $reservation = $_POST['rsvDate'];
             $reservation = date("Y-m-d",strtotime($reservation));
@@ -37,6 +37,6 @@
                 </form>";
             }
         ?>
-
+    </div>
 </body>
 </html>

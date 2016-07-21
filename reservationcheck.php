@@ -19,6 +19,7 @@
 </head>
 <body>
 <div id="syscon">
+
     <?php
     session_start();
 
@@ -28,14 +29,13 @@
     $type = $_SESSION['facility'];
 
     echo "<div id='reservationdetails'>
-                <label>Facility: " .$type. "</label>
-                <label>Start Date: " .$startdate. "</label>
-                <label>End Date: " .$enddate. "</label>
+                <label>Facility: " .$type. "</label><br>
+                <label>Start Date: " .$startdate. "</label><br>
+                <label>End Date: " .$enddate. "</label><br>
           </div>";
 
-
-
     ?>
+
 </div>
 </body>
 </html>

@@ -23,6 +23,9 @@ input[type=date]{
     border: 1px solid #999;
     border-radius: 7px;
 }
+input[type=date]:focus {
+    border: 3px solid lightskyblue;
+}
 
 select{
     width: 480px;
@@ -30,6 +33,10 @@ select{
     box-sizing: border-box;
     border: 1px solid #999;
     border-radius: 7px;
+}
+select:focus {
+    border: 3px solid lightskyblue;
+    background-color: aliceblue;
 }
 
 label{

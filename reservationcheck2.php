@@ -22,28 +22,31 @@
         <?php
             $startdate = $_POST['startdate'];
             $startdate = date("Y-m-d",strtotime($startdate));
-            $type = $_POST['facility'];
+            $facility = $_POST['facility'];
 
 
 
 
             if (isset($_POST['enddate']) && $_POST['enddate'] == 'yes'){
+                session_start();
+                $_SESSION['startdate'] = $startdate;
+                $_SESSION['facility'] = $facility;
+                header('Location: reservationcheck.php');
+
                 echo "<div id='reservationdetails'>
-                <p>Facility: " .$type. "</p>
+                <p>Facility: " .$facility. "</p>
                 <p>Start Date: " .$startdate. "</p>
                 </div>";
+
                 echo "<form method='post' action='reservationcheck.php'>"."
-                <input type='hidden' value=". $startdate . "id='startdate' name='startdate' ./>
-                <input type='hidden' value=". $type . "id='facility' name='facility'/>
                 <label>Meeting Date : </label>
                 <input id='enddate' name='enddate' type='date' value='2016-07-02'/><br><br>
                 <input type='submit' value='submit'/><br><br>
                 </form>";
             }else{
-                echo "<form method='post' action='reservationcheck.php'>
-                <input type='hidden' value= ". $startdate ." id='startdate' name='startdate'./>
-                <input type='hidden' value= ". $type . " id='facility' name='facility'/>
-                </form>";
+                session_start();
+                $_SESSION['startdate'] = $startdate;
+                $_SESSION['facility'] = $facility;
                 header('Location: reservationcheck.php');
             }
 

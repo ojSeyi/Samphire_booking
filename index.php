@@ -31,7 +31,7 @@
             </select>
             <label>Meeting Date : </label>
             <input id="startdate" name="startdate" type="date" value="2016-07-01"/>
-            <label id="nextdate">If you would require the facility for more than one day tick this box</label>
+            <p>If you would require the facility for more than one day tick this box</p>
             <input type="checkbox" id="enddate" name="enddate" value="yes"/>
             <input type="submit" value="submit"/>
         </form>

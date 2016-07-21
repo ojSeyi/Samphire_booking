@@ -19,7 +19,7 @@
 </head>
 <body>
     <div id="syscon">
-        <form method="post" action="reservationcheck2.php, reservationcheck.php">
+        <form method="post" action="rsvchk.php">
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>
                 <?php

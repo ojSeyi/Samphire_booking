@@ -11,14 +11,14 @@ body{
 
 input[type=date]{
     width: 480px;
-    padding: 20px;
+    padding: 12px 20px;
     box-sizing: border-box;
     border: 1px solid #999;
 }
 
 select{
     width: 480px;
-    padding: 20px;
+    padding: 12px 20px;
     box-sizing: border-box;
     border: 1px solid #999;
 }

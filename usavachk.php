@@ -2,8 +2,8 @@
 <html lang="en">
 <?php include ("db_connection.php"); ?>
 <?php session_start();
-if(is_null($_SESSION['firstname'])){
-    header('Location: index.php');
+if(is_null($_SESSION['firstname']) && ($_SESSION['facilities']) && ($_SESSION['startdates'])){
+    header('Location: index1.php');
 };
 ?>
 <head>

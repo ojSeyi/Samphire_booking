@@ -57,6 +57,10 @@
                 <label>Reservation Date: " . $startdate . "</label><br><br><br>
             </div>";
         }
+
+        $facility = $_SESSION['facilities'];
+        $startdate = $_SESSION['startdates'];
+        $enddate = $_SESSION['enddates'];
         ?>
 
 

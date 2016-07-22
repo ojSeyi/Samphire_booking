@@ -2,7 +2,7 @@
 <html lang="en">
 <?php include ("db_connection.php"); ?>
 <?php session_start();
-if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
+if(is_null($_SESSION['login'])){
     header('Location: index.php');
 };
 ?>
@@ -26,41 +26,42 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>
     <div id="form">
+        <div id="loginerror">Please enter a valid username and password</div>
         <form method="post" action="login.php">
             <input type="text" name="username" id="usernamebox" placeholder="Username" required/>
             <input type="password" name="password" id="passwordbox" placeholder="Password" required/>
-            <input type="submit" value="Login" name="login" id="loginb"/>
+            <input type="submit" value="Login" id="loginb"/>
         </form>
     </div>
     <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
 </header>
+
 <main>
     <section id="bannerbox">
         <img src="assets/images/banner1.jpg" id="bannerimage"/>
     </section>
 
     <div id="syscon">
-        <?php
-            $facilitys = $_SESSION['facilities'];
-            $startdates = date("d-m-Y",strtotime($_SESSION['startdates']));;
-            $enddates = $_SESSION['enddates'];
+        <div id="errormessage1">
+            <p>Sorry, that failitity is not available on <?php $_SESSION['startdates'] ?></p>
+        </div>
 
-            $available = "SELECT * FROM samphire_facilities WHERE 'name' = '$facilitys'";
-            $result = mysqli_query($db, $result);
-            if(mysqli_num_rows($result) > 0) {
-                $row = mysqli_fetch_array($result);
-                $rows = $row['f_id'];
-                $availables = "SELECT * FROM guestbookings WHERE 'f_id' = '$rows' AND 'startdate' = $startdates";
-                $results = mysqli_query($db, $availables);
-                if(mysqli_num_rows($results) == 1){
-                    $yesavailable = 1;
-                    $_SESSION['yes'] = $yesavailable;
-                }
-            }else{
-                header('Location: index3.php');
-            }
-
-        ?>
+        <form id="search" method="post" action="reservationcheck2.php">
+            <Label>Please select a facility</Label>
+            <select name="facility" size="1" required>
+                <?php
+                $getfacilities = "SELECT name FROM samphire_facilities";
+                $result = mysqli_query($db, $getfacilities);
+                while ($row = mysqli_fetch_array($result))
+                    echo "<option>". $row['name'] . "</option>";
+                ?>
+            </select><br><br>
+            <label>Reservation Date : </label>
+            <input id="startdate" name="startdate" type="date" value="2016-07-01"/><br><br>
+            <label>If you would require the facility for more than one day tick this box</label><br>
+            <input type="checkbox" id="enddate" name="enddate" value="yes"/><br><br><br>
+            <input type="submit" value="submit"/><br><br>
+        </form>
 
     </div>
 </main>

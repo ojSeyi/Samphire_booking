@@ -8,6 +8,8 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
 }else {
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $login = $_POST['login'];
+    $_SESSION['login'] = $login;
 
     $login = "SELECT * FROM customer_login WHERE username = '$username' AND password = '$password'";
     $result = mysqli_query($db, $login) or die("Invalid Query".mysqli_error());

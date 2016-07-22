@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include ("db_connection.php"); ?>
+<?php session_start();
+if(is_null($_SESSION['login'])){
+    header('Location: index.php');
+};
+?>
 <head>
     <meta charset="UTF-8">
     <title>Samphire-Subsea: Facility Reservation</title>

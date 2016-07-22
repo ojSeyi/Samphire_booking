@@ -24,7 +24,7 @@
     <form method="post" action="login.php">
         <input type="text" name="username" id="usernamebox" placeholder="Username" required/>
         <input type="password" name="password" id="passwordbox" placeholder="Password" required/>
-        <input type="submit" value="Login" id="loginb"/>
+        <input type="submit" value="Login" name="login" id="loginb"/>
     </form>
     </div>
     <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>

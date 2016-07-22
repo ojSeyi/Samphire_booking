@@ -11,6 +11,7 @@ body{
 
 #username{
     width: 100px;
+    float: none;
 }
 
 #usernamebox{
@@ -19,6 +20,7 @@ body{
 
 #password{
     width: 100px;
+    float: none;
 }
 
 #passwordbox{

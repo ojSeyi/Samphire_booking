@@ -5,12 +5,16 @@ body{
 }
 
 #login{
+    width:auto;
     height: 70px;
     margin: 3px;
     margin-left: 0px;
     background-color: darkslategray;
-
+    float: right;
 }
+
+
+
 #password{
     width: 200px;
     display: none;

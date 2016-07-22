@@ -4,6 +4,16 @@ body{
     margin-right: auto;
 }
 
+#login{
+    float: right;
+    width: 300px;
+}
+#username{
+    width: 120px;
+}
+#password{
+    width: 120px;
+}
 #syscon{
     width:960px;
     margin-left: auto;

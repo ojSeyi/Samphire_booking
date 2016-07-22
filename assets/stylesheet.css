@@ -8,22 +8,23 @@ body{
     width: 900px;
     float: right;
 }
+
 #username{
     width: 100px;
-    float: left;
 }
+
 #usernamebox{
     width: 180px;
-    float: left;
 }
+
 #password{
     width: 100px;
-    float: left;
 }
+
 #passwordbox{
     width: 180px;
-    float: left;
 }
+
 #loginb{
     width: 100px;
     background-color: #999999;

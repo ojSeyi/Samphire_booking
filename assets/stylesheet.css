@@ -20,7 +20,7 @@ header{
     float: none;
 }
 
-#login.input[type=date]{
+#login.input[type=text]{
     width: 400px;
 }
 

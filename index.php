@@ -22,8 +22,8 @@
     <img src="assets/images/logo_2016.jpg" id="logo"/>
     <div id="form">
     <form method="post" action="login.php">
-        <input type="text" name="uname" id="usernamebox" placeholder="Username" required/>
-        <input type="password" name="pword" id="passwordbox" placeholder="Password" required/>
+        <input type="text" name="username" id="usernamebox" placeholder="Username" required/>
+        <input type="password" name="password" id="passwordbox" placeholder="Password" required/>
         <input type="submit" value="Login" id="loginb"/>
     </form>
     </div>

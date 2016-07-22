@@ -1,4 +1,5 @@
 <?php
     session_start();
 
-    echo $_SESSION['firstname'];
+    $_SESSION['firstname'] = $user;
+    echo "Welcome".$user;

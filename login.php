@@ -7,7 +7,7 @@
     $password = $_POST['password'];
 
     $login = "SELECT log_id FROM customer_login WHERE username = '$username' AND password = '$password'";
-    $result = mysqli_query($db, $login) or die("failed query").mysqli_error();
+    $result = mysqli_query($db,$login) or die("failed query".mysqli_error());
 
     if (mysqli_num_rows($result) == 1){
         $row = mysqli_fetch_row($result);

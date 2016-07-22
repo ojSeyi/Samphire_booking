@@ -28,9 +28,6 @@
     </form>
     </div>
     <div id="pagetitie"><h4>Samphire-Subsea</h4><h5>Facilities Booking System</h5></div>
-
-
-
 </header>
 
 <main>

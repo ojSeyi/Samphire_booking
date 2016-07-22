@@ -15,7 +15,7 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_array($result);
         $userloginid = $row['log_id'];
-        $getuserfullname = mysqli_query($db, "SELECT firstname, lastname FROM customers WHERE log_id = $userloginid");
+        $getuserfullname = mysqli_query($db, "SELECT * FROM customers WHERE log_id = $userloginid");
         if(mysqli_num_rows($getuserfullname) == 1){
             $userfullname = mysqli_fetch_array(getuserfullname);
             $userfirstname = $userfullname['firstname'];

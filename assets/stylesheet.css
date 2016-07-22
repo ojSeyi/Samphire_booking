@@ -16,13 +16,16 @@ header{
     float: right;
 }
 
-
-
-#password{
-    width: 200px;
+#usernamebox{
+    margin-right: 3px;
     display: none;
     float: left;
-    padding-top: 0%;
+}
+
+#passwordbox{
+    margin-right: 3px;
+    display: none;
+    float: left;
 }
 
 #loginb{

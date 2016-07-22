@@ -56,7 +56,7 @@
                 <label>Start Date: " .$startdate. "</label><br><br><br>
                 </div>";
 
-            echo "<form method='post' action='reservationcheck.php'>"."
+            echo "<form method='post' action='reservecheck.php'>"."
                 <label>Reservation End Date : </label>
                 <input id='enddate' name='enddate' type='date' value='2016-07-02'/><br><br>
                 <input type='submit' value='submit'/><br><br>
@@ -64,7 +64,7 @@
         }else{
             $_SESSION['startdate'] = $startdate;
             $_SESSION['facility'] = $facility;
-            header('Location: reservationcheck.php');
+            header('Location: reservecheck.php');
         }
 
         ?>

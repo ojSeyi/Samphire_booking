@@ -15,7 +15,8 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
 
     if (mysqli_num_rows($result) == 1){
         $row = mysqli_fetch_row($result);
-        $user = $row['firstname'];
+        $logid = $row['log_id'];
+        $user = mysqli_query($db, "SELECT firstname FROM customers WHERE log_id = '$logid'");
         $_SESSION['firstname'] = $user;
         header('Location: index1.php');
     }else{

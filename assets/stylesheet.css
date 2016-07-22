@@ -20,6 +20,7 @@ header{
     height: 60px;
 }
 #form{
+    float: right;
     padding-right: 40px;
 }
 #login{

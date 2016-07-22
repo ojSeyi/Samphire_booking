@@ -46,7 +46,16 @@ if(isset($_SESSION['login'])){
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>
                 <?php
-                $getfacilities = "SELECT name FROM samphire_facilities";
+                function generateRandomString($length = 6) {
+                    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                    $charactersLength = strlen($characters);
+                    $randomString = '';
+                    for ($i = 0; $i < $length; $i++) {
+                        $randomString .= $characters[rand(0, $charactersLength - 1)];
+                    }
+                    return $randomString;
+                }
+                $getfacilities = "SELECT * FROM samphire_facilities";
                 $result = mysqli_query($db, $getfacilities);
                 while ($row = mysqli_fetch_array($result))
                     echo "<option>". $row['name'] . "</option>";

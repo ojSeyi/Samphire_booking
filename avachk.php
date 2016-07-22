@@ -59,8 +59,46 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
             }else{
                 header('Location: index3.php');
             }
+            function generateRandomString($length = 6) {
+                $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $charactersLength = strlen($characters);
+                $randomString = '';
+                for ($i = 0; $i < $length; $i++) {
+                    $randomString .= $characters[rand(0, $charactersLength - 1)];
+                }
+                return $randomString;
+            }
+
+            $getcosts = "SELECT cost FROM samphire_facilities WHERE name = '$facilitys'";
+            $report = mysqli_query($db, $getcosts);
+            $costs = mysqli_fetch_array($report);
+            $costss = $costs['cost'];
+
+            $randomtable = generateRandomString();
+
+            $checkoftable = mysqli_query($db, "SELECT * FROM '$randomtable'");
+            if(mysqli_error($checkoftable)) {
+                $createordertable = "CREATE TABLE pending(
+                pend int(6) UNIQUE NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                f_id varchar(30) NOT NULL,
+                cost int(10) NOT NULL)";
+                $create = mysqli_query($db, $createordertable);
+
+                $temprecord = "INSERT INTO table_name (f_id,cost,)
+                    VALUES ($facilitys,$costss);";
+
+                $inserttemprecord = mysqli_query($db, $temprecord);
+            }
+            else{
+                header('Location: avachk.php');
+            }
 
         ?>
+
+        <form id="addto" action="avachk.php" method="post">
+            <label>Click to add more facilities</label>
+            <input type="submit" name="add" id="add" value="Add"/>
+        </form>
 
     </div>
 </main>

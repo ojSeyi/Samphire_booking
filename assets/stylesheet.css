@@ -31,7 +31,7 @@ header{
     padding-right: 15px;
 }
 
-#logout>label{
+#logout>form>label{
     width: 150px;
     float: left;
 }

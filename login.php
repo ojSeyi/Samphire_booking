@@ -15,8 +15,10 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_row($result);
         $userloginid = $row['log_id'];
-        $userfirstname = mysqli_query($db, "SELECT firstname, lastname FROM customers WHERE log_id = $userloginid");
-        $_SESSION['firstname'] = $user;
+        $getuserfullname = mysqli_query($db, "SELECT firstname, lastname FROM customers WHERE log_id = $userloginid");
+        $userfullname = mysqli_fetch_row($userfirstname);
+        $userfirstname = $userfullname['firstname'];
+        $_SESSION['firstname'] = $userfirstname;
         header('Location: index1.php');
     } else {
         header('Location: index2.php');

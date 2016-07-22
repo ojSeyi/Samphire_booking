@@ -24,8 +24,14 @@ header{
     float: right;
     padding-right: 15px;
 }
-#login{
-
+#pagetitle>h4{
+    color: white;
+    font-size: 16pt;
+    margin: 5px 10px 0px 3px;
+}
+#pagetitle>h4{
+    color: white;
+    font-size: 14pt;
 }
 
 #usernamebox{

@@ -11,12 +11,16 @@ header{
     padding-right: 40px;
     background-color: darkslategray;
     background-image: url("images/samphire-banner.PNG");
-    background-size: 960px 70px;
+    background-size: 980px 70px;
     background-repeat: no-repeat;
 }
 
 #logo{
     height: 70px;
+    float: left;
+}
+#pagetitle{
+    height: 60px;
 }
 
 #login{

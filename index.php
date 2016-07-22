@@ -21,9 +21,9 @@
 <header>
     <div id="login">
         <form method="post" action="login.php">
-            <label id="Username">Username</label>
+            <p id="Username">Username</p>
             <input type="text" name="uname" id="usernamebox"/>
-            <label id="Password">Password</label>
+            <p id="Password">Password</p>
             <input type="password" name="pword" id="passwordbox"/>
             <input type="submit" value="Login" id="loginb"/>
         </form>

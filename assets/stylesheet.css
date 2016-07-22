@@ -27,11 +27,14 @@ header{
 #pagetitle>h4{
     color: white;
     font-size: 16pt;
-    margin: 5px 10px 0px 3px;
+    margin-left: 5px;
+    margin-top: 20px;
+    margin-bottom: 3px;
 }
-#pagetitle>h4{
+#pagetitle>h5{
     color: white;
     font-size: 14pt;
+    margin-left: 5px;
 }
 
 #usernamebox{

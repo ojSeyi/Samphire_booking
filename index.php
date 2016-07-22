@@ -18,6 +18,7 @@
     <title>Samphire Subsea Facilities Booking</title>
 </head>
 <body>
+<header>
     <div id="login">
         <form method="post" action="login.php">
             <label id="Username">Username</label>
@@ -27,6 +28,9 @@
             <input type="submit" value="Login" id="loginb"/>
         </form>
     </div>
+</header>
+
+<main>
     <div id="syscon">
 
         <form method="post" action="reservationcheck2.php">
@@ -47,7 +51,7 @@
         </form>
 
     </div>
-
+</main>
 
 </body>
 </html>

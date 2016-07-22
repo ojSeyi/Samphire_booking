@@ -26,7 +26,7 @@
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>
     <div id="logout">
-        <form>
+        <form method="post" action="logout.php">
             <label><?php echo $_SESSION['firstname'];?></label>
             <input type="submit" name="logout" value="logout" id="logoutbutton"/>
         </form>

@@ -18,13 +18,18 @@ header{
 
 #usernamebox{
     margin-right: 3px;
-    display: none;
     float: left;
+    padding: 3px 6px;
+    box-sizing: border-box;
+    border-radius: 7px;
 }
 
 #passwordbox{
     margin-right: 3px;
     float: left;
+    padding: 3px 6px;
+    box-sizing: border-box;
+    border-radius: 7px;
 }
 
 #loginb{

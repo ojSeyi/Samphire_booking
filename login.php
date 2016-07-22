@@ -13,10 +13,18 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
     $result = mysqli_query($db, $login) or die("Invalid Query".mysqli_error());
 
     if (mysqli_num_rows($result) == 1) {
-        $row = mysqli_fetch_row($result);
+        $row = mysqli_fetch_array($result);
         $userloginid = $row['log_id'];
-        echo $userloginid;
+        $getuserfullname = mysqli_query($db, "SELECT firstname, lastname FROM customers WHERE log_id = $userloginid");
+        if(mysqli_num_rows($getuserfullname) == 1){
+            $userfullname = mysqli_fetch_array(getuserfullname);
+            $userfirstname = $userfullname['firstname'];
+            $userfirstname = $_SESSION['firstname'];
+            header('Location: index1.php');
+        }else{
 
+            echo "code error".mysqli_stmt_error();
+        }
 
     } else {
         header('Location: index2.php');

@@ -13,6 +13,10 @@ header{
     background-image: url("images/samphire-banner.PNG");
 }
 
+#logo{
+    height: 70px;
+}
+
 #login{
     margin-top: 20px;
     float: right;

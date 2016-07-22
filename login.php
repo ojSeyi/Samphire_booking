@@ -3,12 +3,15 @@
 
     include ("db_connection.php");
 
+if(empty($_POST['username']) || empty($_POST['password'])) {
+    echo "Enter Username and Password";
+}else{
 
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $login = "SELECT * FROM customer_login WHERE username = '$username' AND password = '$password'";
-    $result = mysqli_query($login, $db);
+    $login = "SELECT log_id FROM customer_login WHERE username = '$username' AND password = '$password'";
+    $result = mysqli_query($db, $login);
 
     if (mysqli_num_rows($result) == 1){
         $row = mysqli_fetch_row($result);
@@ -18,3 +21,4 @@
     }else{
         header('Location: index2.php');
     }
+}

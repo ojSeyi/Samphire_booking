@@ -32,8 +32,12 @@ header{
 }
 
 #logout>form>label{
+    display: block;
+    border: inset 1px lightgray;
     width: 150px;
     float: left;
+    font-size: 14pt;
+    color: white;
 }
 #logoutbutton{
     width: 70px;

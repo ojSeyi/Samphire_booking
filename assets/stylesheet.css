@@ -18,6 +18,7 @@ header{
 }
 
 #usernamebox{
+    width: 150px;
     margin-right: 3px;
     float: left;
     padding: 3px 6px;
@@ -26,6 +27,7 @@ header{
 }
 
 #passwordbox{
+    width: 150px;
     margin-right: 3px;
     float: left;
     padding: 3px 6px;

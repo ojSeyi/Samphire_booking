@@ -19,7 +19,7 @@ header{
 #usernamebox{
     margin-right: 3px;
     float: left;
-    padding: 5px 6px;
+    padding: 3px 6px;
     box-sizing: border-box;
     border-radius: 7px;
 }
@@ -27,7 +27,7 @@ header{
 #passwordbox{
     margin-right: 3px;
     float: left;
-    padding: 5px 6px;
+    padding: 3px 6px;
     box-sizing: border-box;
     border-radius: 7px;
 }
@@ -36,6 +36,7 @@ header{
     width: 100px;
     background-color: #999999;
     border: 1px solid;
+    border-radius: 7px;
     color: white;
     padding: 5px 10px;
     text-decoration: none;

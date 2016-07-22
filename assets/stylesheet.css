@@ -6,7 +6,8 @@ body{
 
 header{
     width: 960px;
-    height: 50px;
+    height: 70px;
+    margin: 10px;
     background-color: darkslategray;
 
 }

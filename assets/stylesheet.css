@@ -11,28 +11,6 @@ header{
 
 }
 
-#login{
-    float: right;
-}
-
-#username{
-    width: 150px;
-    float: none;
-}
-
-#login.input[type=text]{
-    width: 400px;
-}
-
-#password{
-    width: 15px;
-    float: none;
-}
-
-#passwordbox{
-
-}
-
 #loginb{
     width: 100px;
     background-color: #999999;
@@ -57,7 +35,7 @@ form {
     margin-right: auto;
 }
 
-{
+input[type=date]{
     width: 480px;
     padding: 12px 20px;
     box-sizing: border-box;

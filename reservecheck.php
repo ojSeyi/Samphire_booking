@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include ("db_connection.php"); ?>
-<?php session_start();
 
-?>
 <head>
     <meta charset="UTF-8">
     <title>Samphire-Subsea: Facility Reservation</title>

@@ -41,7 +41,6 @@ if(is_null($_SESSION['firstname'])){
 <div id="syscon">
 
     <?php
-    session_start();
 
         $startdate = date("d-m-Y",strtotime($_SESSION['startdate']));
         $enddate = $_POST['enddate'];

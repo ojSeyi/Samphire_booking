@@ -71,6 +71,10 @@ header{
     margin-right: 0px;
 
 }
+#form>form>p{
+    color: orangered;
+    font-size: 10pt;
+}
 
 #bannerbox{
     width: 1020px;

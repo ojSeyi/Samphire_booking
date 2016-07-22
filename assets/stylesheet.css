@@ -7,8 +7,6 @@ body{
 header{
     width: 980px;
     height: 70px;
-    margin-bottom: 3px;
-    padding-right: 40px;
     background-color: darkslategray;
     background-image: url("images/samphire-banner.PNG");
     background-size: 980px 70px;
@@ -26,6 +24,8 @@ header{
 #login{
     margin-top: 20px;
     float: right;
+    margin-bottom: 3px;
+    padding-right: 40px;
 }
 
 #usernamebox{

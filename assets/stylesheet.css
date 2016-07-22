@@ -6,13 +6,13 @@ body{
 
 #login{
     float: right;
-    width: 300px;
+    width: 900px;
 }
 #username{
-    width: 120px;
+    width: 50px;
 }
 #password{
-    width: 120px;
+    width: 50px;
 }
 #syscon{
     width:960px;

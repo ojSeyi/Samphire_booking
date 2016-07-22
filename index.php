@@ -22,7 +22,7 @@
         <form method="post" action="login.php">
             <label id="Username">Username</label>
             <input type="text" id="uname" name="uname"/>
-            <label id="Password">Username</label>
+            <label id="Password">Password</label>
             <input type="text" id="pword" name="pword"/>
             <input type="submit" value="Login" id="login"/>
         </form>

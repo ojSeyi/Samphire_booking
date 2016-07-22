@@ -20,7 +20,9 @@ header{
 #pagetitle{
     height: 60px;
 }
-
+#form{
+    float: right;
+}
 #login{
     margin-top: 20px;
     float: right;

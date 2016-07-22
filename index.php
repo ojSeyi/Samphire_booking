@@ -27,7 +27,7 @@
         <input type="submit" value="Login" id="loginb"/>
     </form>
     </div>
-    <div id="pagetitie"><h4>Samphire-Subsea</h4><h5>Facilities Booking System</h5></div>
+    <div id="pagetitle"><h4>Samphire-Subsea</h4><h5>Facilities Booking System</h5></div>
 </header>
 
 <main>

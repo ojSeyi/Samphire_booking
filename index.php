@@ -19,6 +19,7 @@
 </head>
 <body>
 <header>
+    <img src="assets/images/logo_2016.jpg" id="logo"/>
     <form id="login" method="post" action="login.php">
         <input type="text" name="uname" id="usernamebox" placeholder="Username"/>
         <input type="password" name="pword" id="passwordbox" placeholder="Password"/>

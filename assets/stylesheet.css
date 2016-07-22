@@ -11,6 +11,12 @@ body{
     background-color: darkslategray;
 
 }
+#passwork{
+    width: 200px;
+    display: none;
+    float: left;
+    padding-top: 0%;
+}
 
 #loginb{
     width: 100px;

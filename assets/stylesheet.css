@@ -33,8 +33,8 @@ header{
 
 #logout>form>label{
     display: block;
-    width: 130px;
-    margin-right: 3px;
+    width: 100px;
+    margin-right: 0px;
     float: left;
     padding: 3px 6px;
     font-size: 14pt;

@@ -20,6 +20,11 @@
 <body>
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>
+    <form method="post" action="login.php">
+        <input type="text" name="uname" id="usernamebox" placeholder="Username"/>
+        <input type="password" name="pword" id="passwordbox" placeholder="Password"/>
+        <input type="submit" value="Login" id="loginb"/>
+    </form>
     <div id="pagetitie"><h4>Samphire-Subsea</h4><h5>Facilities Booking System</h5></div>
     <div id="form">
 

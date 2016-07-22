@@ -31,14 +31,14 @@ header{
 }
 #pagetitle>h4{
     color: white;
-    font-size: 16pt;
+    font-size: 18pt;
     margin-left: 5px;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: -20px;
 }
 #pagetitle>p{
     color: white;
-    font-size: 14pt;
+    font-size: 16pt;
     margin-left: 5px;
 }
 

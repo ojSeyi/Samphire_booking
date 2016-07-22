@@ -2,7 +2,9 @@
 <html lang="en">
 <?php include ("db_connection.php"); ?>
 <?php session_start();
-    $_SESSION['firstname'] = $firstname;
+    if(is_null($_SESSION['firstname'])){
+        header('Location: index.php');
+    };
 ?>
 <head>
     <meta charset="UTF-8">
@@ -25,7 +27,7 @@
     <img src="assets/images/logo_2016.jpg" id="logo"/>
     <div id="logout">
         <form>
-            <label><?php echo $firstname;?></label>
+            <label><?php echo $_SESSION['firstname'];?></label>
             <input type="submit" name="logout" value="logout" id="logoutbutton"/>
         </form>
     </div>

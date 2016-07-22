@@ -23,7 +23,7 @@
             <label id="Username">Username</label>
             <input type="text" id="uname" name="uname" id="usernamebox"/>
             <label id="Password">Password</label>
-            <input type="text" id="pword" name="pword" id="passwordbox"/>
+            <input type="password" id="pword" name="pword" id="passwordbox"/>
             <input type="submit" value="Login" id="loginb"/>
         </form>
     </div>

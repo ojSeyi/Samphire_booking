@@ -6,14 +6,14 @@ body{
 
 header{
     width: 1020px;
-    height: 70px;
+    height: 80px;
     background-color: darkslategray;
     background-image: url("images/samphire-banner.PNG");
-    background-size: 1020px 70px;
+    background-size: 1020px 80px;
 }
 
 #logo{
-    height: 70px;
+    height: 80px;
     float: left;
 }
 #pagetitle{

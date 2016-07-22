@@ -11,15 +11,14 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
 
     $login = "SELECT * FROM customer_login WHERE username = '$username' AND password = '$password'";
     $result = mysqli_query($db, $login) or die("Invalid Query".mysqli_error());
-
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_array($result);
         $userloginid = $row['log_id'];
         $getuserfullname = mysqli_query($db, "SELECT * FROM customers WHERE log_id = $userloginid");
         if(mysqli_num_rows($getuserfullname) == 1){
-            $userfullname = mysqli_fetch_array(getuserfullname);
+            $userfullname = mysqli_fetch_array($getuserfullname);
             $userfirstname = $userfullname['firstname'];
-            $_SESSION['firstname'] = $num = 'eight';
+            $_SESSION['firstname'] = $userfirstname;
             header('Location: index1.php');
         }else{
 

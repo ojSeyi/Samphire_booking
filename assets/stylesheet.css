@@ -16,21 +16,21 @@ header{
 }
 
 #username{
-    width: 100px;
+    width: 150px;
     float: none;
 }
 
 #usernamebox{
-    width: 180px;
+
 }
 
 #password{
-    width: 100px;
+    width: 15px;
     float: none;
 }
 
 #passwordbox{
-    width: 180px;
+
 }
 
 #loginb{

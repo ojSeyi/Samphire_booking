@@ -22,9 +22,6 @@ header{
 }
 #form{
     float: right;
-    margin-top: 20px;
-
-    margin-bottom: 3px;
     padding-right: 40px;
 }
 #login{

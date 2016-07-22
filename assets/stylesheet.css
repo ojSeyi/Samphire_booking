@@ -59,11 +59,12 @@ header{
 
 #syscon{
     width:960px;
+    margin-top: 5px;
     background-color: aliceblue;
     padding: 20px;
     padding-left: 40px;
     border: solid 1px white;
-    border-radius: 7px;
+    border-radius: 10px;
 }
 
 #search {

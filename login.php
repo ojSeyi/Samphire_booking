@@ -19,7 +19,7 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
         if(mysqli_num_rows($getuserfullname) == 1){
             $userfullname = mysqli_fetch_array(getuserfullname);
             $userfirstname = $userfullname['firstname'];
-            $_SESSION['firstname'] = $userfirstname;
+            $_SESSION['firstname'] = $num = 'eight';
             header('Location: index1.php');
         }else{
 

@@ -25,14 +25,14 @@ header{
     padding-right: 15px;
 }
 #pagetitle{
-
+    padding-top: 20px;
 }
 #pagetitle>h4{
     color: white;
     font-size: 16pt;
     margin-left: 5px;
     margin-top: 20px;
-    margin-bottom: 0px;
+    margin-bottom: -10px;
 }
 #pagetitle>p{
     color: white;

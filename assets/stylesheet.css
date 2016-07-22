@@ -72,11 +72,6 @@ header{
 
 }
 
-#errorlogin{
-    width: 20px;
-    height:20px;
-    float: left;
-}
 #loginerror{
     margin-left: 3px;
     color: red;

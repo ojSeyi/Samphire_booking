@@ -26,6 +26,7 @@ header{
 }
 #pagetitle{
     padding-top: 10px;
+    padding-left: 0px;
 }
 #pagetitle>h4{
     color: white;

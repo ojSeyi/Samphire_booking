@@ -9,18 +9,28 @@ body{
 }
 #username{
     width: 100px;
+    float: left;
 }
 #usernamebox{
     width: 180px;
+    float: left;
 }
 #password{
     width: 100px;
+    float: left;
 }
 #passwordbox{
     width: 180px;
+    float: left;
 }
 #login{
     width: 100px;
+    background-color: #999999;
+    border: 1px solid;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+
 }
 
 #syscon{

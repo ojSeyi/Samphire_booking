@@ -15,6 +15,7 @@ header{
 #logo{
     height: 80px;
     float: left;
+    margin-right: 5px;
 }
 #pagetitle{
     height: 60px;

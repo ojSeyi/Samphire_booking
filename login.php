@@ -12,8 +12,8 @@
 
     if (mysqli_num_rows($result) == 1){
         $row = mysqli_fetch_row($result);
-        $user = $row['username'];
-        $_SESSION['user'] = $user;
+        $user = $row['firstname'];
+        $_SESSION['firstname'] = $user;
         header('Location: index1.php');
     }else{
         header('Location: index2.php');

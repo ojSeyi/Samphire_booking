@@ -5,7 +5,7 @@ body{
 }
 
 header{
-    width:960px;
+    width: 960px;
     height: 50px;
     background-color: darkslategray;
 }
@@ -45,8 +45,7 @@ header{
 
 #syscon{
     width:960px;
-    margin-left: auto;
-    margin-right: auto;
+
     background-color: aliceblue;
     padding: 20px;
     padding-left: 40px;

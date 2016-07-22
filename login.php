@@ -20,9 +20,6 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
             $userfirstname = $userfullname['firstname'];
             $_SESSION['firstname'] = $userfirstname;
             header('Location: index1.php');
-        }else{
-
-            echo "code error".mysqli_stmt_error();
         }
 
     } else {

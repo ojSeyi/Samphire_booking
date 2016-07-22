@@ -18,6 +18,15 @@
     <title>Samphire Subsea Facilities Booking</title>
 </head>
 <body>
+    <div id="login">
+        <form method="post" action="login.php">
+            <label id="Username">Username</label>
+            <input type="text" id="uname" name="uname"/>
+            <label id="Password">Username</label>
+            <input type="text" id="pword" name="pword"/>
+            <input type="submit" value="Login" id="login"/>
+        </form>
+    </div>
     <div id="syscon">
 
         <form method="post" action="reservationcheck2.php">

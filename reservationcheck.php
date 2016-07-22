@@ -18,11 +18,7 @@
     <title>Samphire Subsea Facilities Booking</title>
 </head>
 <body>
-<div id="login">
-    <form method="post" action="login.php">
 
-    </form>
-</div>
 <div id="syscon">
 
     <?php

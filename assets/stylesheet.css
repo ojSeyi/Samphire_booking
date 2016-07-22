@@ -33,8 +33,9 @@ header{
 
 #logout>form>label{
     display: block;
-    border: inset 1px lightgray;
-    width: 150px;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-right: 0px;
     float: left;
     font-size: 14pt;
     color: white;

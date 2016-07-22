@@ -30,6 +30,12 @@ header{
     float: right;
     padding-right: 15px;
 }
+
+#logout>label{
+    width: 100px;
+    float: right;
+}
+
 #pagetitle{
     padding-top: 10px;
     padding-left: 0px;

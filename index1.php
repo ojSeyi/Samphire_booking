@@ -26,7 +26,7 @@
     <div id="logout">
         <form>
             <label><?php echo $firstname;?></label>
-            <input type="submit" name="logout" value="logout" id="logout"/>
+            <input type="submit" name="logout" value="logout" id="logoutbutton"/>
         </form>
     </div>
     <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>

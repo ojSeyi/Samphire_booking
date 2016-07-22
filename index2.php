@@ -21,7 +21,7 @@
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>
     <div id="form">
-        <div id="login error">please enter a valid username and password</div>
+        <div id="loginerror">please enter a valid username and password</div>
         <form method="post" action="login.php">
             <input type="text" name="username" id="usernamebox" placeholder="Username" required/>
             <input type="password" name="password" id="passwordbox" placeholder="Password" required/>

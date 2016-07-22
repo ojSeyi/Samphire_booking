@@ -71,7 +71,7 @@ header{
     margin-right: 0px;
 
 }
-#form>p{
+#loginerror{
     color: orangered;
     font-size: 10pt;
 }

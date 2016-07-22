@@ -1,4 +1,7 @@
 <?php
     session_start();
-
-    echo "Welcome: ".$_SESSION['firstname'];
+    if(isset($_SESSION['firstname'])) {
+        echo "Welcome: " . $_SESSION['firstname'];
+    }else{
+        echo "not set";
+    }

@@ -21,7 +21,7 @@ header{
     height: 60px;
 }
 #form{
-    padding-top: 35px;
+    padding-top: 30px;
     float: right;
     padding-right: 15px;
 }
@@ -71,7 +71,7 @@ header{
     margin-right: 0px;
 
 }
-#form>form>p{
+#form>p{
     color: orangered;
     font-size: 10pt;
 }

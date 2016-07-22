@@ -29,10 +29,10 @@ header{
     padding-left: 40px;
 }
 
-form {
+#search {
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 95px;
+    margin-right: 95px;
 }
 
 input[type=date]{

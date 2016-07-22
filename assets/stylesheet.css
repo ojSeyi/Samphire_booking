@@ -15,14 +15,15 @@ body{
     width: 180px;
 }
 #password{
+    width: 100px;
+}
+#passwordbox{
     width: 180px;
 }
 #login{
-    width: 50px;
+    width: 100px;
 }
-#password{
-    width: 50px;
-}
+
 #syscon{
     width:960px;
     margin-left: auto;

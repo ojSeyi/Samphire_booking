@@ -72,6 +72,19 @@ header{
 
 }
 
+#bannerbox{
+    width: 1020px;
+    height: 400px;
+    border: solid 1px white;
+    border-radius: 7px;
+}
+
+#bannerimage{
+    width: 1020px;
+    height: 400px;
+
+}
+
 #syscon{
     width:960px;
     margin-top: 5px;

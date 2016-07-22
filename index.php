@@ -31,6 +31,10 @@
 </header>
 
 <main>
+    <section id="bannerbox">
+        <img src="assets/images/banner1.jpg" id="bannerimage"/>
+    </section>
+
     <div id="syscon">
 
         <form id="search" method="post" action="reservationcheck2.php">

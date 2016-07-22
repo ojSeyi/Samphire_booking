@@ -24,17 +24,18 @@ header{
     float: right;
     padding-right: 15px;
 }
+#pagetitle{
+    padding-left: 5px;
+    padding-top: 20px;
+}
 #pagetitle>h4{
     color: white;
     font-size: 16pt;
-    margin-left: 5px;
-    margin-top: 20px;
     margin-bottom: 3px;
 }
 #pagetitle>h5{
     color: white;
     font-size: 14pt;
-    margin-left: 5px;
 }
 
 #usernamebox{

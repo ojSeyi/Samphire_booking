@@ -6,6 +6,7 @@ body{
 
 #login{
     width: 900px;
+    float: right;
 }
 #username{
     width: 100px;

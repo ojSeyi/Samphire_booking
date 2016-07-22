@@ -19,13 +19,11 @@
 </head>
 <body>
 <header>
-    <div id="login">
-        <form method="post" action="login.php">
-            <input type="text" name="uname" id="usernamebox" placeholder="Username"/>
-            <input type="password" name="pword" id="passwordbox" placeholder="Password"/>
-            <input type="submit" value="Login" id="loginb"/>
-        </form>
-    </div>
+    <form id="login" method="post" action="login.php">
+        <input type="text" name="uname" id="usernamebox" placeholder="Username"/>
+        <input type="password" name="pword" id="passwordbox" placeholder="Password"/>
+        <input type="submit" value="Login" id="loginb"/>
+    </form>
 </header>
 
 <main>

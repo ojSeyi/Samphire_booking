@@ -10,7 +10,7 @@
     $result = mysqli_query($db,$login) or die("failed query".mysqli_error());
 
     if (mysqli_num_rows($result) == 1){
-        $row = mysqli_fetch_row($result);
+        $row = mysqli_fetch_array($result);
         $logid = $row['log_id'];
         $user = mysqli_query($db, "SELECT firstname FROM customers WHERE log_id = '$logid'");
         $_SESSION['firstname'] = $user;

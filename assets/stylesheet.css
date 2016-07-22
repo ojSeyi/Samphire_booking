@@ -22,12 +22,13 @@ header{
 }
 #form{
     float: right;
-}
-#login{
     margin-top: 20px;
     float: right;
     margin-bottom: 3px;
     padding-right: 40px;
+}
+#login{
+
 }
 
 #usernamebox{

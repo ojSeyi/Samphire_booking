@@ -4,7 +4,7 @@
     include ("db_connection.php");
 
 if(empty($_POST['username']) || empty($_POST['password'])) {
-    echo "Enter Username and Password";
+
 }else{
 
     $username = $_POST['username'];

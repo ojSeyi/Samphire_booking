@@ -9,6 +9,15 @@ body{
     width: 900px;
 }
 #username{
+    width: 100px;
+}
+#usernamebox{
+    width: 180px;
+}
+#password{
+    width: 180px;
+}
+#login{
     width: 50px;
 }
 #password{

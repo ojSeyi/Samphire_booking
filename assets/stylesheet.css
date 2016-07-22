@@ -4,12 +4,15 @@ body{
     margin-right: auto;
 }
 
-#login{
-    width:auto;
+header{
     height: 70px;
     margin: 3px;
     margin-left: 0px;
     background-color: darkslategray;
+}
+
+#login{
+    width:auto;
     float: right;
 }
 

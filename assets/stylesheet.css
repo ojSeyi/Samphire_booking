@@ -25,6 +25,11 @@ header{
     float: right;
     padding-right: 15px;
 }
+#logout{
+    padding-top: 35px;
+    float: right;
+    padding-right: 15px;
+}
 #pagetitle{
     padding-top: 10px;
     padding-left: 0px;

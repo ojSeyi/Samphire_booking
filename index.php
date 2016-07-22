@@ -21,10 +21,8 @@
 <header>
     <div id="login">
         <form method="post" action="login.php">
-            <p id="Username">Username</p>
-            <input type="text" name="uname" id="usernamebox"/>
-            <p id="Password">Password</p>
-            <input type="password" name="pword" id="passwordbox"/>
+            <input type="text" name="uname" id="usernamebox" placeholder="Username"/>
+            <input type="password" name="pword" id="passwordbox" placeholder="Password"/>
             <input type="submit" value="Login" id="loginb"/>
         </form>
     </div>

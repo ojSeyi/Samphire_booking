@@ -56,6 +56,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                 $results = mysqli_query($db, $availables);
                 if(mysqli_num_rows($results) > 0){
                     $notavailable = 1;
+                    header('Location: index.php');
                     //put COde to show that facility not available and user to select new date
 
                 }

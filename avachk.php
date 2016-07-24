@@ -41,6 +41,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
 
     <div id="syscon">
         <?php
+            //availabililty check start
             $facilitys = $_SESSION['facilities'];
             $startdates = date("d-m-Y",strtotime($_SESSION['startdates']));;
             $enddates = $_SESSION['enddates'];
@@ -52,13 +53,20 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                 $rows = $row['f_id'];
                 $availables = "SELECT * FROM guestbookings WHERE 'f_id' = '$rows' AND 'startdate' = $startdates";
                 $results = mysqli_query($db, $availables);
-                if(mysqli_num_rows($results) == 1){
-                    $yesavailable = 1;
-                    $_SESSION['yes'] = $yesavailable;
+                if(mysqli_num_rows($results) > 0){
+                    $notavailable = 1;
+                    header('Location: index3.php');
+
                 }
             }else{
-                header('Location: index3.php');
+                $_SESSION['yes'] = $yesavailable;
+                $getcosts = "SELECT cost FROM samphire_facilities WHERE name = '$facilitys'";
+                $report = mysqli_query($db, $getcosts);
+                $costs = mysqli_fetch_array($report);
+                $costss = $costs['cost'];
             }
+            //availability check end
+
             function generateRandomString($length = 6) {
                 $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
                 $charactersLength = strlen($characters);
@@ -69,29 +77,11 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                 return $randomString;
             }
 
-            $getcosts = "SELECT cost FROM samphire_facilities WHERE name = '$facilitys'";
-            $report = mysqli_query($db, $getcosts);
-            $costs = mysqli_fetch_array($report);
-            $costss = $costs['cost'];
+
 
             $randomtable = generateRandomString();
 
-            $checkoftable = mysqli_query($db, "SELECT * FROM '$randomtable'");
-            if(mysqli_error($checkoftable)) {
-                $createordertable = "CREATE TABLE pending(
-                pend int(6) UNIQUE NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                f_id varchar(30) NOT NULL,
-                cost int(10) NOT NULL)";
-                $create = mysqli_query($db, $createordertable);
 
-                $temprecord = "INSERT INTO table_name (f_id,cost,)
-                    VALUES ($facilitys,$costss);";
-
-                $inserttemprecord = mysqli_query($db, $temprecord);
-            }
-            else{
-                header('Location: avachk.php');
-            }
 
         ?>
 

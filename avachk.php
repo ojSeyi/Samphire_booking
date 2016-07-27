@@ -53,7 +53,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                 $row = mysqli_fetch_array($result);
                 $rows = $row['f_id'];
                 if(is_null($enddates)){
-                    $availables = "SELECT * FROM guestbookings WHERE 'f_id' = '$rows' AND 'startdate' = $startdates";
+                    $availables = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND 'startdate' = $startdates";
                     $results = mysqli_query($db, $availables);
                         if(mysqli_num_rows($results) > 0){
                             $notavailable = 1;
@@ -75,8 +75,10 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                         echo "<div id='syscon'>
                                 <div>
                                     <label>The $facilitys facility is unavailable on $startdates</label><br><br>
-                                    <label>Please select a different date: </label><br><br>
-                                    <input id='startdate' name='startdate' type='date' value='2016-07-01'/><br><br>
+                                    <form>
+                                        <label>Please select a different date: </label><br><br>
+                                        <input id='startdate' name='startdate' type='date' value='2016-07-01'/><br><br>
+                                    </form>
                                 </div>
                             </div>";
                     }else{

@@ -59,15 +59,29 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                             $notavailable = 1;
                             echo "<div id='syscon'>
                                 <div>
-
+                                    <label>The $facilitys facility is unavailable on $startdates</label><br><br>
+                                    <label>Please select a different date: </label><br><br>
+                                    <input id='startdate' name='startdate' type='date' value='2016-07-01'/><br><br>
                                 </div>
                             </div>";
-                            header('Location: index.php');
-                            //put COde to show that facility not available and user to select new date
-
+                        }else{
+                            header('Location: booking.php');
                         }
                 }else{
-
+                    $availables = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND ('startdate' BETWEEN '$startdates' AND '$enddates')";
+                    $results = mysqli_query($db, $availables);
+                    if(mysqli_num_rows($results) > 0){
+                        $notavailable = 1;
+                        echo "<div id='syscon'>
+                                <div>
+                                    <label>The $facilitys facility is unavailable on $startdates</label><br><br>
+                                    <label>Please select a different date: </label><br><br>
+                                    <input id='startdate' name='startdate' type='date' value='2016-07-01'/><br><br>
+                                </div>
+                            </div>";
+                    }else{
+                        header('Location: booking.php');
+                    }
                 }
             }else{
                 $_SESSION['yes'] = $yesavailable;

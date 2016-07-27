@@ -43,8 +43,8 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
         <?php
             //availabililty check start
             $facilitys = $_SESSION['facilities'];
-            $startdates = date("d-m-Y",strtotime($_SESSION['startdates']));;
-            $enddates = $_SESSION['enddates'];
+            $startdates = date("Y-m-d",strtotime($_SESSION['startdates']));
+            $enddates = date("Y-m-d",strtotime($_SESSION['enddates']));;
 
             //Upgrade code to search through date range too
             $available = "SELECT * FROM samphire_facilities WHERE 'name' = '$facilitys'";
@@ -52,12 +52,21 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
             if(mysqli_num_rows($result) > 0) {
                 $row = mysqli_fetch_array($result);
                 $rows = $row['f_id'];
-                $availables = "SELECT * FROM guestbookings WHERE 'f_id' = '$rows' AND 'startdate' = $startdates";
-                $results = mysqli_query($db, $availables);
-                if(mysqli_num_rows($results) > 0){
-                    $notavailable = 1;
-                    header('Location: index.php');
-                    //put COde to show that facility not available and user to select new date
+                if(is_null($enddates)){
+                    $availables = "SELECT * FROM guestbookings WHERE 'f_id' = '$rows' AND 'startdate' = $startdates";
+                    $results = mysqli_query($db, $availables);
+                        if(mysqli_num_rows($results) > 0){
+                            $notavailable = 1;
+                            echo "<div id='syscon'>
+                                <div>
+
+                                </div>
+                            </div>";
+                            header('Location: index.php');
+                            //put COde to show that facility not available and user to select new date
+
+                        }
+                }else{
 
                 }
             }else{

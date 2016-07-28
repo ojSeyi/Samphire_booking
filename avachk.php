@@ -53,13 +53,13 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                 $row = mysqli_fetch_array($result);
                 $rows = $row['f_id'];
                 if(is_null($enddates)){
-                    $availables = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND 'startdate' = $startdates";
+                    $availables = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND startdate = $startdates";
                     $results = mysqli_query($db, $availables);
                         if(mysqli_num_rows($results) > 0){
                             $notavailable = 1;
                             echo "<div id='syscon'>
                                 <div>
-                                    <label>The $facilitys facility is unavailable on $startdates</label><br><br>
+                                    <label>Sorry, the $facilitys facility is unavailable on $startdates</label><br><br>
                                     <label>Please select a different date: </label><br><br>
                                     <input id='startdate' name='startdate' type='date' value='2016-07-01'/><br><br>
                                 </div>
@@ -68,13 +68,28 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                             header('Location: booking.php');
                         }
                 }else{
-                    $availables = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND ('startdate' BETWEEN '$startdates' AND '$enddates')";
+                    $availables = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND (startdate BETWEEN '$startdates' AND '$enddates')";
                     $results = mysqli_query($db, $availables);
                     if(mysqli_num_rows($results) > 0){
                         $notavailable = 1;
+                        $takendatesquery = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND (startdate BETWEEN '$startdates' AND '$enddates')";
+                        $datesresult = mysqli_query($db, $availables);
+                        $resultarray = array();
+                        $c = 0;
+                        while($takendateslist = mysqli_fetch_assoc($datesresult)) {
+                            $resultarray[] = $takendateslist;
+                            $c++;
+                        }
+                        for($i=0;$i=$c;$i++){
+                            if($resultarray[i]['username']==$mysearch){
+                                // name found
+
+                            }
+                        }
+
                         echo "<div id='syscon'>
                                 <div>
-                                    <label>The $facilitys facility is unavailable on $startdates</label><br><br>
+                                    <label>Sorry, the $facilitys facility is unavailable on $startdates</label><br><br>
                                     <form>
                                         <label>Please select a different date: </label><br><br>
                                         <input id='startdate' name='startdate' type='date' value='2016-07-01'/><br><br>

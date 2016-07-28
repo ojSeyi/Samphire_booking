@@ -68,6 +68,10 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                             header('Location: booking.php');
                         }
                 }else{
+                    //Make the enddates in the database compulsory so that days without an end date specified will end the same day
+                    //as the startdates. When its two dates, state the start dates, end dates and anybooked intermediate dates.
+
+
                     $availables = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND (startdate BETWEEN '$startdates' AND '$enddates')";
                     $results = mysqli_query($db, $availables);
                     if(mysqli_num_rows($results) > 0){

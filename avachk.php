@@ -124,11 +124,6 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
 
         ?>
 
-        <form id="addto" action="avachk.php" method="post">
-            <label>Click to add more facilities</label>
-            <input type="submit" name="add" id="add" value="Add"/>
-        </form>
-
     </div>
 </main>
 

@@ -61,16 +61,12 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                                     <label>Sorry, the $facilitys facility is unavailable on $startdates</label><br><br>
                                     <label>Please select a different date: </label><br><br>
                                     <input id='startdate' name='startdate' type='date' value='2016-07-01'/><br><br>
+                                    <input type='submit' value='Check' />
                                 </div>";
                         }else{
                             header('Location: booking.php');
                         }
                 }else{
-                    //Make the enddates in the database compulsory so that days without an end date specified will end the same day
-                    //as the startdates. When its two dates, state the start dates, end dates and anybooked intermediate dates.
-                    //OR HAVE THE PAGE CHECK THE DB FOR BOOKED DATES AND DISABLE THEM. GOOGLE HOW
-
-
                     $availables = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND (startdate BETWEEN '$startdates' AND '$enddates')";
                     $results = mysqli_query($db, $availables);
                     if(mysqli_num_rows($results) > 0){
@@ -93,6 +89,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                                     <form form id='search' method='post' action='datecheck2.php'>
                                         <label>Please select a different reservation end date: </label><br><br>
                                         <input id='enddate' name='enddate' type='date' value='2016-07-01'/><br><br>
+                                        <input type='submit' value='Check' />
                                     </form>
                                 </div>";
                     }else{

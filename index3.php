@@ -46,7 +46,7 @@ if(is_null($_SESSION['login'])){
             <p>Sorry, that failitity is not available on <?php $_SESSION['startdates'] ?></p>
         </div>
 
-        <form id="search" method="post" action="reservationcheck2.php">
+        <form id="search" method="post" action="logdatecheck2.php">
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>
                 <?php

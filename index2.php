@@ -43,7 +43,7 @@ if(is_null($_SESSION['login'])){
 
     <div id="syscon">
 
-        <form id="search" method="post" action="reservationcheck2.php">
+        <form id="search" method="post" action="datecheck2.php">
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>
                 <?php

@@ -57,13 +57,11 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                     $results = mysqli_query($db, $availables);
                         if(mysqli_num_rows($results) > 0){
                             $notavailable = 1;
-                            echo "<div id='syscon'>
-                                <div>
+                            echo "<div>
                                     <label>Sorry, the $facilitys facility is unavailable on $startdates</label><br><br>
                                     <label>Please select a different date: </label><br><br>
                                     <input id='startdate' name='startdate' type='date' value='2016-07-01'/><br><br>
-                                </div>
-                            </div>";
+                                </div>";
                         }else{
                             header('Location: booking.php');
                         }
@@ -81,26 +79,22 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                         $datesresult = mysqli_query($db, $availables);
                         $resultarray = array();
                         $c = 0;
+                        echo "<div><label>Sorry, the $facilitys facility is unavailable on the following dates:</label></div><br>";
                         while($takendateslist = mysqli_fetch_assoc($datesresult)) {
                             $resultarray[] = $takendateslist;
                             $c++;
                         }
                         for($i=0;$i=$c;$i++){
-                            if($resultarray[i]['username']==$mysearch){
-                                // name found
-
-                            }
+                            echo $resultarray[i]['startdate'].", ";
+                            echo $resultarray[i]['enddate'].", ";
                         }
 
-                        echo "<div id='syscon'>
-                                <div>
-                                    <label>Sorry, the $facilitys facility is unavailable on $startdates</label><br><br>
-                                    <form>
-                                        <label>Please select a different date: </label><br><br>
-                                        <input id='startdate' name='startdate' type='date' value='2016-07-01'/><br><br>
+                        echo "<div>
+                                    <form form id='search' method='post' action='datecheck2.php'>
+                                        <label>Please select a different reservation end date: </label><br><br>
+                                        <input id='enddate' name='enddate' type='date' value='2016-07-01'/><br><br>
                                     </form>
-                                </div>
-                            </div>";
+                                </div>";
                     }else{
                         header('Location: booking.php');
                     }

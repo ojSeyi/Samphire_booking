@@ -63,6 +63,9 @@
         $enddate = $_SESSION['enddates'];
         ?>
 
+        <form action="avachk.php" method="post">
+            <input type="submit" value="Check Availability"/>
+        </form>
 
 
     </div>

@@ -46,6 +46,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
             $startdates = date("Y-m-d",strtotime($_SESSION['startdates']));
             $enddates = date("Y-m-d",strtotime($_SESSION['enddates']));;
 
+            echo $facilitys;
             //Upgrade code to search through date range too
             $available = "SELECT * FROM samphire_facilities WHERE f_name = '$facilitys'";
             $result = mysqli_query($db, $result) or die('cannot reach DB');

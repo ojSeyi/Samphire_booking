@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include ("db_connection.php"); ?>
-<?php session_start();
+<?php
 if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
     header('Location: index.php');
 };
@@ -41,6 +41,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
 
     <div id="syscon">
         <?php
+        session_start();
             //availabililty check start
             $facilitys = $_SESSION['facilities'];
             $startdates = date("Y-m-d",strtotime($_SESSION['startdates']));

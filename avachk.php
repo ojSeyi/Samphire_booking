@@ -52,6 +52,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
             if(mysqli_num_rows($result) > 0) {
                 $row = mysqli_fetch_array($result);
                 $rows = $row['f_id'];
+                echo $rows;
                 if(is_null($enddates)){
                     $availables = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND startdate = $startdates";
                     $results = mysqli_query($db, $availables);

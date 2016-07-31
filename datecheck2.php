@@ -40,7 +40,7 @@
         session_start();
 
         $startdate = $_POST['startdate'];
-        $startdate = date("d-m-Y",strtotime($startdate));
+        $startdate = date("Y-m-d",strtotime($startdate));
         $facility = $_POST['facility'];
 
 
@@ -53,7 +53,7 @@
 
             echo "<div id='reservationdetails'>
                 <label>Facility: " .$facility. "</label><br><br><br>
-                <label>Start Date: " .$startdate. "</label><br><br><br>
+                <label>Start Date: " .date("d-m-Y",strtotime($startdate)). "</label><br><br><br>
                 </div>";
 
             echo "<form method='post' action='datecheck.php'>" ."

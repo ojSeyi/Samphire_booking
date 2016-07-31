@@ -40,21 +40,21 @@
         <?php
         session_start();
 
-        $startdate = date("d-m-Y",strtotime($_SESSION['startdate']));
+        $startdate = date("Y-m-d",strtotime($_SESSION['startdate']));
         $enddate1 = $_POST['enddate'];
-        $enddate = date("d-m-Y",strtotime($enddate1));
+        $enddate = date("Y-m-d",strtotime($enddate1));
         $facility = $_SESSION['facility'];
 
         if(isset($enddate1)) {
             echo "<div id='reservationdetails'>
                 <label>Facility: " . $facility . "</label><br><br><br>
-                <label>Start Date: " . $startdate . "</label><br><br><br>
-                <label>Reservation End Date: " . $enddate . "</label><br><br><br>
+                <label>Start Date: " . date("d-m-Y",strtotime($_SESSION['startdate'])) . "</label><br><br><br>
+                <label>Reservation End Date: " . date("d-m-Y",strtotime($enddate1)) . "</label><br><br><br>
             </div>";
         }else{
             echo "<div id='reservationdetails'>
                 <label>Facility: " . $facility . "</label><br><br><br>
-                <label>Reservation Date: " . $startdate . "</label><br><br><br>
+                <label>Reservation Date: " . date("d-m-Y",strtotime($_SESSION['startdate'])) . "</label><br><br><br>
             </div>";
         }
 

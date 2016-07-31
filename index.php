@@ -58,7 +58,7 @@ if(isset($_SESSION['login'])){
                 $getfacilities = "SELECT * FROM samphire_facilities";
                 $result = mysqli_query($db, $getfacilities);
                 while ($row = mysqli_fetch_array($result))
-                    echo "<option>". $row['name'] . "</option>";
+                    echo "<option>". $row['f_name'] . "</option>";
                 ?>
             </select><br><br>
             <label>Reservation Date : </label>

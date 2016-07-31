@@ -50,7 +50,7 @@ if(is_null($_SESSION['login'])){
                 $getfacilities = "SELECT name FROM samphire_facilities";
                 $result = mysqli_query($db, $getfacilities);
                 while ($row = mysqli_fetch_array($result))
-                    echo "<option>". $row['name'] . "</option>";
+                    echo "<option>". $row['f_name'] . "</option>";
                 ?>
             </select><br><br>
             <label>Reservation Date : </label>

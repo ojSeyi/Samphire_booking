@@ -105,11 +105,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                     }
                 }
             }else{
-                $_SESSION['yes'] = $yesavailable;
-                $getcosts = "SELECT cost FROM samphire_facilities WHERE name = '$facilitys'";
-                $report = mysqli_query($db, $getcosts);
-                $costs = mysqli_fetch_array($report);
-                $costss = $costs['cost'];
+                header('location: index.php');
                 //Put code to show booking details and button to add new facility(must be contained within page)
             }
             //availability check end

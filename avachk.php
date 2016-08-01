@@ -51,8 +51,9 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
             echo "$facilitys <br>";
             //Upgrade code to search through date range too
             $available = "SELECT * FROM samphire_facilities WHERE f_name = '$facilitys'";
-            $result = mysqli_query($db, $result) or die('cannot reach DB');
+            $result = mysqli_query($db, $result);
             if(mysqli_num_rows($result) > 0) {
+                echo "yes";
                 $row = mysqli_fetch_array($result);
                 $rows = $row['f_id'];
                 echo $rows;

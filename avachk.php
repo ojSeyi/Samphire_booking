@@ -48,7 +48,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
             $enddates = date("Y-m-d",strtotime($_SESSION['enddates']));;
 
         echo "was good<br>";
-            echo $facilitys "<br>";
+            echo "$facilitys <br>";
             //Upgrade code to search through date range too
             $available = "SELECT * FROM samphire_facilities WHERE f_name = '$facilitys'";
             $result = mysqli_query($db, $result) or die('cannot reach DB');
@@ -57,7 +57,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                 $rows = $row['f_id'];
                 echo $rows;
                 if(is_null($enddates)){
-                    $availables = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND startdate = $startdates";
+                    $availables = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND startdate = $startdates";
                     $results = mysqli_query($db, $availables);
                         if(mysqli_num_rows($results) > 0){
                             $notavailable = 1;
@@ -71,7 +71,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                             header('Location: booking.php');
                         }
                 }else{
-                    $availables = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND (startdate BETWEEN '$startdates' AND '$enddates')";
+                    $availables = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND (startdate BETWEEN '$startdates' AND '$enddates')";
                     $results = mysqli_query($db, $availables);
                     if(mysqli_num_rows($results) > 0){
                         $notavailable = 1;

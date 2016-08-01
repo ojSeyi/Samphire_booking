@@ -58,7 +58,6 @@
             </div>";
         }
 
-        $_SESSION['facilities'] = $facility;
         $_SESSION['startdates'] = $startdate;
         $_SESSION['enddates'] = $enddate;
         ?>

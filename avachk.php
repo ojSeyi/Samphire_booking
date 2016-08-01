@@ -43,14 +43,14 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
         <?php
         session_start();
             //availabililty check start
-            $facilitys = $_SESSION['facilities'];
+            $facility = $_SESSION['facility'];
             $startdates = date("Y-m-d",strtotime($_SESSION['startdates']));
             $enddates = date("Y-m-d",strtotime($_SESSION['enddates']));;
 
         echo "was good<br>";
             echo "$facilitys <br>";
             //Upgrade code to search through date range too
-            $available = "SELECT * FROM samphire_facilities WHERE 'f_name' = '$facilitys'";
+            $available = "SELECT * FROM samphire_facilities WHERE 'f_name' = '$facility'";
             $result = mysqli_query($db, $available);
             if(!$result){
                 echo "cant reach db".mysqli_error();

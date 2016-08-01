@@ -53,7 +53,8 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
             $available = "SELECT * FROM samphire_facilities WHERE 'f_name' = '$facility'";
             $result = mysqli_query($db, $available);
             echo mysqli_num_rows($result);
-            if(mysqli_num_rows($result) > 0) {
+            //below should be an if check num rows
+
                 echo "yes";
                 $row = mysqli_fetch_array($result);
                 $rows = $row['f_id'];
@@ -102,10 +103,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                         header('Location: booking.php');
                     }
                 }
-            }else{
-                header('location: index.php');
-                //Put code to show booking details and button to add new facility(must be contained within page)
-            }
+
             //availability check end
 
             function generateRandomString($length = 6) {

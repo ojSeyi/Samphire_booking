@@ -51,6 +51,7 @@
                 <label>Start Date: " . date("d-m-Y",strtotime($_SESSION['startdate'])) . "</label><br><br><br>
                 <label>Reservation End Date: " . date("d-m-Y",strtotime($enddate1)) . "</label><br><br><br>
             </div>";
+            $_SESSION['enddates'] = $enddate;
         }else{
             echo "<div id='reservationdetails'>
                 <label>Facility: " . $facility . "</label><br><br><br>
@@ -59,7 +60,7 @@
         }
 
         $_SESSION['startdates'] = $startdate;
-        $_SESSION['enddates'] = $enddate;
+
         ?>
 
         <form action="avachk.php" method="post">

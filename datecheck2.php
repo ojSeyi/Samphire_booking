@@ -46,7 +46,7 @@
 
 
 
-        if (isset($_POST['enddate']) && $_POST['enddate'] == 'yes'){
+        if (isset($_POST['enddateC']) && $_POST['enddateC'] == 'yes'){
 
             $_SESSION['startdate'] = $startdate;
             $_SESSION['facility'] = $facility;

@@ -45,7 +45,11 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
             //availabililty check start
             $facility = $_SESSION['facility'];
             $startdates = date("Y-m-d",strtotime($_SESSION['startdates']));
-            $enddates = date("Y-m-d",strtotime($_SESSION['enddates']));;
+            if(isset($_SESSION['enddates'])) {
+                $enddates = date("Y-m-d", strtotime($_SESSION['enddates']));;
+            }else{
+                $enddates = null;
+            }
 
         echo "was good<br>";
             echo "$facilitys <br>";

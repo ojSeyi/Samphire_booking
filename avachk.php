@@ -44,7 +44,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
         session_start();
             //availabililty check start
             $facility = $_SESSION['facility'];
-            $startdaterecieved = strtotime($_SESSION['startdates'])
+            $startdaterecieved = strtotime($_SESSION['startdates']);
             $startdates = date("Y-m-d",$startdaterecieved);
             if(isset($_SESSION['enddates'])) {
                 $enddates = date("Y-m-d", strtotime($_SESSION['enddates']));;

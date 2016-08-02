@@ -55,11 +55,11 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
             $show = mysqli_num_rows($result);
             echo $show;
             if(mysqli_num_rows($result) > 0) {
-                echo "yes";
                 $row = mysqli_fetch_array($result);
                 $rows = $row['f_id'];
-                echo $rows;
-
+                echo $rows."<br>";
+                echo $startdates."<br>";
+                echo $enddates;
             }else{
                 header('location: index.php');
                 //Put code to show booking details and button to add new facility(must be contained within page)

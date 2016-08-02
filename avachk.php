@@ -74,7 +74,9 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                                     <input type='submit' value='Check' />
                                 </div>";
                         }else{
-                            header('Location: booking.php');
+                            //header to booking
+                            echo $startdates."<br>";
+                            echo $enddates."<br>";
                         }
                 }else{
                     $availables = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND (startdate BETWEEN '$startdates' AND '$enddates')";
@@ -103,7 +105,9 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                                     </form>
                                 </div>";
                     }else{
-                        header('Location: booking.php');
+                        //header to booking
+                        echo $startdates."<br>";
+                        echo $enddates."<br>";
                     }
                 }
             }else{

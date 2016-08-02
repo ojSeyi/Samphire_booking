@@ -57,6 +57,7 @@
                 <label>Facility: " . $facility . "</label><br><br><br>
                 <label>Reservation Date: " . date("d-m-Y",strtotime($_SESSION['startdate'])) . "</label><br><br><br>
             </div>";
+            $_SESSION['enddates'] = null;
         }
 
         $_SESSION['startdates'] = $startdate;

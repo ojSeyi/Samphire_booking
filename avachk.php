@@ -54,59 +54,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
             $result = mysqli_query($db, $available);
             $show = mysqli_num_rows($result);
             echo $show;
-            if(mysqli_num_rows($result) > 0) {
-                echo "yes";
-                $row = mysqli_fetch_array($result);
-                $rows = $row['f_id'];
-                echo $rows;
-                if(is_null($enddates)){
-                    $availables = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND startdate = $startdates";
-                    $results = mysqli_query($db, $availables);
-                        if(mysqli_num_rows($results) > 0){
-                            $notavailable = 1;
-                            echo "<div>
-                                    <label>Sorry, the $facilitys facility is unavailable on $startdates</label><br><br>
-                                    <label>Please select a different date: </label><br><br>
-                                    <input id='startdate' name='startdate' type='date' value='2016-07-01'/><br><br>
-                                    <input type='submit' value='Check' />
-                                </div>";
-                        }else{
-                            header('Location: booking.php');
-                        }
-                }else{
-                    $availables = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND (startdate BETWEEN '$startdates' AND '$enddates')";
-                    $results = mysqli_query($db, $availables);
-                    if(mysqli_num_rows($results) > 0){
-                        $notavailable = 1;
-                        $takendatesquery = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND (startdate BETWEEN '$startdates' AND '$enddates')";
-                        $datesresult = mysqli_query($db, $availables);
-                        $resultarray = array();
-                        $c = 0;
-                        echo "<div><label>Sorry, the $facilitys facility is unavailable on the following dates:</label></div><br>";
-                        while($takendateslist = mysqli_fetch_assoc($datesresult)) {
-                            $resultarray[] = $takendateslist;
-                            $c++;
-                        }
-                        for($i=0;$i=$c;$i++){
-                            echo $resultarray[i]['startdate'].", ";
-                            echo $resultarray[i]['enddate'].", ";
-                        }
 
-                        echo "<div>
-                                    <form form id='search' method='post' action='datecheck2.php'>
-                                        <label>Please select a different reservation end date: </label><br><br>
-                                        <input id='enddate' name='enddate' type='date' value='2016-07-01'/><br><br>
-                                        <input type='submit' value='Check' />
-                                    </form>
-                                </div>";
-                    }else{
-                        header('Location: booking.php');
-                    }
-                }
-            }else{
-                header('location: index.php');
-                //Put code to show booking details and button to add new facility(must be contained within page)
-            }
             //availability check end
 
             function generateRandomString($length = 6) {

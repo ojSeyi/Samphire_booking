@@ -69,9 +69,11 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                             $notavailable = 1;
                             echo "<div>
                                     <label>Sorry, the $facilitys facility is unavailable on $startdates</label><br><br>
+                                    <form id='search' method='post' action='datecheck2.php'>
                                     <label>Please select a different date: </label><br><br>
                                     <input id='startdate' name='startdate' type='date' value='2016-07-01'/><br><br>
                                     <input type='submit' value='Check' />
+                                    </form>
                                 </div>";
                         }else{
                             //header to booking
@@ -98,7 +100,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                         }
 
                         echo "<div>
-                                    <form form id='search' method='post' action='datecheck2.php'>
+                                    <form id='search' method='post' action='datecheck2.php'>
                                         <label>Please select a different reservation end date: </label><br><br>
                                         <input id='enddate' name='enddate' type='date' value='2016-07-01'/><br><br>
                                         <input type='submit' value='Check' />

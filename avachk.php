@@ -61,7 +61,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                 if(is_null($enddates)){
                     $availables = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND startdate = '$startdates'";
                     $results = mysqli_query($db, $availables) or die("failed");
-                        if(mysqli_num_rows($results) > 0){
+                        if(mysqli_num_rows($results) <= 0){
                             $notavailable = 1;
                             echo "<div>
                                     <label>Sorry, the $facilitys facility is unavailable on $startdates</label><br><br>

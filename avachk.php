@@ -59,20 +59,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                 $row = mysqli_fetch_array($result);
                 $rows = $row['f_id'];
                 echo $rows;
-                if(is_null($enddates)){
-                    $availables = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND startdate = '$startdates'";
-                    $results = mysqli_query($db, $availables);
-                        if(mysqli_num_rows($results) > 0){
-                            $notavailable = 1;
-                            echo "<div>
-                                    <label>Sorry, the $facilitys facility is unavailable on $startdates</label><br><br>
-                                    <label>Please select a different date: </label><br><br>
-                                    <input id='startdate' name='startdate' type='date' value='2016-07-01'/><br><br>
-                                    <input type='submit' value='Check' />
-                                </div>";
-                        }else{
-                            header('Location: booking.php');
-                        }
+
                 }else{
                     $availables = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND (startdate BETWEEN '$startdates' AND '$enddates')";
                     $results = mysqli_query($db, $availables);

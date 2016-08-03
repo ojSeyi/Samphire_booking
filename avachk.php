@@ -117,11 +117,12 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                             if(count($unavailabledates) > 31){
                                 echo "<label>For booking greater than 30 days please contact the office using the information in the contact page</label>";
                             }else{
-                                for($i=0;$i=$c;$i++){
+                                for($i=0;$i=count($unavailabledates);$i++){
                                     echo "<label>The following dates are unavailable: </label><br>";
                                     echo "<label>".$unavailabledates[i].", "."</label><br><br><br>";
                                 }
-                                echo "<div>
+                            }
+                            echo "<div>
                                     <form id='search' method='post' action='datecheck.php'>
                                         <label>Please select a different reservation dates: </label><br><br>
                                         <input id='startdate' name='startdate' type='date' value='2016-07-01'/><br><br>
@@ -129,7 +130,6 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                                         <input type='submit' value='Check' />
                                     </form>
                                 </div>";
-                            }
                         }else{
 
                         }

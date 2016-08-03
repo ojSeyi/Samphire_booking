@@ -119,16 +119,15 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                         }else{
 
                         }
-                        if(count($datesinrange) > 31){
-                            echo "<label>For booking greater than 30 days please contact the office using the information in the contact page</label>";
-                        }else{
-                            echo "<label>The following dates are unavailable: </label><br>";
-                            foreach($unavailabledates as $showdate){
+                    }
+                    if(count($datesinrange) > 31){
+                        echo "<label>For booking greater than 30 days please contact the office using the information in the contact page</label>";
+                    }else{
+                        echo "<label>The following dates are unavailable: </label><br>";
+                        foreach($unavailabledates as $showdate){
 
-                                echo "<label>".$showdate.", "."</label><br><br><br>";
-                            }
+                            echo "<label>".$showdate.", "."</label><br><br><br>";
                         }
-
                     }
 
 

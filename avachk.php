@@ -115,7 +115,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                         if(mysqli_num_rows($results) > 0){
                             $unavailabledates[] = $date;
                         }else{
-                            header('location: booking.php');
+
                         }
                     }
                     if(count($datesinrange) > 31){

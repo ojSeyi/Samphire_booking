@@ -45,7 +45,7 @@
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>
                 <?php
-                $getfacilities = "SELECT * FROM samphire_facilities";
+                $getfacilities = "SELECT  FROM samphire_facilities";
                 $result = mysqli_query($db, $getfacilities);
                 while ($row = mysqli_fetch_array($result))
                     echo "<option>". $row['f_name'] . "</option>";
@@ -54,7 +54,7 @@
             <label>Reservation Date : </label>
             <input id="startdate" name="startdate" type="date" value="2016-07-01"/><br><br>
             <label>If you would require the facility for more than one day tick this box</label><br>
-            <input type="checkbox" id="enddate" name="enddate" value="yes"/><br><br><br>
+            <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" value="submit"/><br><br>
         </form>
 

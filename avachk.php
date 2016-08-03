@@ -111,7 +111,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                     $unavailabledates = array();
                     foreach($datesinrange as $date){
                         $availablerange = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND (startdate <= '$date' AND enddate >= '$date')";
-                        $results = mysqli_query($db, $availables);
+                        $results = mysqli_query($db, $availablerange);
                         if(mysqli_num_rows($results) > 0){
                             $unavailabledates[] = $date;
                             if(count($unavailabledates) > 31){

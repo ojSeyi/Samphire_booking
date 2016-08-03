@@ -114,12 +114,12 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                         $results = mysqli_query($db, $availablerange);
                         if(mysqli_num_rows($results) > 0){
                             $unavailabledates[] = $date;
-                            if(count($unavailabledates) > 31){
+                            if(count($datesinrange) > 31){
                                 echo "<label>For booking greater than 30 days please contact the office using the information in the contact page</label>";
                             }else{
-                                for($i=0;$i=count($unavailabledates);$i++){
+                                foreach($unavailabledates as $showdate){
                                     echo "<label>The following dates are unavailable: </label><br>";
-                                    echo "<label>".$unavailabledates[i].", "."</label><br><br><br>";
+                                    echo "<label>".$showdate.", "."</label><br><br><br>";
                                 }
                             }
                             echo "<div>

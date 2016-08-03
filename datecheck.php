@@ -40,7 +40,11 @@
         <?php
         session_start();
 
+        if(isset($_POST['startdate'])){
+            $startdate = date("Y-m-d",strtotime($_POST['startdate']));
+        }else{
         $startdate = date("Y-m-d",strtotime($_SESSION['startdate']));
+        }
         $enddate1 = $_POST['enddate'];
         $enddate = date("Y-m-d",strtotime($enddate1));
         $facility = $_SESSION['facility'];

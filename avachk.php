@@ -82,11 +82,67 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                             echo $enddates."<br>";
                         }
                 }else{
-                    $availables = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND (startdate BETWEEN 'FROM_UNIXTIME($startdates)' AND 'FROM_UNIXTIME($enddates)')";
+                    function createDateRangeArray($strDateFrom,$strDateTo)
+                    {
+                        // takes two dates formatted as YYYY-MM-DD and creates an
+                        // inclusive array of the dates between the from and to dates.
+
+                        // could test validity of dates here but I'm already doing
+                        // that in the main script
+
+                        $aryRange=array();
+
+                        $iDateFrom=mktime(1,0,0,substr($strDateFrom,5,2),     substr($strDateFrom,8,2),substr($strDateFrom,0,4));
+                        $iDateTo=mktime(1,0,0,substr($strDateTo,5,2),     substr($strDateTo,8,2),substr($strDateTo,0,4));
+
+                        if ($iDateTo>=$iDateFrom)
+                        {
+                            array_push($aryRange,date('Y-m-d',$iDateFrom)); // first entry
+                            while ($iDateFrom<$iDateTo)
+                            {
+                                $iDateFrom+=86400; // add 24 hours
+                                array_push($aryRange,date('Y-m-d',$iDateFrom));
+                            }
+                        }
+                        return $aryRange;
+                    }
+
+                    $datesinrange = createDateRangeArray($startdates, $enddates);
+                    $unavailabledates = array();
+                    foreach($datesinrange as $date){
+                        $availablerange = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND (startdate <= '$date' AND enddate >= '$date')";
+                        $results = mysqli_query($db, $availables);
+                        if(mysqli_num_rows($results) > 0){
+                            $unavailabledates[] = $date;
+                            if(count($unavailabledates) > 31){
+                                echo "<label>For booking greater than 30 days please contact the office using the information in the contact page</label>";
+                            }else{
+                                for($i=0;$i=$c;$i++){
+                                    echo "<label>The following dates are unavailable: </label><br>";
+                                    echo "<label>".$unavailabledates[i].", "."</label><br><br><br>";
+                                }
+                                echo "<div>
+                                    <form id='search' method='post' action='datecheck.php'>
+                                        <label>Please select a different reservation dates: </label><br><br>
+                                        <input id='startdate' name='startdate' type='date' value='2016-07-01'/><br><br>
+                                        <input id='enddate' name='enddate' type='date' value='2016-07-02'/><br><br>
+                                        <input type='submit' value='Check' />
+                                    </form>
+                                </div>";
+                            }
+                        }else{
+
+                        }
+
+
+                    }
+
+
+                    $availables = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND (startdate BETWEEN '$startdates' AND '$enddates')";
                     $results = mysqli_query($db, $availables);
                     if(mysqli_num_rows($results) > 0){
                         $notavailable = 1;
-                        $takendatesquery = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND (startdate BETWEEN 'FROM_UNIXTIME($startdates)' AND 'FROM_UNIXTIME($enddates)')";
+                        $takendatesquery = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND (startdate BETWEEN '$startdates' AND '$enddates')";
                         $datesresult = mysqli_query($db, $availables);
                         $resultarray = array();
                         $c = 0;
@@ -100,13 +156,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                             echo $resultarray[i]['enddate'].", ";
                         }
 
-                        echo "<div>
-                                    <form id='search' method='post' action='datecheck2.php'>
-                                        <label>Please select a different reservation end date: </label><br><br>
-                                        <input id='enddate' name='enddate' type='date' value='2016-07-01'/><br><br>
-                                        <input type='submit' value='Check' />
-                                    </form>
-                                </div>";
+
                     }else{
                         //header to booking
                         echo $startdates."<br>";

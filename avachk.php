@@ -138,30 +138,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                     }
 
 
-                    $availables = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND (startdate BETWEEN '$startdates' AND '$enddates')";
-                    $results = mysqli_query($db, $availables);
-                    if(mysqli_num_rows($results) > 0){
-                        $notavailable = 1;
-                        $takendatesquery = "SELECT * FROM guestbookings WHERE f_id = '$rows' AND (startdate BETWEEN '$startdates' AND '$enddates')";
-                        $datesresult = mysqli_query($db, $availables);
-                        $resultarray = array();
-                        $c = 0;
-                        echo "<div><label>Sorry, the $facilitys facility is unavailable on the following dates:</label></div><br>";
-                        while($takendateslist = mysqli_fetch_assoc($datesresult)) {
-                            $resultarray[] = $takendateslist;
-                            $c++;
-                        }
-                        for($i=0;$i=$c;$i++){
-                            echo $resultarray[i]['startdate'].", ";
-                            echo $resultarray[i]['enddate'].", ";
-                        }
 
-
-                    }else{
-                        //header to booking
-                        echo $startdates."<br>";
-                        echo $enddates."<br>";
-                    }
                 }
             }else{
                 header('location: index.php');

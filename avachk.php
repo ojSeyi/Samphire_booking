@@ -122,9 +122,11 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                         echo "<label>For booking greater than 30 days please contact the office using the information in the contact page</label>";
                     }else{
                         echo "<div id='filled dates'><label>The $facilitys facility is unavailable on the following dates: </label><br>";
+                        echo "<table><tr>";
                         foreach($unavailabledates as $showdate){
-                            echo "<label>".$showdate.", "."</label></div>";
+                            echo "<td>".$showdate.", "."</td>";
                         }
+                        echo "</tr></table></div>";
                     }
                     if($unavailabledates == 0){
                         header('location: booking.php');

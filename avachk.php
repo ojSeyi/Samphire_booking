@@ -77,9 +77,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                                     </form>
                                 </div>";
                         }else{
-                            //header to booking
-                            echo $startdates."<br>";
-                            echo $enddates."<br>";
+                            header('location: booking.php');
                         }
                 }else{
                     function createDateRangeArray($strDateFrom,$strDateTo)

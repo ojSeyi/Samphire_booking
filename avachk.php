@@ -124,7 +124,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                         echo "<div id='filled dates'><label>The $facilitys facility is unavailable on the following dates: </label><br>";
                         echo "<table><tr>";
                         foreach($unavailabledates as $showdate){
-                            echo "<td>".$showdate.", "."</td>";
+                            echo "<td>".$showdate."</td>";
                         }
                         echo "</tr></table></div>";
                     }

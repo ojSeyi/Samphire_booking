@@ -51,6 +51,9 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
             }else{
                 $enddates = null;
             }
+            $currentdate = date('Y-m-d');
+
+
 
         echo "was good<br>";
             echo "$facilitys <br>";
@@ -72,7 +75,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                                     <label>Sorry, the $facilitys facility is unavailable on $startdates</label><br><br>
                                     <form id='search' method='post' action='datecheck2.php'>
                                     <label>Please select a different date: </label><br><br>
-                                    <input id='startdate' name='startdate' type='date' value='2016-07-01'/><br><br>
+                                    <input id='startdate' name='startdate' type='date' value='$currentdate'/><br><br>
                                     <input type='submit' value='Check' />
                                     </form>
                                 </div>";
@@ -126,10 +129,16 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                         }
                         echo "</tr></table></div>";
                     }
+                    echo "<form id='search' method='post' action='datecheck.php'>
+                                    <label>Please select different dates: </label><br><br>
+                                    <input id='startdate' name='startdate' type='date' value='$currentdate'/><br><br>
+                                    <input id='enddate' name='enddate' type='date' value='($currentdate + 1)'/><br><br>
+                                    <input type='submit' value='Check' />
+                                    </form>";
+
                     if($unavailabledates == 0){
                         header('location: booking.php');
                     }
-
 
                 }
             }else{

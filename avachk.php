@@ -51,7 +51,8 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
             }else{
                 $enddates = null;
             }
-            $currentdate = date('Y-m-d');
+            $currentdate = date('d-m-Y');
+            $currentnextdate = date('d-m-Y', ($currentdate + 1));
 
 
 
@@ -132,7 +133,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                     echo "<form id='search' method='post' action='datecheck.php'>
                                     <label>Please select different dates: </label><br><br>
                                     <input id='startdate' name='startdate' type='date' value='$currentdate'/><br><br>
-                                    <input id='enddate' name='enddate' type='date' value='($currentdate + 1)'/><br><br>
+                                    <input id='enddate' name='enddate' type='date' value='$currentnextdate'/><br><br>
                                     <input type='submit' value='Check' />
                                     </form>";
 

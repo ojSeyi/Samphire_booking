@@ -6,6 +6,9 @@
         header('Location: index.php');
     };
 ?>
+<?php
+$currentdate = date('d-m-Y');
+$currentnextdate = date('Y-m-d', ($currentdate + 1)); ?>
 <head>
     <meta charset="UTF-8">
     <title>Samphire-Subsea: Facility Reservation</title>
@@ -52,7 +55,7 @@
                 ?>
             </select><br><br>
             <label>Reservation Date : </label>
-            <input id="startdate" name="startdate" type="date" value="2016-07-01"/><br><br>
+            <input id="startdate" name="startdate" type="date" value="<?php$currentnextdate?>"/><br><br>
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" value="submit"/><br><br>

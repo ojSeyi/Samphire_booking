@@ -44,7 +44,8 @@ if(is_null($_SESSION['firstname'])){
             $startdate = $_POST['startdate'];
             $startdate = date("d-m-Y",strtotime($startdate));
             $facility = $_POST['facility'];
-
+            $currentdate = date('d-m-Y');
+            $currentnextdate = date('d-m-Y', ($currentdate + 1));
 
 
 
@@ -60,7 +61,7 @@ if(is_null($_SESSION['firstname'])){
 
                 echo "<form method='post' action='logdatecheck.php'>" ."
                 <label>Reservation End Date : </label>
-                <input id='enddate' name='enddate' type='date' value='2016-07-02'/><br><br>
+                <input id='enddate' name='enddate' type='date' value='$currentnextdate'/><br><br>
                 <input type='submit' value='submit'/><br><br>
                 </form>";
             }else{

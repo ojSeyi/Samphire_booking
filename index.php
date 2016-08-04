@@ -6,6 +6,9 @@ if(isset($_SESSION['login'])){
     header('Location: index1.php');
 };
 ?>
+<?php
+$currentdate = date('d-m-Y');
+$currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
 <head>
     <meta charset="UTF-8">
     <title>Samphire-Subsea: Facility Reservation</title>
@@ -46,15 +49,6 @@ if(isset($_SESSION['login'])){
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>
                 <?php
-                function generateRandomString($length = 6) {
-                    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                    $charactersLength = strlen($characters);
-                    $randomString = '';
-                    for ($i = 0; $i < $length; $i++) {
-                        $randomString .= $characters[rand(0, $charactersLength - 1)];
-                    }
-                    return $randomString;
-                }
                 $getfacilities = "SELECT * FROM samphire_facilities";
                 $result = mysqli_query($db, $getfacilities);
                 while ($row = mysqli_fetch_array($result))
@@ -62,7 +56,7 @@ if(isset($_SESSION['login'])){
                 ?>
             </select><br><br>
             <label>Reservation Date : </label>
-            <input id="startdate" name="startdate" type="date" value="2016-07-01"/><br><br>
+            <input id="startdate" name="startdate" type="date" value="<?php$currentnextdate?>"/><br><br>
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" value="submit"/><br><br>

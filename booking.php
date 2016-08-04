@@ -54,8 +54,6 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
             return $randomString;
         }
 
-
-
         $randomtable = generateRandomString();
 
 

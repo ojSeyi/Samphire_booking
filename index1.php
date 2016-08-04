@@ -4,11 +4,11 @@
 <?php session_start();
     if(is_null($_SESSION['firstname'])){
         header('Location: index.php');
-    };
-?>
+    }; ?>
 <?php
 $currentdate = date('Y-m-d');
 $currentnextdate = date('Y-m-d', ($currentdate + 1)); ?>
+
 <head>
     <meta charset="UTF-8">
     <title>Samphire-Subsea: Facility Reservation</title>

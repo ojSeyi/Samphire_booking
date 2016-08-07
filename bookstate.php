@@ -2,7 +2,7 @@
 <html lang="en">
 <?php include ("db_connection.php"); ?>
 <?php
-if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
+if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
     header('Location: index.php');
 };
 ?>
@@ -42,7 +42,42 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
     <div id="syscon">
         <?php
         session_start();
+        echo "<script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+        <script src='js/global.js'></script></script>";
         //booking check start
+        ?>
+        <div id="screen">
+            <p>Your reservetion details are as follows: </p>
+            <label><?php echo "Start date:  " . $_SESSION['start'] ?></label><br><br>
+            <?php
+                $facilities = array();
+                $facilities[0] = $_SESSION['facili'];
+                if(!is_null($_SESSION['end'])){
+                    echo "<label> End date:  " . $_SESSION['end'] . "</label><br><br>";
+                }
+
+                if(count($facilities) > 1){
+                    echo "<div id='facili'></div>";
+                }else{
+                    echo "<label> Facility to be reserved:  " . $_SESSION['facili']."</label><br><br>";
+                }
+
+
+            ?>
+            <form>
+                <select name="facilityarray" size="1" required>
+                    <?php
+                    $getfacilities = "SELECT * FROM samphire_facilities";
+                    $result = mysqli_query($db, $getfacilities);
+                    while ($row = mysqli_fetch_array($result))
+                        echo "<option>". $row['f_name'] . "</option>";
+                    ?>
+                </select><br><br>
+                <input type='submit' value='Add Facility'>
+            </form>
+
+        </div>";
+
 
         function generateRandomString($length = 6) {
             $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -58,7 +93,7 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
 
 
 
-        ?>
+
 
     </div>
 </main>

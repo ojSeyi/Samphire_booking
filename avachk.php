@@ -81,7 +81,9 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                                     </form>
                                 </div>";
                         }else{
-                            header('location: booking.php');
+                            $_SESSION['Start'] = $startdates;
+                            $_SESSION['facili'] = $facility;
+                            header('location: bookstate.php');
                         }
                 }else{
                     function createDateRangeArray($strDateFrom,$strDateTo)
@@ -138,11 +140,15 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                                     </form>";
 
                     if($unavailabledates == 0){
-                        header('location: booking.php');
+                        $_SESSION['Start'] = $startdates;
+                        $_SESSION['end'] = $enddates;
+                        $_SESSION['facili'] = $facility;
+                        header('location: bookstate.php');
                     }
 
                 }
             }else{
+
                 header('location: index.php');
                 //Put code to show booking details and button to add new facility(must be contained within page)
             }

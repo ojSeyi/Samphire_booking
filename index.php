@@ -1,14 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include ("db_connection.php"); ?>
-<?php session_start();
-if(isset($_SESSION['login'])){
-    header('Location: index1.php');
-};
-?>
-<?php
-$currentdate = date('d-m-Y');
-$currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
 <head>
     <meta charset="UTF-8">
     <title>Samphire-Subsea: Facility Reservation</title>
@@ -25,6 +16,15 @@ $currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
     <meta charset="UTF-8">
     <title>Samphire Subsea Facilities Booking</title>
 </head>
+<?php include ("db_connection.php"); ?>
+<?php session_start();
+if(isset($_SESSION['login'])){
+    header('Location: index1.php');
+};
+?>
+<?php
+$currentdate = date('d-m-Y');
+$currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
 <body>
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>

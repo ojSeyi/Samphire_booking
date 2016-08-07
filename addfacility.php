@@ -9,3 +9,5 @@ echo "<label> Facilities to be reserved are:  </label><br><br>
         <td>.$showfacility.</td>;
     }
     </tr></table>";
+
+?>

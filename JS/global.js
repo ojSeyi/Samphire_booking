@@ -1,20 +1,19 @@
-/**
- * Created by OJ Pumping on 08/08/2016.
- */
-
-function setDate(startdate){
-    z=$(startdate).val();
-
+function onLoad() {
+    var input = document.getElementById("startdate");
     var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth()+1; //January is 0!
+    // Set month and day to string to add leading 0
+    var day = new String(today.getDate());
+    var mon = new String(today.getMonth()+1); //January is 0!
+    var yr = today.getFullYear();
 
-    var yyyy = today.getFullYear();
-    if(dd<10){dd='0'+dd}
-    if(mm<10){mm='0'+mm}
-    today = yyyy+'-'+mm+'-'+dd;
+    if(day.length < 2) { day = "0" + day; }
+    if(mon.length < 2) { mon = "0" + mon; }
 
-    $(startdate).val(today);
+    var date = new String( yr + '-' + mon + '-' + day );
 
+    input.disabled = false;
+    input.setAttribute('min', date);
+    input.setAttribute('value', date);
 }
 
+document.addEventListener('load', onLoad, false);

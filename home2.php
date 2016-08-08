@@ -5,8 +5,6 @@
 if(is_null($_SESSION['login'])){
     header('Location: index.php');
 };
-?>
-<?php
 $currentdate = date('d-m-Y');
 $currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
 <head>

@@ -56,7 +56,7 @@ $currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
                 ?>
             </select><br><br>
             <label>Reservation Date : </label>
-            <input id="startdate" name="startdate" type="date" value="<?php echo $currentnextdate?>"/><br><br>
+            <input id="startdate" name="startdate" type="date" value="<?php $currentnextdate?>"/><br><br>
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" value="submit"/><br><br>

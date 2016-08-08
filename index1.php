@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php include ("db_connection.php"); ?>
 <?php session_start();
-    if(is_null($_SESSION['firstname'])){
-        header('Location: index.php');
-    }; ?>
+if(is_null($_SESSION['firstname'])){
+    header('Location: index.php');
+}; ?>
 <?php
 $currentdate = date('Y-m-d');
 $currentnextdate = date('Y-m-d', ($currentdate + 1)); ?>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -21,10 +21,7 @@ $currentnextdate = date('Y-m-d', ($currentdate + 1)); ?>
           minimum-scale=1,
           maximum-scale=1"/>
 </head>
-<head>
-    <meta charset="UTF-8">
-    <title>Samphire Subsea Facilities Booking</title>
-</head>
+
 <body>
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>

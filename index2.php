@@ -21,10 +21,7 @@ $currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
           minimum-scale=1,
           maximum-scale=1"/>
 </head>
-<head>
-    <meta charset="UTF-8">
-    <title>Samphire Subsea Facilities Booking</title>
-</head>
+
 <body>
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>

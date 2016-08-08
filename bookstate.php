@@ -48,38 +48,38 @@ if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
         ?>
         <div id="screen">
             <p>Your reservetion details are as follows: </p>
-            <label><?php echo "Start date:  " . $_SESSION['start'] ?></label><br><br>
+            <div><label><?php echo "Start date:  " . $_SESSION['start'] ?></label><br><br></div>
             <?php
-
                 $facilities = array();
                 $facilities[0] = $_SESSION['facili'];
                 if(!is_null($_SESSION['end'])){
-                    echo "<label> End date:  " . $_SESSION['end'] . "</label><br><br>";
+                    echo "<div><label> End date:  " . $_SESSION['end'] . "</label><br><br></div>";
                 }
 
                 if(count($facilities) > 1){
-                    echo "<div id='facili'></div>";
+                    echo "<div id='facili'>
+
+                    </div>";
                 }else{
-                    echo "<label> Facility to be reserved:  " . $facilities[0]."</label><br><br>";
+                    echo "<div><label> Facility to be reserved:  " . $facilities[0]."</label><br><br></div>";
                 }
 
             ?>
-                <label>Choose a facility to add to booking: </label><br><br><br>
-                <select name="facilityarray" size="1" required>
-                    <?php
-                    $getfacilities = "SELECT * FROM samphire_facilities";
-                    $result = mysqli_query($db, $getfacilities);
-                    while ($row = mysqli_fetch_array($result))
-                        if($row['f_name'] ==  $facilities[0]) {
+            <div><label>To add another facility, select facility and click 'add': </label><br><br><br></div>
+            <select name="facilityarray" size="1" required>
+            <?php
+                $getfacilities = "SELECT * FROM samphire_facilities";
+                $result = mysqli_query($db, $getfacilities);
+                while ($row = mysqli_fetch_array($result)){
+                    if($row['f_name'] ==  $facilities[0]) {
 
-                        }else{
-                            echo "<option>" . $row['f_name'] . "</option>";
-                        }
-                    ?>
-                </select><br><br>
-                <input type='submit' value='Add Facility'>
-
-
+                    }else{
+                        echo "<option>" . $row['f_name'] . "</option>";
+                    }
+                }
+            ?>
+            </select><br><br>
+            <input type='submit' value='Add Facility'>
         </div>
 
     <?php

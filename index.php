@@ -2,26 +2,7 @@
 <html lang="en">
 <head>
     <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-    <script>
-        function onLoad() {
-            var input = document.getElementById("startdate");
-            var today = new Date();
-            // Set month and day to string to add leading 0
-            var day = new String(today.getDate());
-            var mon = new String(today.getMonth()+1); //January is 0!
-            var yr = today.getFullYear();
-
-            if(day.length < 2) { day = "0" + day; }
-            if(mon.length < 2) { mon = "0" + mon; }
-
-            var date = new String( yr + '-' + mon + '-' + day );
-
-            input.disabled = false;
-            input.setAttribute('min', date);
-            input.setAttribute('value', date);
-        }
-        document.addEventListener('load', onLoad, false);
-    </script>
+    <script type="text/javascript" src='JS/global.js'></script>
     <meta charset="UTF-8">
     <title>Samphire-Subsea: Facility Reservation</title>
     <link rel="stylesheet" href="assets/stylesheet.css">

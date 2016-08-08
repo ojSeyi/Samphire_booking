@@ -4,9 +4,7 @@
 <?php session_start();
 if(is_null($_SESSION['login'])){
     header('Location: index.php');
-};
-$currentdate = date('d-m-Y');
-$currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
+}; ?>
 
 <head>
     <meta charset="UTF-8">

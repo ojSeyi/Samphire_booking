@@ -2,9 +2,7 @@
 <?php session_start();
 if(is_null($_SESSION['firstname'])){
     header('Location: index.php');
-};
-$currentdate = date('Y-m-d');
-$currentnextdate = date('Y-m-d', ($currentdate + 1)); ?>
+}; ?>
 <!DOCTYPE html>
 <html lang="en">
 

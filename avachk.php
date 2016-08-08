@@ -112,38 +112,35 @@ if(is_null($_SESSION['facilities']) && ($_SESSION['startdates'])){
                     }
 
                     $datesinrange = createDateRangeArray($startdates, $enddates);
-                    $unavailabledates = array();
-                    foreach($datesinrange as $date){
-                        $availablerange = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND (startdate <= '$date' AND enddate >= '$date')";
-                        $results = mysqli_query($db, $availablerange) or die("failed");
-                        if(mysqli_num_rows($results) > 0){
-                            $unavailabledates[] = $date;
-                        }else{
 
-                        }
-                    }
                     if(count($datesinrange) > 31){
                         echo "<label>For booking greater than 30 days please contact the office using the information in the contact page</label>";
                     }else{
-                        echo "<div id='filled dates'><label>The $facilitys facility is unavailable on the following dates: </label><br>";
-                        echo "<table><tr>";
-                        foreach($unavailabledates as $showdate){
-                            echo "<td>".$showdate."</td>";
-                        }
-                        echo "</tr></table></div>";
-                    }
-                    echo "<form id='search' method='post' action='datecheck.php'>
+                    $unavailabledates = array();
+                        foreach($datesinrange as $date){
+                            $availablerange = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND (startdate <= '$date' AND enddate >= '$date')";
+                            $results = mysqli_query($db, $availablerange) or die("failed");
+                            if(mysqli_num_rows($results) > 0){
+                                $unavailabledates[] = $date;
+                                echo "<div id='filled dates'><label>The $facilitys facility is unavailable on the following dates: </label><br>";
+                                echo "<table><tr>";
+                                foreach($unavailabledates as $showdate){
+                                    echo "<td>".$showdate."</td>";
+                                }
+                                echo "</tr></table></div>";
+                                echo "<form id='search' method='post' action='datecheck.php'>
                                     <label>Please select different dates: </label><br><br>
                                     <input id='startdate' name='startdate' type='date' value='$currentdate'/><br><br>
                                     <input id='enddate' name='enddate' type='date' value='$currentnextdate'/><br><br>
                                     <input type='submit' value='Check' />
                                     </form>";
-
-                    if($unavailabledates == 0){
-                        $_SESSION['Start'] = $startdates;
-                        $_SESSION['end'] = $enddates;
-                        $_SESSION['facili'] = $facility;
-                        header('location: bookstate.php');
+                            }else{
+                                $_SESSION['Start'] = $startdates;
+                                $_SESSION['end'] = $enddates;
+                                $_SESSION['facili'] = $facility;
+                                header('location: bookstate.php');
+                            }
+                        }
                     }
 
                 }

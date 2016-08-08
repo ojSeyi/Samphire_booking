@@ -170,6 +170,10 @@ label{
     color: red;
 }
 
+#screen * select{
+    float: left;
+}
+
 input[type=submit] {
     background-color: lightskyblue;
     border: none;

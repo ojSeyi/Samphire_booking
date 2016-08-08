@@ -63,7 +63,7 @@ if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
                 }
 
             ?>
-                <label>Choose a facility to add to booking: </label><br><br>
+                <label>Choose a facility to add to booking: </label><br><br><br>
                 <select name="facilityarray" size="1" required>
                     <?php
                     $getfacilities = "SELECT * FROM samphire_facilities";

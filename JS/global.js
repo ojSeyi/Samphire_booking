@@ -13,6 +13,5 @@ function onLoad() {
 
     input.disabled = false;
     input.setAttribute('min', date);
-    input.val(date);
 }
 document.addEventListener('load', onLoad, false);

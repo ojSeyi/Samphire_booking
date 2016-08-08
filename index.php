@@ -12,21 +12,6 @@
           minimum-scale=1,
           maximum-scale=1"/>
     <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-    <script >var input = document.getElementById("startdate");
-        var today = new Date();
-        var day = today.getDate();
-        // Set month to string to add leading 0
-        var mon = new String(today.getMonth()+1); //January is 0!
-        var yr = today.getFullYear();
-
-        if(mon.length < 2) { mon = "0" + mon; }
-
-        var date = new String( day + '-' + mon + '-' + yr );
-
-        input.disabled = false;
-        input.setAttribute('min', date);
-        input.setAttribute('value', date);
-    </script>
 </head>
 
 <?php include ("db_connection.php"); ?>
@@ -71,6 +56,21 @@ $currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
                 ?>
             </select><br><br>
             <label>Reservation Date : </label>
+            <script >var input = document.getElementById("startdate");
+                var today = new Date();
+                var day = today.getDate();
+                // Set month to string to add leading 0
+                var mon = new String(today.getMonth()+1); //January is 0!
+                var yr = today.getFullYear();
+
+                if(mon.length < 2) { mon = "0" + mon; }
+
+                var date = new String( day + '-' + mon + '-' + yr );
+
+                input.disabled = false;
+                input.setAttribute('min', date);
+                input.setAttribute('value', date);
+            </script>
             <input id="startdate" name="startdate" type="date" value="01-09-2016" required/><br><br>
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>

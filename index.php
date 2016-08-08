@@ -18,14 +18,12 @@
 </head>
 <?php include ("db_connection.php"); ?>
 <?php
-session_start();
 if(isset($_SESSION['login'])){
     header('Location: home1.php');
 };
-?>
-<?php
 $currentdate = date('d-m-Y');
 $currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
+
 <body>
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>

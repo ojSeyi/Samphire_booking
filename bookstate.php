@@ -78,7 +78,7 @@ if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
 
         </div>";
 
-
+    <?php
         function generateRandomString($length = 6) {
             $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
             $charactersLength = strlen($characters);
@@ -90,7 +90,7 @@ if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
         }
 
         $randomtable = generateRandomString();
-
+    ?>
 
 
 

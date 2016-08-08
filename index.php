@@ -21,7 +21,7 @@ if(isset($_SESSION['login'])){
     header('Location: home1.php');
 }; ?>
 
-<body onload="setDate()">
+<body>
 
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>

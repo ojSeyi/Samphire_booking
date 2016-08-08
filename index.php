@@ -23,7 +23,7 @@ if(isset($_SESSION['login'])){
 };
 ?>
 <?php
-$currentdate = date('d-m-Y', date());
+$currentdate = date('d-m-Y', getTimestamp());
 $currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
 <body>
 <header>

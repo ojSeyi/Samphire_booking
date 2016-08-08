@@ -7,6 +7,7 @@ if(is_null($_SESSION['login'])){
 };
 $currentdate = date('d-m-Y');
 $currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
+
 <head>
     <meta charset="UTF-8">
     <title>Samphire-Subsea: Facility Reservation</title>

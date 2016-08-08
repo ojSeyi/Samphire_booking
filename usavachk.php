@@ -3,7 +3,7 @@
 <?php include ("db_connection.php"); ?>
 <?php session_start();
 if(is_null($_SESSION['firstname']) && ($_SESSION['facilities']) && ($_SESSION['startdates'])){
-    header('Location: index1.php');
+    header('Location: home1.php');
 };
 ?>
 <head>

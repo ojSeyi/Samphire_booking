@@ -2,18 +2,17 @@
  * Created by OJ Pumping on 08/08/2016.
  */
 
-var input = document.getElementById("startdate");
-var today = new Date();
-var day = today.getDate();
-// Set month to string to add leading 0
-var mon = new String(today.getMonth()+1); //January is 0!
-var yr = today.getFullYear();
+function setDate(date){
+    z=$(date).val();
 
-if(mon.length < 2) { mon = "0" + mon; }
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
 
-var date = new String( day + '-' + mon + '-' + yr );
+    var yyyy = today.getFullYear();
+    if(dd<10){dd='0'+dd}
+    if(mm<10){mm='0'+mm}
+    today = yyyy+'-'+mm+'-'+dd;
 
-input.disabled = false;
-input.setAttribute('min', date);
-input.setAttribute('value', date);
-
+    $(date).val(today);
+}

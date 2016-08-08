@@ -11,8 +11,7 @@
           initial-scale=1,
           minimum-scale=1,
           maximum-scale=1"/>
-    <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-    <script type="text/javascript" src='JS/global.js'></script>
+
 </head>
 
 <?php include ("db_connection.php"); ?>
@@ -26,7 +25,8 @@ $currentdate = date('d-m-Y');
 $currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
 
 <body>
-
+<script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+<script type="text/javascript" src='JS/global.js'></script>
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>
     <div id="form">

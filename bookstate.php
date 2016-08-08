@@ -2,6 +2,7 @@
 <html lang="en">
 <?php include ("db_connection.php"); ?>
 <?php
+session_start();
 if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
     header('Location: index.php');
 };
@@ -41,7 +42,7 @@ if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
 
     <div id="syscon">
         <?php
-        session_start();
+
         echo "<script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
         <script src='js/global.js'></script>";
         //booking check start

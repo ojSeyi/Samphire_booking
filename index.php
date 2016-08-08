@@ -12,7 +12,21 @@
           minimum-scale=1,
           maximum-scale=1"/>
     <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-    <script type="text/javascript" src='JS/global.js'></script>
+    <script >var input = document.getElementById("startdate");
+        var today = new Date();
+        var day = today.getDate();
+        // Set month to string to add leading 0
+        var mon = new String(today.getMonth()+1); //January is 0!
+        var yr = today.getFullYear();
+
+        if(mon.length < 2) { mon = "0" + mon; }
+
+        var date = new String( day + '-' + mon + '-' + yr );
+
+        input.disabled = false;
+        input.setAttribute('min', date);
+        input.setAttribute('value', date);
+    </script>
 </head>
 
 <?php include ("db_connection.php"); ?>

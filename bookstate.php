@@ -69,7 +69,9 @@ if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
                     $getfacilities = "SELECT * FROM samphire_facilities";
                     $result = mysqli_query($db, $getfacilities);
                     while ($row = mysqli_fetch_array($result))
-                        echo "<option>". $row['f_name'] . "</option>";
+                        if($row['f_name'] !=  $_SESSION['facili']) {
+                            echo "<option>" . $row['f_name'] . "</option>";
+                        }
                     ?>
                 </select><br><br>
                 <input type='submit' value='Add Facility'>

@@ -7,6 +7,7 @@ if(isset($_SESSION['login'])){
 <?php
 $currentdate = date('d-m-Y');
 $currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +21,6 @@ $currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
           initial-scale=1,
           minimum-scale=1,
           maximum-scale=1"/>
-</head>
-<head>
-    <meta charset="UTF-8">
-    <title>Samphire Subsea Facilities Booking</title>
 </head>
 
 <body>

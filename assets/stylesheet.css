@@ -163,6 +163,12 @@ label{
     padding-top: 20px;
 }
 
+#screen+label{
+    width: 288px;
+    display: block;
+    padding-top: 20px;
+}
+
 input[type=submit] {
     background-color: lightskyblue;
     border: none;

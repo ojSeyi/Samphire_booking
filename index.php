@@ -13,8 +13,8 @@
           maximum-scale=1"/>
 </head>
 <head>
-    <script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-    <script src='JS/global.js'></script>
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+    <script type="text/javascript" src='JS/global.js'></script>
 </head>
 <?php include ("db_connection.php"); ?>
 <?php session_start();
@@ -58,7 +58,7 @@ $currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
                 ?>
             </select><br><br>
             <label>Reservation Date : </label>
-            <input id="startdate" name="startdate" type="date"/><br><br>
+            <input id="startdate" name="startdate" type="date" required/><br><br>
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" value="submit"/><br><br>

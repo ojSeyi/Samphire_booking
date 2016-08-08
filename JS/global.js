@@ -15,5 +15,5 @@ var date = new String( day + '-' + mon + '-' + yr );
 
 input.disabled = false;
 input.setAttribute('min', date);
-input.setAttribute('value', date);
+$(startdate).val(date);
 

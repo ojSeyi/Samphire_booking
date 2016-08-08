@@ -25,7 +25,10 @@ if(isset($_SESSION['login'])){
 <?php
 $currentdate = date('d-m-Y');
 $currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
+<script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+<script src='js/global.js'></script>
 <body>
+
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>
     <div id="form">

@@ -43,7 +43,7 @@ if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
         <?php
         session_start();
         echo "<script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-        <script src='js/global.js'></script></script>";
+        <script src='js/global.js'></script>";
         //booking check start
         ?>
         <div id="screen">

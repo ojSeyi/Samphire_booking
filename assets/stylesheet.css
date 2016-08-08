@@ -163,7 +163,7 @@ label{
     padding-top: 20px;
 }
 
-#screen+label{
+#screen>label{
     width: 288px;
     display: block;
     padding-top: 20px;

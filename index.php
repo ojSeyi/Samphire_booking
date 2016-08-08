@@ -17,11 +17,14 @@
     <title>Samphire Subsea Facilities Booking</title>
 </head>
 <?php include ("db_connection.php"); ?>
-<?php
+<?php session_start();
 if(isset($_SESSION['login'])){
     header('Location: home1.php');
-}; ?>
-
+};
+?>
+<?php
+$currentdate = date('d-m-Y');
+$currentnextdate = date('d-m-Y', ($currentdate + 1)); ?>
 <body>
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>
@@ -53,7 +56,7 @@ if(isset($_SESSION['login'])){
                 ?>
             </select><br><br>
             <label>Reservation Date : </label>
-            <input id="startdate" name="startdate" type="date" value="11-07-2016"/><br><br>
+            <input id="startdate" name="startdate" type="date" value="<?php$currentnextdate?>"/><br><br>
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" value="submit"/><br><br>

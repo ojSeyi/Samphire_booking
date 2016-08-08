@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include ("db_connection.php"); ?>
+<?php include ("db_connection.php");
+    if(is_null($_POST['startdate']) && ($_POST['facility'])){
+    header('Location: index.php');}
+?>
 
 <head>
     <meta charset="UTF-8">

@@ -48,12 +48,12 @@ if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
         ?>
         <div id="screen">
             <p>Your reservetion details are as follows: </p>
-            <div><label><?php echo "Start date:  " . $_SESSION['start'] ?></label></div>
+            <div><label><?php echo "Start date:  " . $_SESSION['start'] ?></label><br></div>
             <?php
                 $facilities = array();
                 $facilities[0] = $_SESSION['facili'];
                 if(!is_null($_SESSION['end'])){
-                    echo "<div><label> End date:  " . $_SESSION['end'] . "</label></div>";
+                    echo "<div><label> End date:  " . $_SESSION['end'] . "</label><br></div>";
                 }
 
                 if(count($facilities) > 1){
@@ -61,11 +61,11 @@ if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
 
                     </div>";
                 }else{
-                    echo "<div><label> Facility to be reserved:  " . $facilities[0]."</label></div>";
+                    echo "<div><label> Facility to be reserved:  " . $facilities[0]."</label><br></div>";
                 }
 
             ?>
-            <div><label>To add another facility, select facility and click 'add': </label></div>
+            <div><label>To add another facility, select facility and click 'add': </label><br></div>
             <select name="facilityarray" size="1" required>
             <?php
                 $getfacilities = "SELECT * FROM samphire_facilities";

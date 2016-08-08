@@ -18,6 +18,7 @@
 </head>
 <?php include ("db_connection.php"); ?>
 <?php
+session_start();
 if(isset($_SESSION['login'])){
     header('Location: home1.php');
 };

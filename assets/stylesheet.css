@@ -167,6 +167,7 @@ label{
     width: 288px;
     display: block;
     padding-top: 20px;
+    color: red;
 }
 
 input[type=submit] {

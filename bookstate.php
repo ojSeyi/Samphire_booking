@@ -50,6 +50,7 @@ if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
             <p>Your reservetion details are as follows: </p>
             <label><?php echo "Start date:  " . $_SESSION['start'] ?></label><br><br>
             <?php
+
                 $facilities = array();
                 $facilities[0] = $_SESSION['facili'];
                 if(!is_null($_SESSION['end'])){
@@ -59,7 +60,7 @@ if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
                 if(count($facilities) > 1){
                     echo "<div id='facili'></div>";
                 }else{
-                    echo "<label> Facility to be reserved:  " . $_SESSION['facili']."</label><br><br>";
+                    echo "<label> Facility to be reserved:  " . $facilities[0]."</label><br><br>";
                 }
 
             ?>
@@ -69,7 +70,7 @@ if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
                     $getfacilities = "SELECT * FROM samphire_facilities";
                     $result = mysqli_query($db, $getfacilities);
                     while ($row = mysqli_fetch_array($result))
-                        if($row['f_name'] ==  $_SESSION['facili']) {
+                        if($row['f_name'] ==  $facilities[0]) {
 
                         }else{
                             echo "<option>" . $row['f_name'] . "</option>";

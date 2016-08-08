@@ -76,7 +76,7 @@ if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
                 <input type='submit' value='Add Facility'>
             </form>
 
-        </div>";
+        </div>
 
     <?php
         function generateRandomString($length = 6) {

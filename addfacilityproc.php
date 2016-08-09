@@ -3,7 +3,8 @@ if(isset($_POST['addfacility'])){
     $facilityarray = array();
     $facilityarray[0] = $_SESSION['facili'];
     $facilityarray[] = $_POST['addfacility'];
-    echo "<div><label> Facilities to be reserved:  </label><br><br></div>
+    if(count($facilities) > 1){
+        echo "<div><label> Facilities to be reserved:  </label><br><br></div>
                         <div>
                             <form>
                                 <table>
@@ -17,4 +18,11 @@ if(isset($_POST['addfacility'])){
                                 </table>
                             </form>
                         </div>";
+    }elseif(count($facilities) == 0){
+        echo "<div><label> Facility to be reserved:  " . $_SESSION['facili']."</label><br><br></div>";
+
+    }elseif((count($facilities) == 1)){
+        echo "<div><label> Facility to be reserved:  " . $_SESSION['facili']."</label><br><br></div>";
+    }
+
 }

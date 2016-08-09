@@ -49,25 +49,16 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
         ?>
         <div id="screen">
             <p>Your reservetion details are as follows: </p>
-            <div><label><?php echo "Start date:  " . $_SESSION['start'] ?></label><br><br></div>
-            <?php
-                $facilities = array();?>
-                <script>var facilities = <?php echo(json_encode($facilities)); ?>;</script>;
+
+            <div><label><?php echo "Start date:  " . $_SESSION['start']; ?></label><br><br></div>
+
             <?php
                 if(!is_null($_SESSION['end'])){
                     echo "<div><label> End date:  " . $_SESSION['end'] . "</label><br><br></div>";
-                }
+                }?>
 
-                if(count($facilities) > 1){
-                    echo "<div id='facili'> </div>";
-                }elseif(count($facilities) == 0){
-                    echo "<div><label> Facility to be reserved:  " . $_SESSION['facili']."</label><br><br></div>";
+            <div id='facili'> </div>
 
-                }elseif((count($facilities) == 1)){
-                    echo "<div><label> Facility to be reserved:  " . $_SESSION['facili']."</label><br><br></div>";
-                }
-
-            ?>
             <div><label>To add another facility, select facility and click 'add':  </label></div>
             <form><select name="facilityarray" id="facilityarray" size="1" required>
             <?php

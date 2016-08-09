@@ -24,5 +24,5 @@ if(isset($_POST['addfacility'])){
     }elseif((count($facilities) == 1)){
         echo '<div><label> Facility to be reserved:  ' . $_SESSION['facili'].'</label><br><br></div>';
     }
-
+    echo 'fuck';
 }

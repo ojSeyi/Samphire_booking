@@ -81,7 +81,7 @@ if(is_null($_SESSION['facilities']) && is_null($_SESSION['startdates'])){
                                     </form>
                                 </div>";
                         }else{
-                            $_SESSION['Start'] = $startdates;
+                            $_SESSION['start'] = $startdates;
                             $_SESSION['facili'] = $facility;
                             header('location: bookstate.php');
                         }

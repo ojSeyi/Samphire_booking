@@ -3,7 +3,7 @@
 <?php include ("db_connection.php"); ?>
 <?php
 session_start();
-if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
+if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
     header('location: index.php');
 };
 ?>

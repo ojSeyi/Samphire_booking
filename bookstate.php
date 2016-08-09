@@ -43,7 +43,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
     <div id="syscon">
         <?php
 
-        $start = $_SESSION['start']
+        $start = date("Y-m-d",strtotime($_SESSION['start']));
         //booking check start
         ?>
         <div id="screen">

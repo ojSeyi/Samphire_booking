@@ -63,9 +63,9 @@ if(is_null($_SESSION['facili']) && ($_SESSION['start'])){
                     </div>";
                 }else{
                     echo "<div><label> Facility to be reserved:  " . $facilities[0]."</label><br><br></div>";
-                    if(is_null($_SESSION['facili'])){
-                        echo "oboi eh"
-;                    };
+                    if(is_null($_SESSION['start'])){
+                        echo "oboi eh";
+                    };
                 }
 
             ?>

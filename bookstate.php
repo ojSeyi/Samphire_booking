@@ -39,13 +39,9 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
     <section id="bannerbox">
         <img src="assets/images/banner1.jpg" id="bannerimage"/>
     </section>
-    <div id='facilitydisplay'></div>
 
     <div id="syscon">
         <?php
-
-        echo "<script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-        <script src='JS/addfacility.js'></script>";
         //booking check start
         ?>
         <div id="screen">
@@ -76,6 +72,8 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
             </select><br><br>
             <input type='submit' id="addfacility" value='Add Facility'></form>
         </div>
+        <script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+        <script src='JS/addfacility.js'></script>
 
     <?php
         function generateRandomString($length = 6) {

@@ -43,13 +43,13 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
     <div id="syscon">
         <?php
 
-
+        $start = $_SESSION['start']
         //booking check start
         ?>
         <div id="screen">
             <p>Your reservetion details are as follows: </p>
 
-            <div><label><?php echo "Start date:  " . $_SESSION['start']; ?></label><br><br></div>
+            <div><label><?php echo "Start date:  " . $start ; ?></label><br><br></div>
 
             <?php
                 if(!is_null($_SESSION['end'])){

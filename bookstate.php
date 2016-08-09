@@ -57,35 +57,42 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                 }?>
 
             <div><label> Facility(s) to be reserved:  </label><br><br></div>
-            <div id="facilitytable">
-                <table>
-                    <tr>
-                        <td>
-                            <div id='facilitydisplay-facilities'></div>
-                        </td>
-                    </tr>
-                </table>
+            <div id="facili">
+                <?php
+                    if(isset($_SESSION['facilityarray'])){
+                        $facilities = $_SESSION['facilityarray'];
+                        echo "<table><tr>";
+                        foreach($facilities as $facility){
+                            echo "<td>".$facility."</td>";
+                        }
+                        echo "</tr></table></div>";
+                    }else{
+                        $facili = $_SESSION['facili'];
+                        echo "".$facili."";
+                    }
+
+                ?>
+
             </div>
 
 
             <div><label>To add another facility, select facility and click 'add':  </label></div>
-            <select name="facilityarray" id="facilityarray" size="1" required>
-            <?php
-                $getfacilities = "SELECT * FROM samphire_facilities";
-                $result = mysqli_query($db, $getfacilities);
-                while ($row = mysqli_fetch_array($result)){
-                    if($row['f_name'] ==  $facilities[0]) {
+            <form method="post" action="addfacility.php">
+                <select name="facilityarray" id="facilityarray" size="1" required>
+                <?php
+                    $getfacilities = "SELECT * FROM samphire_facilities";
+                    $result = mysqli_query($db, $getfacilities);
+                    while ($row = mysqli_fetch_array($result)){
+                        if($row['f_name'] ==  $facilities[0]) {
 
-                    }else{
-                        echo "<option>" . $row['f_name'] . "</option>";
+                        }else{
+                            echo "<option>" . $row['f_name'] . "</option>";
+                        }
                     }
-                }
-            ?>
-            </select><br><br>
-            <input type='submit' id="addfacility" value='Add Facility'>
-
-            <script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-            <script src='JS/addfacility.js'></script>
+                ?>
+                </select><br><br>
+                <input type='submit' id="addfacility" value='Add Facility'>
+            </form>
         </div>
 
     <?php

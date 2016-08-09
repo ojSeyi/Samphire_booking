@@ -1,13 +1,17 @@
 <?php
+session_start();
+
+if(is_null($_POST['newfacility'])){
+    header('location: bookstate.php');
+}
+
+
 $newfacility = $_POST['newfacility'];
-$facilityarray[0] = $_SESSION['facili'];
-$facilityarray[] = $newfacility;
 
-echo "<label> Facilities to be reserved are:  </label><br><br>
-    <table><tr>
-    foreach($facilityarray as $showfacility){
-        <td>.$showfacility.</td>;
-    }
-    </tr></table>";
-
-?>
+$facilityarray = array();
+if(is_null($facilityarray[0])){
+    $facilityarray[0] = $_SESSION['facili'];
+}else {
+    $facilityarray[] = $newfacility;
+    $_SESSION['facilityarray'] = $facilityarray;
+}

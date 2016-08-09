@@ -7,7 +7,7 @@ echo $_POST['addfacility'];
     $facilityarray[0] = $_SESSION['facili'];
     $facilityarray[] = $_POST['facility'];
     echo (count($facilities) > 1) ?
-         '<div><label> Facilities to be reserved:  </label><br><br></div>
+         "<div><label> Facilities to be reserved:  </label><br><br></div>
                         <div>
                             <form>
                                 <table>
@@ -20,7 +20,7 @@ echo $_POST['addfacility'];
                                     </tr>
                                 </table>
                             </form>
-                        </div>' :
+                        </div>" :
          '<div><label> Facility to be reserved:  '.$facilityarray[0].'</label><br><br></div>';
 
 

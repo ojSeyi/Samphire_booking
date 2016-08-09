@@ -3,8 +3,8 @@
  */
 $('input#addfacility').on('click', function(){
     var facility = $('input#facilityarray').val();
-    $.post('addfacilityproc.php',{facilityarray:facilityarray},function(facilityarray){
-        $('#facili').text(facilityarray);
+    $.post('ajax/addfacilityproc.php',{facilityarray:facilityarray},function(facilityarray){
+        $('div#facili').text(facilityarray);
     });
 
 });

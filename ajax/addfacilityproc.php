@@ -1,6 +1,6 @@
 <?php
 
-echo "".$_SESSION['facili'];
+echo "".$_SESSION['facili']."";
 echo $_POST['addfacility'];
 
     $facilityarray = array();

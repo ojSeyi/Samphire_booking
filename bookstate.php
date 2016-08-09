@@ -44,7 +44,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
         <?php
 
         echo "<script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-        <script src='js/global.js'></script>";
+        <script src='JS/addfacility.js'></script>";
         //booking check start
         ?>
         <div id="screen">
@@ -59,18 +59,26 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
 
                 if(count($facilities) > 1){
                     echo "<div id='facili'>
-
+                        <div><label> Facilities to be reserved:  </label><br><br></div>
                     </div>";
                 }else{
                     echo "<div><label> Facility to be reserved:  " . $facilities[0]."</label><br><br></div>";
-                    if(is_null($_SESSION['start'])){
-                        echo "oboi eh";
-                    };
+                    echo "<div>
+                            <form>
+                                <table>
+                                    <tr>";
+                                        foreach($facilities as $facility){
+                                            echo "<td>".$facility."</td>";
+                                        }
+                                    "</tr>;
+                                </table>
+                            </form>
+                    </div>";
                 }
 
             ?>
             <div><label>To add another facility, select facility and click 'add':  </label></div>
-            <select name="facilityarray" size="1" required>
+            <select name="facilityarray" id="facilityarray" size="1" required>
             <?php
                 $getfacilities = "SELECT * FROM samphire_facilities";
                 $result = mysqli_query($db, $getfacilities);
@@ -83,7 +91,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                 }
             ?>
             </select><br><br>
-            <input type='submit' value='Add Facility'>
+            <input type='ADD' id="addfacility" value='Add Facility'>
         </div>
 
     <?php

@@ -11,6 +11,3 @@ echo $_POST['addfacility'];
                                             } ?>" :  $_SESSION['facili'];
 
 
-foreach($facilityarray as $facility){
-    echo '<label>'.$facilityarray.'</label>';
-}

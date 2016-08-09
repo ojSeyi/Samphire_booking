@@ -59,24 +59,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                 }
 
                 if(count($facilities) > 1){
-                    echo "<div id='facili'>
-                        <div><label> Facilities to be reserved:  </label><br><br></div>";?>
-                        <div>
-                            <form>
-                                <table>
-                                    <tr>
-                                        <?php
-                                            foreach($facilities as $facility){
-                                            echo "<td>".$facility."</td>";
-                                            }
-                                        ?>
-                                    </tr>
-                                </table>
-                            </form>
-                        </div>
-            <?php
-
-            echo "</div>";
+                    echo "<div id='facili'> </div>";
                 }elseif(count($facilities) == 0){
                     echo "<div><label> Facility to be reserved:  " . $_SESSION['facili']."</label><br><br></div>";
 
@@ -99,7 +82,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                 }
             ?>
             </select><br><br>
-            <input type='submit' id="addfacility" value='Add Facility'></form>
+            <input type='submit' id="addfacility" value='Add Facility'></form
         </div>
 
     <?php

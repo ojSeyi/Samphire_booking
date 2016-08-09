@@ -76,6 +76,7 @@ if(is_null($_SESSION['facilities']) && is_null($_SESSION['startdates'])){
                                     <label>Sorry, the $facilitys facility is unavailable on $startdates</label><br><br>
                                     <form id='search' method='post' action='datecheck2.php'>
                                     <label>Please select a different date: </label><br><br>
+                                    <input id='facility' name='facility' type='hidden' value='$facility'/><br><br>
                                     <input id='startdate' name='startdate' type='date' value='$currentdate'/><br><br>
                                     <input type='submit' value='Check' />
                                     </form>

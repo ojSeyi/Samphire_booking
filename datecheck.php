@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include ("db_connection.php");
-if(is_null($_SESSION['startdate']) && is_null($_SESSION['facility'])){
+if(is_null($_SESSION['startdate']) && ($_SESSION['facility'])){
     header('Location: index.php');
 };
 ?>

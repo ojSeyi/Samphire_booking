@@ -5,7 +5,7 @@ $('input#facilityarray-addfacility').on('click', function(){
     var facility = $('input#facilityarray').val();
     $.post('addfacilityproc.php',{addfacility:addfacility},function(facilityarray){
         facilities = facilityarray;
-
+        $('#facilities').isArray(facilityarray);
     });
 
 });

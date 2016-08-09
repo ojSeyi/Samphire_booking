@@ -99,7 +99,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                 }
             ?>
             </select><br><br>
-            <input type='ADD' id="addfacility" value='Add Facility'>
+            <input type='submit' id="addfacility" value='Add Facility'>
         </div>
 
     <?php

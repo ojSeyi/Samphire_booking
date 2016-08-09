@@ -5,7 +5,6 @@ if(is_null($_POST['newfacility'])){
     header('location: bookstate.php');
 }
 
-
 $newfacility = $_POST['newfacility'];
 $facilityarray = array();
 foreach($facilityarray as $count){

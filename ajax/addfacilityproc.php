@@ -24,3 +24,6 @@ echo $_POST['addfacility'];
          '<div><label> Facility to be reserved:  '.$facilityarray[0].'</label><br><br></div>';
 
 
+foreach($facilityarray as $facility){
+    echo '<label>'.$facilityarray.'</label>';
+}

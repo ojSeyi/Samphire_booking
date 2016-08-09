@@ -51,29 +51,37 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
             <p>Your reservetion details are as follows: </p>
             <div><label><?php echo "Start date:  " . $_SESSION['start'] ?></label><br><br></div>
             <?php
-                $facilities = array();
-                $facilities[0] = $_SESSION['facili'];
+                $facilities = array();?>
+                <script>var facilities = <?php echo(json_encode($facilities)); ?>;</script>;
+            <?php
                 if(!is_null($_SESSION['end'])){
                     echo "<div><label> End date:  " . $_SESSION['end'] . "</label><br><br></div>";
                 }
 
                 if(count($facilities) > 1){
                     echo "<div id='facili'>
-                        <div><label> Facilities to be reserved:  </label><br><br></div>
-                    </div>";
-                }else{
-                    echo "<div><label> Facility to be reserved:  " . $facilities[0]."</label><br><br></div>";
-                    echo "<div>
+                        <div><label> Facilities to be reserved:  </label><br><br></div>";?>
+                        <div>
                             <form>
                                 <table>
-                                    <tr>";
-                                        foreach($facilities as $facility){
+                                    <tr>
+                                        <?php
+                                            foreach($facilities as $facility){
                                             echo "<td>".$facility."</td>";
-                                        }
-                                    "</tr>;
+                                            }
+                                        ?>
+                                    </tr>
                                 </table>
                             </form>
-                    </div>";
+                        </div>
+            <?php
+
+            echo "</div>";
+                }elseif(count($facilities) == 0){
+                    echo "<div><label> Facility to be reserved:  " . $_SESSION['facili']."</label><br><br></div>";
+
+                }elseif((count($facilities) == 1)){
+                    echo "<div><label> Facility to be reserved:  " . $_SESSION['facili']."</label><br><br></div>";
                 }
 
             ?>

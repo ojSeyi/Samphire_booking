@@ -4,7 +4,7 @@
 $('input#addfacility').on('click', function(){
     var facility = $('input#facilityarray').val();
     $.post('ajax/addfacilityproc.php',{facility:facility},function(facilities){
-        $('div#facilitydisplay').text(facilities);
+        $('div#facilitydisplay-facilities').text(facilities);
     });
 
 });

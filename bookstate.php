@@ -42,6 +42,8 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
 
     <div id="syscon">
         <?php
+
+
         //booking check start
         ?>
         <div id="screen">
@@ -54,7 +56,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                     echo "<div><label> End date:  " . $_SESSION['end'] . "</label><br><br></div>";
                 }?>
 
-
+            <div id='facilitydisplay-facilities'></div>
 
             <div><label>To add another facility, select facility and click 'add':  </label></div>
             <select name="facilityarray" id="facilityarray" size="1" required>
@@ -71,9 +73,10 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
             ?>
             </select><br><br>
             <input type='submit' id="addfacility" value='Add Facility'>
+
+            <script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+            <script src='JS/addfacility.js'></script>
         </div>
-        <script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-        <script src='JS/addfacility.js'></script>
 
     <?php
         function generateRandomString($length = 6) {

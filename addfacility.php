@@ -11,7 +11,9 @@ $newfacility = $_POST['newfacility'];
 $facilityarray = array();
 if(is_null($facilityarray[0])){
     $facilityarray[0] = $_SESSION['facili'];
+    header('location: bookstate.php');
 }else {
     $facilityarray[] = $newfacility;
     $_SESSION['facilityarray'] = $facilityarray;
+    header('location: bookstate.php');
 }

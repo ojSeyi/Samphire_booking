@@ -57,7 +57,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                     echo "<div><label> End date:  " . $_SESSION['end'] . "</label><br><br></div>";
                 }?>
 
-            <div id='facili'> </div>
+            <div id='facilitydisplay'></div>
 
             <div><label>To add another facility, select facility and click 'add':  </label></div>
             <form><select name="facilityarray" id="facilityarray" size="1" required>

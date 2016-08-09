@@ -57,7 +57,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
 
 
             <div><label>To add another facility, select facility and click 'add':  </label></div>
-            <form><select name="facilityarray" id="facilityarray" size="1" required>
+            <select name="facilityarray" id="facilityarray" size="1" required>
             <?php
                 $getfacilities = "SELECT * FROM samphire_facilities";
                 $result = mysqli_query($db, $getfacilities);
@@ -70,7 +70,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                 }
             ?>
             </select><br><br>
-            <input type='submit' id="addfacility" value='Add Facility'></form>
+            <input type='submit' id="addfacility" value='Add Facility'>
         </div>
         <script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
         <script src='JS/addfacility.js'></script>

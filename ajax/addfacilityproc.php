@@ -14,7 +14,7 @@ echo $_POST['addfacility'];
                                     <tr>
                                         <?php
                                             foreach($facilityarray as $facility){
-                                            echo <td>'.$facility.'</td>;
+                                            echo <td>'.$facilityarray.'</td>;
                                             }
                                         ?>
                                     </tr>

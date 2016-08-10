@@ -66,6 +66,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
 
                 if(isset($_POST['facilityarray'])) {
                     $i++;
+                    echo $i;
                     if ($_SESSION['facili'] = $_POST['facilityarray']) {
                         echo "<div><label>You cannot select the same facility</label></div>";
                         echo "<div><table><tr><td>".$_SESSION['facili']."</td></tr></table></div>";

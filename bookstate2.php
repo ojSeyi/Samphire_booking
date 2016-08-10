@@ -52,14 +52,42 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
             <div><label><?php echo "Start date:  " . $start ; ?></label><br><br></div>
 
             <?php
-                if(!is_null($_SESSION['end'])){
-                    echo "<div><label> End date:  " . $_SESSION['end'] . "</label><br><br></div>";
-                }?>
+            if(!is_null($_SESSION['end'])){
+                echo "<div><label> End date:  " . $_SESSION['end'] . "</label><br><br></div>";
+            }?>
 
             <div><label> Facility(s) to be reserved:  </label><br><br></div>
             <div id="facili">
                 <?php
+                $i = $_SESSION['s'];
+                echo $i;
+
+                $facilityarray = array();
+                $facilityarray[0] = $_SESSION['facili'];
+                $newfacility = $_POST['facilityarray'];
+
+                if(isset($_POST['facilityarray'])) {
+                    echo $i;
+                    if ($_SESSION['facili'] = $_POST['facilityarray']) {
+                        echo "<div><label>You cannot select the same facility</label></div>";
+                        echo "<div><table><tr><td>".$_SESSION['facili']."</td></tr></table></div>";
+                        echo count($facilityarray);
+                    } else {
+                        $facilityarray[$_SESSION['s']] = $newfacility;
+                        echo "<div><table><tr>";
+                        foreach ($facilityarray as $showdate) {
+                            echo "<td>" . $showdate . "</td>";
+                        }
+                        echo "</tr></table></div>";
+                        echo count($facilityarray);
+
+                    }
+
+                }else{
                     echo "<div><table><tr><td>".$_SESSION['facili']."</td></tr></table></div>";
+                }
+
+
                 ?>
 
             </div>
@@ -68,7 +96,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
             <div><label>To add another facility, select facility and click 'add':  </label></div>
             <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
                 <select name="facilityarray" id="facilityarray" size="1" required>
-                <?php
+                    <?php
                     $getfacilities = "SELECT * FROM samphire_facilities";
                     $result = mysqli_query($db, $getfacilities);
                     while ($row = mysqli_fetch_array($result)){
@@ -78,7 +106,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                             echo "<option>" . $row['f_name'] . "</option>";
                         }
                     }
-                ?>
+                    ?>
                 </select><br><br>
                 <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
             </form>
@@ -87,7 +115,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
         </div>
 
 
-    <?php
+        <?php
         function generateRandomString($length = 6) {
             $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
             $charactersLength = strlen($characters);
@@ -99,7 +127,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
         }
 
         $randomtable = generateRandomString();
-    ?>
+        ?>
 
 
 

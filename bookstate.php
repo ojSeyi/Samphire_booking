@@ -61,7 +61,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                 <?php
                 $facilityarray = array();
                 $facilityarray[0] = $_SESSION['facili'];
-                if(isset($_POST['submit'])){
+                if(isset($_POST['addfacility'])){
                     $newfacility = $_POST['newfacility'];
 
                     foreach($facilityarray as $count){
@@ -89,7 +89,6 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                     }
                     echo "</tr></table></div>";
                 }
-
                 ?>
 
             </div>
@@ -110,7 +109,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                     }
                 ?>
                 </select><br><br>
-                <input type='submit' id="addfacility" value='Add Facility'>
+                <input type='submit' name = "addfacility" id="addfacility" value='Add Facility'>
             </form>
         </div>
 

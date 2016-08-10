@@ -62,6 +62,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
 
                 $facilityarray[0] = $_SESSION['facili'];
                 $newfacility = $_POST['facilityarray'];
+                $facilityarray[] = $newfacility;
                 echo "<table><tr>";
                 foreach($facilityarray as $showdate){
                     echo "<td>".$showdate."</td>";

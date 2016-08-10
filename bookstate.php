@@ -67,14 +67,14 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                     foreach($facilityarray as $count){
                         if($count = $_POST['newfacility']){
                             echo "<div><label>You cannot select the same facility</label></div>";
-                            echo "<div></div><table><tr>";
+                            echo "<div><table><tr>";
                             foreach($facilityarray as $facility){
                                 echo "<td>".$facility."</td>";
                             }
                             echo "</tr></table></div>";
                         }else{
                             $facilityarray[] = $newfacility;
-                            echo "<table><tr>";
+                            echo "<div><table><tr>";
                             foreach($facilityarray as $facility){
                                 echo "<td>".$facility."</td>";
                             }

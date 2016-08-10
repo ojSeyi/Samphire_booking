@@ -83,11 +83,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                         }
                     }
                 }else{
-                    echo "<table><tr>";
-                    foreach($facilityarray as $facility){
-                        echo "<td>".$facility."</td>";
-                    }
-                    echo "</tr></table></div>";
+
                 }
                 ?>
 

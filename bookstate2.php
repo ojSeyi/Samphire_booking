@@ -60,7 +60,7 @@ if(is_null($_POST['facilityarray'])){
             <div id="facili">
                 <?php
                 $_SESSION['count'] = $_SESSION['count'] + 1;
-                echo ($_SESSION['count']);
+                echo $_SESSION['count'];
 
                 $facilityarray = array();
                 $facilityarray[0] = $_SESSION['facili'];
@@ -73,7 +73,7 @@ if(is_null($_POST['facilityarray'])){
                         echo "<div><table><tr><td>".$_SESSION['facili']."</td></tr></table></div>";
                         echo count($facilityarray);
                     } else {
-                        $facilityarray[$_SESSION['s']] = $newfacility;
+                        $facilityarray[$_SESSION['count']] = $newfacility;
                         echo "<div><table><tr>";
                         foreach ($facilityarray as $showdate) {
                             echo "<td>" . $showdate . "</td>";

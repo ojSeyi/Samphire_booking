@@ -60,7 +60,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
             <div id="facili">
                 <?php
                 $facilityarray = array();
-                $facilityarray[0] = $_SESSION['facili'];
+                $facilityarray[] = $_SESSION['facili'];
                 if(isset($_POST['facilityarray'])){
                     $newfacility = $_POST['newfacility'];
 
@@ -83,7 +83,11 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                         }
                     }
                 }else{
-
+                    echo "<table><tr>";
+                    foreach($facilityarray as $facility){
+                        echo "<td>".$facility."</td>";
+                    }
+                    echo "</tr></table></div>";
                 }
                 ?>
 

@@ -61,7 +61,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                 <?php
                 $facilityarray = array();
                 $facilityarray[0] = $_SESSION['facili'];
-                if(isset($_POST['addfacility'])){
+                if(isset($_POST['facilityarray'])){
                     $newfacility = $_POST['newfacility'];
 
                     foreach($facilityarray as $count){

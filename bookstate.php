@@ -64,30 +64,31 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                 $facilityarray[$i] = $_SESSION['facili'];
                 $newfacility = $_POST['facilityarray'];
 
-                if(isset($_POST['facilityarray'])){
+                if(isset($_POST['facilityarray'])) {
                     $i++;
-                }
 
-                if($_SESSION['facili'] = $_POST['facilityarray']){
-                    echo "<div><label>You cannot select the same facility</label></div>";
-                    echo "<div><table><tr>";
-                    foreach($facilityarray as $showdate){
-                        echo "<td>".$showdate."</td>";
+                    if ($_SESSION['facili'] = $_POST['facilityarray']) {
+                        echo "<div><label>You cannot select the same facility</label></div>";
+                        echo "<div><table><tr>";
+                        foreach ($facilityarray as $showdate) {
+                            echo "<td>" . $showdate . "</td>";
+                        }
+                        echo "</tr></table></div>";
+                        echo count($facilityarray);
+                    } else {
+                        $facilityarray[$i] = $newfacility;
+                        echo "<div><table><tr>";
+                        foreach ($facilityarray as $showdate) {
+                            echo "<td>" . $showdate . "</td>";
+                        }
+                        echo "</tr></table></div>";
+                        echo count($facilityarray);
+
                     }
-                    echo "</tr></table></div>";
-                    echo count($facilityarray);
+
                 }else{
-                    $facilityarray[$i]= $newfacility;
-                    echo "<div><table><tr>";
-                    foreach($facilityarray as $showdate){
-                        echo "<td>".$showdate."</td>";
-                    }
-                    echo "</tr></table></div>";
-                    echo count($facilityarray);
 
                 }
-
-
 
 
                 ?>

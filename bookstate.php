@@ -60,7 +60,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
             <div id="facili">
                 <?php
 
-                $facilityarray[0] = $_SESSION['facili'];
+                $facilityarray[] = $_SESSION['facili'];
                 $newfacility = $_POST['facilityarray'];
                 $facilityarray[] = $newfacility;
                 echo "<table><tr>";

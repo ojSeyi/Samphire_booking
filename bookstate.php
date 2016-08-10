@@ -61,6 +61,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                 <?php
                     echo "<div><table><tr><td>".$_SESSION['facili']."</td></tr></table></div>";
                     $_SESSION['count'] = 0;
+                    $_SESSION['facilityarray'] = $facilityarray = array($_SESSION['facili']);
                 ?>
 
             </div>

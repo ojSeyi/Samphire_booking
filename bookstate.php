@@ -61,6 +61,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                 <?php
                 $i = $_SESSION['s'];
                 echo $i;
+
                 $facilityarray = array();
                 $facilityarray[0] = $_SESSION['facili'];
                 $newfacility = $_POST['facilityarray'];

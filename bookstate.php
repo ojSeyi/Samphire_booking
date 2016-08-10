@@ -59,15 +59,35 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
             <div><label> Facility(s) to be reserved:  </label><br><br></div>
             <div id="facili">
                 <?php
+                $i = 0;
                 $facilityarray = array();
-                $facilityarray[0] = $_SESSION['facili'];
+                $facilityarray[$i] = $_SESSION['facili'];
+                $newfacility = $_POST['facilityarray'];
 
-                echo "<table><tr>";
-                foreach($facilityarray as $showdate){
-                    echo "<td>".$showdate."</td>";
+                if(isset($_POST['facilityarray'])){
+                    $i++;
                 }
-                echo "</tr></table></div>";
-                echo count($facilityarray);
+
+                if($_SESSION['facili'] = $_POST['facilityarray']){
+                    echo "<div><label>You cannot select the same facility</label></div>";
+                    echo "<div><table><tr>";
+                    foreach($facilityarray as $showdate){
+                        echo "<td>".$showdate."</td>";
+                    }
+                    echo "</tr></table></div>";
+                    echo count($facilityarray);
+                }else{
+                    $facilityarray[$i]= $newfacility;
+                    echo "<div><table><tr>";
+                    foreach($facilityarray as $showdate){
+                        echo "<td>".$showdate."</td>";
+                    }
+                    echo "</tr></table></div>";
+                    echo count($facilityarray);
+
+                }
+
+
 
 
                 ?>

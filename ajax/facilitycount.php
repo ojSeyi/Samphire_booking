@@ -7,4 +7,4 @@ if(isset($_POST['number'])){
 }else{
     $_SESSION['s'] = $s;
 }
-header('location: bookstate.php');
+header('location: samphire_subsea_booking_system/bookstate.php');

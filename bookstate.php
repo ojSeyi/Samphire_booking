@@ -68,6 +68,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                     echo "<td>".$showdate."</td>";
                 }
                 echo "</tr></table></div>";
+                echo count($facilityarray);
 
 
                 ?>

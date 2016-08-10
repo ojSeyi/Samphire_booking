@@ -59,7 +59,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
             <div><label> Facility(s) to be reserved:  </label><br><br></div>
             <div id="facili">
                 <?php
-                $i = 0;
+                $i = $_SESSION['s'];
                 echo $i;
                 $facilityarray = array();
                 $facilityarray[0] = $_SESSION['facili'];

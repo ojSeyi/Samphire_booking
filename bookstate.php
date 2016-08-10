@@ -73,7 +73,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                             }
                             echo "</tr></table></div>";
                         }else{
-                            $facilityarray[] = $newfacility;
+                            array_push($facilityarray, $newfacility);
                             echo "<div><table><tr>";
                             foreach($facilityarray as $facility){
                                 echo "<td>".$facility."</td>";

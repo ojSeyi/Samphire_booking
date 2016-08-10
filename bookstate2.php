@@ -60,7 +60,7 @@ if(is_null($_POST['facilityarray'])){
             <div id="facili">
                 <?php
                 $_SESSION['count'] = $_SESSION['count'] + 1;
-                $_SESSION['count'] = $s;
+                $s = $_SESSION['count'];
                 echo $s;
 
                 $facilityarray = array();

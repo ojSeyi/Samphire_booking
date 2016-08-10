@@ -67,7 +67,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                     foreach($facilityarray as $count){
                         if($count = $_POST['newfacility']){
                             echo "<div><label>You cannot select the same facility</label></div>";
-                            echo "<table><tr>";
+                            echo "<div></div><table><tr>";
                             foreach($facilityarray as $facility){
                                 echo "<td>".$facility."</td>";
                             }
@@ -109,7 +109,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                     }
                 ?>
                 </select><br><br>
-                <input type='submit' name = "addfacility" id="addfacility" value='Add Facility'>
+                <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
             </form>
         </div>
 

@@ -7,4 +7,4 @@ if(isset($_POST['number'])){
 }else{
     $_SESSION['s'] = $s;
 }
-header('location: datecheck.php');
+header('location: bookstate.php');

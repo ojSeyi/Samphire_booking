@@ -59,7 +59,7 @@ if(is_null($_POST['facilityarray'])){
             <div><label> Facility(s) to be reserved:  </label><br><br></div>
             <div id="facili">
                 <?php
-                echo $_SESSION['count'];
+                echo ($_SESSION['count'] + 1);
 
                 $facilityarray = array();
                 $facilityarray[0] = $_SESSION['facili'];

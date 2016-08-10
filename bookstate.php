@@ -60,13 +60,14 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
             <div id="facili">
                 <?php
                     echo "<div><table><tr><td>".$_SESSION['facili']."</td></tr></table></div>";
+                    $_SESSION['count'] = 0;
                 ?>
 
             </div>
 
 
             <div><label>To add another facility, select facility and click 'add':  </label></div>
-            <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
+            <form method="post" action="bookstate2.php">
                 <select name="facilityarray" id="facilityarray" size="1" required>
                 <?php
                     $getfacilities = "SELECT * FROM samphire_facilities";

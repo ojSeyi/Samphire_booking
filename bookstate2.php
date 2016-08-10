@@ -3,8 +3,8 @@
 <?php include ("db_connection.php"); ?>
 <?php
 session_start();
-if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
-    header('location: index.php');
+if(is_null($_POST['facilityarray'])){
+    header('location: bookstate.php');
 };
 ?>
 <head>
@@ -59,8 +59,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
             <div><label> Facility(s) to be reserved:  </label><br><br></div>
             <div id="facili">
                 <?php
-                $i = $_SESSION['s'];
-                echo $i;
+                echo $_SESSION['count'];
 
                 $facilityarray = array();
                 $facilityarray[0] = $_SESSION['facili'];

@@ -84,7 +84,7 @@ if(is_null($_SESSION['facilities']) && is_null($_SESSION['startdates'])){
                         }else{
                             $_SESSION['start'] = $startdates;
                             $_SESSION['facili'] = $facility;
-                            header('location: bookstate.php');
+                            header('location: facilitycount.php');
                         }
                 }else{
                     function createDateRangeArray($strDateFrom,$strDateTo)

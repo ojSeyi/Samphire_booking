@@ -59,17 +59,36 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
             <div><label> Facility(s) to be reserved:  </label><br><br></div>
             <div id="facili">
                 <?php
-                    if(isset($_SESSION['facilityarray'])){
-                        $facilities = $_SESSION['facilityarray'];
-                        echo "<table><tr>";
-                        foreach($facilities as $facility){
-                            echo "<td>".$facility."</td>";
+                $facilityarray = array();
+                $facilityarray[0] = $_SESSION['facili'];
+                if(isset($_POST['submit'])){
+                    $newfacility = $_POST['newfacility'];
+
+                    foreach($facilityarray as $count){
+                        if($count = $_POST['newfacility']){
+                            echo "<div><label>You cannot select the same facility</label></div>";
+                            echo "<table><tr>";
+                            foreach($facilityarray as $facility){
+                                echo "<td>".$facility."</td>";
+                            }
+                            echo "</tr></table></div>";
+                        }else{
+                            $facilityarray[] = $newfacility;
+                            echo "<table><tr>";
+                            foreach($facilityarray as $facility){
+                                echo "<td>".$facility."</td>";
+                            }
+                            echo "</tr></table></div>";
+
                         }
-                        echo "</tr></table></div>";
-                    }else{
-                        $facili = $_SESSION['facili'];
-                        echo "".$facili."";
                     }
+                }else{
+                    echo "<table><tr>";
+                    foreach($facilityarray as $facility){
+                        echo "<td>".$facility."</td>";
+                    }
+                    echo "</tr></table></div>";
+                }
 
                 ?>
 
@@ -77,7 +96,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
 
 
             <div><label>To add another facility, select facility and click 'add':  </label></div>
-            <form method="post" action="addfacility.php">
+            <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
                 <select name="facilityarray" id="facilityarray" size="1" required>
                 <?php
                     $getfacilities = "SELECT * FROM samphire_facilities";

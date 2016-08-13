@@ -66,7 +66,7 @@ if(is_null($_POST['facilityarray'])){
                 $facilityarray = $_SESSION['facilityarray'];
                 $newfacility = $_POST['facilityarray'];
                 $facilityarray = $_SESSION['facilityarray'];
-                $facilityarray[] = $newfacility;
+                $facilityarray = array_push($facilityarray, $newfacility);
 
                 $_SESSION['facilityarray'] = $facilityarray;
                     if ($_SESSION['facili'] = $_POST['facilityarray']) {

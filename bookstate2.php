@@ -63,7 +63,6 @@ if(is_null($_POST['facilityarray'])){
                 $_SESSION['usecount'] = $_SESSION['count'];
                 echo $_SESSION['count'];
 
-                $_SESSION['facilityarray'] = $facilityarray;
                 $newfacility = $_POST['facilityarray'];
                 $facilityarray = $_SESSION['facilityarray'];
                 $facilityarray[] = $newfacility;

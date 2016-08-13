@@ -65,24 +65,31 @@ if(is_null($_POST['facilityarray'])){
 
                 $newfacility = $_POST['facilityarray'];
                 $facilityarray = $_SESSION['facilityarray'];
-                $facilityarray[] = $newfacility;
-                $_SESSION['facilityarray'] = $facilityarray;
+
                     if ($_SESSION['facili'] == $_POST['facilityarray']) {
                         echo "<div><label>You cannot select the same facility</label></div>";
                         echo "<div><table><tr><td>".$_SESSION['facili']."</td></tr></table></div>";
                         echo count($facilityarray);
                     } else {
-                        $newfacility = $_POST['facilityarray'];
-                        $facilityarray = $_SESSION['facilityarray'];
-                        $facilityarray[] = $newfacility;
-                        $_SESSION['facilityarray'] = $facilityarray;
-                        echo "<div><table><tr>";
-                        foreach ($facilityarray as $showdate) {
-                            echo "<td>" . $showdate . "</td>";
+                        foreach ($facilityarray as $checkfacility) {
+                            if($showdate == $_POST['facilityarray']){
+                                echo "<div><label>You cannot select the same facility</label></div>";
+                                echo "<div><table><tr>";
+                                foreach ($facilityarray as $showfacility) {
+                                    echo "<td>" . $showfacility . "</td>";
+                                }
+                                echo "</tr></table></div>";
+                            }else{
+                                $facilityarray[] = $newfacility;
+                                $_SESSION['facilityarray'] = $facilityarray;
+                                echo "<div><table><tr>";
+                                foreach ($facilityarray as $showdate) {
+                                    echo "<td>" . $showdate . "</td>";
+                                }
+                                echo "</tr></table></div>";
+                            }
                         }
-                        echo "</tr></table></div>";
                         echo count($facilityarray);
-
                     }
 
 

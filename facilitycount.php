@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(is_null($_POST['bounce'])){
     header('location: bookstate.php');
 };

@@ -63,19 +63,18 @@ if(is_null($_POST['facilityarray'])){
                 $_SESSION['usecount'] = $_SESSION['count'];
                 echo $_SESSION['count'];
 
-                $_SESSION['facilityarray'] = array();
+                $_SESSION['facilityarray'] = $facilityarray;
                 $newfacility = $_POST['facilityarray'];
                 $facilityarray = $_SESSION['facilityarray'];
-                $_SESSION['facilityarray'][] = $newfacility;
-
+                $facilityarray[] = $newfacility;
                 $_SESSION['facilityarray'] = $facilityarray;
-                    if ($_SESSION['facili'] == $_POST['facilityarray']) {
+                    if ($_SESSION['facili'] = $_POST['facilityarray']) {
                         echo "<div><label>You cannot select the same facility</label></div>";
                         echo "<div><table><tr><td>".$_SESSION['facili']."</td></tr></table></div>";
                         echo count($facilityarray);
                     } else {
                         echo "<div><table><tr>";
-                        foreach ($_SESSION['facilityarray'] as $showdate) {
+                        foreach ($facilityarray as $showdate) {
                             echo "<td>" . $showdate . "</td>";
                         }
                         echo "</tr></table></div>";

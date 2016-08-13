@@ -3,7 +3,7 @@
 <?php include ("db_connection.php"); ?>
 <?php
 session_start();
-if(is_null($_SESSION['facilityarraycheck'])){
+if($_SESSION['facilityarraycheck'] != 1){
     header('location: bookstate.php');
 };
 ?>

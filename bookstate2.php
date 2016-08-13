@@ -63,10 +63,10 @@ if(is_null($_POST['facilityarray'])){
                 $_SESSION['usecount'] = $_SESSION['count'];
                 echo $_SESSION['count'];
 
-                $facilityarray = $_SESSION['facilityarray'];
+                $_SESSION['facilityarray'] = array();
                 $newfacility = $_POST['facilityarray'];
                 $facilityarray = $_SESSION['facilityarray'];
-                $facilityarray = array_push($facilityarray, $newfacility);
+                $_SESSION['facilityarray'][] = $newfacility;
 
                 $_SESSION['facilityarray'] = $facilityarray;
                     if ($_SESSION['facili'] = $_POST['facilityarray']) {
@@ -75,7 +75,7 @@ if(is_null($_POST['facilityarray'])){
                         echo count($facilityarray);
                     } else {
                         echo "<div><table><tr>";
-                        foreach ($facilityarray as $showdate) {
+                        foreach ($_SESSION['facilityarray'] as $showdate) {
                             echo "<td>" . $showdate . "</td>";
                         }
                         echo "</tr></table></div>";

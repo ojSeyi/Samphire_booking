@@ -1,11 +1,9 @@
 <?php
-$s = 0;
-$_SESSION['s'] = $s;
-if(isset($_POST['number'])){
-    $_SESSION['s'] = $_SESSION['s'] + $_POST['number'];
-    echo 'success';
-}else{
-    $_SESSION['s'] = $s;
-}
+$newfacilityone = $_POST['facilityarray'];
+$facilityarray[0] = $newfacilityone;
+$newfacility = $_POST['subsequentfacilityarray'];
+$facilityarray[] = $newfacility;
 
-header('location: bookstate.php');
+$_SESSION['facilityarray'] = $facilityarray;
+
+header('location: bookstate2.php');

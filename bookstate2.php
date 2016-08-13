@@ -63,10 +63,8 @@ if(is_null($_POST['facilityarray'])){
                 $_SESSION['usecount'] = $_SESSION['count'];
                 echo $_SESSION['count'];
 
-                $newfacility = $_POST['facilityarray'];
                 $facilityarray = $_SESSION['facilityarray'];
-                $facilityarray[] = $newfacility;
-                $_SESSION['facilityarray'] = $facilityarray;
+
                     if ($_SESSION['facili'] = $_POST['facilityarray']) {
                         echo "<div><label>You cannot select the same facility</label></div>";
                         echo "<div><table><tr><td>".$_SESSION['facili']."</td></tr></table></div>";
@@ -88,8 +86,8 @@ if(is_null($_POST['facilityarray'])){
 
 
             <div><label>To add another facility, select facility and click 'add':  </label></div>
-            <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
-                <select name="facilityarray" id="facilityarray" size="1" required>
+            <form method="post" action="facilitycount.php">
+                <select name="subsequentfacilityarray" id="facilityarray" size="1" required>
                     <?php
                     $getfacilities = "SELECT * FROM samphire_facilities";
                     $result = mysqli_query($db, $getfacilities);

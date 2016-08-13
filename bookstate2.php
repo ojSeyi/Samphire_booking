@@ -3,7 +3,7 @@
 <?php include ("db_connection.php"); ?>
 <?php
 session_start();
-if(is_null($_POST['facilityarray'])){
+if(is_null($_SESSION['facilityarraycheck'])){
     header('location: bookstate.php');
 };
 ?>
@@ -66,29 +66,16 @@ if(is_null($_POST['facilityarray'])){
                 $newfacility = $_POST['facilityarray'];
                 $facilityarray = $_SESSION['facilityarray'];
 
-                    if ($_SESSION['facili'] == $_POST['facilityarray']) {
+                    if ($_SESSION['notaddfacility'] == 1) {
                         echo "<div><label>You cannot select the same facility</label></div>";
                         echo "<div><table><tr><td>".$_SESSION['facili']."</td></tr></table></div>";
                         echo count($facilityarray);
                     } else {
-                        foreach ($facilityarray as $checkfacility) {
-                            if($showdate == $_POST['facilityarray']){
-                                echo "<div><label>You cannot select the same facility</label></div>";
-                                echo "<div><table><tr>";
-                                foreach ($facilityarray as $showfacility) {
-                                    echo "<td>" . $showfacility . "</td>";
-                                }
-                                echo "</tr></table></div>";
-                            }else{
-                                $facilityarray[] = $newfacility;
-                                $_SESSION['facilityarray'] = $facilityarray;
-                                echo "<div><table><tr>";
-                                foreach ($facilityarray as $showdate) {
-                                    echo "<td>" . $showdate . "</td>";
-                                }
-                                echo "</tr></table></div>";
-                            }
+                        echo "<div><table><tr>";
+                        foreach ($facilityarray as $showfacility) {
+                            echo "<td>" . $showfacility . "</td>";
                         }
+                            echo "</tr></table></div>";
                         echo count($facilityarray);
                     }
 
@@ -99,7 +86,7 @@ if(is_null($_POST['facilityarray'])){
 
 
             <div><label>To add another facility, select facility and click 'add':  </label></div>
-            <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
+            <form method="post" action="facilitycount.php">
                 <select name="facilityarray" id="facilityarray" size="1" required>
                     <?php
                     $getfacilities = "SELECT * FROM samphire_facilities";
@@ -113,6 +100,7 @@ if(is_null($_POST['facilityarray'])){
                     }
                     ?>
                 </select><br><br>
+                <input type="hidden" name="firstfacility" id="firstfacility" value="<?php $_SESSION['facili'] ?>">
                 <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
             </form>
             <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>

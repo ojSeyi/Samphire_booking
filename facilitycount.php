@@ -1,11 +1,27 @@
 <?php
-$s = 0;
-$_SESSION['s'] = $s;
-if(isset($_POST['number'])){
-    $_SESSION['s'] = $_SESSION['s'] + $_POST['number'];
-    echo 'success';
-}else{
-    $_SESSION['s'] = $s;
+if(is_null($_POST['facilityarray'])){
+    header('location: bookstate.php');
+};
+
+$newfacility = $_POST['facilityarray'];
+$facilityarray = $_SESSION['facilityarray'];
+if(isset($facilityarray[0])){
+
+}else {
+    $firstfacility = $_POST['firstfacility'];
+    $facilityarray[0] = $firstfacility;
+}
+
+foreach ($facilityarray as $checkfacility) {
+    if($checkfacility == $_POST['facilityarray']){
+        $_SESSION['facilityarraycheck'] = 0;
+        $_SESSION['notaddfacility'] = 1;
+
+    }else{
+        $facilityarray[] = $newfacility;
+        $_SESSION['facilityarray'] = $facilityarray;
+        $_SESSION['facilityarraycheck'] = 0;
+    }
 }
 
 header('location: bookstate2.php');

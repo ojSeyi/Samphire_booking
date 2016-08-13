@@ -69,6 +69,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
 
             <div><label>To add another facility, select facility and click 'add':  </label></div>
             <form method="post" action="facilitycount.php">
+                <input type="hidden" name="bounce" value="bounce">
                 <select name="facilityarray" id="facilityarray" size="1" required>
                 <?php
                     $getfacilities = "SELECT * FROM samphire_facilities";

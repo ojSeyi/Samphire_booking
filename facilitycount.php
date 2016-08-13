@@ -1,5 +1,5 @@
 <?php
-if(is_null($_POST['facilityarray'])){
+if(is_null($_POST['bounce'])){
     header('location: bookstate.php');
 };
 

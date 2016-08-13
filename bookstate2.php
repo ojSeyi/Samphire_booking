@@ -73,7 +73,7 @@ if(is_null($_POST['facilityarray'])){
                         echo count($facilityarray);
                     } else {
                         echo "<div><table><tr>";
-                        foreach ($facilityarray as $showdate) {
+                        foreach ($_SESSION['facilityarray'] as $showdate) {
                             echo "<td>" . $showdate . "</td>";
                         }
                         echo "</tr></table></div>";

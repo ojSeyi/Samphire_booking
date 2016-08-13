@@ -14,14 +14,14 @@ if(isset($facilityarray[0])){
 
 foreach ($facilityarray as $checkfacility) {
     if($checkfacility == $_POST['facilityarray']){
-        $_SESSION['facilityarraycheck'] = 1;
+
         $_SESSION['notaddfacility'] = 1;
 
     }else{
         $facilityarray[] = $newfacility;
         $_SESSION['facilityarray'] = $facilityarray;
-        $_SESSION['facilityarraycheck'] = 1;
+
     }
 }
-
+$_SESSION['facilityarraycheck'] = 1;
 header('location: bookstate2.php');

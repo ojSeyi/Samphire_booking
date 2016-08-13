@@ -1,9 +1,11 @@
 <?php
-$newfacilityone = $_POST['facilityarray'];
-$facilityarray[0] = $newfacilityone;
-$newfacility = $_POST['subsequentfacilityarray'];
-$facilityarray[] = $newfacility;
-
-$_SESSION['facilityarray'] = $facilityarray;
+$s = 0;
+$_SESSION['s'] = $s;
+if(isset($_POST['number'])){
+    $_SESSION['s'] = $_SESSION['s'] + $_POST['number'];
+    echo 'success';
+}else{
+    $_SESSION['s'] = $s;
+}
 
 header('location: bookstate2.php');

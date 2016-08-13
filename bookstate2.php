@@ -67,6 +67,7 @@ if(is_null($_POST['facilityarray'])){
                 $newfacility = $_POST['facilityarray'];
                 $facilityarray = $_SESSION['facilityarray'];
                 $facilityarray[] = $newfacility;
+
                 $_SESSION['facilityarray'] = $facilityarray;
                     if ($_SESSION['facili'] = $_POST['facilityarray']) {
                         echo "<div><label>You cannot select the same facility</label></div>";

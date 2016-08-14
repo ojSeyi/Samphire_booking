@@ -3,7 +3,7 @@
  */
 $('input#addfacility').onclick(function(){
     var number = 1;
-    $.post('facilitycount.php', {number:number}, function(data){
+    $.post('createfacilityarray.php', {number:number}, function(data){
 
     });
 });

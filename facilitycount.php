@@ -19,7 +19,7 @@ while ($facilityarra == $facilityarray) {
         $_SESSION['notaddfacility'] = 1;
 
     }else{
-        $facilityarray = $facilityarra;
+        $facilityarray[] = $facilityarra;
         $_SESSION['facilityarray'] = $facilityarra;
 
     }

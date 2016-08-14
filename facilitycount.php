@@ -13,14 +13,14 @@ if(isset($facilityarray[0])){
     $facilityarray[0] = $firstfacility;
 }
 
-while ($facilityarray == $facilityarray) {
-    if($facilityarray == $_POST['facilityarray']){
+while ($facilityarra == $facilityarray) {
+    if($facilityarra == $_POST['facilityarray']){
 
         $_SESSION['notaddfacility'] = 1;
 
     }else{
-        $facilityarray[] = $newfacility;
-        $_SESSION['facilityarray'] = $facilityarray;
+        $facilityarray = $facilityarra;
+        $_SESSION['facilityarray'] = $facilityarra;
 
     }
 }

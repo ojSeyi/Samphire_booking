@@ -75,7 +75,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
                             echo "<td>" . $showfacility . "</td>";
                         }
                             echo "</tr></table></div>";
-                        echo count($facilityarray);
+                        echo count($facilityarrays);
                     }
 
 

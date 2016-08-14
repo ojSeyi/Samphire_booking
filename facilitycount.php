@@ -13,7 +13,7 @@ if(isset($facilityarray[0])){
     $facilityarray[0] = $firstfacility;
 }
 
-foreach ($facilityarray as $checkfacility) {
+while ($facilityarray as $checkfacility) {
     if($checkfacility == $_POST['facilityarray']){
 
         $_SESSION['notaddfacility'] = 1;

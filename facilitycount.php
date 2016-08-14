@@ -14,7 +14,7 @@ if(isset($facilityarray[0])){
 }
 
 while ($facilityarray == $facilityarray) {
-    if($firstfacility[0] == $_POST['facilityarray']){
+    if($facilityarray == $_POST['facilityarray']){
 
         $_SESSION['notaddfacility'] = 1;
 

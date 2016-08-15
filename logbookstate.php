@@ -71,6 +71,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facili']) && is_null($_
 
 
         <div><label>To add another facility, select facility and click 'add':  </label></div>
+        <div>
         <form method="post" action="logfacilitycount.php">
             <input type="hidden" name="bounce" value="bounce">
             <input type="hidden" name="firstfacility" id="firstfacility" value="<?php $_SESSION['facili'] ?>">
@@ -89,6 +90,8 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facili']) && is_null($_
             </select><br><br>
             <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
         </form>
+        </div>
+
         <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
         <script type="text/javascript" src='JS/facilityarray.js.js'></script>
 

@@ -73,6 +73,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
 
 
         <div><label>To add another facility, select facility and click 'add':  </label></div>
+        <div>
         <form method="post" action="facilitycount.php">
             <input type="hidden" name="bounce" value="bounce">
             <input type="hidden" name="firstfacility" id="firstfacility" value="<?php $_SESSION['facili'] ?>">
@@ -91,7 +92,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
             </select><br><br>
             <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
         </form>
-
+        </div>
 
     <?php
         function generateRandomString($length = 6) {

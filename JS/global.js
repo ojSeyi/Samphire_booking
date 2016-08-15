@@ -1,5 +1,4 @@
-function onLoad() {
-    var input = document.getElementById("startdate");
+ var input = document.getElementById("startdate");
     var today = new Date();
     // Set month and day to string to add leading 0
     var day = new String(today.getDate());
@@ -17,7 +16,6 @@ function onLoad() {
     $(function() {
         $( "#startdate" ).startdate({ minDate: date});
     });
-}
 document.addEventListener('load', onLoad, false);
 
 

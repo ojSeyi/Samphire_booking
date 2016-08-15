@@ -64,7 +64,6 @@ if(is_null($_SESSION['facilityarraycheck'])){
                 echo $_SESSION['count'];
 
                 $facilityarrays = $_SESSION['facilityarray'];
-                if($_SESSION)
 
                     if ($_SESSION['notaddfacility'] == 1) {
                         echo "<div><label>You cannot select the same facility</label></div>";

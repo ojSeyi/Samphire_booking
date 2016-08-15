@@ -59,6 +59,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
             <div><label> Facility(s) to be reserved:  </label><br><br></div>
             <div id="facili">
                 <?php
+                echo "<div id='warning'><label>You cannot select the same facility</label></div>";
 
                 if($_SESSION['newfacilityunavailable'] == 0) {
 
@@ -66,7 +67,6 @@ if(is_null($_SESSION['facilityarraycheck'])){
                     $_SESSION['usecount'] = $_SESSION['count'];
 
                     $facilityarrays = $_SESSION['facilityarray'];
-                    echo "<div id='warning'><label>You cannot select the same facility</label></div>";
 
                     echo "<div><table><tr>";
                     foreach ($facilityarrays as $showfacility) {
@@ -78,7 +78,12 @@ if(is_null($_SESSION['facilityarraycheck'])){
                     $unavailabledate = $_SESSION['unavailabledate'];
                     $rejectfacility = $_SESSION['unavailablefacility'];
                     echo "<div id='filled dates'><label>The $rejectfacility is not unavailable on: $unavailabledate</label><br>";
-
+                    echo "<div><table><tr>";
+                    foreach ($facilityarrays as $showfacility) {
+                        echo "<td>" . $showfacility . "</td>";
+                    }
+                    echo "</tr></table></div>";
+                    echo count($facilityarrays);
 
                 }elseif($_SESSION['newfacilityunavailable'] == 2){
                     $unavailabledates =  $_SESSION['unavailabledates'];
@@ -89,6 +94,13 @@ if(is_null($_SESSION['facilityarraycheck'])){
                         echo "<td>" . $showdate . "</td>";
                     }
                     echo "</tr></table></div>";
+
+                    echo "<div><table><tr>";
+                    foreach ($facilityarrays as $showfacility) {
+                        echo "<td>" . $showfacility . "</td>";
+                    }
+                    echo "</tr></table></div>";
+                    echo count($facilityarrays);
                 }
 
                 ?>

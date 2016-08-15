@@ -107,7 +107,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
         </div>
 
         <div><label>To add another facility, select facility and click 'add':  </label></div>
-        <form method="post" action="facilitycount.php">
+        <form method="post" action="logfacilitycount.php">
             <select name="facilityarray" id="facilityarray" size="1" required>
                 <?php
                 $getfacilities = "SELECT * FROM samphire_facilities";

@@ -29,7 +29,7 @@ foreach ($facilityarray as $checkfacility) {
 if($addfacility == 1){
     $facilityarray[] = $newfacility;
     $_SESSION['facilityarray'] = $facilityarray;
-}elseif($addfacility == 0){
+}else{
     $_SESSION['facilityarray'] = $facilityarray;
 }
 

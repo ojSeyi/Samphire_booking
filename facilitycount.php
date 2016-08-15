@@ -6,34 +6,36 @@ if(is_null($_POST['bounce'])){
 
 $newfacility = $_POST['facilityarray'];
 $facilityarray = $_SESSION['facilityarray'];
-if(isset($facilityarray[0])){
+if($_SESSION['facilityarray'] <= 4) {
 
-}else {
-    $firstfacility = $_POST['firstfacility'];
-    $facilityarray[0] = $firstfacility;
-}
+    if (isset($facilityarray[0])) {
 
-$addfacility;
-
-foreach ($facilityarray as $checkfacility) {
-    if($checkfacility == $_POST['facilityarray']){
-
-        $addfacility = 0;
-
-    }else{
-        $addfacility = 1;
-
+    } else {
+        $firstfacility = $_POST['firstfacility'];
+        $facilityarray[0] = $firstfacility;
     }
+
+    $addfacility;
+
+    foreach ($facilityarray as $checkfacility) {
+        if ($checkfacility == $_POST['facilityarray']) {
+
+            $addfacility = 0;
+
+        } else {
+            $addfacility = 1;
+
+        }
+    }
+
+    if ($addfacility == 1) {
+        $facilityarray[] = $newfacility;
+        $_SESSION['facilityarray'] = $facilityarray;
+    } else {
+        $_SESSION['facilityarray'] = $facilityarray;
+    }
+
 }
-
-if($addfacility == 1){
-    $facilityarray[] = $newfacility;
-    $_SESSION['facilityarray'] = $facilityarray;
-}else{
-    $_SESSION['facilityarray'] = $facilityarray;
-}
-
-
 
 $_SESSION['facilityarraycheck'] = 1;
 header('location: bookstate2.php');

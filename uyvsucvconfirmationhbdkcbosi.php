@@ -42,7 +42,33 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_
 
     <div id="syscon">
         <div id="bookingconfirmation">
-
+            <table>
+                <tr>
+                    <td id="tablehead"> Here are the details of your booking </td>
+                </tr>
+                <tr>
+                    <td>Customer Name: </td>
+                    <td><?php echo $firstname . " " . $lastname; ?></td>
+                </tr>
+                <tr>
+                    <td>Booking Date(s): </td>
+                    <?php
+                        if(is_null($enddate)){
+                            echo "<td>".$startdate."</td>";
+                        }else{
+                            echo "<td> From: ".$startdate." to: " . $enddate . "</td>";
+                        }
+                    ?>
+                </tr>
+                <tr>
+                    <td>Facility(s): </td>
+                    <td><?php echo "<div><table><tr>";
+                        foreach ($facilityarrays as $showfacility) {
+                            echo "<td>" . $showfacility . "</td>";
+                        }
+                        echo "</tr></table></div>"; ?></td>
+                </tr>
+            </table>
         </div>
     </div>
 </main>

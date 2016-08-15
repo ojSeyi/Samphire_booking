@@ -1,5 +1,6 @@
 <?php
 session_start();
+<?php include ("db_connection.php"); ?>
 if(is_null($_POST['bounce'])){
     header('location: bookstate.php');
 };

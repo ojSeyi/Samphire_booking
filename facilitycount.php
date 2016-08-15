@@ -6,7 +6,7 @@ if(is_null($_POST['bounce'])){
 
 $newfacility = $_POST['facilityarray'];
 $facilityarray = $_SESSION['facilityarray'];
-if(count($facilityarray) <= 4) {
+if(count($facilityarray) <= 3) {
 
     if (isset($facilityarray[0])) {
 

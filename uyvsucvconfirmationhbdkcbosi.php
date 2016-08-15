@@ -73,6 +73,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_
                         ?>
                     </td>
                     <td><?php
+                        $facilityarrays = $_SESSION['facilityarray'];
                         $totalcost = 0;
                         foreach ($facilityarrays as $showcost) {
                             $checkcost = $showcost;

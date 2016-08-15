@@ -78,7 +78,16 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_
                         echo "</table></div>"; ?>
                     </td>
                 </tr>
+                <tr>
+                    <td>Total: </td>
+                    <td><?php $pricetotal ?> </td>
+                </tr>
             </table>
+        </div>
+        <div id="book">
+            <form method="post" action="createbooking.php">
+                <input type="submit" value="Book">
+            </form>
         </div>
     </div>
 </main>

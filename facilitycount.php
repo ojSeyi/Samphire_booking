@@ -136,8 +136,10 @@ if(mysqli_num_rows($result) > 0) {
                 header('location: bookstate2.php');
             }elseif($newfacilityunavailable == 0){
                 $_SESSION['newfacilityunavailable'] = 0;
-
-                if (count($facilityarray) <= $_SESSION['facilitysize']) {
+                $getfacilities = "SELECT * FROM samphire_facilities";
+                $result = mysqli_query($db, $getfacilities);
+                $big = mysqli_num_rows($result);
+                if (count($facilityarray) <= $big) {
 
                     if (isset($facilityarray[0])) {
 

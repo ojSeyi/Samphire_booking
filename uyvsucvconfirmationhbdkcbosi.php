@@ -61,12 +61,22 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_
                     ?>
                 </tr>
                 <tr>
-                    <td>Facility(s): </td>
-                    <td><?php echo "<div><table><tr>";
+                    <td>Facility(s)</td>
+                    <td>Price(s)</td>
+                </tr>
+                <tr>
+                    <td><?php echo "<div><table>";
                         foreach ($facilityarrays as $showfacility) {
-                            echo "<td>" . $showfacility . "</td>";
+                            echo "<tr>" . $showfacility . "</tr>";
                         }
-                        echo "</tr></table></div>"; ?></td>
+                        echo "</table></div>"; ?>
+                    </td>
+                    <td><?php echo "<div><table>";
+                        foreach ($facilitypricearrays as $showprice) {
+                            echo "<tr>" . $showprice . "</tr>";
+                        }
+                        echo "</table></div>"; ?>
+                    </td>
                 </tr>
             </table>
         </div>

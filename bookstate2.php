@@ -61,10 +61,9 @@ if(is_null($_SESSION['facilityarraycheck'])){
                 <?php
                 $_SESSION['count'] = $_SESSION['count'] + 1;
                 $_SESSION['usecount'] = $_SESSION['count'];
-                echo $_SESSION['count'];
 
                 $facilityarrays = $_SESSION['facilityarray'];
-                echo "<div><label>You cannot select the same facility</label></div>";
+                echo "<div id='warning'><label>You cannot select the same facility</label></div>";
 
                         echo "<div><table><tr>";
                         foreach ($facilityarrays as $showfacility) {

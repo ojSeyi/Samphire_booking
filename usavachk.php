@@ -2,7 +2,7 @@
 <html lang="en">
 <?php include ("db_connection.php"); ?>
 <?php session_start();
-if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilities']) && is_null($_SESSION['startdates'])){
+if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
     header('Location: home1.php');
 };
 ?>

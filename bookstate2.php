@@ -127,6 +127,8 @@ if(is_null($_SESSION['facilityarraycheck'])){
         <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
         <script type="text/javascript" src='JS/facilityarray.js.js'></script>
 
+
+
         <?php
         function generateRandomString($length = 6) {
             $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

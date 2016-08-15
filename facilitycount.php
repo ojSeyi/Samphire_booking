@@ -45,7 +45,10 @@ if(mysqli_num_rows($result) > 0) {
 
         }else{
             $_SESSION['newfacilityunavailable'] = 0;
-            if (count($facilityarray) <= 3) {
+            $getfacilities = "SELECT * FROM samphire_facilities";
+            $result = mysqli_query($db, $getfacilities);
+            $big = mysqli_num_rows($result);
+            if (count($facilityarray) <= $big) {
 
                 if (isset($facilityarray[0])) {
 

@@ -87,8 +87,6 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                         echo "<option>" . $row['f_name'] . "</option>";
                     }
                 }
-                $big = mysqli_fetch_array($result);
-                $_SESSION['facilitysize'] = count($big);
                 ?>
             </select><br><br>
             <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>

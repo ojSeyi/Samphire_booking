@@ -14,7 +14,7 @@ $facilityarray = $_SESSION['facilityarray'];
         $firstfacility = $_POST['firstfacility'];
         $facilityarray[0] = $firstfacility;
     }
-if($facilityarray <= 4) {
+if($facilityarray < 5) {
     $addfacility;
 
     foreach ($facilityarray as $checkfacility) {

@@ -97,12 +97,23 @@ if(is_null($_SESSION['facilityarraycheck'])){
                             $cost = mysqli_fetch_array($result);
                             echo $cost['cost'] . "<br>";
                         }
-                         ?>
+                        ?>
                     </td>
                 </tr>
                 <tr>
                     <td>Total: </td>
-                    <td><?php $pricetotal ?> </td>
+                    <td><?php
+                        foreach ($facilityarrays as $showcost) {
+                            $totalcost = 0;
+                            $checkcost = $showcost;
+                            $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+                            $result = mysqli_query($db, $getfacilities);
+                            $cost = mysqli_fetch_array($result);
+                            $totalcost = $totalcost + $cost['cost'];
+                        }
+                        echo $totalcost;
+                        ?>
+                    </td>
                 </tr>
 
                 <?php

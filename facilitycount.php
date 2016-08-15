@@ -16,20 +16,33 @@ if(count($facilityarray) <= 3) {
     }
 
     $addfacility;
-
+    $a = 1;
+    $k = 0;
     foreach ($facilityarray as $checkfacility) {
         if ($checkfacility == $_POST['facilityarray']) {
-            $_SESSION['facilityarray'] = $facilityarray;
-            $_SESSION['facilityarraycheck'] = 1;
-            header('location: bookstate2.php');
 
+            $addfacility = 0;
+            $k = $a++;
         } else {
+
+            if($k > $a){
+                $addfacility = 4;
+            }else{
             $addfacility = 1;
-            $facilityarray[] = $newfacility;
-            $_SESSION['facilityarray'] = $facilityarray;
-            $_SESSION['facilityarraycheck'] = 1;
-            header('location: bookstate2.php');
+            }
+
+
         }
     }
 
+    if ($addfacility == 1) {
+        $facilityarray[] = $newfacility;
+        $_SESSION['facilityarray'] = $facilityarray;
+    } else {
+        $_SESSION['facilityarray'] = $facilityarray;
+    }
+
 }
+
+$_SESSION['facilityarraycheck'] = 1;
+header('location: bookstate2.php');

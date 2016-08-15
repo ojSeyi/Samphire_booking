@@ -13,6 +13,10 @@ function onLoad() {
 
     input.disabled = false;
     input.setAttribute('min', date);
+
+    $(function() {
+        $( "#startdate" ).startdate({ minDate: date});
+    });
 }
 document.addEventListener('load', onLoad, false);
 

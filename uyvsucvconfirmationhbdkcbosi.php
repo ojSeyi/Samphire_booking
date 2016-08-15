@@ -74,6 +74,20 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_
                     </td>
                     <td><?php
                         $facilityarrays = $_SESSION['facilityarray'];
+                        foreach ($facilityarrays as $showcost) {
+                            $checkcost = $showcost;
+                            $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+                            $result = mysqli_query($db, $getfacilities);
+                            $cost = mysqli_fetch_array($result);
+                            echo $cost['cost'] . "<br>";
+                        }
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Total: </td>
+                    <td><?php
+                        $facilityarrays = $_SESSION['facilityarray'];
                         $totalcost = 0;
                         foreach ($facilityarrays as $showcost) {
                             $checkcost = $showcost;
@@ -83,12 +97,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_
                             $totalcost = $totalcost + $cost['cost'];
                         }
                         echo $totalcost;
-                        ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Total: </td>
-                    <td><?php $pricetotal ?> </td>
+                        ?> </td>
                 </tr>
             </table>
         </div>

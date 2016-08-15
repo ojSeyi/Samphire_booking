@@ -18,7 +18,6 @@ $addfacility;
 foreach ($facilityarray as $checkfacility) {
     if($checkfacility == $_POST['facilityarray']){
 
-        $_SESSION['notaddfacility'] = 1;
         $addfacility = 0;
 
     }else{
@@ -32,6 +31,7 @@ if($addfacility ==1){
     $_SESSION['facilityarray'] = $facilityarray;
 }else{
     $_SESSION['facilityarray'] = $facilityarray;
+    $_SESSION['notaddfacility'] = 1;
 }
 
 

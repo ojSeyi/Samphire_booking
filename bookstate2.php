@@ -88,11 +88,16 @@ if(is_null($_SESSION['facilityarraycheck'])){
                         }
                         ?>
                     </td>
-                    <td><?php echo "<div><table>";
-                        foreach ($facilitypricearrays as $showprice) {
-                            echo "<tr>" . $showprice . "</tr>";
+                    <td><?php
+                        $facilityarrays = $_SESSION['facilityarray'];
+                        foreach ($facilityarrays as $showcost) {
+                            $checkcost = $showcost;
+                            $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+                            $result = mysqli_query($db, $getfacilities);
+                            $cost = mysqli_fetch_array($result);
+                            echo $cost['cost'];
                         }
-                        echo "</table></div>"; ?>
+                         ?>
                     </td>
                 </tr>
                 <tr>
@@ -149,7 +154,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
             <input type="hidden" name="firstfacility" id="firstfacility" value="<?php $_SESSION['facili'] ?>">
             <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
         </form>
-        </div>
+        </div><br><br><br><br>
 
         <div id="submitbooking">
             <form method="post" action="jsfggksvuaigfuakwjygviuaevfvdkuvjy.php">

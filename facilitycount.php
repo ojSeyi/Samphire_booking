@@ -13,16 +13,26 @@ if(isset($facilityarray[0])){
     $facilityarray[0] = $firstfacility;
 }
 
+$addfacility;
+
 foreach ($facilityarray as $checkfacility) {
     if($checkfacility == $_POST['facilityarray']){
 
         $_SESSION['notaddfacility'] = 1;
+        $addfacility = 0;
 
     }else{
-        $facilityarray[] = $newfacility;
-        $_SESSION['facilityarray'] = $facilityarray;
+        $addfacility = 1;
 
     }
 }
+
+if($addfacility ==1){
+    $facilityarray[] = $newfacility;
+    $_SESSION['facilityarray'] = $facilityarray;
+}
+
+
+
 $_SESSION['facilityarraycheck'] = 1;
 header('location: bookstate2.php');

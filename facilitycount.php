@@ -23,13 +23,13 @@ if(count($facilityarray) <= 3) {
 
             $addfacility = 0;
             $a++;
+
+        } else {
             if($a > $k){
                 $addfacility = 4;
-            }
-        } else {
-
+            }else{
             $addfacility = 1;
-
+            }
         }
     }
 

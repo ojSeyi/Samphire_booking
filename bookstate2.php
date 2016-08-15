@@ -81,13 +81,12 @@ if(is_null($_SESSION['facilityarraycheck'])){
                 </tr>
                 <tr>
                     <td><?php
-                        echo "<div id='warning'><label>You cannot select the same facility</label></div>";
                         $facilityarrays = $_SESSION['facilityarray'];
-                        echo "<div><table>";
+
                         foreach ($facilityarrays as $showfacility) {
                             echo "<tr>" . $showfacility . "</tr>";
                         }
-                            echo "</table></div>";
+
 
                         ?>
                     </td>
@@ -133,6 +132,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
 
 
         <div><label>To add another facility, select facility and click 'add':  </label></div>
+        <div id="warning"><label>You cannot select the same facility</label></div>
         <div>
         <form method="post" action="facilitycount.php">
             <select name="facilityarray" id="facilityarray" size="1" required>

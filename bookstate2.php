@@ -51,17 +51,9 @@ if(is_null($_SESSION['facilityarraycheck'])){
         }
         //booking check start
         ?>
+        <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+        <script type="text/javascript" src='JS/facilityarray.js.js'></script>
 
-            <div><label> Facility(s) to be reserved:  </label><br><br></div>
-            <div id="facili">
-                <?php
-
-                ?>
-
-            </div>
-            <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-            <script type="text/javascript" src='JS/facilityarray.js.js'></script>
-        </div>
 
 
         <div id="bookingconfirmation">

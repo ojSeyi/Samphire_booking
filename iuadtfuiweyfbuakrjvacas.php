@@ -56,6 +56,9 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])){
                                 <form method="post" action="latelogin.php">
                                     <table>
                                         <tr>
+                                            <label>Please enter a valid username and password</label>
+                                        </tr>
+                                        <tr>
                                             <td>
                                                 Username:
                                             </td>

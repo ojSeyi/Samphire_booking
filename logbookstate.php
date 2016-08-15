@@ -26,11 +26,10 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facili']) && is_null($_
 <body>
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>
-    <div id="form">
-        <form method="post" action="login.php">
-            <input type="text" name="username" id="usernamebox" placeholder="Username" required/>
-            <input type="password" name="password" id="passwordbox" placeholder="Password" required/>
-            <input type="submit" value="Login" name="login" id="loginb"/>
+    <div id="logout">
+        <form method="post" action="logout.php">
+            <label><?php echo $_SESSION['firstname'];?></label>
+            <input type="submit" name="logout" value="logout" id="logoutbutton"/>
         </form>
     </div>
     <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>

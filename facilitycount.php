@@ -45,7 +45,7 @@ if(mysqli_num_rows($result) > 0) {
 
         }else{
             $_SESSION['newfacilityunavailable'] = 0;
-            if (count($facilityarray) <= 3) {
+            if (count($facilityarray) <= $_SESSION['facilitysize']) {
 
                 if (isset($facilityarray[0])) {
 
@@ -134,7 +134,7 @@ if(mysqli_num_rows($result) > 0) {
             }elseif($newfacilityunavailable == 0){
                 $_SESSION['newfacilityunavailable'] = 0;
 
-                if (count($facilityarray) <= 3) {
+                if (count($facilityarray) <= $_SESSION['facilitysize']) {
 
                     if (isset($facilityarray[0])) {
 

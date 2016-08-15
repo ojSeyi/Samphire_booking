@@ -67,27 +67,6 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
             </div>
 
 
-            <div><label>To add another facility, select facility and click 'add':  </label></div>
-            <form method="post" action="facilitycount.php">
-                <input type="hidden" name="bounce" value="bounce">
-                <input type="hidden" name="firstfacility" id="firstfacility" value="<?php $_SESSION['facili'] ?>">
-                <select name="facilityarray" id="facilityarray" size="1" required>
-                <?php
-                    $getfacilities = "SELECT * FROM samphire_facilities";
-                    $result = mysqli_query($db, $getfacilities);
-                    while ($row = mysqli_fetch_array($result)){
-                        if($row['f_name'] ==  $facilities[0]) {
-
-                        }else{
-                            echo "<option>" . $row['f_name'] . "</option>";
-                        }
-                    }
-                ?>
-                </select><br><br>
-                <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
-            </form>
-            <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-            <script type="text/javascript" src='JS/facilityarray.js.js'></script>
         </div>
 
 

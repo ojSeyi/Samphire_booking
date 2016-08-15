@@ -42,29 +42,59 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facili']) && is_null($_
     <div id="syscon">
         <?php
 
-        $start = date("Y-m-d",strtotime($_SESSION['start']));
+        $startdate = date("Y-m-d",strtotime($_SESSION['start']));
+        if(!is_null($_SESSION['end'])){
+            $enddate =  date("Y-m-d",strtotime($_SESSION['end']));
+        }else{
+            $enddate = null;
+        }
         //booking check start
         ?>
-        <div id="screen">
-            <p>Your reservetion details are as follows: </p>
 
-            <div><label><?php echo "Start date:  " . $start ; ?></label><br><br></div>
+        <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+        <script type="text/javascript" src='JS/facilityarray.js.js'></script>
 
-            <?php
-            if(!is_null($_SESSION['end'])){
-                echo "<div><label> End date:  " . $_SESSION['end'] . "</label><br><br></div>";
-            }?>
-
-            <div><label> Facility(s) to be reserved:  </label><br><br></div>
-            <div id="facili">
-                <?php
-                echo "<div><table><tr><td>".$_SESSION['facili']."</td></tr></table></div>";
-                $_SESSION['count'] = 0;
-                $_SESSION['facilityarray'] = $facilityarray = array($_SESSION['facili']);
-                ?>
-
-            </div>
-
+        <div id="bookingconfirmation">
+            <table>
+                <tr>
+                    <td id="tablehead"> Here are the details of your booking </td>
+                </tr>
+                <tr>
+                    <td>Booking Date(s):
+                        <?php
+                        if(is_null($enddate)){
+                            echo " ".$startdate." ";
+                        }else{
+                            echo " From: ".$startdate." to: " . $enddate . " ";
+                        }
+                        ?>
+                    </td><br>
+                </tr>
+                <tr>
+                    <td>Facility(s)</td>
+                    <td>Price(s)</td>
+                </tr>
+                <tr>
+                    <td><?php
+                        echo $_SESSION['facili'];
+                        $_SESSION['count'] = 0;
+                        $_SESSION['facilityarray'] = $facilityarray = array($_SESSION['facili']);
+                        ?>
+                    </td>
+                    <td><?php
+                        $check = $_SESSION['facili'];
+                        $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$check'";
+                        $result = mysqli_query($db, $getfacilities);
+                        $row = mysqli_fetch_array($result);
+                        echo $row['cost'];
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Total: </td>
+                    <td><?php $pricetotal ?> </td>
+                </tr><br>
+            </table>
         </div>
 
 

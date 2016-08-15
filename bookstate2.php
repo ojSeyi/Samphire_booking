@@ -99,7 +99,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
                         }
                         ?>
                     </td>
-                </tr><br>
+                </tr><br><br>
                 <tr>
                     <td>Total: </td>
                     <td><?php

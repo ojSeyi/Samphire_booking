@@ -40,9 +40,9 @@ if(isset($_SESSION['login'])){
         <img src="assets/images/banner1.jpg" id="bannerimage"/>
     </section>
 
-    <div id="syscon" onload="mindate()">
+    <div id="syscon"">
 
-        <form id="search" method="post" action="datecheck2.php">
+        <form id="search" method="post" action="datecheck2.php" onload="mindate()>
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>
                 <?php

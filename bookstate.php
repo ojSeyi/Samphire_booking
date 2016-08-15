@@ -86,7 +86,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                         $getfacilities = "SELECT * FROM samphire_facilities WHERE f_id = '$check";
                         $result = mysqli_query($db, $getfacilities);
                         while ($row = mysqli_fetch_array($result))
-                            echo "<option>". $row['cost'] . "</option>";
+                            echo $row['cost'];
                         ?>
                     </td>
                 </tr>

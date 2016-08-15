@@ -41,25 +41,39 @@ if(is_null($_SESSION['firstname'])){
 <div id="syscon">
 
     <?php
+    session_start();
 
-        $startdate = date("d-m-Y",strtotime($_SESSION['startdate']));
-        $enddate = $_POST['enddate'];
-        $enddate = date("d-m-Y",strtotime($enddate));
-        $facility = $_SESSION['facility'];
+    if(isset($_POST['startdate'])){
+        $startdate = date("Y-m-d",strtotime($_POST['startdate']));
+    }else{
+        $startdate = date("Y-m-d",strtotime($_SESSION['startdate']));
+    }
+    $enddate1 = $_POST['enddate'];
+    $enddate = date("Y-m-d",strtotime($enddate1));
+    $facility = $_SESSION['facility'];
 
-        if(isset($enddate)) {
-            echo "<div id='reservationdetails'>
+    if(isset($enddate1)) {
+        echo "<div id='reservationdetails'>
                 <label>Facility: " . $facility . "</label><br><br><br>
-                <label>Start Date: " . $startdate . "</label><br><br><br>
-                <label>Reservation End Date: " . $enddate . "</label><br><br><br>
+                <label>Start Date: " . date("d-m-Y",strtotime($_SESSION['startdate'])) . "</label><br><br><br>
+                <label>Reservation End Date: " . date("d-m-Y",strtotime($enddate1)) . "</label><br><br><br>
             </div>";
-        }else{
-            echo "<div id='reservationdetails'>
+        $_SESSION['enddates'] = $enddate;
+    }else{
+        echo "<div id='reservationdetails'>
                 <label>Facility: " . $facility . "</label><br><br><br>
-                <label>Reservation Date: " . $startdate . "</label><br><br><br>
+                <label>Reservation Date: " . date("d-m-Y",strtotime($_SESSION['startdate'])) . "</label><br><br><br>
             </div>";
-        }
+        $_SESSION['enddates'] = null;
+    }
+
+    $_SESSION['startdates'] = $startdate;
+
     ?>
+
+    <form action="usaavachk.php" method="post">
+        <input type="submit" value="Check Availability"/>
+    </form>
 
 </div>
 </main>

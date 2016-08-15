@@ -85,7 +85,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                     if($row['f_name'] ==  $facilities[0]) {
 
                     }else{
-                        echo "<option>" . $row['f_name'] . "</option>";
+                        echo "<option>" . $row['f_name'] . " at " . $row['price'] . "</option>";
                     }
                 }
                 ?>

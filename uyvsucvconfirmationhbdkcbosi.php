@@ -3,7 +3,7 @@
 <?php include ("db_connection.php"); ?>
 <?php
 session_start();
-if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])){
+if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_SESSION['end'])  && is_null($_SESSION['facili'])){
     header('location: index.php');
 };
 ?>
@@ -41,7 +41,9 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])){
     </section>
 
     <div id="syscon">
+        <div id="bookingconfirmation">
 
+        </div>
     </div>
 </main>
 

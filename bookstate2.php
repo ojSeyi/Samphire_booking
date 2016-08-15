@@ -73,7 +73,6 @@ if(is_null($_SESSION['facilityarraycheck'])){
                         echo "<td>" . $showfacility . "</td>";
                     }
                     echo "</tr></table></div>";
-                    echo count($facilityarrays);
                 }elseif($_SESSION['newfacilityunavailable'] == 1){
                     $unavailabledate = $_SESSION['unavailabledate'];
                     $rejectfacility = $_SESSION['unavailablefacility'];
@@ -83,7 +82,6 @@ if(is_null($_SESSION['facilityarraycheck'])){
                         echo "<td>" . $showfacility . "</td>";
                     }
                     echo "</tr></table></div>";
-                    echo count($facilityarrays);
 
                 }elseif($_SESSION['newfacilityunavailable'] == 2){
                     $unavailabledates =  $_SESSION['unavailabledates'];
@@ -100,36 +98,34 @@ if(is_null($_SESSION['facilityarraycheck'])){
                         echo "<td>" . $showfacility . "</td>";
                     }
                     echo "</tr></table></div>";
-                    echo count($facilityarrays);
                 }
 
                 ?>
 
             </div>
 
-
-            <div><label>To add another facility, select facility and click 'add':  </label></div>
-            <form method="post" action="facilitycount.php">
-                <select name="facilityarray" id="facilityarray" size="1" required>
-                    <?php
-                    $getfacilities = "SELECT * FROM samphire_facilities";
-                    $result = mysqli_query($db, $getfacilities);
-                    while ($row = mysqli_fetch_array($result)){
-                        if($row['f_name'] ==  $facilities[0]) {
-
-                        }else{
-                            echo "<option>" . $row['f_name'] . "</option>";
-                        }
-                    }
-                    ?>
-                </select><br><br>
-                <input type="hidden" name="firstfacility" id="firstfacility" value="<?php $_SESSION['facili'] ?>">
-                <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
-            </form>
-            <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-            <script type="text/javascript" src='JS/facilityarray.js.js'></script>
         </div>
 
+        <div><label>To add another facility, select facility and click 'add':  </label></div>
+        <form method="post" action="facilitycount.php">
+            <select name="facilityarray" id="facilityarray" size="1" required>
+                <?php
+                $getfacilities = "SELECT * FROM samphire_facilities";
+                $result = mysqli_query($db, $getfacilities);
+                while ($row = mysqli_fetch_array($result)){
+                    if($row['f_name'] ==  $facilities[0]) {
+
+                    }else{
+                        echo "<option>" . $row['f_name'] . "</option>";
+                    }
+                }
+                ?>
+            </select><br><br>
+            <input type="hidden" name="firstfacility" id="firstfacility" value="<?php $_SESSION['facili'] ?>">
+            <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
+        </form>
+        <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+        <script type="text/javascript" src='JS/facilityarray.js.js'></script>
 
         <?php
         function generateRandomString($length = 6) {

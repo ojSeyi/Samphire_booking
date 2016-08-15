@@ -25,15 +25,14 @@ if(count($facilityarray) <= 3) {
             $k = $a++;
         } else {
 
-            if($k > $a){
-                $addfacility = 4;
-            }else{
             $addfacility = 1;
-            }
-
 
         }
     }
+
+if($k > $a){
+    $addfacility = 4;
+}
 
     if ($addfacility == 1) {
         $facilityarray[] = $newfacility;

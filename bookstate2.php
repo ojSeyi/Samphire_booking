@@ -103,8 +103,8 @@ if(is_null($_SESSION['facilityarraycheck'])){
                 <tr>
                     <td>Total: </td>
                     <td><?php
+                        $totalcost = 0;
                         foreach ($facilityarrays as $showcost) {
-                            $totalcost = 0;
                             $checkcost = $showcost;
                             $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
                             $result = mysqli_query($db, $getfacilities);

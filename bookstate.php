@@ -69,7 +69,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                         echo " From: ".$startdate." to: " . $enddate . " ";
                     }
                     ?>
-                    </td>
+                    </td><br>
                 </tr>
                 <tr>
                     <td>Facility(s)</td>
@@ -94,7 +94,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                 <tr>
                     <td>Total: </td>
                     <td><?php $pricetotal ?> </td>
-                </tr>
+                </tr><br>
             </table>
         </div>
 
@@ -118,7 +118,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                 ?>
             </select><br><br>
             <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
-        </form>
+        </form><br><br><br>
         </div>
 
         <div id="submitbooking">

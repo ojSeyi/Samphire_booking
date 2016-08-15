@@ -61,14 +61,15 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                     <td id="tablehead"> Here are the details of your booking </td>
                 </tr>
                 <tr>
-                    <td>Booking Date(s): </td>
+                    <td>Booking Date(s):
                     <?php
                     if(is_null($enddate)){
-                        echo "<td>".$startdate."</td>";
+                        echo " ".$startdate." ";
                     }else{
-                        echo "<td> From: ".$startdate." to: " . $enddate . "</td>";
+                        echo " From: ".$startdate." to: " . $enddate . " ";
                     }
                     ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>Facility(s)</td>

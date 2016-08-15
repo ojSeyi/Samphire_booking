@@ -1,4 +1,4 @@
-function onLoad() {
+function mindate() {
     var input = document.getElementById("startdate");
     var today = new Date();
     // Set month and day to string to add leading 0
@@ -15,8 +15,4 @@ function onLoad() {
     input.setAttribute('min', date);
 }
 document.addEventListener('load', onLoad, false);
-
-$(function() {
-    $( "#startdate" ).startdate({ minDate: date});
-});
 

@@ -40,7 +40,7 @@ if(isset($_SESSION['login'])){
         <img src="assets/images/banner1.jpg" id="bannerimage"/>
     </section>
 
-    <div id="syscon">
+    <div id="syscon" onload="mindate()">
 
         <form id="search" method="post" action="datecheck2.php">
             <Label>Please select a facility</Label>
@@ -53,7 +53,7 @@ if(isset($_SESSION['login'])){
                 ?>
             </select><br><br>
             <label>Reservation Date : </label>
-            <input id="startdate" name="startdate" type="date" onload="minDate" value=" " required/><br><br>
+            <input id="startdate" name="startdate" type="date" disabled required/><br><br>
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" value="submit"/><br><br>

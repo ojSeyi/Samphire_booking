@@ -143,7 +143,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
                     if($row['f_name'] ==  $facilities[0]) {
 
                     }else{
-                        echo "<option>" . $row['f_name'] . " at " . $row['price'] . "</option>";
+                        echo "<option>" . $row['f_name'] . "</option>";
                     }
                 }
                 ?>

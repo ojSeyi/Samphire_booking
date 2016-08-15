@@ -43,62 +43,18 @@ if(is_null($_SESSION['facilityarraycheck'])){
     <div id="syscon">
         <?php
 
-        $start = date("Y-m-d",strtotime($_SESSION['start']));
+        $startdate = date("Y-m-d",strtotime($_SESSION['start']));
+        if(!is_null($_SESSION['end'])){
+            $enddate =  date("Y-m-d",strtotime($_SESSION['end']));
+        }else{
+            $enddate = null;
+        }
         //booking check start
         ?>
-        <div id="screen">
-            <p>Your reservetion details are as follows: </p>
-
-            <div><label><?php echo "Start date:  " . $start ; ?></label><br><br></div>
-
-            <?php
-            if(!is_null($_SESSION['end'])){
-                echo "<div><label> End date:  " . $_SESSION['end'] . "</label><br><br></div>";
-            }?>
 
             <div><label> Facility(s) to be reserved:  </label><br><br></div>
             <div id="facili">
                 <?php
-                echo "<div id='warning'><label>You cannot select the same facility</label></div>";
-
-                if($_SESSION['newfacilityunavailable'] == 0) {
-
-                    $_SESSION['count'] = $_SESSION['count'] + 1;
-                    $_SESSION['usecount'] = $_SESSION['count'];
-
-                    $facilityarrays = $_SESSION['facilityarray'];
-
-                    echo "<div><table><tr>";
-                    foreach ($facilityarrays as $showfacility) {
-                        echo "<td>" . $showfacility . "</td>";
-                    }
-                    echo "</tr></table></div>";
-                }elseif($_SESSION['newfacilityunavailable'] == 1){
-                    $unavailabledate = $_SESSION['unavailabledate'];
-                    $rejectfacility = $_SESSION['unavailablefacility'];
-                    echo "<div id='filled dates'><label>The $rejectfacility is not unavailable on: $unavailabledate</label><br>";
-                    echo "<div><table><tr>";
-                    foreach ($facilityarrays as $showfacility) {
-                        echo "<td>" . $showfacility . "</td>";
-                    }
-                    echo "</tr></table></div>";
-
-                }elseif($_SESSION['newfacilityunavailable'] == 2){
-                    $unavailabledates =  $_SESSION['unavailabledates'];
-                    $_SESSION['unavailablefacility'] = $rejectfacility;
-                    echo "<div id='filled dates'><label>The $rejectfacility is not unavailable on the following dates: </label><br>";
-                    echo "<table><tr>";
-                    foreach ($unavailabledates as $showdate) {
-                        echo "<td>" . $showdate . "</td>";
-                    }
-                    echo "</tr></table></div>";
-
-                    echo "<div><table><tr>";
-                    foreach ($facilityarrays as $showfacility) {
-                        echo "<td>" . $showfacility . "</td>";
-                    }
-                    echo "</tr></table></div>";
-                }
 
                 ?>
 
@@ -106,6 +62,82 @@ if(is_null($_SESSION['facilityarraycheck'])){
             <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
             <script type="text/javascript" src='JS/facilityarray.js.js'></script>
         </div>
+
+
+        <div id="bookingconfirmation">
+            <table>
+                <tr>
+                    <td id="tablehead"> Here are the details of your booking </td>
+                </tr>
+                <tr>
+                    <td>Customer Name: </td>
+                    <td><?php echo $firstname . " " . $lastname; ?></td>
+                </tr>
+                <tr>
+                    <td>Booking Date(s): </td>
+                    <?php
+                    if(is_null($enddate)){
+                        echo "<td>".$startdate."</td>";
+                    }else{
+                        echo "<td> From: ".$startdate." to: " . $enddate . "</td>";
+                    }
+                    ?>
+                </tr>
+                <tr>
+                    <td>Facility(s)</td>
+                    <td>Price(s)</td>
+                </tr>
+                <?php
+                    if($_SESSION['newfacilityunavailable'] == 1 || $_SESSION['newfacilityunavailable'] == 2){
+                        echo "<tr>";
+                        if($_SESSION['newfacilityunavailable'] == 1){
+                            $unavailabledate = $_SESSION['unavailabledate'];
+                            $rejectfacility = $_SESSION['unavailablefacility'];
+                            echo "<div id='filled dates'><label>The $rejectfacility is not unavailable on: $unavailabledate</label><br>";
+                        }elseif($_SESSION['newfacilityunavailable'] == 2){
+                            $unavailabledates =  $_SESSION['unavailabledates'];
+                            $_SESSION['unavailablefacility'] = $rejectfacility;
+                            echo "<div id='filled dates'><label>The $rejectfacility is not unavailable on the following dates: </label><br>";
+                            echo "<table><tr>";
+                            foreach ($unavailabledates as $showdate) {
+                                echo "<td>" . $showdate . "</td>";
+                            }
+                            echo "</tr></table></div>";
+                        }
+                        echo "</tr>";
+                    }
+                ?>
+                <tr>
+                    <td><?php
+                        echo "<div id='warning'><label>You cannot select the same facility</label></div>";
+                        $facilityarrays = $_SESSION['facilityarray'];
+                        echo "<div><table>";
+                        foreach ($facilityarrays as $showfacility) {
+                            echo "<tr>" . $showfacility . "</tr>";
+                        }
+                            echo "</table></div>";
+
+                        ?>
+                    </td>
+                    <td><?php echo "<div><table>";
+                        foreach ($facilitypricearrays as $showprice) {
+                            echo "<tr>" . $showprice . "</tr>";
+                        }
+                        echo "</table></div>"; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Total: </td>
+                    <td><?php $pricetotal ?> </td>
+                </tr>
+            </table>
+        </div>
+
+
+
+
+
+
 
         <div><label>To add another facility, select facility and click 'add':  </label></div>
         <div>

@@ -20,7 +20,12 @@ if(isset($_SESSION['end'])) {
 $currentdate = date('d-m-Y');
 $currentnextdate = date('d-m-Y', ($currentdate + 1));
 
+if (isset($facilityarray[0])) {
 
+} else {
+    $firstfacility = $_POST['firstfacility'];
+    $facilityarray[0] = $firstfacility;
+}
 
 echo "was good<br>";
 echo "$newfacility <br>";
@@ -49,13 +54,6 @@ if(mysqli_num_rows($result) > 0) {
             $result = mysqli_query($db, $getfacilities);
             $big = mysqli_num_rows($result);
             if (count($facilityarray) <= $big) {
-
-                if (isset($facilityarray[0])) {
-
-                } else {
-                    $firstfacility = $_POST['firstfacility'];
-                    $facilityarray[0] = $firstfacility;
-                }
 
                 $addfacility;
                 $a = 1;
@@ -140,13 +138,6 @@ if(mysqli_num_rows($result) > 0) {
                 $result = mysqli_query($db, $getfacilities);
                 $big = mysqli_num_rows($result);
                 if (count($facilityarray) <= $big) {
-
-                    if (isset($facilityarray[0])) {
-
-                    } else {
-                        $firstfacility = $_POST['firstfacility'];
-                        $facilityarray[0] = $firstfacility;
-                    }
 
                     $addfacility;
                     $a = 1;

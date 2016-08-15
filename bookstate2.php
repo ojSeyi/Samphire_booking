@@ -80,7 +80,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
                     <td>Price(s)</td>
                 </tr>
                 <tr>
-                    <td><?php
+                    <table><?php
                         $facilityarrays = $_SESSION['facilityarray'];
 
                         foreach ($facilityarrays as $showfacility) {
@@ -89,7 +89,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
 
 
                         ?>
-                    </td>
+                    </table>
                     <td><?php echo "<div><table>";
                         foreach ($facilitypricearrays as $showprice) {
                             echo "<tr>" . $showprice . "</tr>";

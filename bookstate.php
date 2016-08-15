@@ -43,33 +43,59 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
     <div id="syscon">
         <?php
 
-        $start = date("Y-m-d",strtotime($_SESSION['start']));
+        $startdate = date("Y-m-d",strtotime($_SESSION['start']));
+        if(!is_null($_SESSION['end'])){
+            $enddate =  date("Y-m-d",strtotime($_SESSION['end']));
+        }else{
+            $enddate = null;
+        }
         //booking check start
         ?>
-        <div id="screen">
-            <p>Your reservetion details are as follows: </p>
 
-            <div><label><?php echo "Start date:  " . $start ; ?></label><br><br></div>
+        <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+        <script type="text/javascript" src='JS/facilityarray.js.js'></script>
 
-            <?php
-                if(!is_null($_SESSION['end'])){
-                    echo "<div><label> End date:  " . $_SESSION['end'] . "</label><br><br></div>";
-                }?>
-
-            <div><label> Facility(s) to be reserved:  </label><br><br></div>
-            <div id="facili">
-                <?php
-                    echo "<div><table><tr><td>".$_SESSION['facili']."</td></tr></table></div>";
-                    $_SESSION['count'] = 0;
-                    $_SESSION['facilityarray'] = $facilityarray = array($_SESSION['facili']);
-                ?>
-
-            </div>
-
-            <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-            <script type="text/javascript" src='JS/facilityarray.js.js'></script>
+        <div id="bookingconfirmation">
+            <table>
+                <tr>
+                    <td id="tablehead"> Here are the details of your booking </td>
+                </tr>
+                <tr>
+                    <td>Booking Date(s): </td>
+                    <?php
+                    if(is_null($enddate)){
+                        echo "<td>".$startdate."</td>";
+                    }else{
+                        echo "<td> From: ".$startdate." to: " . $enddate . "</td>";
+                    }
+                    ?>
+                </tr>
+                <tr>
+                    <td>Facility(s)</td>
+                    <td>Price(s)</td>
+                </tr>
+                <tr>
+                    <td><?php
+                        echo $_SESSION['facili'];
+                        $_SESSION['count'] = 0;
+                        $_SESSION['facilityarray'] = $facilityarray = array($_SESSION['facili']);
+                        ?>
+                    </td>
+                    <td><?php
+                        $check = $_SESSION['facili'];
+                        $getfacilities = "SELECT * FROM samphire_facilities WHERE f_id = '$check";
+                        $result = mysqli_query($db, $getfacilities);
+                        while ($row = mysqli_fetch_array($result))
+                            echo "<option>". $row['cost'] . "</option>";
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Total: </td>
+                    <td><?php $pricetotal ?> </td>
+                </tr>
+            </table>
         </div>
-
 
 
         <div><label>To add another facility, select facility and click 'add':  </label></div>

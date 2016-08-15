@@ -86,8 +86,6 @@ if(is_null($_SESSION['facilityarraycheck'])){
                         foreach ($facilityarrays as $showfacility) {
                             echo $showfacility . "</br>";
                         }
-
-
                         ?>
                     </td>
                     <td><?php echo "<div><table>";

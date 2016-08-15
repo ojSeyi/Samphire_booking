@@ -27,7 +27,8 @@ if(count($facilityarray) <= 3) {
             $addfacility = 1;
             $facilityarray[] = $newfacility;
             $_SESSION['facilityarray'] = $facilityarray;
-
+            $_SESSION['facilityarraycheck'] = 1;
+            header('location: bookstate2.php');
         }
     }
 

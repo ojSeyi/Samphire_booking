@@ -32,3 +32,4 @@ if(count($facilityarray) <= 3) {
         }
     }
 
+}

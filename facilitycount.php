@@ -31,7 +31,6 @@ if($addfacility == 1){
     $facilityarray[] = $newfacility;
     $_SESSION['facilityarray'] = $facilityarray;
 }elseif($addfacility == 0){
-    $_SESSION['notaddfacility'] = 2;
     $_SESSION['facilityarray'] = $facilityarray;
 }
 

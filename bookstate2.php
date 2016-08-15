@@ -64,31 +64,14 @@ if(is_null($_SESSION['facilityarraycheck'])){
                 echo $_SESSION['count'];
 
                 $facilityarrays = $_SESSION['facilityarray'];
+                echo "<div><label>You cannot select the same facility</label></div>";
 
-                    if ($_SESSION['notaddfacility'] == 1) {
-                        echo "<div><label>You cannot select the same facility</label></div>";
                         echo "<div><table><tr>";
                         foreach ($facilityarrays as $showfacility) {
                             echo "<td>" . $showfacility . "</td>";
                         }
                         echo "</tr></table></div>";
                         echo count($facilityarrays);
-                    }elseif($_SESSION['notaddfacility'] == 2){
-                        echo "<div><label>You cannot select the same facility</label></div>";
-                        echo "<div><table><tr>";
-                        foreach ($facilityarrays as $showfacility) {
-                            echo "<td>" . $showfacility . "</td>";
-                        }
-                        echo "</tr></table></div>";
-                        echo count($facilityarrays);
-                    } else {
-                        echo "<div><table><tr>";
-                        foreach ($facilityarrays as $showfacility) {
-                            echo "<td>" . $showfacility . "</td>";
-                        }
-                            echo "</tr></table></div>";
-                        echo count($facilityarrays);
-                    }
 
 
                 ?>

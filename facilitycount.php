@@ -19,23 +19,15 @@ if(count($facilityarray) <= 3) {
 
     foreach ($facilityarray as $checkfacility) {
         if ($checkfacility == $_POST['facilityarray']) {
-
-            $addfacility = 0;
+            $_SESSION['facilityarray'] = $facilityarray;
+            $_SESSION['facilityarraycheck'] = 1;
+            header('location: bookstate2.php');
 
         } else {
             $addfacility = 1;
+            $facilityarray[] = $newfacility;
+            $_SESSION['facilityarray'] = $facilityarray;
 
         }
     }
 
-    if ($addfacility == 1) {
-        $facilityarray[] = $newfacility;
-        $_SESSION['facilityarray'] = $facilityarray;
-    } else {
-        $_SESSION['facilityarray'] = $facilityarray;
-    }
-
-}
-
-$_SESSION['facilityarraycheck'] = 1;
-header('location: bookstate2.php');

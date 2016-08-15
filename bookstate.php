@@ -83,7 +83,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                     </td>
                     <td><?php
                         $check = $_SESSION['facili'];
-                        $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$check";
+                        $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$check'";
                         $result = mysqli_query($db, $getfacilities)or die('error');
                         $row = mysqli_fetch_array($result);
                         echo $row['cost'];

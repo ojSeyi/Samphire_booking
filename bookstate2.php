@@ -59,19 +59,37 @@ if(is_null($_SESSION['facilityarraycheck'])){
             <div><label> Facility(s) to be reserved:  </label><br><br></div>
             <div id="facili">
                 <?php
-                $_SESSION['count'] = $_SESSION['count'] + 1;
-                $_SESSION['usecount'] = $_SESSION['count'];
 
-                $facilityarrays = $_SESSION['facilityarray'];
-                echo "<div id='warning'><label>You cannot select the same facility</label></div>";
+                if($_SESSION['newfacilityunavailable'] == 0) {
 
-                        echo "<div><table><tr>";
-                        foreach ($facilityarrays as $showfacility) {
-                            echo "<td>" . $showfacility . "</td>";
-                        }
-                        echo "</tr></table></div>";
-                        echo count($facilityarrays);
+                    $_SESSION['count'] = $_SESSION['count'] + 1;
+                    $_SESSION['usecount'] = $_SESSION['count'];
 
+                    $facilityarrays = $_SESSION['facilityarray'];
+                    echo "<div id='warning'><label>You cannot select the same facility</label></div>";
+
+                    echo "<div><table><tr>";
+                    foreach ($facilityarrays as $showfacility) {
+                        echo "<td>" . $showfacility . "</td>";
+                    }
+                    echo "</tr></table></div>";
+                    echo count($facilityarrays);
+                }elseif($_SESSION['newfacilityunavailable'] == 1){
+                    $unavailabledate = $_SESSION['unavailabledate'];
+                    $rejectfacility = $_SESSION['unavailablefacility'];
+                    echo "<div id='filled dates'><label>The $rejectfacility is not unavailable on: $unavailabledate</label><br>";
+
+
+                }elseif($_SESSION['newfacilityunavailable'] == 2){
+                    $unavailabledates =  $_SESSION['unavailabledates'];
+                    $_SESSION['unavailablefacility'] = $rejectfacility;
+                    echo "<div id='filled dates'><label>The $rejectfacility is not unavailable on the following dates: </label><br>";
+                    echo "<table><tr>";
+                    foreach ($unavailabledates as $showdate) {
+                        echo "<td>" . $showdate . "</td>";
+                    }
+                    echo "</tr></table></div>";
+                }
 
                 ?>
 

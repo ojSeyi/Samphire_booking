@@ -17,12 +17,12 @@ if(count($facilityarray) <= 3) {
 
     $addfacility;
     $a = 1;
-    $k = 0;
+    $k = $a;
     foreach ($facilityarray as $checkfacility) {
         if ($checkfacility == $_POST['facilityarray']) {
 
             $addfacility = 0;
-            $k = $a++;
+            $a++;
         } else {
 
             $addfacility = 1;
@@ -30,7 +30,7 @@ if(count($facilityarray) <= 3) {
         }
     }
 
-if($k > $a){
+if($a > $k){
     $addfacility = 4;
 }
 

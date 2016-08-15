@@ -94,6 +94,12 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
         </form>
         </div>
 
+        <div id="submitbooking">
+            <form method="post" action="jsfggksvuaigfuakwjygviuaevfvdkuvjy.php">
+                <input type="submit" value="Make Reservation">
+            </form>
+        </div>
+
     <?php
         function generateRandomString($length = 6) {
             $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

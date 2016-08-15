@@ -66,7 +66,8 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
 
             </div>
 
-
+            <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+            <script type="text/javascript" src='JS/facilityarray.js.js'></script>
         </div>
 
 
@@ -92,8 +93,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
             </select><br><br>
             <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
         </form>
-        <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-        <script type="text/javascript" src='JS/facilityarray.js.js'></script>
+
 
     <?php
         function generateRandomString($length = 6) {

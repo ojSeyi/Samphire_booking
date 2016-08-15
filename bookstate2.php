@@ -103,7 +103,8 @@ if(is_null($_SESSION['facilityarraycheck'])){
                 ?>
 
             </div>
-
+            <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+            <script type="text/javascript" src='JS/facilityarray.js.js'></script>
         </div>
 
         <div><label>To add another facility, select facility and click 'add':  </label></div>
@@ -124,8 +125,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
             <input type="hidden" name="firstfacility" id="firstfacility" value="<?php $_SESSION['facili'] ?>">
             <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
         </form>
-        <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-        <script type="text/javascript" src='JS/facilityarray.js.js'></script>
+
 
 
 

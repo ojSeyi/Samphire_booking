@@ -13,6 +13,8 @@ function mindate() {
 
     input.disabled = false;
     input.setAttribute('min', date);
+
+    document.addEventListener('load', mindate, false);
 }
-document.addEventListener('load', onLoad, false);
+
 

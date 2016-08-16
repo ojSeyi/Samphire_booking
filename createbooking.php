@@ -42,6 +42,7 @@ session_start();
     if(mysqli_num_rows($searcher) == 1){
         $custi = mysqli_fetch_array($searcher);
         $custid = $custi['cust_id'];
+        echo $custid;
     }else{
         header('location: index1.php');
     }

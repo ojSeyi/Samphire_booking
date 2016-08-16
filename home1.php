@@ -43,7 +43,7 @@ if(is_null($_SESSION['firstname'])){
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>
                 <?php
-                $getfacilities = "SELECT  FROM samphire_facilities";
+                $getfacilities = "SELECT * FROM samphire_facilities";
                 $result = mysqli_query($db, $getfacilities);
                 while ($row = mysqli_fetch_array($result))
                     echo "<option>". $row['f_name'] . "</option>" ;

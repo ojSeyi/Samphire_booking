@@ -1,1 +1,1 @@
-$('#startdate').datepicker({});
+$('#startdate').datepicker({dateformt: 'dd mm yy' });

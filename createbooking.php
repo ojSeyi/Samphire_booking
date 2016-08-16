@@ -39,7 +39,7 @@ session_start();
     echo $custid;
 
 $totalcost = 0;
-foreach ($facilityarrays as $showcost) {
+foreach ($facilities as $showcost) {
     $checkcost = $showcost;
     $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
     $result = mysqli_query($db, $getfacilities);

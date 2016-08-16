@@ -40,7 +40,7 @@ if(isset($_SESSION['login'])){
         <img src="assets/images/banner1.jpg" id="bannerimage"/>
     </section>
 
-    <div id="syscon" onload="onLoad()">
+    <div id="syscon">
 
         <form id="search" method="post" action="datecheck2.php">
             <Label>Please select a facility</Label>

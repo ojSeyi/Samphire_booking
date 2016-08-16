@@ -118,10 +118,10 @@ if(is_null($_SESSION['facilityarraycheck'])){
                         ?>
                     </td>
                 </tr>
-
+                <tr>
                 <?php
                 if($_SESSION['newfacilityunavailable'] == 1 || $_SESSION['newfacilityunavailable'] == 2){
-                    echo "<tr>";
+
                     if($_SESSION['newfacilityunavailable'] == 1){
                         $unavailabledate = $_SESSION['unavailabledate'];
                         $rejectfacility = $_SESSION['unavailablefacility'];
@@ -136,9 +136,10 @@ if(is_null($_SESSION['facilityarraycheck'])){
                         }
                         echo "</tr></table></div>";
                     }
-                    echo "</tr>";
+
                 }
                 ?>
+                </tr>
             </table>
         </div>
 
@@ -147,7 +148,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
 
 
 
-        <br><br><br><br>
+        <br><br>
         <div><label>To add another facility, select facility and click 'add':  </label></div><br><br><br><br>
         <div id="warning"><label>You cannot select the same facility</label></div>
         <div>

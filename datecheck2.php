@@ -64,6 +64,9 @@
                 <label>Reservation End Date : </label>
                 <input id='enddate' name='enddate' type='date' value='$currentnextdate'/><br><br>
                 <input type='submit' value='submit'/><br><br>
+                <script src= 'https://code.jquery.com/jquery-1.12.4.js'></script>
+                <script src= 'https://code.jquery.com/ui/1.12.0/jquery-ui.js'></script>
+                <script type= 'text/javascript' src='JS/global.js'></script>
                 </form>";
         }else{
             $_SESSION['startdate'] = $startdate;

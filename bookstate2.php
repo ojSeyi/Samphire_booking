@@ -63,10 +63,6 @@ if(is_null($_SESSION['facilityarraycheck'])){
                     <td id="tablehead"> Here are the details of your booking </td>
                 </tr>
                 <tr>
-                    <td>Customer Name: </td>
-                    <td><?php echo $firstname . " " . $lastname; ?></td>
-                </tr>
-                <tr>
                     <td>Booking Date(s): </td>
                     <?php
                     if(is_null($enddate)){
@@ -83,13 +79,11 @@ if(is_null($_SESSION['facilityarraycheck'])){
                 <tr>
                     <td>
                         <?php $facilityarrays = $_SESSION['facilityarray'];?>
-                        <select name="facilityarray" id="facilityarray" size="<?php echo count($facilityarrays) ?>" required>
                             <?php
                                 foreach ($facilityarrays as $showfacility) {
-                                    echo "<option>".$showfacility ."</option>";
+                                    echo $showfacility ."</br>";
                                 }
                             ?>
-                        </select>
                     </td>
                     <td>  <?php
                         $facilityarrays = $_SESSION['facilityarray'];

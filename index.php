@@ -39,7 +39,7 @@ if(isset($_SESSION['login'])){
         <img src="assets/images/banner1.jpg" id="bannerimage"/>
     </section>
 
-    <div id="syscon" class="grid-70">
+    <div id="syscon" class="grid-80">
 
         <form id="search" name="search" method="post" action="datecheck2.php">
             <Label>Please select a facility</Label>
@@ -63,8 +63,7 @@ if(isset($_SESSION['login'])){
 
     </div>
 
-    <aside class="grid-30">
-        <nav class="grid-30">
+        <nav class="grid-20">
             <ul>
                 <li><a href='showbugs.php'>All Bug Items</a></li>
                 <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
@@ -73,7 +72,7 @@ if(isset($_SESSION['login'])){
                 <li><a href='addbug.php'>Insert Bug Items</a></li>
             </ul>
         </nav>
-    </aside>
+
 </main>
 
 </body>

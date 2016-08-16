@@ -35,17 +35,7 @@ session_start();
         echo $enddate;
     }
 
-    $firstname = $_SESSION['firstname'];
-    $custidgetter = "SELECT * FROM customers WHERE firstname = '$firstname'";
-    $searcher = mysqli_query($db, $custidgetter);
-    $custid = 0;
-    if(mysqli_num_rows($searcher) == 1){
-        $custi = mysqli_fetch_array($searcher);
-        $custid = $custi['cust_id'];
-
-    }else{
-        header('location: index1.php');
-    }
+    $custid = $_SESSION['custid'];
     echo $custid;
 
 $totalcost = 0;

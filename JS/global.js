@@ -15,6 +15,5 @@ function onLoad() {
     input.setAttribute('min', date);
 }
 
-document.addEventListener('load', onLoad, false);
 
 

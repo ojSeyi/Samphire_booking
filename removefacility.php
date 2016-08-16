@@ -51,13 +51,13 @@ if(is_null($_SESSION['facilityarraycheck'])){
             $k = 0;
             if(isset($_POST['rfacilityarray'])){
                 $facilityarrays = $_SESSION['facilityarray'];
-                while ($showfacility = current($facilityarrays)) {
+                foreach ($facilityarrays as $showfacility) {
                     if ($showfacility = $_POST['rfacilityarray']){
-                        $k = key($facilityarrays);
+                        $k = key($showfacility);
                         $array = array_diff_key($facilityarrays, [$k => $showfacility]);
                     }next($facilityarrays);
                 }
-                header('location: datacheck2.php');
+                header('location: bookstate2.php');
             }
         ?>
 

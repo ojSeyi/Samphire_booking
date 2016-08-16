@@ -71,14 +71,13 @@ foreach($facilities as $facility) {
         header('location: index1.php');
     }
     echo $rows;
-    $insertrecord = "INSERT INTO customer_bookings (reference, f_id, cust_id, startdate, enddate, price) VALUES ('$bookingconfirmationnumber', '$rows', '$custid', '$startdate', '$enddate', '$cost')";
+    $insertrecord = "INSERT INTO customer_bookings (reference, f_id, cust_id, startdate, enddate, price) VALUES ('$bookingconfirmationnumber', '$rows', '$custid', '$startdate', '$enddate', '$totalcost')";
     $go = mysqli_query($db, $insertrecord);
     if($go){
 
     }else{
         echo "<br> fuck it";
     }
-
 }
 
 

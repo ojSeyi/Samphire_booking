@@ -54,7 +54,7 @@ foreach($facilities as $facility) {
         header('location: index1.php');
     }
     $insertrecord = "Insert Into customer_bookings (reference, f_id, cust_id, startdate, enddate, price) VALUES ('$bookingconfirmationnumber', '$rows', '$custid', '$startdate', '$enddate', '$cost')";
-
+    $go = mysqli_query($db, $insertrecord) or die("crap bro");
 }
 
 

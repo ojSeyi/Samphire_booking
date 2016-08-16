@@ -82,7 +82,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
                 <tr>
                     <td>
                         <?php $facilityarrays = $_SESSION['facilityarray'];?>
-                        <select name="facilityarray" id="facilityarray" size="<?php count($facilityarrays) ?>" required>
+                        <select name="facilityarray" id="facilityarray" size="<?php echo count($facilityarrays) ?>" required>
                             <?php
                                 foreach ($facilityarrays as $showfacility) {
                                     echo "<option>".$showfacility ."</option>";

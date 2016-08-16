@@ -41,7 +41,16 @@ if(is_null($_SESSION['facilityarraycheck'])){
     </section>
 
     <div id="syscon">
+        <?php
+        include ("db_connection.php");
+        if(is_null($_POST['flow'])){
+            header('location: bookstate.php');
+        };
 
+        $newfacility = $_POST['facilityarray'];
+        $facilityarray = $_SESSION['facilityarray'];
+
+        ?>
     </div>
 </main>
 </body>

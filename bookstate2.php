@@ -145,8 +145,6 @@ if(is_null($_SESSION['facilityarraycheck'])){
 
 
 
-
-
         <br><br>
         <div><label>To add another facility, select facility and click 'add':  </label></div><br><br><br><br>
         <div id="warning"><label>You cannot select the same facility</label></div>
@@ -169,6 +167,13 @@ if(is_null($_SESSION['facilityarraycheck'])){
             <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
         </form>
         </div><br><br><br><br>
+
+        <div id="removefacility">
+            <form method="post" action="logremovefacility.php">
+                <input type="hidden" name="flow" value="flow">
+                <input type="submit" value="Remove">
+            </form>
+        </div>
 
         <div id="submitbooking">
             <form method="post" action="jsfggksvuaigfuakwjygviuaevfvdkuvjy.php">

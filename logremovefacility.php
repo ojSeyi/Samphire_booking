@@ -40,6 +40,42 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
     </section>
 
     <div id="syscon">
+        <?php
+        include ("db_connection.php");
+        if(is_null($_POST['flow'])){
+            header('location: bookstate2.php');
+        };?>
+
+        <?php
+        $k = 0;
+        if(isset($_POST['rfacilityarray'])){
+            $facilityarrays = $_SESSION['facilityarray'];
+            foreach ($facilityarrays as $showfacility) {
+                if ($showfacility = $_POST['rfacilityarray']){
+                    $k = 1;
+                }else{}
+            }
+            if($k == 1){
+                $facilityarrays = array_diff($facilityarrays,[$_POST['rfacilityarray']]);
+                $facilityarrays = array_values($facilityarrays);
+                $_SESSION['facilityarray'] = $facilityarrays;
+                header('location: bookstate2.php');
+            }
+
+        }
+        ?>
+
+        <?php $facilityarrays = $_SESSION['facilityarray'];?>
+        <form method="post" action="removefacility.php">
+            <select name="rfacilityarray" id="facilityarray" size="<?php echo count($facilityarrays) ?>" required>
+                <?php
+                foreach ($facilityarrays as $showfacilityy) {
+                    echo "<option>".$showfacilityy ."</option>";
+                }
+                ?>
+            </select>
+            <input type="submit" value="remove">
+        </form>
 
     </div>
 </main>

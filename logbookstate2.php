@@ -168,7 +168,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
                 <input type="hidden" name="flow" value="flow">
                 <input type="submit" value="Remove">
             </form>
-        </div>
+        </div><br><br><br><br>
 
 
         <div id="submitbooking">

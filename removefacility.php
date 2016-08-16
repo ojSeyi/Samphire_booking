@@ -66,19 +66,18 @@ if(is_null($_SESSION['facilityarraycheck'])){
             }
         ?>
 
-
         <?php $facilityarrays = $_SESSION['facilityarray'];?>
         <form method="post" action="removefacility.php">
             <select name="rfacilityarray" id="facilityarray" size="<?php echo count($facilityarrays) ?>" required>
                 <?php
-                foreach ($facilityarrays as $showfacility) {
-                    echo "<option>".$showfacility ."</option>";
+                foreach ($facilityarrays as $showfacilityy) {
+                    echo "<option>".$showfacilityy ."</option>";
                 }
                 ?>
             </select>
             <input type="submit" value="remove">
         </form>
-        ?>
+
     </div>
 </main>
 </body>

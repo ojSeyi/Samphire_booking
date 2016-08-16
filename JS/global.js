@@ -11,8 +11,10 @@ function mindate() {
 
     var date = new String( yr + '-' + mon + '-' + day );
 
-    document.getElementById("startdate").disabled = false;
-    document.getElementById("startdate").setAttribute('min', date);
+    input.disabled = false;
+    input.setAttribute('min', date);
 }
+
+document.addEventListener('load', onLoad, false);
 
 

@@ -44,7 +44,7 @@ session_start();
 
 
 foreach($facilities as $facility) {
-    $fac = "SELECT * FROM samphire_facilities WHERE f_name = '$newfacility'";
+    $fac = "SELECT * FROM samphire_facilities WHERE f_name = '$facility'";
     $result = mysqli_query($db, $fac);
     $rows = 0;
     if (mysqli_num_rows($result) > 0) {

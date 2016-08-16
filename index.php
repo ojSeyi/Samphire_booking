@@ -12,21 +12,8 @@
           minimum-scale=1,
           maximum-scale=1"/>
 
-    <script>function mindate() {
-            var input = document.getElementById("startdate");
-            var today = new Date();
-            // Set month and day to string to add leading 0
-            var day = new String(today.getDate());
-            var mon = new String(today.getMonth()+1); //January is 0!
-            var yr = today.getFullYear();
-
-            if(day.length < 2) { day = "0" + day; }
-            if(mon.length < 2) { mon = "0" + mon; }
-
-            var date = new String( yr + '-' + mon + '-' + day );
-
-            alert(date);
-        }</script>
+    <script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+    <script src='JS/global.js'></script>K
 </head>
 
 <?php include ("db_connection.php"); ?>

@@ -41,7 +41,6 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
 
     <div id="syscon">
         <?php
-        include ("db_connection.php");
         if(is_null($_POST['flow'])){
             header('location: bookstate2.php');
         };?>

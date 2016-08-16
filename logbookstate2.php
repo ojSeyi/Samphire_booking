@@ -126,8 +126,14 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
         </form>
         </div>
 
+        <div id="submitbooking">
+            <form method="post" action="createbooking.php">
+                <input type="submit" value="Make Reservation">
+            </form>
+        </div>
+
         <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-        <script type="text/javascript" src='JS/facilityarray.js.js'></script>
+        <script type="text/javascript" src='JS/facilityarray.js'></script>
 
 
 

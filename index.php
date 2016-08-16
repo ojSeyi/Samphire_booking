@@ -11,7 +11,7 @@
           initial-scale=1,
           minimum-scale=1,
           maximum-scale=1"/>
-    <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+
     <script type="text/javascript" src='JS/global.js'></script>
 </head>
 

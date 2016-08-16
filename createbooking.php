@@ -35,7 +35,7 @@ session_start();
         echo $enddate;
     }
 
-    $custid = $_SESSION['cust_id'];
+    $custid = $_SESSION['custid'];
     echo $custid;
 
 $totalcost = 0;

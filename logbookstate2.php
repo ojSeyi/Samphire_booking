@@ -34,12 +34,12 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
     </div>
     <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
 </header>
-<main>
+<main class="grid-container">
     <section id="bannerbox">
         <img src="assets/images/banner1.jpg" id="bannerimage"/>
     </section>
 
-    <div id="syscon">
+    <div id="syscon" class="grid-70">
         <?php
         $firstname = $_SESSION['firstname'];
         $lastname = $_SESSION['lastname'];
@@ -194,11 +194,19 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
 
         $randomtable = generateRandomString();
         ?>
-
-
-
-
     </div>
+
+    <aside class="grid-30">
+        <nav class="grid-30">
+            <ul>
+                <li><a href='showbugs.php'>All Bug Items</a></li>
+                <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
+                <li><a href='showbugs.php?bugcategory=ios'>iOS Bug Items</a></li>
+                <li><a href='showbugs.php?bugcategory=windows'>Windows Bug Items</a></li>
+                <li><a href='addbug.php'>Insert Bug Items</a></li>
+            </ul>
+        </nav>
+    </aside>
 </main>
 
 </body>

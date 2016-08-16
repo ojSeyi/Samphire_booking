@@ -35,6 +35,7 @@ if(isset($_SESSION['login'])){
 
     input.disabled = false;
     input.min = date;
+    alert('bitch');
     }
 
     document.addEventListener('load', onLoad, false);" >

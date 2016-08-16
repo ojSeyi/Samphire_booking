@@ -27,6 +27,7 @@ session_start();
         $enddate =  date("Y-m-d",strtotime($_SESSION['end']));
     }else{
         $enddate = $startdate;
+        $enddate =  date("Y-m-d",strtotime($enddate));
     }
 
     $userfullname = $_SESSION['userfullname'];

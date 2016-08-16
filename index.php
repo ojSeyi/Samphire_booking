@@ -13,7 +13,7 @@
           maximum-scale=1"/>
 
     <script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-    <script src='JS/global.js'></script>
+    <script src="JS/global.js"></script>
 </head>
 
 <?php include ("db_connection.php"); ?>

@@ -1,4 +1,4 @@
-function onload() {
+
     var input = document.getElementsByName("startdate");
     var today = new Date();
     // Set month and day to string to add leading 0
@@ -12,7 +12,7 @@ function onload() {
     var date = new String( yr + '-' + mon + '-' + day );
 
     input.setAttribute('min', date);
-}
+
 
 
 

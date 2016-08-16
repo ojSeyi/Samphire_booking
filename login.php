@@ -19,13 +19,13 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
         $getuserfullname = mysqli_query($db, "SELECT * FROM customers WHERE log_id = $userloginid");
         if(mysqli_num_rows($getuserfullname) == 1){
             $userfullname = mysqli_fetch_array($getuserfullname);
-            $_SESSION['userfullname'] = $userfullname;
             $userfirstname = $userfullname['firstname'];
             $_SESSION['firstname'] = $userfirstname;
             $userlastname = $userfullname['lastname'];
             $_SESSION['lastname'] = $userlastname;
             $custid = $userfullname['cust_id'];
             $_SESSION['custid'] = $custid;
+            $_SESSION['userfullname'] = $userfullname;
             header('Location: home1.php');
         }
 

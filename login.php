@@ -21,9 +21,11 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
             $userfullname = mysqli_fetch_array($getuserfullname);
             $_SESSION['userfullname'] = $userfullname;
             $userfirstname = $userfullname['firstname'];
-            $custid = $userfullname['cust_id'];
-            $_SESSION['cust_id'] = $custid;
             $_SESSION['firstname'] = $userfirstname;
+            $userlastname = $userfullname['lastname'];
+            $_SESSION['lastname'] = $userlastname;
+            $custid = $userfullname['cust_id'];
+            $_SESSION['custid'] = $custid;
             header('Location: home1.php');
         }
 

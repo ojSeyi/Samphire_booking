@@ -22,6 +22,8 @@ if(empty($_POST['bigusername']) || empty($_POST['bigpassword'])) {
             $_SESSION['userfullname'] = $userfullname;
             $userfirstname = $userfullname['firstname'];
             $_SESSION['firstname'] = $userfirstname;
+            $userlastname = $userfullname['lastname'];
+            $_SESSION['lastname'] = $userlastname;
             $custid = $userfullname['cust_id'];
             $_SESSION['custid'] = $custid;
             header('Location: uyvsucvconfirmationhbdkcbosi.php');

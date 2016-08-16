@@ -59,7 +59,7 @@ foreach ($facilities as $showcost) {
 echo $totalcost;
 
 
-
+$addcount = 0;
 foreach($facilities as $facility) {
     $fac = "SELECT * FROM samphire_facilities WHERE f_name = '$facility'";
     $result = mysqli_query($db, $fac);
@@ -73,14 +73,12 @@ foreach($facilities as $facility) {
     echo $rows;
     $insertrecord = "INSERT INTO customer_bookings (reference, f_id, cust_id, startdate, enddate, price) VALUES ('$bookingconfirmationnumber', '$rows', '$custid', '$startdate', '$enddate', '$totalcost')";
     $go = mysqli_query($db, $insertrecord);
-    if($go){
-
-    }else{
-        echo "<br> fuck it";
-    }
+    $addcount++;
 }
 
-
+if($addcount == count($facilities)){
+    $SUCCESS = 1;
+}else{}
 
 
 

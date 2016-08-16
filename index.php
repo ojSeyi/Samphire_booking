@@ -20,7 +20,7 @@ if(isset($_SESSION['login'])){
 }; ?>
 
 <body onload="
-    function onLoad() {
+    function() {
     var input = document.getElementById('startdate');
     var today = new Date();
     // Set month and day to string to add leading 0

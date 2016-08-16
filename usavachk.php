@@ -72,7 +72,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
                     $notavailable = 1;
                     echo "<div>
                                     <label>Sorry, the $facilitys facility is unavailable on $startdates</label><br><br>
-                                    <form id='search' method='post' action='datecheck2.php'>
+                                    <form id='search' method='post' action='logdatecheck2.php'>
                                     <label>Please select a different date: </label><br><br>
                                     <input id='facility' name='facility' type='hidden' value='$facility'/><br><br>
                                     <input id='startdate' name='startdate' type='date' value='$currentdate'/><br><br>
@@ -82,7 +82,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
                 }else{
                     $_SESSION['start'] = $startdates;
                     $_SESSION['facili'] = $facility;
-                    header('location: bookstate.php');
+                    header('location: logbookstate.php');
                 }
             }else{
                 function createDateRangeArray($strDateFrom,$strDateTo)

@@ -1,1 +1,1 @@
-$('#startdate').datepicker({});
+$('#startdate').date

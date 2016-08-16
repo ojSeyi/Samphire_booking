@@ -11,7 +11,8 @@
           initial-scale=1,
           minimum-scale=1,
           maximum-scale=1"/>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 </head>
 
 <?php include ("db_connection.php"); ?>

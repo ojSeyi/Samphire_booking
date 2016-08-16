@@ -25,8 +25,7 @@
 
             var date = new String( yr + '-' + mon + '-' + day );
 
-            document.getElementById("startdate").disabled = false;
-            document.getElementById("startdate").setAttribute('min', date);
+            alert(date);
         }</script>
 </head>
 

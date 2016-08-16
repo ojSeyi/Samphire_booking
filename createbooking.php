@@ -12,6 +12,7 @@ session_start();
     }
 
     $bookingconfirmationnumber = generateRandomString();
+    echo $bookingconfirmationnumber;
 
     $availables = "SELECT * FROM guest_bookings WHERE reference = '$bookingconfirmationnumber'";
     $resultsavailables = mysqli_query($db, $availables) or die("failed");
@@ -32,6 +33,7 @@ session_start();
 
     $userfullname = $_SESSION['userfullname'];
     $custid = $userfullname['cust_id'];
+    echo $custid;
 
     $totalcost = 0;
     foreach ($facilities as $savecost) {

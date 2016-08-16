@@ -54,7 +54,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
                 foreach ($facilityarrays as $showfacility) {
                     if ($showfacility = $_POST['rfacilityarray']){
                         $k = 1;
-                    }
+                    }else{}
                 }
                 if($k == 1){
                     $facilityarrays = array_diff($facilityarrays,[$_POST['rfacilityarray']]);

@@ -1,4 +1,6 @@
-<?php include ("db_connection.php");
+<?php
+
+include ("db_connection.php");
 session_start();
 
     function generateRandomString($length = 8) {
@@ -24,11 +26,13 @@ session_start();
 
     $facilities = $_SESSION['facilityarray'];
     $startdate = date("Y-m-d",strtotime($_SESSION['start']));
+    echo $startdate;
     if(!is_null($_SESSION['end'])){
         $enddate =  date("Y-m-d",strtotime($_SESSION['end']));
     }else{
         $enddate = $startdate;
         $enddate =  date("Y-m-d",strtotime($enddate));
+        echo $enddate;
     }
 
     $custid = $_SESSION['cust_id'];

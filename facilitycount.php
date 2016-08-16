@@ -37,13 +37,14 @@ echo $show;
 if(mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_array($result);
     $rows = $row['f_id'];
+    $rowss = $row['f_name'];
     echo $rows;
     if(is_null($enddates)){
         $availables = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND (startdate <= '$startdates' AND enddate >= '$startdates')";
         $results = mysqli_query($db, $availables) or die("failed");
         if(mysqli_num_rows($results) > 0){
             $notavailable = 1;
-            $_SESSION['unavailablefacility'] = $rows;
+            $_SESSION['unavailablefacility'] = $rowss;
             $unavailabledates = $startdates;
             $_SESSION['newfacilityunavailable'] = 1;
             header('location: bookstate2.php');
@@ -122,7 +123,7 @@ if(mysqli_num_rows($result) > 0) {
                 if(mysqli_num_rows($results) > 0){
                     $unavailabledates[] = $date;
                     $newfacilityunavailable = 2;
-                    $_SESSION['unavailablefacility'] = $rows;
+                    $_SESSION['unavailablefacility'] = $rowss;
                 }else{
                     $newfacilityunavailable = 0;
                 }

@@ -60,6 +60,7 @@ foreach($facilities as $facility) {
     }else{
         header('location: index1.php');
     }
+    echo $rows;
     $insertrecord = "Insert Into customer_bookings (reference, f_id, cust_id, startdate, enddate, price) VALUES ('$bookingconfirmationnumber', '$rows', '$custid', '$startdate', '$enddate', '$cost')";
     $go = mysqli_query($db, $insertrecord) or die("crap bro");
     echo $error = mysqli_stmt_error($go);

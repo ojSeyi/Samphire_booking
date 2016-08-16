@@ -42,7 +42,8 @@ if(is_null($_SESSION['facilityarraycheck'])){
 
     <div id="syscon">
         <?php
-
+        $firstname = $_SESSION['firstname'];
+        $lastname = $_SESSION['lastname'];
         $startdate = date("Y-m-d",strtotime($_SESSION['start']));
         if(!is_null($_SESSION['end'])){
             $enddate =  date("Y-m-d",strtotime($_SESSION['end']));

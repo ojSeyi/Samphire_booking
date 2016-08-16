@@ -71,7 +71,7 @@ if(is_null($_SESSION['firstname'])){
 
     ?>
 
-    <form action="usaavachk.php" method="post">
+    <form action="usavachk.php" method="post">
         <input type="submit" value="Check Availability"/>
     </form>
 

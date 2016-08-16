@@ -12,13 +12,12 @@ if(is_null($_SESSION['firstname'])){
     <link rel="stylesheet" href="assets/stylesheet.css">
     <link rel="stylesheet" href="assets/unsemantic-grid-responsive-tablet.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
     <meta name="viewpoint"
           content="width=device-width,
           initial-scale=1,
           minimum-scale=1,
           maximum-scale=1"/>
-    <script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-    <script src='JS/global.js'></script>
 </head>
 
 <body>
@@ -55,8 +54,9 @@ if(is_null($_SESSION['firstname'])){
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" value="submit"/><br><br>
-            <script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-            <script src='JS/global.js'></script>
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+            <script type="text/javascript" src="JS/global.js"></script>
         </form>
 
     </div>

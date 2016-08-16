@@ -97,7 +97,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
                             $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
                             $result = mysqli_query($db, $getfacilities);
                             $cost = mysqli_fetch_array($result);
-                            echo $cost['cost'] . "<br>";
+                            echo "  ".$cost['cost'] . "<br>";
                         }
                         ?>
                     </td>

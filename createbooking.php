@@ -37,9 +37,9 @@ session_start();
 
     $firstname = $_SESSION['firstname'];
     $custidgetter = "SELECT * FROM customers WHERE firstname = '$firstname'";
-    $searcher = mysqli_query($db, $fac);
+    $searcher = mysqli_query($db, $custidgetter);
 
-    if (mysqli_num_rows($searcher) > 0) {
+    if(mysqli_num_rows($searcher) == 1){
         $custi = mysqli_fetch_array($searcher);
         $custid = $custi['cust_id'];
     }else{

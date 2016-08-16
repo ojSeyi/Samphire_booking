@@ -165,7 +165,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
         <div id="removefacility">
             <form method="post" action="logremovefacility.php">
                 <input type="hidden" name="flow" value="flow">
-                <input type="submit" value="Remove">
+                <input type="submit" name ="removefacility" value="Remove">
             </form>
         </div><br><br><br><br>
 

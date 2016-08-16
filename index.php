@@ -62,6 +62,18 @@ if(isset($_SESSION['login'])){
         </form>
 
     </div>
+
+    <aside class="grid-30">
+        <nav class="grid-30">
+            <ul>
+                <li><a href='showbugs.php'>All Bug Items</a></li>
+                <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
+                <li><a href='showbugs.php?bugcategory=ios'>iOS Bug Items</a></li>
+                <li><a href='showbugs.php?bugcategory=windows'>Windows Bug Items</a></li>
+                <li><a href='addbug.php'>Insert Bug Items</a></li>
+            </ul>
+        </nav>
+    </aside>
 </main>
 
 </body>

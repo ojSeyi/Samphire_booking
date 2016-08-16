@@ -35,16 +35,16 @@ session_start();
     $custid = $userfullname['cust_id'];
     echo $custid;
 
-    $totalcost = 0;
-    foreach ($facilities as $savecost) {
-        $checkcost = $savecostcost;
-        $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
-        $result = mysqli_query($db, $getfacilities);
-        $cost = mysqli_fetch_array($result);
-        $totalcost = $totalcost + $cost['cost'];
-    }
-    $cost = $totalcost;
-    echo $cost;
+$totalcost = 0;
+foreach ($facilityarrays as $showcost) {
+    $checkcost = $showcost;
+    $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+    $result = mysqli_query($db, $getfacilities);
+    $cost = mysqli_fetch_array($result);
+    $totalcost = $totalcost + $cost['cost'];
+}
+echo $totalcost;
+
 
 
 foreach($facilities as $facility) {

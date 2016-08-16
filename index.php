@@ -19,26 +19,7 @@ if(isset($_SESSION['login'])){
     header('Location: home1.php');
 }; ?>
 
-<body onload="
-    function() {
-    var input = document.getElementById('startdate');
-    var today = new Date();
-    // Set month and day to string to add leading 0
-    var day = new String(today.getDate());
-    var mon = new String(today.getMonth()+1); //January is 0!
-    var yr = today.getFullYear();
-
-    if(day.length < 2) { day = '0' + day; }
-    if(mon.length < 2) { mon = '0' + mon; }
-
-    var date = new String( yr + '-' + mon + '-' + day );
-
-    input.disabled = false;
-    input.min = date;
-    alert('bitch');
-    }
-
-    document.addEventListener('load', onLoad, false);" >
+<body>
 
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>
@@ -57,7 +38,7 @@ if(isset($_SESSION['login'])){
         <img src="assets/images/banner1.jpg" id="bannerimage"/>
     </section>
 
-    <div id="syscon" >
+    <div id="syscon">
 
         <form id="search" name="search" method="post" action="datecheck2.php">
             <Label>Please select a facility</Label>
@@ -70,11 +51,12 @@ if(isset($_SESSION['login'])){
                 ?>
             </select><br><br>
             <label>Reservation Date : </label>
-            <input type="date" id="startdate" name="startdate"  min="2016-08-14" disabled required/><br><br>
+            <input type="text" name="startdate" id="startdate" min="2016-08-14" required/><br><br>
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" onload="onload()" value="submit" /><br><br>
-
+            <script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+            <script src='JS/global.js'></script>
         </form>
 
     </div>

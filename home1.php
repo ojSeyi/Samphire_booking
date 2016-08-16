@@ -55,6 +55,8 @@ if(is_null($_SESSION['firstname'])){
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" value="submit"/><br><br>
+            <script src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+            <script src='JS/global.js'></script>
         </form>
 
     </div>

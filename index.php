@@ -34,12 +34,12 @@ if(isset($_SESSION['login'])){
     <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
 </header>
 
-<main>
+<main class="grid-container">
     <section id="bannerbox">
         <img src="assets/images/banner1.jpg" id="bannerimage"/>
     </section>
 
-    <div id="syscon">
+    <div id="syscon" class="grid-70">
 
         <form id="search" name="search" method="post" action="datecheck2.php">
             <Label>Please select a facility</Label>

@@ -41,7 +41,7 @@ if(isset($_SESSION['login'])){
     <div id="syscon">
         <script type="javascript">
             function onLoad() {
-                var input = document.getElementsByName("startdate");
+                var input = document.getElementById("startdate");
                 var today = new Date();
                 // Set month and day to string to add leading 0
                 var day = new String(today.getDate());

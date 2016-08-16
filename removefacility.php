@@ -57,6 +57,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
                         $array = array_diff_key($facilityarrays, [$k => $showfacility]);
                     }next($facilityarrays);
                 }
+                header('location: datacheck2.php');
             }
         ?>
 

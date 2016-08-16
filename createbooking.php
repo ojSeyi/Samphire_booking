@@ -31,8 +31,7 @@ session_start();
         $enddate =  date("Y-m-d",strtotime($enddate));
     }
 
-    $userfullname = $_SESSION['userfullname'];
-    $custid = $userfullname['cust_id'];
+    $custid = $_SESSION['cust_id'];
     echo $custid;
 
 $totalcost = 0;

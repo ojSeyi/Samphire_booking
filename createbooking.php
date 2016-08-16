@@ -4,7 +4,7 @@ include ("db_connection.php");
 session_start();
 
     function generateRandomString($length = 8) {
-            $characters = '0123456789]ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
             $charactersLength = strlen($characters);
             $randomString = '';
             for ($i = 0; $i < $length; $i++) {
@@ -79,7 +79,6 @@ foreach($facilities as $facility) {
         echo "<br> fuck it";
     }
 }
-
 
 
 

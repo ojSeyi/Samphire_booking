@@ -51,12 +51,13 @@ if(is_null($_SESSION['facilityarraycheck'])){
             $k = 0;
             if(isset($_POST['rfacilityarray'])){
                 $facilityarrays = $_SESSION['facilityarray'];
-                foreach ($facilityarrays as $showfacility) {
+                while ($showfacility = current($facilityarrays)) {
                     if ($showfacility = $_POST['rfacilityarray']){
                         $k = key($facilityarrays);
-                        unset($facilityarrays[$k]);
+                        next($array);
                     }
                 }
+                unset($facilityarrays[$k]);
                 $facilityarrays = array_values($facilityarrays);
                 $_SESSION['facilityarray'] = $facilityarrays;
                 header('location: bookstate2.php');

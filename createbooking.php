@@ -44,6 +44,7 @@ session_start();
         $totalcost = $totalcost + $cost['cost'];
     }
     $cost = $totalcost;
+    echo $cost;
 
 
 foreach($facilities as $facility) {

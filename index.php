@@ -11,6 +11,7 @@
           initial-scale=1,
           minimum-scale=1,
           maximum-scale=1"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 
 <?php include ("db_connection.php"); ?>
@@ -55,7 +56,6 @@ if(isset($_SESSION['login'])){
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" onload="onload()" value="submit" /><br><br>
-            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
             <script type="text/javascript" src="JS/global.js"></script>
         </form>
 

@@ -42,7 +42,7 @@ if(isset($_SESSION['login'])){
 
     <div id="syscon" onload="onLoad()">
 
-        <form id="search" method="post" action="datecheck2.php">
+        <form id="search" method="post" action="datecheck2.php" onload="onLoad()">
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>
                 <?php
@@ -53,7 +53,7 @@ if(isset($_SESSION['login'])){
                 ?>
             </select><br><br>
             <label>Reservation Date : </label>
-            <input id="startdate" name="startdate" type="date" onload="onLoad()" disabled required/><br><br>
+            <input id="startdate" name="startdate" type="date" disabled required/><br><br>
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" value="submit"/><br><br>

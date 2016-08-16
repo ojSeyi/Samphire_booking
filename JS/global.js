@@ -12,7 +12,7 @@ function onLoad() {
     var date = new String( yr + '-' + mon + '-' + day );
 
     input.disabled = false;
-    input.setAttribute('min', date);
+    document.getElementById("startdate").setAttribute('min', date);
 }
 
 document.addEventListener('load', onLoad, false);

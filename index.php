@@ -39,7 +39,27 @@ if(isset($_SESSION['login'])){
     </section>
 
     <div id="syscon">
+        <script type="javascript">
+            function onLoad() {
+                var input = document.getElementsByName("startdate");
+                var today = new Date();
+                // Set month and day to string to add leading 0
+                var day = new String(today.getDate());
+                var mon = new String(today.getMonth()+1); //January is 0!
+                var yr = today.getFullYear();
 
+                if(day.length < 2) { day = "0" + day; }
+                if(mon.length < 2) { mon = "0" + mon; }
+
+                var date = new String( yr + '-' + mon + '-' + day );
+
+                input.disabled = false;
+                input.setAttribute('min', date);
+            }
+
+            document.addEventListener('load', onLoad, false);
+
+        </script>
         <form id="search" name="search" method="post" action="datecheck2.php">
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>
@@ -55,27 +75,7 @@ if(isset($_SESSION['login'])){
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" onload="onload()" value="submit" /><br><br>
-            <script type="javascript">
-                function onLoad() {
-                    var input = document.getElementsByName("startdate");
-                    var today = new Date();
-                    // Set month and day to string to add leading 0
-                    var day = new String(today.getDate());
-                    var mon = new String(today.getMonth()+1); //January is 0!
-                    var yr = today.getFullYear();
 
-                    if(day.length < 2) { day = "0" + day; }
-                    if(mon.length < 2) { mon = "0" + mon; }
-
-                    var date = new String( yr + '-' + mon + '-' + day );
-
-                    input.disabled = false;
-                    input.setAttribute('min', date);
-                }
-
-                document.addEventListener('load', onLoad, false);
-
-            </script>
         </form>
 
     </div>

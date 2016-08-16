@@ -90,14 +90,14 @@ if(is_null($_SESSION['facilityarraycheck'])){
                             ?>
                         </select>
                     </td>
-                    <td><?php
+                    <td>  <?php
                         $facilityarrays = $_SESSION['facilityarray'];
                         foreach ($facilityarrays as $showcost) {
                             $checkcost = $showcost;
                             $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
                             $result = mysqli_query($db, $getfacilities);
                             $cost = mysqli_fetch_array($result);
-                            echo "      ".$cost['cost'] . "<br>";
+                            echo $cost['cost'] . "<br>";
                         }
                         ?>
                     </td>

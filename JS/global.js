@@ -11,7 +11,6 @@ function onload() {
 
     var date = new String( yr + '-' + mon + '-' + day );
 
-    input.disabled = false;
     input.setAttribute('min', date);
 }
 

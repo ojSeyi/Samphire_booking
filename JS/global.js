@@ -15,6 +15,6 @@ function mindate() {
     input.setAttribute('min', date);
 }
 
-document.addEventListener('onload', mindate, false);
+document.addEventListener('load', mindate, false);
 
 

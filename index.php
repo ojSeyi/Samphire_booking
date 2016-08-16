@@ -11,8 +11,6 @@
           initial-scale=1,
           minimum-scale=1,
           maximum-scale=1"/>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 </head>
 
 <?php include ("db_connection.php"); ?>
@@ -57,6 +55,8 @@ if(isset($_SESSION['login'])){
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" onload="onload()" value="submit" /><br><br>
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
             <script type="text/javascript" src="JS/global.js"></script>
         </form>
 

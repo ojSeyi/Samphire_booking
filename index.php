@@ -39,7 +39,7 @@ if(isset($_SESSION['login'])){
     </section>
 
     <div id="syscon">
-        <script type="javascript">
+        <script type="text/javascript">
             function onLoad() {
                 var input = document.getElementById("startdate");
                 var today = new Date();

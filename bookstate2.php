@@ -80,13 +80,16 @@ if(is_null($_SESSION['facilityarraycheck'])){
                     <td>Price(s)</td>
                 </tr>
                 <tr>
-                    <td><?php
-                        $facilityarrays = $_SESSION['facilityarray'];
+                    <td>
+                        <select name="facilityarray" id="facilityarray" size="<?php count($_SESSION['facilityarray']) ?>" required>
+                            <?php
+                                $facilityarrays = $_SESSION['facilityarray'];
 
-                        foreach ($facilityarrays as $showfacility) {
-                            echo $showfacility . "<br>";
-                        }
-                        ?>
+                                foreach ($facilityarrays as $showfacility) {
+                                    echo "<option>".$showfacility ."</option>";
+                                }
+                            ?>
+                        </select>
                     </td>
                     <td><?php
                         $facilityarrays = $_SESSION['facilityarray'];

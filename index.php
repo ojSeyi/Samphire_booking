@@ -54,7 +54,7 @@ if(isset($_SESSION['login'])){
                 var date = new String( yr + '-' + mon + '-' + day );
 
                 input.disabled = false;
-                input.setAttribute('min', date);
+                input.min = date;
             }
 
             document.addEventListener('load', onLoad, false);

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-    <script type="text/javascript" src='JS/global.js'></script>
     <meta charset="UTF-8">
     <title>Samphire-Subsea: Facility Reservation</title>
     <link rel="stylesheet" href="assets/stylesheet.css">
@@ -58,7 +56,8 @@ if(isset($_SESSION['login'])){
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" value="submit"/><br><br>
         </form>
-
+        <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+        <script type="text/javascript" src='JS/global.js'></script>
     </div>
 </main>
 

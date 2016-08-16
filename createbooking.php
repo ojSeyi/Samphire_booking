@@ -46,7 +46,7 @@ session_start();
     }else{
         header('location: index1.php');
     }
-echo $custid;
+    echo $custid;
 
 $totalcost = 0;
 foreach ($facilities as $showcost) {
@@ -75,7 +75,6 @@ foreach($facilities as $facility) {
     $go = mysqli_query($db, $insertrecord) or die("crap bro");
     echo $error = mysqli_stmt_error($go);
 }
-
 
 
 

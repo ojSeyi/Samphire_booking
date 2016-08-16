@@ -55,9 +55,10 @@ if(is_null($_SESSION['facilityarraycheck'])){
                     if ($showfacility = $_POST['rfacilityarray']){
                         $k = key($showfacility);
                         $array = array_diff_key($facilityarrays, [$k => $showfacility]);
-                        header('location: bookstate2.php');
                     }
                 }
+                $_SESSION['facilityarray'] = $facilityarrays;
+                header('location: bookstate2.php');
             }
         ?>
 

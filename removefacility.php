@@ -53,7 +53,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
                 $facilityarrays = $_SESSION['facilityarray'];
                 foreach ($facilityarrays as $showfacility) {
                     if ($showfacility = $_POST['rfacilityarray']){
-                        $k = key($showfacility);
+                        $k = key($facilityarrays);
                         unset($facilityarrays[$k]);
                     }
                 }

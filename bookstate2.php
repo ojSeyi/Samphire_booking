@@ -149,7 +149,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
 
 
         <div><label>To add another facility, select facility and click 'add':  </label></div><br><br><br><br>
-        <div id="warning"><label>You cannot select the same facility</label></div><br><br>
+        <div id="warning"><label>You cannot select the same facility</label></div>
         <div>
         <form method="post" action="facilitycount.php">
             <select name="facilityarray" id="facilityarray" size="1" required>

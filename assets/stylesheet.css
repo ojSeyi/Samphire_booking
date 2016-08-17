@@ -198,9 +198,9 @@ input[name=addfacility] {
 }
 
 input[name=removefacility] {
-    background-color: darkblue;
+    background-color: slategray;
     border: solid 1px darkgray;
-    color: black;
+    color: white;
     padding: 9px 22px;
     text-decoration: none;
     cursor: pointer;

@@ -35,7 +35,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
 </header>
 <main>
     <section id="bannerbox">
-        <img src="assets/images/banner1.jpg" id="bannerimage"/>
+        <img src="assets/images/banner.jpg" id="bannerimage"/>
     </section>
 
     <div id="syscon">

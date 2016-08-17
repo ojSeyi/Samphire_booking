@@ -41,12 +41,6 @@ Samphire Subsea Facilities";
 //take in the necessary swiftmailer code
 require_once 'swiftmailer/lib/swift_required.php';
 
-if (function_exists('mb_internal_encoding') && ((int) ini_get('mbstring.func_overload')) & 2)
-{
-$mbEncoding = mb_internal_encoding();
-mb_internal_encoding('ASCII');
-}
-
 $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
 ->setUsername('oluwaseyiny@gmail.com')
 ->setPassword('Oluwas3y1.');
@@ -60,7 +54,3 @@ $send = $mailer->send($message);
 
 echo $send;
 
-if (isset($mbEncoding))
-{
-mb_internal_encoding($mbEncoding);
-}

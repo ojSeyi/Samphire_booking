@@ -163,9 +163,11 @@ input[type=password]:focus {
 select{
     width: 480px;
     padding: 12px 20px;
+    padding: 100px;
     box-sizing: border-box;
     border: 1px solid #999;
     border-radius: 7px;
+    font-size: 11pt;
 }
 select:focus {
     border: 3px solid lightskyblue;

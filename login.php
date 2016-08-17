@@ -25,6 +25,8 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
             $_SESSION['lastname'] = $userlastname;
             $custid = $userfullname['cust_id'];
             $_SESSION['custid'] = $custid;
+            $custemail = $userfullname['email'];
+            $_SESSION['custemail'] = $custemail;
             $_SESSION['userfullname'] = $userfullname;
             header('Location: home1.php');
         }

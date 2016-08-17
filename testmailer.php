@@ -14,9 +14,9 @@ $message -> setBody('FUck all yall');
 $message->setTo('seyiyusuf100@gmail.com');
 $message->setFrom('oluwaseyiny@gmail.com');
 
-$result = $mailer->send($message);
+$mailer->send($message);
 
-if ($result)
+if ($mailer->send($message))
 {
     echo "Sent\n";
 }

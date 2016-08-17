@@ -12,7 +12,8 @@ body{
 
 header{
     height: 120px;
-    padding: 40px;
+    padding-left: 400px;
+    padding-right: 400px;
     background-color: darkslategray;
     background-size: cover;
 }

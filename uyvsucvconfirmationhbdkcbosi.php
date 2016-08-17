@@ -119,6 +119,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_
                 </tr>
             </table>
         </div>
+        <br><br><br>
         <div id="book">
             <form method="post" action="createbooking.php">
                 <input type="submit" value="Book">

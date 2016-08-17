@@ -21,8 +21,8 @@ if(isset($_SESSION['login'])){
 }; ?>
 
 <body>
-<div id="system">
-    <nav id="innav" class="grid-container">
+<div id="system" class="grid-container">
+    <nav id="innav">
         <ul>
             <li><a href='showbugs.php'>All Bug Items</a></li>
             <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
@@ -70,7 +70,7 @@ if(isset($_SESSION['login'])){
 
 </main>
 </div>
-<nav id="outnav"">
+<nav id="outnav">
     <ul>
         <li><a href='showbugs.php'>All Bug Items</a></li>
         <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>

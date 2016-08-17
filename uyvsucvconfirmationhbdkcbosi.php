@@ -77,11 +77,11 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_
                         }
                     ?>
                 </tr>
-                <tr>
+                <tr id="pins">
                     <td>Facility(s)</td>
                     <td>Price(s)</td>
                 </tr>
-                <tr>
+                <tr  id="pin">
                     <td><?php
                         $facilityarrays = $_SESSION['facilityarray'];
 
@@ -102,7 +102,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_
                         ?>
                     </td>
                 </tr>
-                <tr>
+                <tr  id="pind">
                     <td>Total: </td>
                     <td><?php
                         $facilityarrays = $_SESSION['facilityarray'];

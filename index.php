@@ -34,7 +34,7 @@ if(isset($_SESSION['login'])){
         </div>
         <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
     </div>
-    <nav id="innav" class="grid-container">
+    <nav id="upnav" class="grid-container">
         <ul>
             <li><a href='showbugs.php'>All Bug Items</a></li>
             <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>

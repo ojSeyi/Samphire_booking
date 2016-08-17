@@ -113,19 +113,18 @@ header{
 
 
 main{
-
+    background-color: aliceblue;
+    opacity: 0.8;
 }
 
 #syscon{
     min-height: 400px;
     margin-top: 5px;
     margin-bottom: 10px;
-    background-color: aliceblue;
     padding: 20px;
     padding-left: 40px;
     border: solid 1px white;
     border-radius: 10px;
-    opacity: 0.8;
 }
 
 #search {

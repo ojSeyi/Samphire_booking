@@ -23,26 +23,26 @@ if(isset($_SESSION['login'])){
 <body>
 
 <header class="grid-container">
-<img src="assets/images/logo_2016.jpg" id="logo"/>
-<nav id="innav" class="grid-container">
-    <ul>
-        <li><a href='showbugs.php'>All Bug Items</a></li>
-        <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
-        <li><a href='showbugs.php?bugcategory=ios'>iOS Bug Items</a></li>
-        <li><a href='showbugs.php?bugcategory=windows'>Windows Bug Items</a></li>
-        <li><a href='addbug.php'>Insert Bug Items</a></li>
-    </ul>
-</nav>
-<div id="log">
-    <div id="form">
-        <form method="post" action="login.php">
-            <input type="text" name="username" id="usernamebox" placeholder="Username" required/>
-            <input type="password" name="password" id="passwordbox" placeholder="Password" required/>
-            <input type="submit" value="Login" name="login" id="loginb"/>
-        </form>
+    <img src="assets/images/logo_2016.jpg" id="logo"/>
+    <div id="log">
+        <div id="form">
+            <form method="post" action="login.php">
+                <input type="text" name="username" id="usernamebox" placeholder="Username" required/>
+                <input type="password" name="password" id="passwordbox" placeholder="Password" required/>
+                <input type="submit" value="Login" name="login" id="loginb"/>
+            </form>
+        </div>
+        <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
     </div>
-    <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
-</div>
+    <nav id="innav" class="grid-container">
+        <ul>
+            <li><a href='showbugs.php'>All Bug Items</a></li>
+            <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
+            <li><a href='showbugs.php?bugcategory=ios'>iOS Bug Items</a></li>
+            <li><a href='showbugs.php?bugcategory=windows'>Windows Bug Items</a></li>
+            <li><a href='addbug.php'>Insert Bug Items</a></li>
+        </ul>
+    </nav>
 </header>
 
 

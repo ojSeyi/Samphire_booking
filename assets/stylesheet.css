@@ -277,13 +277,13 @@ nav>ul>li>a:hover{
     margin-bottom: 2px;
 }
 
-#pins{
+#pins > td{
     margin-top: 2px;
     margin-bottom: 2px;
     border: solid 1px black;
 }
 
-#pind{
+#pind > td{
     margin-top: 2px;
     margin-bottom: 2px;
     border: solid 2px black;

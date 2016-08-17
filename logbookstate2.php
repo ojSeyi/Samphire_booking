@@ -92,7 +92,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
                         <?php $facilityarrays = $_SESSION['facilityarray'];?>
                         <?php
                         foreach ($facilityarrays as $showfacility) {
-                            echo $showfacility ."</br>";
+                            echo $showfacility ."<br>";
                         }
                         ?>
                     </td>

@@ -22,7 +22,7 @@ if(isset($_SESSION['login'])){
 
 <body>
 
-<header>
+<header class="grid-container">
     <img src="assets/images/logo_2016.jpg" id="logo"/>
     <div id="log">
         <div id="form">
@@ -36,9 +36,9 @@ if(isset($_SESSION['login'])){
     </div>
     <nav id="upnav" class="grid-container">
         <ul>
-            <li><a href='showbugs.php'>All Bug Items</a></li>
-            <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
-            <li><a href='showbugs.php?bugcategory=ios'>iOS Bug Items</a></li>
+            <li><a href='index.php'>Create Booking</a></li>
+            <li><a href='showbugs.php?bugcategory=android'>Manage Booking</a></li>
+            <li><a href='showbugs.php?bugcategory=ios'>Contact Us</a></li>
             <li><a href='showbugs.php?bugcategory=windows'>Windows Bug Items</a></li>
             <li><a href='addbug.php'>Insert Bug Items</a></li>
         </ul>

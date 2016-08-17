@@ -76,6 +76,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
         ?>
 
         <?php $facilityarrays = $_SESSION['facilityarray'];?>
+        <br><br><br><br><br><br><br><br>
         <form method="post" action="removefacility.php">
             <select name="rfacilityarray" id="facilityarray" size="<?php echo count($facilityarrays) ?>" required>
                 <?php

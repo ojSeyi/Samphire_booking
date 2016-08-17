@@ -204,7 +204,7 @@ input[name=removefacility] {
 
 nav>ul{
     list-style-type: none;
-    margin: 0px;
+    margin: auto;
     padding: 0px;
     overflow: hidden;
 }

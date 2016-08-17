@@ -22,7 +22,7 @@ if(isset($_SESSION['login'])){
 
 <body>
 <div id="system">
-    <nav id="innav" class="grid-20">
+    <nav id="innav"">
         <ul>
             <li><a href='showbugs.php'>All Bug Items</a></li>
             <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
@@ -44,7 +44,7 @@ if(isset($_SESSION['login'])){
         <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
     </header>
 
-    <div id="syscon" class="grid-80">
+    <div id="syscon">
 
         <form id="search" name="search" method="post" action="datecheck2.php">
             <Label>Please select a facility</Label>
@@ -70,7 +70,7 @@ if(isset($_SESSION['login'])){
 
 </main>
 </div>
-<nav id="outnav" class="grid-20">
+<nav id="outnav"">
     <ul>
         <li><a href='showbugs.php'>All Bug Items</a></li>
         <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>

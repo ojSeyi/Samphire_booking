@@ -1,14 +1,13 @@
 body{
     margin-left: auto;
     margin-right: auto;
+    background-image: url("images/banner1.jpg");
+    background-size: cover;
 }
 
 header{
-    width: 1020px;
     height: 80px;
     background-color: darkslategray;
-    background-image: url("images/samphire-banner.PNG");
-    background-size: 1020px 80px;
 }
 
 #logo{
@@ -102,19 +101,7 @@ header{
     font-size: 11pt;
 }
 
-#bannerbox{
-    width: 1020px;
-    height: 400px;
-    border: solid 1px white;
-    border-radius: 7px;
-}
 
-#bannerimage{
-    width: 1020px;
-    height: 400px;
-    border: solid 1px white;
-    border-radius: 4px;
-}
 main{
 
 }

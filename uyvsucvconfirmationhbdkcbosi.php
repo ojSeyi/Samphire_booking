@@ -58,8 +58,14 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_
             $enddate = null;
         }
         ?>
-        <div id="bookingconfirmation" class="grid-container">
-            <table>
+
+        <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
+        <script type="text/javascript" src='JS/facilityarray.js.js'></script>
+
+
+
+        <div id="bookingconfirmation">
+            <table id="bookingdetails" class="grid-container">
                 <tr>
                     <td id="tablehead"> Here are the details of your booking </td>
                 </tr>
@@ -70,27 +76,27 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_
                 <tr>
                     <td>Booking Date(s): </td>
                     <?php
-                        if(is_null($enddate)){
-                            echo "<td>".$startdate."</td>";
-                        }else{
-                            echo "<td> From: ".$startdate." to: " . $enddate . "</td>";
-                        }
+                    if(is_null($enddate)){
+                        echo "<td>".$startdate."</td>";
+                    }else{
+                        echo "<td> From: ".$startdate." to: " . $enddate . "</td>";
+                    }
                     ?>
                 </tr>
                 <tr id="pins">
                     <td>Facility(s)</td>
                     <td>Price(s)</td>
                 </tr>
-                <tr  id="pin">
-                    <td><?php
-                        $facilityarrays = $_SESSION['facilityarray'];
-
+                <tr id="pin">
+                    <td>
+                        <?php $facilityarrays = $_SESSION['facilityarray'];?>
+                        <?php
                         foreach ($facilityarrays as $showfacility) {
-                            echo $showfacility . "<br>";
+                            echo $showfacility ."</br>";
                         }
                         ?>
                     </td>
-                    <td><?php
+                    <td>  <?php
                         $facilityarrays = $_SESSION['facilityarray'];
                         foreach ($facilityarrays as $showcost) {
                             $checkcost = $showcost;
@@ -101,11 +107,10 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_
                         }
                         ?>
                     </td>
-                </tr>
-                <tr  id="pind">
+                </tr><br><br>
+                <tr id="pind">
                     <td>Total: </td>
                     <td><?php
-                        $facilityarrays = $_SESSION['facilityarray'];
                         $totalcost = 0;
                         foreach ($facilityarrays as $showcost) {
                             $checkcost = $showcost;
@@ -115,11 +120,35 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_
                             $totalcost = $totalcost + $cost['cost'];
                         }
                         echo $totalcost;
-                        ?> </td>
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <?php
+                    if($_SESSION['newfacilityunavailable'] == 1 || $_SESSION['newfacilityunavailable'] == 2){
+
+                        if($_SESSION['newfacilityunavailable'] == 1){
+                            $unavailabledate = $_SESSION['unavailabledate'];
+                            $rejectfacility = $_SESSION['unavailablefacility'];
+                            echo "<div id='filled dates'><label>The $rejectfacility is not unavailable on: $unavailabledate</label><br>";
+                        }elseif($_SESSION['newfacilityunavailable'] == 2){
+                            $unavailabledates =  $_SESSION['unavailabledates'];
+                            $_SESSION['unavailablefacility'] = $rejectfacility;
+                            echo "<div id='filled dates'><label>The $rejectfacility is not unavailable on the following dates: </label><br>";
+                            echo "<table><tr>";
+                            foreach ($unavailabledates as $showdate) {
+                                echo "<td>" . $showdate . "</td>";
+                            }
+                            echo "</tr></table></div>";
+                        }
+
+                    }
+                    ?>
                 </tr>
             </table>
         </div>
         <br><br><br>
+
         <div id="book">
             <form method="post" action="createbooking.php">
                 <input type="submit" value="Book">

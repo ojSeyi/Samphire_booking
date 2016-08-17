@@ -24,22 +24,31 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
     <title>Samphire Subsea Facilities Booking</title>
 </head>
 <body>
-<header>
+<header class="grid-container">
     <img src="assets/images/logo_2016.jpg" id="logo"/>
-    <div id="logout">
-        <form method="post" action="logout.php">
-            <label><?php echo $_SESSION['firstname'];?></label>
-            <input type="submit" name="logout" value="logout" id="logoutbutton"/>
-        </form>
+    <div id="log">
+        <div id="logout">
+            <form method="post" action="logout.php">
+                <label><?php echo $_SESSION['firstname'];?></label>
+                <input type="submit" name="logout" value="logout" id="logoutbutton"/>
+            </form>
+        </div>
+        <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
     </div>
-    <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
+    <nav id="upnav" class="grid-container">
+        <ul>
+            <li><a href='index.php'>Create Booking</a></li>
+            <li><a href='showbugs.php?bugcategory=android'>Manage Booking</a></li>
+            <li><a href='showbugs.php?bugcategory=ios'>Contact Us</a></li>
+            <li><a href='showbugs.php?bugcategory=windows'>Register</a></li>
+        </ul>
+    </nav>
 </header>
-<main class="grid-container">
-    <section id="bannerbox">
-        <img src="assets/images/banner.jpg" id="bannerimage"/>
-    </section>
 
-    <div id="syscon" class="grid-70">
+<div id="system">
+    <main class="grid-container">
+
+    <div id="syscon">
         <?php
         $firstname = $_SESSION['firstname'];
         $lastname = $_SESSION['lastname'];
@@ -57,7 +66,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
 
 
         <div id="bookingconfirmation">
-            <table id="bookingdetails">
+            <table id="bookingdetails" class="grid-container">
                 <tr>
                     <td id="tablehead"> Here are the details of your booking </td>
                 </tr>
@@ -75,11 +84,11 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
                     }
                     ?>
                 </tr>
-                <tr>
+                <tr id="pins">
                     <td>Facility(s)</td>
                     <td>Price(s)</td>
                 </tr>
-                <tr>
+                <tr id="pin">
                     <td>
                         <?php $facilityarrays = $_SESSION['facilityarray'];?>
                         <?php
@@ -100,7 +109,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
                         ?>
                     </td>
                 </tr><br><br>
-                <tr>
+                <tr id="pind">
                     <td>Total: </td>
                     <td><?php
                         $totalcost = 0;
@@ -140,74 +149,48 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
             </table>
         </div>
 
-        <br><br>
         <div><label>To add another facility, select facility and click 'add':  </label></div><br><br><br><br>
+        <div id="warning"><label>You cannot select the same facility</label></div>
         <div>
-        <form method="post" action="logfacilitycount.php">
-            <select name="facilityarray" id="facilityarray" size="1" required>
-                <?php
-                $getfacilities = "SELECT * FROM samphire_facilities";
-                $result = mysqli_query($db, $getfacilities);
-                while ($row = mysqli_fetch_array($result)){
-                    if($row['f_name'] ==  $facilities[0]) {
+            <form method="post" action="facilitycount.php">
+                <select name="facilityarray" id="facilityarray" size="1" required>
+                    <?php
+                    $getfacilities = "SELECT * FROM samphire_facilities";
+                    $result = mysqli_query($db, $getfacilities);
+                    while ($row = mysqli_fetch_array($result)){
+                        if($row['f_name'] ==  $facilities[0]) {
 
-                    }else{
-                        echo "<option>" . $row['f_name'] . "</option>";
+                        }else{
+                            echo "<option>" . $row['f_name'] . "</option>";
+                        }
                     }
-                }
-                ?>
-            </select><br><br>
-            <input type="hidden" name="firstfacility" id="firstfacility" value="<?php $_SESSION['facili'] ?>">
-            <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
-        </form>
-        </div><br><br><br><br>
+                    ?>
+                </select><br><br>
+                <input type="hidden" name="firstfacility" id="firstfacility" value="<?php $_SESSION['facili'] ?>">
+                <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
+            </form>
+        </div><br><br><br>
 
         <div id="removefacility">
-            <form method="post" action="logremovefacility.php">
+            <form method="post" action="removefacility.php">
                 <input type="hidden" name="flow" value="flow">
-                <input type="submit" name ="removefacility" value="Remove">
+                <input type="submit" name="removefacility" value="Remove">
             </form>
-        </div><br><br><br><br>
-
+        </div><br>
 
         <div id="submitbooking">
-            <form method="post" action="createbooking.php">
-                <input type="submit" value="Make Reservation">
+            <form method="post" action="jsfggksvuaigfuakwjygviuaevfvdkuvjy.php">
+                <input type="submit" name="submitbooking" value="Make Reservation">
             </form>
-        </div>
-
-        <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-        <script type="text/javascript" src='JS/facilityarray.js'></script>
-
-
-
-        <?php
-        function generateRandomString($length = 6) {
-            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            $charactersLength = strlen($characters);
-            $randomString = '';
-            for ($i = 0; $i < $length; $i++) {
-                $randomString .= $characters[rand(0, $charactersLength - 1)];
-            }
-            return $randomString;
-        }
-
-        $randomtable = generateRandomString();
-        ?>
-    </div>
-
-    <aside class="grid-30">
-        <nav class="grid-30">
-            <ul>
-                <li><a href='showbugs.php'>All Bug Items</a></li>
-                <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
-                <li><a href='showbugs.php?bugcategory=ios'>iOS Bug Items</a></li>
-                <li><a href='showbugs.php?bugcategory=windows'>Windows Bug Items</a></li>
-                <li><a href='addbug.php'>Insert Bug Items</a></li>
-            </ul>
-        </nav>
-    </aside>
+        </div><br><br>
 </main>
-
+</div>
+<nav id="outnav">
+    <ul>
+        <li><a href='index.php'>Create Booking</a></li>
+        <li><a href='showbugs.php?bugcategory=android'>Manage Booking</a></li>
+        <li><a href='showbugs.php?bugcategory=ios'>Contact Us</a></li>
+    </ul>
+</nav>
 </body>
 </html>

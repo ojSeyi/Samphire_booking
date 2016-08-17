@@ -48,12 +48,12 @@ mb_internal_encoding('ASCII');
 }
 
 $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
-->setUsername('ojtestall@gmail.com')
-->setPassword('Oluwas3yi');
+->setUsername('oluwaseyiny@gmail.com')
+->setPassword('Oluwas3y1.');
 
 $mailer = Swift_Mailer::newInstance($transport);
 $message = Swift_Message::newInstance('Samphire Subsea Facilities: Reservation')
-->setFrom(array('ojtestall@gmail.com' => 'Samphire Subsea Facilities'))
+->setFrom(array('oluwaseyiny@gmail.com' => 'Samphire Subsea Facilities'))
 ->setTo('seyiyusuf100@gmail.com')
 ->setBody($txt, ['text/html']);
 $send = $mailer->send($message);

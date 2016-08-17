@@ -112,7 +112,7 @@ header{
 
 
 main{
-    margin-left: 300px;
+
 }
 
 #syscon{
@@ -125,6 +125,7 @@ main{
     padding-left: 40px;
     border: solid 1px white;
     border-radius: 10px;
+    margin-left: 300px;
 }
 
 #search {

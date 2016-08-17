@@ -116,6 +116,7 @@ main{
 }
 
 #syscon{
+    max-width: 960px;
     min-height: 400px;
     margin-top: 70px;
     margin-bottom: 30px;
@@ -255,3 +256,7 @@ nav>ul>li>a:hover{
     opacity: 0.5;
 }
 
+#bookingconfirmation{
+    background-color: white;
+
+}

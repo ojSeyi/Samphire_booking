@@ -1,6 +1,8 @@
 body{
     margin-left: auto;
     margin-right: auto;
+    background-color: darkslategray;
+    background-size: 130px;
 }
 
 #system{
@@ -14,8 +16,6 @@ header{
     height: 120px;
     padding-left: 350px;
     padding-right: 350px;
-    background-color: darkslategray;
-    background-size: cover;
 }
 
 #logo{

@@ -81,7 +81,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
                     }
                     ?>
                 </tr>
-                <tr>
+                <tr id="pins">
                     <td>Facility(s)</td>
                     <td>Price(s)</td>
                 </tr>

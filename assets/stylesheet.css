@@ -2,7 +2,6 @@ body{
     margin-left: auto;
     margin-right: auto;
     background-color: darkslategray;
-    background-size: 130px;
 }
 
 #system{
@@ -231,7 +230,7 @@ nav>ul>li>a{
     text-align: center;
     display: block;
     padding: 5px 5px;
-    color: black;
+    color: White;
     font-family: 'Montserrat', sans-serif;
     font-size: 12pt;
 }

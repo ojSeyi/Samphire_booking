@@ -170,6 +170,7 @@ $message = Swift_Message::newInstance('Samphire Subsea Facilities: Reservation')
     ->setBody($txt, 'text/html');
 $send = $mailer->send($message);
 
-echo $send;
+print_r($send);
+
 ?>
 

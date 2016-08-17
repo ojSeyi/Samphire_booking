@@ -1,56 +1,26 @@
 <?php
- echo "start";
-$custemail = $_SESSION['custemail'];
-$firstname = $_SESSION['firstname'];
-$lastname = $_SESSION['lastname'];
-//email subject
-$subject = "Confirmation Of Your Facility Reservation With Samphire Subsea";
-//email body in html
-//ATTENTION, THE LINK MAY POINT TO THE MASTER DOMAIN, RATHER THAN YOUR OWN xxx.PHP
-$txt = "Dear $firstname,
-<br><br>
-Your booking has been created.
-<br>
-Here is your reference number: <h2> $bookingconfirmationnumber </h2>
-<br>
-Here are the details of your booking
-<br>
-<table>
-    <tr>
-        <th>Facility</th>
-        <th>Price</th><br>
-    </tr>
-    <tr>
-        <td>KGB</td>
-    </tr>
-    <tr>
-        <td>Total: </td>
-        <td>". $totalcost . "</td>
-    </tr>
-</table>
 
-<br><br>
-Thank you for choosing Samphire-Subsea facilities!
-<br>
-Please contact the facilities department on nomail@samphire-subsea.com with any complaints or enquiries.
-<br><br>
-King Regards,
-<br><br>
-Samphire Subsea Facilities";
+require_once 'swiftmailer/lib/swift_init.php';
 
-//take in the necessary swiftmailer code
-require_once 'swiftmailer/lib/swift_required.php';
-
-$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
-->setUsername('oluwaseyiny@gmail.com')
-->setPassword('Oluwas3y1.');
-
+$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
+    ->setUsername('oluwaseyiny@gmail.com')
+    ->setPassword('Oluwas3y1.')
+;
 $mailer = Swift_Mailer::newInstance($transport);
-$message = Swift_Message::newInstance('Samphire Subsea Facilities: Reservation')
-->setFrom(array('oluwaseyiny@gmail.com' => 'Samphire Subsea Facilities'))
-->setTo('seyiyusuf100@gmail.com')
-->setBody('fool');
+
+$message = Swift_Message::newInstance();
+$message->setSubject('My subject');
+$message -> setBody('FUck all yall');
+$message->setTo('seyiyusuf100@gmail.com');
+$message->setFrom('oluwaseyiny@gmail.com');
+
 $result = $mailer->send($message);
 
-$result;
-
+if ($result)
+{
+    echo "Sent\n";
+}
+else
+{
+    echo "Failed\n";
+}

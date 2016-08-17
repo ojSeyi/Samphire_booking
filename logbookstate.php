@@ -132,7 +132,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facili']) && is_null($_
         </div><br><br>
 
         <div id="submitbooking">
-            <form method="post" action="jsfggksvuaigfuakwjygviuaevfvdkuvjy.php">
+            <form method="post" action="createbooking.php">
                 <input type="submit" value="Make Reservation">
             </form>
         </div>

@@ -179,11 +179,9 @@ if(is_null($_SESSION['facilityarraycheck'])){
             </form>
         </div><br><br>
 
-        <div id="submitbooking">
             <form method="post" action="jsfggksvuaigfuakwjygviuaevfvdkuvjy.php">
-                <input type="submit" value="Make Reservation">
+                <input type="submit" name="submitbooking" value="Make Reservation">
             </form>
-        </div>
 
 
 

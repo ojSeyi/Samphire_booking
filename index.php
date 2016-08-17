@@ -21,9 +21,9 @@ if(isset($_SESSION['login'])){
 }; ?>
 
 <body>
-<div id="system" class="grid-container">
-    <nav id="innav">
-        <ul>
+<div id="system">
+    <nav id="innav" class="grid-container">
+        <ul class="grid-100">
             <li><a href='showbugs.php'>All Bug Items</a></li>
             <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
             <li><a href='showbugs.php?bugcategory=ios'>iOS Bug Items</a></li>

@@ -12,6 +12,7 @@ body{
 header{
     height: 120px;
     background-color: darkslategray;
+    background-size: cover;
 }
 
 #logo{

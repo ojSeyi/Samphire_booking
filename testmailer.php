@@ -50,7 +50,7 @@ $message = Swift_Message::newInstance('Samphire Subsea Facilities: Reservation')
 ->setFrom(array('oluwaseyiny@gmail.com' => 'Samphire Subsea Facilities'))
 ->setTo('seyiyusuf100@gmail.com')
 ->setBody('fool');
-$send = $mailer->send($message);
+$result = $mailer->send($message);
 
-$send;
+$result;
 

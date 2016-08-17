@@ -277,6 +277,6 @@ nav>ul>li>a:hover{
     margin-bottom: 2px;
 }
 
-#bookingdetails>#pin>td{
+#bookingdetails * #pin>td{
     border: solid 1px black;
 }

@@ -47,9 +47,6 @@ if(is_null($_SESSION['startdate']) && ($_SESSION['facility'])){
 
 <div id="system">
 <main class="grid-container">
-    <section id="bannerbox">
-        <img src="assets/images/banner.jpg" id="bannerimage"/>
-    </section>
 
     <div id="syscon">
 

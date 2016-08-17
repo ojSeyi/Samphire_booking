@@ -129,7 +129,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                 <input type="hidden" name="firstfacility" id="firstfacility" value="<?php $_SESSION['facili'] ?>">
                 <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
             </form>
-        </div><br><br><br>
+        </div><br><br>
 
         <div id="submitbooking">
             <form method="post" action="jsfggksvuaigfuakwjygviuaevfvdkuvjy.php">

@@ -58,7 +58,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_
             $enddate = null;
         }
         ?>
-        <div id="bookingconfirmation">
+        <div id="bookingconfirmation" class="grid-container">
             <table>
                 <tr>
                     <td id="tablehead"> Here are the details of your booking </td>

@@ -85,7 +85,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
                     <td>Facility(s)</td>
                     <td>Price(s)</td>
                 </tr>
-                <tr>
+                <tr id="pin">
                     <td>
                         <?php $facilityarrays = $_SESSION['facilityarray'];?>
                             <?php
@@ -106,7 +106,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
                         ?>
                     </td>
                 </tr><br><br>
-                <tr>
+                <tr id="pin">
                     <td>Total: </td>
                     <td><?php
                         $totalcost = 0;

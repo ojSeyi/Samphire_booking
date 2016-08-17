@@ -47,7 +47,6 @@ if(is_null($_SESSION['startdate']) && ($_SESSION['facility'])){
 
 <div id="system">
 <main class="grid-container">
-
     <div id="syscon">
 
         <?php

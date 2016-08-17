@@ -58,7 +58,7 @@ $message = Swift_Message::newInstance('Samphire Subsea Facilities: Reservation')
 ->setBody($txt, ['text/html']);
 $send = $mailer->send($message);
 
-print_r($send);
+echo $send;
 
 if (isset($mbEncoding))
 {

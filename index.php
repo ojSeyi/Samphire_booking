@@ -21,20 +21,28 @@ if(isset($_SESSION['login'])){
 }; ?>
 
 <body>
-
-<header>
-    <img src="assets/images/logo_2016.jpg" id="logo"/>
-    <div id="form">
-        <form method="post" action="login.php">
-            <input type="text" name="username" id="usernamebox" placeholder="Username" required/>
-            <input type="password" name="password" id="passwordbox" placeholder="Password" required/>
-            <input type="submit" value="Login" name="login" id="loginb"/>
-        </form>
-    </div>
-    <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
-</header>
-
+<div id="system">
+    <nav id="innav" class="grid-20">
+        <ul>
+            <li><a href='showbugs.php'>All Bug Items</a></li>
+            <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
+            <li><a href='showbugs.php?bugcategory=ios'>iOS Bug Items</a></li>
+            <li><a href='showbugs.php?bugcategory=windows'>Windows Bug Items</a></li>
+            <li><a href='addbug.php'>Insert Bug Items</a></li>
+        </ul>
+    </nav>
 <main class="grid-container">
+    <header>
+        <img src="assets/images/logo_2016.jpg" id="logo"/>
+        <div id="form">
+            <form method="post" action="login.php">
+                <input type="text" name="username" id="usernamebox" placeholder="Username" required/>
+                <input type="password" name="password" id="passwordbox" placeholder="Password" required/>
+                <input type="submit" value="Login" name="login" id="loginb"/>
+            </form>
+        </div>
+        <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
+    </header>
 
     <div id="syscon" class="grid-80">
 
@@ -60,17 +68,16 @@ if(isset($_SESSION['login'])){
 
     </div>
 
-        <nav class="grid-20">
-            <ul>
-                <li><a href='showbugs.php'>All Bug Items</a></li>
-                <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
-                <li><a href='showbugs.php?bugcategory=ios'>iOS Bug Items</a></li>
-                <li><a href='showbugs.php?bugcategory=windows'>Windows Bug Items</a></li>
-                <li><a href='addbug.php'>Insert Bug Items</a></li>
-            </ul>
-        </nav>
-
 </main>
-
+</div>
+<nav id="outnav" class="grid-20">
+    <ul>
+        <li><a href='showbugs.php'>All Bug Items</a></li>
+        <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
+        <li><a href='showbugs.php?bugcategory=ios'>iOS Bug Items</a></li>
+        <li><a href='showbugs.php?bugcategory=windows'>Windows Bug Items</a></li>
+        <li><a href='addbug.php'>Insert Bug Items</a></li>
+    </ul>
+</nav>
 </body>
 </html>

@@ -79,11 +79,11 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facili']) && is_null($_
                         ?>
                     </td><br>
                 </tr>
-                <tr>
+                <tr id="pins">
                     <td>Facility(s)</td>
                     <td>Price(s)</td>
                 </tr>
-                <tr>
+                <tr id="pin">
                     <td><?php
                         echo $_SESSION['facili'];
                         $_SESSION['count'] = 0;
@@ -99,7 +99,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facili']) && is_null($_
                         ?>
                     </td>
                 </tr>
-                <tr>
+                <tr id="pind">
                     <td>Total: </td>
                     <td><?php $pricetotal ?> </td>
                 </tr><br>

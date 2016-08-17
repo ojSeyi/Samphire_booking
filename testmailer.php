@@ -1,5 +1,5 @@
 <?php
-
+ echo "start";
 $custemail = $_SESSION['custemail'];
 $firstname = $_SESSION['firstname'];
 $lastname = $_SESSION['lastname'];

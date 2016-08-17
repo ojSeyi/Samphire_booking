@@ -238,6 +238,6 @@ nav>ul>li>a{
 nav>ul>li>a:hover{
     color: deepskyblue;
     background-color: white;
-    opacity: 0.2;
+    opacity: 0.5;
 }
 

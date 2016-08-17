@@ -289,6 +289,6 @@ nav>ul>li>a:hover{
     border: solid 2px black;
 }
 
-#bookingdetails * #pin>td{
+#bookingdetails * #pin > td{
     border: solid 1px black;
 }

@@ -170,14 +170,14 @@ if(is_null($_SESSION['facilityarraycheck'])){
             <input type="hidden" name="firstfacility" id="firstfacility" value="<?php $_SESSION['facili'] ?>">
             <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
         </form>
-        </div><br><br><br><br>
+        </div><br><br><br>
 
         <div id="removefacility">
             <form method="post" action="removefacility.php">
                 <input type="hidden" name="flow" value="flow">
-                <input type="submit" value="Remove">
+                <input type="submit" name="removefacility" value="Remove">
             </form>
-        </div><br><br><br><br>
+        </div><br><br><br>
 
         <div id="submitbooking">
             <form method="post" action="jsfggksvuaigfuakwjygviuaevfvdkuvjy.php">

@@ -66,7 +66,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
         <script type="text/javascript" src='JS/facilityarray.js.js'></script>
 
         <div id="bookingconfirmation">
-            <table>
+            <table id="bookingdetails">
                 <tr>
                     <td id="tablehead"> Here are the details of your booking </td>
                 </tr>

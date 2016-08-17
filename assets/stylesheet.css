@@ -263,5 +263,11 @@ nav>ul>li>a:hover{
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
+}
 
+#bookingdetails{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9pt;
+    padding-left: 20px;
+    padding-right: 20px;
 }

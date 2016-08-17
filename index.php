@@ -23,6 +23,7 @@ if(isset($_SESSION['login'])){
 <body>
 
 <header>
+<img src="assets/images/logo_2016.jpg" id="logo"/>
 <nav id="innav" class="grid-container">
     <ul>
         <li><a href='showbugs.php'>All Bug Items</a></li>
@@ -33,7 +34,6 @@ if(isset($_SESSION['login'])){
     </ul>
 </nav>
 <div id="log">
-    <img src="assets/images/logo_2016.jpg" id="logo"/>
     <div id="form">
         <form method="post" action="login.php">
             <input type="text" name="username" id="usernamebox" placeholder="Username" required/>

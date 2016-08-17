@@ -195,6 +195,7 @@ input[name=submitbooking] {
     width: 300px;
     margin-right: 0px;
     float: right;
+    margin-bottom: 10px;
 }
 
 input[name=addfacility] {
@@ -219,6 +220,7 @@ input[name=removefacility] {
     width: 150px;
     margin-right: 0px;
     float: left;
+    margin-bottom: 10px;
 }
 
 #upnav{

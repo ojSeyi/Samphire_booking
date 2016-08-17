@@ -146,10 +146,6 @@ if(is_null($_SESSION['facilityarraycheck'])){
             </table>
         </div>
 
-
-
-
-        <br><br>
         <div><label>To add another facility, select facility and click 'add':  </label></div><br><br><br><br>
         <div id="warning"><label>You cannot select the same facility</label></div>
         <div>

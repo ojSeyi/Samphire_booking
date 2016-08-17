@@ -22,7 +22,7 @@ if(isset($_SESSION['login'])){
 
 <body>
 
-<header class="grid-container">
+<header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>
     <div id="log">
         <div id="form">

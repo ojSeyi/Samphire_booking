@@ -106,7 +106,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
                         ?>
                     </td>
                 </tr><br><br>
-                <tr id="pin">
+                <tr id="pind">
                     <td>Total: </td>
                     <td><?php
                         $totalcost = 0;

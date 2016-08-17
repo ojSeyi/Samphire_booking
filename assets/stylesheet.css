@@ -111,7 +111,6 @@ main{
 }
 
 #syscon{
-    float: right;
     margin-top: 5px;
     background-color: aliceblue;
     padding: 20px;

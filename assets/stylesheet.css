@@ -272,9 +272,9 @@ nav>ul>li>a:hover{
     padding-right: 20px;
 }
 
-#bookingdetails>#pin{
-    margin-top: 20px;
-    margin-bottom: 20px;
+#bookingdetails * #pin{
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 #bookingdetails>#pin>td{

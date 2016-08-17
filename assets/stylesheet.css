@@ -3,6 +3,7 @@ body{
     margin-right: auto;
     background-image: url("images/banner1.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 header{

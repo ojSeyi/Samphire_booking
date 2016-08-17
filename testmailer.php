@@ -39,7 +39,7 @@ King Regards,
 Samphire Subsea Facilities";
 
 //take in the necessary swiftmailer code
-require_once 'swiftmailer-5.x/lib/swift_required.php';
+require_once 'swiftmailer/lib/swift_required.php';
 
 if (function_exists('mb_internal_encoding') && ((int) ini_get('mbstring.func_overload')) & 2)
 {

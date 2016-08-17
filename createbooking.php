@@ -152,6 +152,12 @@ $txt = "Dear $firstname,
 //take in the necessary swiftmailer code
 require_once 'swiftmailer-5.x/lib/swift_required.php';
 
+if (function_exists('mb_internal_encoding') && ((int) ini_get('mbstring.func_overload')) & 2)
+{
+    $mbEncoding = mb_internal_encoding();
+    mb_internal_encoding('ASCII');
+}
+
 $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
     ->setUsername('ojtestall@gmail.com')
     ->setPassword('Oluwas3yi');
@@ -160,10 +166,15 @@ $mailer = Swift_Mailer::newInstance($transport);
 $message = Swift_Message::newInstance('Samphire Subsea Facilities: Reservation')
     ->setFrom(array('ojtestall@gmail.com' => 'Samphire Subsea Facilities'))
     ->setTo('seyiyusuf100@gmail.com')
-    ->setBody($txt, 'text/html');
+    ->setBody($txt, ['text/html']);
 $send = $mailer->send($message);
 
 print_r($send);
+
+if (isset($mbEncoding))
+{
+    mb_internal_encoding($mbEncoding);
+}
 
 ?>
 

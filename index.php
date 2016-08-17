@@ -46,9 +46,9 @@ if(isset($_SESSION['login'])){
 
 
 <div id="system">
-<main>
+<main class="grid-container">
 
-    <div id="syscon" class="grid-container">
+    <div id="syscon">
 
         <form id="search" name="search" method="post" action="datecheck2.php">
             <Label>Please select a facility</Label>

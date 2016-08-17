@@ -156,7 +156,9 @@ $txt = "Dear $firstname,
 //take in the necessary swiftmailer code
 require_once 'swiftmailer-5.x/lib/swift_required.php';
 
-$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')->setUsername('ojtestall@gmail.com')->setPassword('Oluwas3yi');
+$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
+    ->setUsername('ojtestall@gmail.com')
+    ->setPassword('Oluwas3yi');
 
 $mailer = Swift_Mailer::newInstance($transport);
 $message = Swift_Message::newInstance('Samphire Subsea Facilities: Reservation')

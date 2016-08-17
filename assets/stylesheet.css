@@ -202,9 +202,13 @@ input[name=removefacility] {
     float: right;
 }
 
+nav{
+
+}
+
 nav>ul{
     list-style-type: none;
-    margin: auto;
+    margin: 0;
     padding: 0px;
     overflow: hidden;
 }

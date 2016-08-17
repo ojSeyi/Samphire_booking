@@ -40,7 +40,6 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
             <li><a href='index.php'>Create Booking</a></li>
             <li><a href='showbugs.php?bugcategory=android'>Manage Booking</a></li>
             <li><a href='showbugs.php?bugcategory=ios'>Contact Us</a></li>
-            <li><a href='showbugs.php?bugcategory=windows'>Register</a></li>
         </ul>
     </nav>
 </header>

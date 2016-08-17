@@ -173,7 +173,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
                 <input type="hidden" name="flow" value="flow">
                 <input type="submit" name="removefacility" value="Remove">
             </form>
-        </div><br><br>
+        </div><br>
 
             <form method="post" action="jsfggksvuaigfuakwjygviuaevfvdkuvjy.php">
                 <input type="submit" name="submitbooking" value="Make Reservation">

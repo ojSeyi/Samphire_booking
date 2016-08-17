@@ -68,9 +68,7 @@ if(is_null($_SESSION['facilityarraycheck'])){
 
         <div id="bookingconfirmation">
             <table id="bookingdetails" class="grid-container">
-                <tr>
-                    <td id="tablehead"> Here are the details of your booking </td>
-                </tr>
+                <caption>id="tablehead"> Here are the details of your booking </caption>
                 <tr>
                     <td>Booking Date(s): </td>
                     <?php

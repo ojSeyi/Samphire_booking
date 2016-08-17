@@ -194,7 +194,7 @@ input[name=addfacility] {
     cursor: pointer;
     width: 150px;
     margin-right: 0px;
-    float: right;
+    float: left;
 }
 
 input[name=removefacility] {
@@ -206,7 +206,7 @@ input[name=removefacility] {
     cursor: pointer;
     width: 150px;
     margin-right: 0px;
-    float: right;
+    float: left;
 }
 
 #upnav{

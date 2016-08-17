@@ -23,7 +23,7 @@ if(isset($_SESSION['login'])){
 <body>
 <div id="system">
     <nav id="innav" class="grid-container">
-        <ul class="grid-100">
+        <ul>
             <li><a href='showbugs.php'>All Bug Items</a></li>
             <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
             <li><a href='showbugs.php?bugcategory=ios'>iOS Bug Items</a></li>

@@ -21,9 +21,6 @@ if(isset($_SESSION['login'])){
 }; ?>
 
 <body>
-<section id="bannerbox">
-    <img src="assets/images/banner1.jpg" id="bannerimage"/>
-</section>
 
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>

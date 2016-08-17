@@ -22,23 +22,28 @@ if(is_null($_SESSION['login'])){
 </head>
 
 <body>
-<header>
+<header class="grid-container">
     <img src="assets/images/logo_2016.jpg" id="logo"/>
-    <div id="form">
-        <div id="loginerror">Please enter a valid username and password</div>
-        <form method="post" action="login.php">
-            <input type="text" name="username" id="usernamebox" placeholder="Username" required/>
-            <input type="password" name="password" id="passwordbox" placeholder="Password" required/>
-            <input type="submit" value="Login" id="loginb"/>
-        </form>
+    <div id="log">
+        <div id="logout">
+            <form method="post" action="logout.php">
+                <label><?php echo $_SESSION['firstname'];?></label>
+                <input type="submit" name="logout" value="logout" id="logoutbutton"/>
+            </form>
+        </div>
+        <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
     </div>
-    <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
+    <nav id="upnav" class="grid-container">
+        <ul>
+            <li><a href='index.php'>Create Booking</a></li>
+            <li><a href='showbugs.php?bugcategory=android'>Manage Booking</a></li>
+            <li><a href='showbugs.php?bugcategory=ios'>Contact Us</a></li>
+        </ul>
+    </nav>
 </header>
 
-<main>
-    <section id="bannerbox">
-        <img src="assets/images/banner.jpg" id="bannerimage"/>
-    </section>
+<div id="system">
+    <main class="grid-container">
 
     <div id="syscon">
 
@@ -53,7 +58,7 @@ if(is_null($_SESSION['login'])){
                 ?>
             </select><br><br>
             <label>Reservation Date : </label>
-            <input id="startdate" name="startdate" type="date" value=" " required/><br><br>
+            <input id="startdate" name="startdate" type="text" value=" " required/><br><br>
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" value="submit"/><br><br>
@@ -64,6 +69,13 @@ if(is_null($_SESSION['login'])){
 
     </div>
 </main>
-
+</div>
+<nav id="outnav">
+    <ul>
+        <li><a href='index.php'>Create Booking</a></li>
+        <li><a href='showbugs.php?bugcategory=android'>Manage Booking</a></li>
+        <li><a href='showbugs.php?bugcategory=ios'>Contact Us</a></li>
+    </ul>
+</nav>
 </body>
 </html>

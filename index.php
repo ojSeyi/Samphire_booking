@@ -70,7 +70,7 @@ if(isset($_SESSION['login'])){
             <script type="text/javascript" src="JS/global.js"></script>
         </form>
 
-    </div>
+    </div
 
 </main>
 </div>

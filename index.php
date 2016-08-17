@@ -21,16 +21,18 @@ if(isset($_SESSION['login'])){
 }; ?>
 
 <body>
+
+<nav id="innav" class="grid-container">
+    <ul>
+        <li><a href='showbugs.php'>All Bug Items</a></li>
+        <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
+        <li><a href='showbugs.php?bugcategory=ios'>iOS Bug Items</a></li>
+        <li><a href='showbugs.php?bugcategory=windows'>Windows Bug Items</a></li>
+        <li><a href='addbug.php'>Insert Bug Items</a></li>
+    </ul>
+</nav>
+
 <div id="system">
-    <nav id="innav" class="grid-container">
-        <ul>
-            <li><a href='showbugs.php'>All Bug Items</a></li>
-            <li><a href='showbugs.php?bugcategory=android'>Android Bug Items</a></li>
-            <li><a href='showbugs.php?bugcategory=ios'>iOS Bug Items</a></li>
-            <li><a href='showbugs.php?bugcategory=windows'>Windows Bug Items</a></li>
-            <li><a href='addbug.php'>Insert Bug Items</a></li>
-        </ul>
-    </nav>
 <main class="grid-container">
     <header>
         <img src="assets/images/logo_2016.jpg" id="logo"/>

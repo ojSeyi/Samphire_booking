@@ -7,7 +7,7 @@ body{
     background-image: url("images/banner.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 800px;
+    min-height: 600px;
 }
 
 header{

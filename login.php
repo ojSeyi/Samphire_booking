@@ -8,6 +8,11 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
 }else {
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $username = stripcslashes($username);
+    $password = stripcslashes($password);
+    $username = mysqli_real_escape_string($db, $username);
+    $password = mysqli_real_escape_string($db, $password);
+
     $login = $_POST['login'];
     $_SESSION['login'] = $login;
 

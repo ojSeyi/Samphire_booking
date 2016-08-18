@@ -39,18 +39,22 @@ $txt = "Dear $firstname,
 					<br><br>
 					Samphire Subsea Facilities";
 
+/**
+ * @var \Swift_Mime_Message $myMessage
+ */
 
 $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 587,'tls')
     ->setUsername('ojtestall@gmail.com')
     ->setPassword('Oluwas3yi');
 
 $mailer = Swift_Mailer::newInstance($transport);
-$message = Swift_Message::newInstance('Samphire')
+$myMessage = Swift_Message::newInstance('Samphire')
     ->setFrom(array('ojtestall@gmail.com' => 'Samphire Subsea Facilities'))
     ->setTo(array('oluwaseyiny@gmail.com' => 'OJ DON'))
     ->setSubject('Samphire Subsea Facilities: Reservation')
     ->setBody($txt, 'text/html');
-$result = $mailer->send($message);
+
+$result = $mailer->send($myMessage);
 
 
 

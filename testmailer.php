@@ -39,7 +39,6 @@ $txt = "Dear $firstname,
 					<br><br>
 					Samphire Subsea Facilities";
 
-try{
 
 $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 587,'tls')
     ->setUsername('ojtestall@gmail.com')
@@ -53,11 +52,7 @@ $message = Swift_Message::newInstance('Samphire')
     ->setBody($txt, 'text/html');
 $result = $mailer->send($message);
 
-}catch(Exception $e){
-$e->getMessage();
-echo $e;
 
-}
 
 ?>
 

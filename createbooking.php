@@ -170,8 +170,9 @@ $send = $mailer->send($message);
 print_r($send);
 
 }catch(Exception $e){
-    echo $e;
     $e->getMessage();
+    echo $e;
+
 }
 ?>
 

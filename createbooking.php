@@ -75,13 +75,15 @@ function displayprices(){
 
     $db = mysqli_connect(db_server, db_username, db_password, db_name);
     $facilities = $_SESSION['facilityarray'];
+    $facilitycosts = array();
     foreach ($facilities as $showcost) {
         $checkcost = $showcost;
         $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
         $result = mysqli_query($db, $getfacilities);
         $cost = mysqli_fetch_array($result);
         $costs = $cost['cost'];
-        echo $costs . "<br>";
+        $facilitycosts[] = $costs;
+        return implode(',',$facilitycosts) ."<br>";
     }
 }
 
@@ -106,9 +108,7 @@ function total(){
 
 function displayfacilities(){
     $facilities = $_SESSION['facilityarray'];
-    foreach ($facilities as $showfacility) {
-        echo $showfacility ."<br>";
-    }
+    return implode(',',$facilities) ."<br>";
 }
 
 //https://www.google.com/settings/security/lesssecureapps

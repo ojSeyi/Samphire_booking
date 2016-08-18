@@ -151,28 +151,6 @@ $txt = "Dear $firstname,
 					Samphire Subsea Facilities";
 
 //take in the necessary swiftmailer code
-require_once 'swiftmailer/lib/swift_required.php';
 
-try{
-
-$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
-    ->setUsername('ojtestall@gmail.com')
-    ->setPassword('Oluwas3yi');
-
-$mailer = Swift_Mailer::newInstance($transport);
-$message = Swift_Message::newInstance();
-    $message->setSubject("Samphire Subsea Facilities: Reservation");
-    $message->setFrom(array('ojtestall@gmail.com' => 'Samphire Subsea Facilities'));
-    $message->setTo('seyiyusuf100@gmail.com');
-    $message->setBody($txt, ['text/html']);
-$send = $mailer->send($message);
-
-print_r($send);
-
-}catch(Exception $e){
-    $e->getMessage();
-    echo $e;
-
-}
 ?>
 

@@ -134,11 +134,12 @@ $txt = "Dear $firstname,
 					        <th>Price</th><br>
                         </tr>
                         <tr>
-                            <td>KGB</td>
+                            <td>".displayfacilities()."</td>
+                            <td>". displayprices()."</td>
                         </tr>
                         <tr>
                             <td>Total: </td>
-                            <td>". $totalcost . "</td>
+                            <td>". total() . "</td>
                         </tr>
                     </table>
 

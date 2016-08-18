@@ -39,13 +39,16 @@ $txt = "Dear $firstname,
 					<br><br>
 					Samphire Subsea Facilities";
 
+$username = "ojtestall@gmail.com";
+$password = "Oluwas3yi";
+
 try{
 
 $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 587,'tls')
-    ->setUsername('ojtestall@gmail.com')
-    ->setPassword('Oluwas3yi');
+    ->setUsername($this->username)
+    ->setPassword($this->password);
 
-$mailer = Swift_Mailer::newInstance($transport);
+$this->mailer = Swift_Mailer::newInstance($transport);
 $message = Swift_Message::newInstance('Samphire')
     ->setFrom(array('ojtestall@gmail.com' => 'Samphire Subsea Facilities'))
     ->setTo(array('oluwaseyiny@gmail.com' => 'OJ DON'))

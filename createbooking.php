@@ -167,7 +167,7 @@ $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
 $mailer = Swift_Mailer::newInstance($transport);
 $myMessage = Swift_Message::newInstance('Samphire')
     ->setFrom(array('ojtestall@gmail.com' => 'Samphire Subsea Facilities'))
-    ->setTo(array($custemail => $firstname))
+    ->setTo(array($custemail => $custemail))
     ->setSubject('Samphire Subsea Facilities: Reservation')
     ->setBody($txt, 'text/html');
 

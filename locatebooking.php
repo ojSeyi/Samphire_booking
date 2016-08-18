@@ -56,7 +56,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="submit">
+                            <input type="submit" value="Find">
                         </td>
                     </tr>
                 </table>

@@ -61,7 +61,7 @@ if(isset($_SESSION['login'])){
                 ?>
             </select><br><br>
             <label>Reservation Date : </label>
-            <input type="text" name="startdate" id="startdate" min="2016-08-14" required/><br><br>
+            <input type="text" name="startdate" id="startdate" min="2016-08-14" value="Click here to select a date"required/><br><br>
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" onload="onload()" value="submit" /><br><br>

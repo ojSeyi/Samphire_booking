@@ -7,7 +7,7 @@
 
 <?php
 
-require_once 'swiftmailer/lib/swift_required.php';
+require_once 'swiftmailer-5.x/lib/swift_required.php';
 $txt = "Dear $firstname,
 					<br><br>
 					Your booking has been created.

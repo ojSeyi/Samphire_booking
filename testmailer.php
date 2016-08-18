@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
 <?php
 
 require_once 'swiftmailer/lib/swift_required.php';
@@ -53,3 +60,6 @@ echo $e;
 }
 
 ?>
+
+</body>
+</html>

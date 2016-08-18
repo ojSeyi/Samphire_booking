@@ -83,8 +83,8 @@ function displayprices(){
         $cost = mysqli_fetch_array($result);
         $costs = $cost['cost'];
         $facilitycosts[] = $costs;
-        return implode(',',$facilitycosts) ."<br>";
     }
+    return implode(',',$facilitycosts) ."<br>";
 }
 
 function total(){
@@ -135,8 +135,11 @@ $txt = "Dear $firstname,
 					        <td>Price</td><br>
                         </tr>
                         <tr>
-                            <td>".displayfacilities()."</td>
-                            <td>". displayprices()."</td>
+                            <td>Facilities: ".displayfacilities()."</td>
+
+                        </tr>
+                        <tr>
+                            <td>Prices:     ". displayprices()."</td>
                         </tr>
                         <tr>
                             <td>Total: </td>

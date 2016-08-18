@@ -163,10 +163,10 @@ $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
     ->setPassword('Oluwas3yi');
 
 $mailer = Swift_Mailer::newInstance($transport);
-$message = Swift_Message::newInstance('Samphire Subsea Facilities: Reservation')
-    ->setFrom(array('ojtestall@gmail.com' => 'Samphire Subsea Facilities'))
-    ->setTo('seyiyusuf100@gmail.com')
-    ->setBody($txt, ['text/html']);
+$message = Swift_Message::newInstance('Samphire Subsea Facilities: Reservation');
+    $message->setFrom(array('ojtestall@gmail.com' => 'Samphire Subsea Facilities'));
+    $message->setTo('seyiyusuf100@gmail.com');
+    $message->setBody($txt, ['text/html']);
 $send = $mailer->send($message);
 
 print_r($send);

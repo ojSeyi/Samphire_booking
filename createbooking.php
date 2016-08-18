@@ -136,9 +136,6 @@ $txt = "Dear $firstname,
                         </tr>
                         <tr>
                             <td>Facilities: ".displayfacilities()."</td>
-
-                        </tr>
-                        <tr>
                             <td>Prices:     ". displayprices()."</td>
                         </tr>
                         <tr>

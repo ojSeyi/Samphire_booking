@@ -106,7 +106,7 @@ function total(){
 function displayfacilities(){
     $facilities = $_SESSION['facilityarray'];
     foreach ($facilities as $showfacility) {
-        return $showfacility ."<br>";
+        echo $showfacility ."<br>";
     }
 }
 
@@ -125,13 +125,13 @@ $txt = "Dear $firstname,
 					Your booking has been created.
 					<br>
 					Here is your reference number: <h2> $bookingconfirmationnumber </h2>
-					<br>
+
 					Here are the details of your booking
 					<br>
 					<table>
 					    <tr>
-					        <th>Facility</th>
-					        <th>Price</th><br>
+					        <td>Facility</td>
+					        <td>Price</td><br>
                         </tr>
                         <tr>
                             <td>".displayfacilities()."</td>
@@ -163,7 +163,7 @@ $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
 $mailer = Swift_Mailer::newInstance($transport);
 $myMessage = Swift_Message::newInstance('Samphire')
     ->setFrom(array('ojtestall@gmail.com' => 'Samphire Subsea Facilities'))
-    ->setTo(array('oluwaseyiny@gmail.com' => 'OJ DON'))
+    ->setTo(array($custemail => $firstname))
     ->setSubject('Samphire Subsea Facilities: Reservation')
     ->setBody($txt, 'text/html');
 

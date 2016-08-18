@@ -1,7 +1,7 @@
 <?php
 if(is_null($_POST['iliya'])){
     header('location: index.php');
-}
+};
 
 include ("db_connection.php");
 session_start();
@@ -18,6 +18,7 @@ session_start();
 
     $bookingconfirmationnumber = generateRandomString();
     echo $bookingconfirmationnumber;
+    $_SESSION['confirmation'] = $bookingconfirmationnumber;
 
     $availables = "SELECT * FROM guest_bookings WHERE reference = '$bookingconfirmationnumber'";
     $resultsavailables = mysqli_query($db, $availables) or die("failed");
@@ -173,6 +174,7 @@ $myMessage = Swift_Message::newInstance('Samphire')
 
 $result = $mailer->send($myMessage);
 
+header('location: confirmation.php');
 
 ?>
 

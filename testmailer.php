@@ -43,7 +43,7 @@ $txt = "Dear $firstname,
  * @var \Swift_Mime_Message $myMessage
  */
 
-$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 587,'tls')
+$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
     ->setUsername('ojtestall@gmail.com')
     ->setPassword('Oluwas3yi');
 

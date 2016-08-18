@@ -84,7 +84,7 @@ function displayprices(){
         $costs = $cost['cost'];
         $facilitycosts[] = $costs;
     }
-    return implode(',',$facilitycosts) ."<br>";
+    return implode('<br>',$facilitycosts);
 }
 
 function total(){
@@ -108,7 +108,7 @@ function total(){
 
 function displayfacilities(){
     $facilities = $_SESSION['facilityarray'];
-    return implode(',',$facilities) ."<br>";
+    return implode('<br>',$facilities);
 }
 
 //https://www.google.com/settings/security/lesssecureapps

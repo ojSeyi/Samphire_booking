@@ -80,7 +80,8 @@ function displayprices(){
         $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
         $result = mysqli_query($db, $getfacilities);
         $cost = mysqli_fetch_array($result);
-        return $cost['cost'] . "<br>";
+        $costs = $cost['cost'];
+        echo $costs . "<br>";
     }
 }
 

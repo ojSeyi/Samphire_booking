@@ -50,7 +50,7 @@ $mailer = Swift_Mailer::newInstance($transport);
 $message = Swift_Message::newInstance('Samphire Subsea Facilities: Reservation')
 ->setFrom(array('ojtestall@gmail.com' => 'Samphire Subsea Facilities'))
 ->setTo('oluwaseyiny@gmail.com')
-->setBody($txt, ['text/html']);
+->setBody($txt, 'text/html');
 $send = $mailer->send($message);
 
 echo $send;

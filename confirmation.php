@@ -44,7 +44,15 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
     </nav>
 </header>
 <?php
-
+$startdate = date("Y-m-d",strtotime($_SESSION['start']));
+echo $startdate;
+if(!is_null($_SESSION['end'])){
+    $enddate =  date("Y-m-d",strtotime($_SESSION['end']));
+}else{
+    $enddate = $startdate;
+    $enddate =  date("Y-m-d",strtotime($enddate));
+    echo $enddate;
+}
 $confirmationnumber = $_SESSION['confirmation'];
 $firstname = $_SESSION['firstname'];
 $lastname = $_SESSION['lastname'];
@@ -102,13 +110,29 @@ function total(){
                 <table id="confirmation" class="grid-container">
                     <caption><h1>Thank you for choosing Samphire-Subsea Facilities</h1></caption>
                     <tr>
-                        <caption>Your Booking has been created and an email of your booking details has been sent to your email along with an invoice</caption>
+                        <td>Your Booking has been created and an email of your booking details has been sent to your email.</td>
                     </tr>
                     <tr>
                         <td>Booking Reference Number:</td>
-                        <td><h3><?php $confirmationnumber ?></h3></td>
+                        <td><h3><?php echo $confirmationnumber ?></h3></td>
                     </tr><br><br>
-                    <tr></tr>
+                    <tr>
+                        <td><label>Click this link view, print and save your invoice</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form method="post" action="invoice.html">
+                                <input type="hidden" name="firstname" value="<?php $_SESSION['firstname']?>">
+                                <input type="hidden" name="firstname" value="<?php $_SESSION['lastname']?>">
+                                <input type="hidden" name="firstname" value="<?php $_SESSION['confirmation']?>">
+                                <input type="hidden" name="firstname" value="<?php $_SESSION['facilityarray']?>">
+                                <input type="hidden" name="firstname" value="<?php $_SESSION['firstname']?>">
+                                <input type="hidden" name="firstname" value="<?php $_SESSION['firstname']?>">
+                                <input type="hidden" name="firstname" value="<?php $_SESSION['firstname']?>">
+                                <input type="submit" name="invoice" value="Print Invoice">
+                            </form>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>

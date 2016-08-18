@@ -43,7 +43,25 @@
     <main class="grid-container">
 
         <div id="syscon">
-            <table></table>
+            <form method="post" action="bookinglocator.php">
+                <table>
+                    <caption>Please enter your booking reference and your last name below</caption>
+                    <tr>
+                        <td>
+                            Reference: <input type="text" name="confirmation">
+                        </td>
+                        <td>
+                            Last name: <input type="text" name="lastname">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
         </div>
 
     </main>

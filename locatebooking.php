@@ -48,10 +48,10 @@
                     <caption>Please enter your booking reference and your last name below</caption>
                     <tr>
                         <td>
-                            Reference: <input type="text" name="confirmation">
+                            Reference: <input type="text" name="confirmation" required>
                         </td>
                         <td>
-                            Last name: <input type="text" name="lastname">
+                            Last name: <input type="text" name="lastname" required>
                         </td>
                     </tr>
                     <tr>

@@ -103,7 +103,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
                             $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
                             $result = mysqli_query($db, $getfacilities);
                             $cost = mysqli_fetch_array($result);
-                            echo $cost['cost'] . "<br>";
+                            echo "£".$cost['cost'] . "<br>";
                         }
                         ?>
                     </td>
@@ -119,7 +119,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
                             $cost = mysqli_fetch_array($result);
                             $totalcost = $totalcost + $cost['cost'];
                         }
-                        echo $totalcost;
+                        echo "£".$totalcost;
                         ?>
                     </td>
                 </tr>

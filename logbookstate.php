@@ -95,20 +95,21 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facili']) && is_null($_
                         $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$check'";
                         $result = mysqli_query($db, $getfacilities);
                         $row = mysqli_fetch_array($result);
-                        echo $row['cost'];
+                        $pricetotal = $row['cost'];
+                        echo "£".$row['cost'];
                         ?>
                     </td>
                 </tr>
                 <tr id="pind">
                     <td>Total: </td>
-                    <td><?php $pricetotal ?> </td>
+                    <td><?php echo "£".$pricetotal; ?> </td>
                 </tr><br>
             </table>
         </div>
 
 
 
-        <div><label>To add another facility, select facility and click 'add':  </label></div><br><br><br><br>
+        <div><label>To change facility or add another facility, select facility and click 'Edit':  </label></div><br><br><br><br>
         <div id="warning"><label>You cannot select the same facility</label></div>
         <div>
         <form method="post" action="logfacilitycount.php">
@@ -127,7 +128,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facili']) && is_null($_
                 }
                 ?>
             </select><br><br>
-            <input type='submit' name="addfacility" id="addfacility" value='Add Facility'>
+            <input type='submit' name="addfacility" id="addfacility" value='Edit'>
         </form>
         </div><br><br>
 

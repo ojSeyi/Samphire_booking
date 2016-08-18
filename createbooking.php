@@ -110,6 +110,7 @@ function displayfacilities(){
     }
 }
 
+//https://www.google.com/settings/security/lesssecureapps
 
 $custemail = $_SESSION['custemail'];
 $firstname = $_SESSION['firstname'];

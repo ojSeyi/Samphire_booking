@@ -179,6 +179,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
 
         <div id="submitbooking">
             <form method="post" action="createbooking.php">
+                <input type="hidden" name="iliya" value="iliya">
                 <input type="submit" name="submitbooking" value="Make Reservation">
             </form>
         </div><br><br>

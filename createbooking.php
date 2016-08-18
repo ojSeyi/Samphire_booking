@@ -1,4 +1,7 @@
 <?php
+if(is_null($_POST['iliya'])){
+    header('location: index.php');
+}
 
 include ("db_connection.php");
 session_start();

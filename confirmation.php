@@ -143,7 +143,7 @@ function total(){
                     </tr>
                     <tr>
                         <td>
-                            <form method="post" action="invoice.html">
+                            <form method="post" action="invoice.php">
                                 <input type="hidden" name="firstname" value="<?php $_SESSION['firstname']?>">
                                 <input type="hidden" name="firstname" value="<?php $_SESSION['lastname']?>">
                                 <input type="hidden" name="firstname" value="<?php $_SESSION['confirmation']?>">

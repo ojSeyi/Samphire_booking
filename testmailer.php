@@ -7,54 +7,6 @@
 
 <?php
 
-require_once 'swiftmailer-5.x/lib/swift_required.php';
-$txt = "Dear $firstname,
-					<br><br>
-					Your booking has been created.
-					<br>
-					Here is your reference number: <h2> $bookingconfirmationnumber </h2>
-					<br>
-					Here are the details of your booking
-					<br>
-					<table>
-					    <tr>
-					        <th>Facility</th>
-					        <th>Price</th><br>
-                        </tr>
-                        <tr>
-                            <td>KGB</td>
-                        </tr>
-                        <tr>
-                            <td>Total: </td>
-                            <td>". $totalcost . "</td>
-                        </tr>
-                    </table>
-
-					<br><br>
-					Thank you for choosing Samphire-Subsea facilities!
-					<br>
-					Please contact the facilities department on nomail@samphire-subsea.com with any complaints or enquiries.
-					<br><br>
-					King Regards,
-					<br><br>
-					Samphire Subsea Facilities";
-
-/**
- * @var \Swift_Mime_Message $myMessage
- */
-
-$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
-    ->setUsername('ojtestall@gmail.com')
-    ->setPassword('Oluwas3yi');
-
-$mailer = Swift_Mailer::newInstance($transport);
-$myMessage = Swift_Message::newInstance('Samphire')
-    ->setFrom(array('ojtestall@gmail.com' => 'Samphire Subsea Facilities'))
-    ->setTo(array('oluwaseyiny@gmail.com' => 'OJ DON'))
-    ->setSubject('Samphire Subsea Facilities: Reservation')
-    ->setBody($txt, 'text/html');
-
-$result = $mailer->send($myMessage);
 
 
 

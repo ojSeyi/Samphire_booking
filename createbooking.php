@@ -119,6 +119,7 @@ $lastname = $_SESSION['lastname'];
 $subject = "Confirmation Of Your Facility Reservation With Samphire Subsea";
 //email body in html
 //ATTENTION, THE LINK MAY POINT TO THE MASTER DOMAIN, RATHER THAN YOUR OWN xxx.PHP
+require_once 'swiftmailer-5.x/lib/swift_required.php';
 $txt = "Dear $firstname,
 					<br><br>
 					Your booking has been created.
@@ -150,7 +151,23 @@ $txt = "Dear $firstname,
 					<br><br>
 					Samphire Subsea Facilities";
 
-//take in the necessary swiftmailer code
+/**
+ * @var \Swift_Mime_Message $myMessage
+ */
+
+$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
+    ->setUsername('ojtestall@gmail.com')
+    ->setPassword('Oluwas3yi');
+
+$mailer = Swift_Mailer::newInstance($transport);
+$myMessage = Swift_Message::newInstance('Samphire')
+    ->setFrom(array('ojtestall@gmail.com' => 'Samphire Subsea Facilities'))
+    ->setTo(array('oluwaseyiny@gmail.com' => 'OJ DON'))
+    ->setSubject('Samphire Subsea Facilities: Reservation')
+    ->setBody($txt, 'text/html');
+
+$result = $mailer->send($myMessage);
+
 
 ?>
 

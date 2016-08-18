@@ -88,7 +88,7 @@ function displayprices(){
         $costs = $cost['cost'];
         $facilitycosts[] = $costs;
     }
-    return implode('<br>',$facilitycosts);
+    return implode('<br>',"£".$facilitycosts);
 }
 
 function total(){
@@ -107,7 +107,7 @@ function total(){
         $cost = mysqli_fetch_array($result);
         $totalcost = $totalcost + $cost['cost'];
     }
-    return $totalcost;
+    return "£".$totalcost;
 }
 
 function displayfacilities(){

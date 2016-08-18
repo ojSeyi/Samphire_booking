@@ -43,12 +43,74 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
         </ul>
     </nav>
 </header>
+<?php
 
+$confirmationnumber = $_SESSION['confirmation'];
+$firstname = $_SESSION['firstname'];
+$lastname = $_SESSION['lastname'];
+$facilities = $_SESSION['facilityarray'];
+
+//Functions for declaring cart items
+function displayfacilities(){
+    $facilities = $_SESSION['facilityarray'];
+    return implode('<br>',$facilities);
+}
+function displayprices(){
+    define('db_server', "us-cdbr-azure-southcentral-f.cloudapp.net");
+    define('db_username', "b508b6e557b8b9");
+    define('db_password', "23ad37fd");
+    define('db_name', "samphire_subsea");
+
+    $db = mysqli_connect(db_server, db_username, db_password, db_name);
+    $facilities = $_SESSION['facilityarray'];
+    $facilitycosts = array();
+    foreach ($facilities as $showcost) {
+        $checkcost = $showcost;
+        $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+        $result = mysqli_query($db, $getfacilities);
+        $cost = mysqli_fetch_array($result);
+        $costs = $cost['cost'];
+        $facilitycosts[] = $costs;
+    }
+    return implode('<br>',$facilitycosts);
+}
+function total(){
+    define('db_server', "us-cdbr-azure-southcentral-f.cloudapp.net");
+    define('db_username', "b508b6e557b8b9");
+    define('db_password', "23ad37fd");
+    define('db_name', "samphire_subsea");
+
+    $db = mysqli_connect(db_server, db_username, db_password, db_name);
+    $facilities = $_SESSION['facilityarray'];
+    $totalcost = 0;
+    foreach ($facilities as $showcost) {
+        $checkcost = $showcost;
+        $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+        $result = mysqli_query($db, $getfacilities);
+        $cost = mysqli_fetch_array($result);
+        $totalcost = $totalcost + $cost['cost'];
+    }
+    return $totalcost;
+}
+
+?>
 <div id="system">
     <main class="grid-container">
 
         <div id="syscon">
-
+            <div id="bookingconfirmation">
+                <table id="confirmation" class="grid-container">
+                    <caption><h1>Thank you for choosing Samphire-Subsea Facilities</h1></caption>
+                    <tr>
+                        <caption>Your Booking has been created and an email of your booking details has been sent to your email along with an invoice</caption>
+                    </tr>
+                    <tr>
+                        <td>Booking Reference Number:</td>
+                        <td><h3><?php $confirmationnumber ?></h3></td>
+                    </tr><br><br>
+                    <tr></tr>
+                </table>
+            </div>
         </div>
 
     </main>

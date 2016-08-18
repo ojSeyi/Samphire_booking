@@ -57,6 +57,28 @@ $confirmationnumber = $_SESSION['confirmation'];
 $firstname = $_SESSION['firstname'];
 $lastname = $_SESSION['lastname'];
 $facilities = $_SESSION['facilityarray'];
+$facilitycost = array();
+foreach ($facilities as $showcost) {
+    $checkcost = $showcost;
+    $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+    $result = mysqli_query($db, $getfacilities);
+    $cost = mysqli_fetch_array($result);
+    $costs = $cost['cost'];
+    $facilitycost[] = $costs;
+}
+$facilitycosts = $facilitycost;
+$_SESSION['facilitycosts'] = $facilitycosts;
+
+$totalcosts = 0;
+foreach ($facilities as $showcost) {
+    $checkcost = $showcost;
+    $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+    $result = mysqli_query($db, $getfacilities);
+    $cost = mysqli_fetch_array($result);
+    $totalcosts = $totalcosts + $cost['cost'];
+}
+$totalcost = $totalcosts;
+$_SESSION['total'] = $totalcost;
 
 //Functions for declaring cart items
 function displayfacilities(){
@@ -126,9 +148,10 @@ function total(){
                                 <input type="hidden" name="firstname" value="<?php $_SESSION['lastname']?>">
                                 <input type="hidden" name="firstname" value="<?php $_SESSION['confirmation']?>">
                                 <input type="hidden" name="firstname" value="<?php $_SESSION['facilityarray']?>">
-                                <input type="hidden" name="firstname" value="<?php $_SESSION['firstname']?>">
-                                <input type="hidden" name="firstname" value="<?php $_SESSION['firstname']?>">
-                                <input type="hidden" name="firstname" value="<?php $_SESSION['firstname']?>">
+                                <input type="hidden" name="firstname" value="<?php $_SESSION['facilitycosts']?>">
+                                <input type="hidden" name="firstname" value="<?php $_SESSION['total']?>">
+                                <input type="hidden" name="firstname" value="<?php $_SESSION['start']?>">
+                                <input type="hidden" name="firstname" value="<?php $_SESSION['end']?>">
                                 <input type="submit" name="invoice" value="Print Invoice">
                             </form>
                         </td>

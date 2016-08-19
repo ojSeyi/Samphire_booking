@@ -92,7 +92,7 @@ $id = mysqli_fetch_array($fetchid);
 $cusid = $id['cust_id'];
 
 $getfirstname = "SELECT firstname FROM customers WHERE cust_id = '$cusid'";
-$fetchfirstname = mysqli_query($db, $getfirstname);
+$fetchfirstname = mysqli_query($db, $getfirstname) or die('shit aint work');
 $first = mysqli_fetch_array($fetchdates);
 $firstname = $dates['firstname'];
 

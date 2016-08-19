@@ -20,7 +20,7 @@ $f_idarray = Array();
 if(!$fetchfacilities){
     echo "nigga i aint working";
 }
-while ($row = mysqli_fetch_array($fetchfacilities, MYSQLI_NUM)) {
+while ($row = mysqli_fetch_array($fetchfacilities, MYSQLI_ASSOC)) {
     $f_idarray[] =  $row;
 }
 foreach($f_idarray as $p){

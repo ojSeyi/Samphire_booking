@@ -35,7 +35,8 @@ foreach($f_idarray as $facili){
     while(mysqli_stmt_fetch($stmt)){
         $facilities[] =  $ross['f_id'];
     }
-
+    mysqli_stmt_close($stmt);
+    mysqli_close($db);
 
 }
 

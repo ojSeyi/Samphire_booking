@@ -88,7 +88,7 @@ $enddate = $dates['enddate'];
 
 $getidcommand = "SELECT * FROM customer_bookings WHERE reference = '$confirmation'";
 $fetchid = mysqli_query($db, $getidcommand);
-$id = mysqli_fetch_array($fetchdates);
+$id = mysqli_fetch_array($fetchid);
 $cusid = $id['cust_id'];
 
 $getfirstname = "SELECT firstname FROM customers WHERE cust_id = '$cusid'";

@@ -43,7 +43,7 @@
     <main class="grid-container">
 
         <div id="syscon">
-            <form method="post" action="managebooking.php">
+            <form method="post" action="viewbooked.php">
                 <table>
                     <caption>Please enter your booking reference and your last name below</caption>
                     <tr>

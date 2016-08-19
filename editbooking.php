@@ -134,7 +134,7 @@ if(empty($_POST['flow']) || empty($_POST['lastname'])) {
 
         }
         ?>
-
+        <div>
         <?php $facilityarrays = $_SESSION['facilityarray'];?>
         <form method="post" action="removefacility.php">
             <select name="rfacilityarray" id="facilityarray" size="<?php echo count($facilityarrays) ?>" required>
@@ -161,7 +161,7 @@ if(empty($_POST['flow']) || empty($_POST['lastname'])) {
                 <input type="submit" name="removefacility2" value="Cancel">
             </form>
         </div><br><br>
-
+        </div>
     </main>
 </div>
 

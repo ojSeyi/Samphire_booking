@@ -49,7 +49,7 @@ $enddate = $dates['enddate'];
 $facilitycosts = array();
 foreach ($facilities as $showcost) {
     $checkcost = $showcost;
-    $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+    $getfacilities = "SELECT * FROM samphire_facilities WHERE f_id = '$checkcost'";
     $result = mysqli_query($db, $getfacilities);
     $cost = mysqli_fetch_array($result);
     $costs = $cost['cost'];

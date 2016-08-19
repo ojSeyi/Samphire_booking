@@ -45,7 +45,16 @@ echo "Enter Reference number and lastname";
 <?php
 
 include ("db_connection.php");
+define('db_server', "us-cdbr-azure-southcentral-f.cloudapp.net");
+define('db_username', "b508b6e557b8b9");
+define('db_password', "23ad37fd");
+define('db_name', "samphire_subsea");
 
+$conn = new mysqli(db_server, db_username, db_password, db_name);
+
+if(!$db){
+    echo "Can't connect to Database" . mysqli_error();
+}
 
     $lastname = $_POST['lastname'];
     $confirmation = $_POST['confirmation'];
@@ -58,7 +67,7 @@ echo $lastname;
     $custid = "";
 
 
-    if($customerid=$db->prepare("SELECT * FROM customers WHERE lastname =?")){
+    if($customerid=$conn->prepare("SELECT * FROM customers WHERE lastname =?")){
         $customerid ->bind_param('ss',$lastname);
         $customerid->execute();
         $customer = $customerid->get_result();

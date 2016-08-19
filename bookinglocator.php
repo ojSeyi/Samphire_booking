@@ -86,7 +86,7 @@ $dates = mysqli_fetch_array($fetchdates);
 $startdate = $dates['startdate'];
 $enddate = $dates['enddate'];
 
-$getidcommand = "SELECT cust_id FROM customer_bookings WHERE f_id = '$facilities[0]' AND reference = '$confirmation'";
+$getidcommand = "SELECT * FROM customer_bookings WHERE f_id = '$facilities[0]' AND reference = '$confirmation'";
 $fetchid = mysqli_query($db, $getidcommand);
 $id = mysqli_fetch_array($fetchdates);
 $custid = $id['cust_id'];

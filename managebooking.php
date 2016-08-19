@@ -9,9 +9,6 @@ $lastname = stripcslashes($lastname);
 $confirmation = stripcslashes($confirmation);
 $lastname = mysqli_real_escape_string($db, $lastname);
 $confirmation = mysqli_real_escape_string($db,$confirmation);
-$firstname = "a";
-$custid = 'a';
-
 
 
 $getfacilitycommand = "SELECT f_id FROM samphire_facilities";
@@ -32,7 +29,6 @@ foreach($f_idarray as $facili){
     if(mysqli_num_rows($fetchbookings) > 0){
         while ($ross = mysqli_fetch_array($fetchbookings, MYSQLI_ASSOC)) {
             $facilities[] =  $ross['f_id'];
-            $custid = $ross['cust_id'];
         }
     }else{
 
@@ -40,11 +36,12 @@ foreach($f_idarray as $facili){
 }
 
 
-$getdatescommand = "SELECT startdate, enddate FROM customer_bookings WHERE f_id = '$facilities[0]' AND reference = '$confirmation'";
+$getdatescommand = "SELECT startdate, enddate, cust_id FROM customer_bookings WHERE f_id = '$facilities[0]' AND reference = '$confirmation'";
 $fetchdates = mysqli_query($db, $getdatescommand);
 $dates = mysqli_fetch_array($fetchdates);
 $startdate = $dates['startdate'];
 $enddate = $dates['enddate'];
+$custid = $date['cust_id'];
 
 $facilitycosts = array();
 $facilityname = array();

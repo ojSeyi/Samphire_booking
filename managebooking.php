@@ -36,12 +36,11 @@ foreach($f_idarray as $facili){
 }
 
 
-$getdatescommand = "SELECT cust_id, startdate, enddate FROM customer_bookings WHERE f_id = '$facilities[0]' AND reference = '$confirmation'";
+$getdatescommand = "SELECT startdate, enddate FROM customer_bookings WHERE f_id = '$facilities[0]' AND reference = '$confirmation'";
 $fetchdates = mysqli_query($db, $getdatescommand);
 $dates = mysqli_fetch_array($fetchdates);
 $startdate = $dates['startdate'];
 $enddate = $dates['enddate'];
-$custid = $dates['cust_id'];
 
 $getidcommand = "SELECT cust_id FROM customer_bookings WHERE f_id = '$facilities[0]' AND reference = '$confirmation'";
 $fetchid = mysqli_query($db, $getidcommand);

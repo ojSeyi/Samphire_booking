@@ -43,6 +43,11 @@ $startdate = $dates['startdate'];
 $enddate = $dates['enddate'];
 $custid = $dates['cust_id'];
 
+$getidcommand = "SELECT cust_id FROM customer_bookings WHERE f_id = '$facilities[0]' AND reference = '$confirmation'";
+$fetchid = mysqli_query($db, $getidcommand);
+$id = mysqli_fetch_array($fetchdates);
+$custid = $id['cust_id'];
+
 $getfirstname = "SELECT firstname FROM customers WHERE cust_id = '$custid'";
 $fetchfirstname = mysqli_query($db, $getfirstname);
 $first = mysqli_fetch_array($fetchdates);

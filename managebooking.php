@@ -109,6 +109,15 @@ foreach ($facilities as $showcost) {
     $facilityname[] = $name;
 }
 
+$_SESSION['confirmation'] = $confirmation;
+$_SESSION['confirmation'] = $firstname;
+$_SESSION['lastname'] = $lastname;
+$_SESSION['cusid'] = $cusid;
+$_SESSION['facilityname'] = $facilityname;
+$_SESSION['facilitycosts'] = $facilitycosts;
+$_SESSION['startdate'] = $startdate;
+$_SESSION['enddate'] = $enddate;
+
 ?>
 
 <div id="system">

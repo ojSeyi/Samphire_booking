@@ -1,11 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Samphire-Subsea: Facility Reservation</title>
+    <link rel="stylesheet" href="assets/stylesheet.css">
+    <link rel="stylesheet" href="assets/unsemantic-grid-responsive-tablet.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <meta name="viewpoint"
+          content="width=device-width,
+          initial-scale=1,
+          minimum-scale=1,
+          maximum-scale=1"/>
+</head>
+
+<body>
+
+<header class="grid-container">
+    <img src="assets/images/logo_2016.jpg" id="logo"/>
+    <div id="log">
+        <div id="form">
+            <form method="post" action="login.php">
+                <input type="text" name="username" id="usernamebox" placeholder="Username" required/>
+                <input type="password" name="password" id="passwordbox" placeholder="Password" required/>
+                <input type="submit" value="Login" name="login" id="loginb"/>
+            </form>
+        </div>
+        <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
+    </div>
+    <nav id="upnav" class="grid-container">
+        <ul>
+            <li><a href='index.php'>Create Booking</a></li>
+            <li><a href='contactus.php'>Contact Us</a></li>
+            <li><a href='registration.php'>Register</a></li>
+        </ul>
+    </nav>
+</header>
+
 <?php
-session_start();
 
 include ("db_connection.php");
 
 if(empty($_POST['confirmation']) || empty($_POST['lastname'])) {
     echo "Enter Reference number and lastname";
-}else {
+}else {$proceed = 1;}
     $lastname = $_POST['lastname'];
     $confirmation = $_POST['confirmation'];
     $lastname = stripcslashes($lastname);
@@ -62,48 +100,8 @@ if(empty($_POST['confirmation']) || empty($_POST['lastname'])) {
         $facilitycosts[] = $costs;
     }
 
-}
+
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Samphire-Subsea: Facility Reservation</title>
-    <link rel="stylesheet" href="assets/stylesheet.css">
-    <link rel="stylesheet" href="assets/unsemantic-grid-responsive-tablet.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-    <meta name="viewpoint"
-          content="width=device-width,
-          initial-scale=1,
-          minimum-scale=1,
-          maximum-scale=1"/>
-</head>
-
-<body>
-
-<header class="grid-container">
-    <img src="assets/images/logo_2016.jpg" id="logo"/>
-    <div id="log">
-        <div id="form">
-            <form method="post" action="login.php">
-                <input type="text" name="username" id="usernamebox" placeholder="Username" required/>
-                <input type="password" name="password" id="passwordbox" placeholder="Password" required/>
-                <input type="submit" value="Login" name="login" id="loginb"/>
-            </form>
-        </div>
-        <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
-    </div>
-    <nav id="upnav" class="grid-container">
-        <ul>
-            <li><a href='index.php'>Create Booking</a></li>
-            <li><a href='contactus.php'>Contact Us</a></li>
-            <li><a href='registration.php'>Register</a></li>
-        </ul>
-    </nav>
-</header>
-
 
 <div id="system">
     <main class="grid-container">
@@ -117,6 +115,10 @@ if(empty($_POST['confirmation']) || empty($_POST['lastname'])) {
                     <tr>
                         <td>Customer Name: </td>
                         <td><?php echo $firstname . " " . $lastname; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Booking Reference Number:</td>
+                        <td><h3><?php echo $confirmation ?></h3></td>
                     </tr>
                     <tr>
                         <td>Booking Date(s): </td>
@@ -134,21 +136,16 @@ if(empty($_POST['confirmation']) || empty($_POST['lastname'])) {
                     </tr>
                     <tr id="pin">
                         <td>
-                            <?php $facilityarrays = $_SESSION['facilityarray'];?>
                             <?php
-                            foreach ($facilityarrays as $showfacility) {
+                            foreach ($facilities as $showfacility) {
                                 echo $showfacility ."</br>";
                             }
                             ?>
                         </td>
-                        <td>  <?php
-                            $facilityarrays = $_SESSION['facilityarray'];
-                            foreach ($facilityarrays as $showcost) {
-                                $checkcost = $showcost;
-                                $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
-                                $result = mysqli_query($db, $getfacilities);
-                                $cost = mysqli_fetch_array($result);
-                                echo $cost['cost'] . "<br>";
+                        <td>
+                            <?php
+                            foreach ($facilitycosts as $costs) {
+                                echo $costs ."</br>";
                             }
                             ?>
                         </td>
@@ -157,12 +154,8 @@ if(empty($_POST['confirmation']) || empty($_POST['lastname'])) {
                         <td>Total: </td>
                         <td><?php
                             $totalcost = 0;
-                            foreach ($facilityarrays as $showcost) {
-                                $checkcost = $showcost;
-                                $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
-                                $result = mysqli_query($db, $getfacilities);
-                                $cost = mysqli_fetch_array($result);
-                                $totalcost = $totalcost + $cost['cost'];
+                            foreach ($facilitycosts as $showcost) {
+                                $totalcost = $totalcost + $showcost;
                             }
                             echo $totalcost;
                             ?>

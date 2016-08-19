@@ -47,24 +47,24 @@ $startdate = $dates['startdate'];
 $enddate = $dates['enddate'];
 
 $facilitycosts = array();
+$facilityname = array();
 foreach ($facilities as $showcost) {
     $checkcost = $showcost;
-    $getfacilities = "SELECT * FROM samphire_facilities WHERE f_id = '$checkcost'";
-    $result = mysqli_query($db, $getfacilities);
+    $getcosts = "SELECT * FROM samphire_facilities WHERE f_id = '$checkcost'";
+    $result = mysqli_query($db, $getcosts);
     $cost = mysqli_fetch_array($result);
     $costs = $cost['cost'];
+    $name = $cost['f_name'];
     $facilitycosts[] = $costs;
+    $facilityname[] = $name;
 }
 
-foreach($facilitycosts as $p){
-    echo $p;
-}
 
 echo $lastname ;
 echo $confirmation;
 echo $firstname;
 echo $custid;
-echo $facilities[0];
+echo $facilityname[0];
 echo $startdate;
 echo $enddate;
 echo $facilitycosts[0];

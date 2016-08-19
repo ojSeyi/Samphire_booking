@@ -89,9 +89,9 @@ $enddate = $dates['enddate'];
 $getidcommand = "SELECT * FROM customer_bookings WHERE f_id = '$facilities[0]' AND reference = '$confirmation'";
 $fetchid = mysqli_query($db, $getidcommand);
 $id = mysqli_fetch_array($fetchdates);
-$custid = $id['cust_id'];
+$cusid = $id['cust_id'];
 
-$getfirstname = "SELECT firstname FROM customers WHERE cust_id = '$custid'";
+$getfirstname = "SELECT firstname FROM customers WHERE cust_id = '$cusid'";
 $fetchfirstname = mysqli_query($db, $getfirstname);
 $first = mysqli_fetch_array($fetchdates);
 $firstname = $dates['firstname'];
@@ -113,7 +113,7 @@ foreach ($facilities as $showcost) {
 echo $lastname ;
 echo $confirmation;
 echo $firstname;
-echo $custid;
+echo $cusid;
 echo $facilities[0];
 echo $startdate;
 echo $enddate;

@@ -100,6 +100,14 @@ if(empty($_POST['confirmation']) || empty($_POST['lastname'])) {
         $facilitycosts[] = $costs;
     }
 
+echo $lastname ;
+echo $confirmation;
+echo $firstname;
+echo $custid;
+echo $facilities[0];
+echo $startdate;
+echo $enddate;
+echo $facilitycosts[0];
 
 ?>
 

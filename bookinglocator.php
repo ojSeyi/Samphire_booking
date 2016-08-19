@@ -61,7 +61,7 @@ echo $lastname;
     $getfacilitycommand = "SELECT f_id FROM samphire_facilities";
     $fetchfacilities = mysqli_query($db, $getfacilitycommand);
     $f_idarray = Array();
-    while ($row = mysqli_fetch_array($fetchfacilities)) {
+    while ($row = mysqli_fetch_array($fetchfacilities, MYSQLI_NUM)) {
         $f_idarray[] =  $row['f_id'];
     }
 

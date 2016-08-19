@@ -155,7 +155,7 @@ echo $facilitycosts[0];
                     <tr id="pin">
                         <td>
                             <?php
-                            foreach ($facilities as $showfacility) {
+                            foreach ($facilityname as $showfacility) {
                                 echo $showfacility ."</br>";
                             }
                             ?>

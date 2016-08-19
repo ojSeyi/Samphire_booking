@@ -39,9 +39,6 @@ foreach($f_idarray as $facili){
 
 }
 
-foreach($facilities as $p){
-    echo $p;
-}
 
 $getdatescommand = "SELECT startdate, enddate FROM customer_bookings WHERE f_id = '$facilities[0]' AND reference = '$confirmation'";
 $fetchdates = mysqli_query($db, $getdatescommand);
@@ -57,6 +54,10 @@ foreach ($facilities as $showcost) {
     $cost = mysqli_fetch_array($result);
     $costs = $cost['cost'];
     $facilitycosts[] = $costs;
+}
+
+foreach($facilitycosts as $p){
+    echo $p;
 }
 
 echo $lastname ;

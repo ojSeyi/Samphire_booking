@@ -5,13 +5,13 @@ include ("db_connection.php");
 
 $lastname = $_POST['lastname'];
 $confirmation = $_POST['confirmation'];
-echo $lastname;
 $lastname = stripcslashes($lastname);
 $confirmation = stripcslashes($confirmation);
 $lastname = mysqli_real_escape_string($db, $lastname);
 $confirmation = mysqli_real_escape_string($db,$confirmation);
 $firstname = "";
 $custid = "";
+
 
 
 $getfacilitycommand = "SELECT f_id FROM samphire_facilities";
@@ -28,17 +28,20 @@ while ($row = mysqli_fetch_array($fetchfacilities, MYSQLI_ASSOC)) {
 $facilities = array();
 foreach($f_idarray as $facili){
     $bookingcommand = "SELECT * FROM customer_bookings WHERE f_id = '$facili' AND reference = '$confirmation'";
-    $fetchbookings = mysqli_query($db, $bookingcommand);
-    if(mysqli_num_rows($fetchbookings) > 0){
-        while ($ross = mysqli_fetch_array($fetchbookings, MYSQLI_ASSOC)) {
-            $facilities[] =  $ross['f_id'];
-        }
-    }else{
-
+    $stmt = mysqli_prepare($db, "SELECT * FROM customer_bookings WHERE f_id = ? AND reference = ?");
+    mysqli_stmt_bind_param($stmt, 'ss', $facili, $confirmation);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $ross);
+    while(mysqli_stmt_fetch($stmt)){
+        $facilities[] =  $ross['f_id'];
     }
+
 
 }
 
+foreach($facilities as $f){
+    echo $f;
+}
 
 $getdatescommand = "SELECT startdate, enddate FROM customer_bookings WHERE f_id = '$facilities[0]' AND reference = '$confirmation'";
 $fetchdates = mysqli_query($db, $getdatescommand);

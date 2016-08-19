@@ -57,3 +57,12 @@ if(isset($_SESSION['login'])){
 
 </body>
 </html>
+
+$fetchbookings = mysqli_query($db, $bookingcommand);
+if(mysqli_num_rows($fetchbookings) > 0){
+while ($ross = mysqli_fetch_array($fetchbookings, MYSQLI_ASSOC)) {
+$facilities[] =  $ross['f_id'];
+}
+}else{
+
+}

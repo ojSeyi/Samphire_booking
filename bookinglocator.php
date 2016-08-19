@@ -114,7 +114,7 @@ echo $lastname ;
 echo $confirmation;
 echo $firstname;
 echo $cusid;
-echo $facilityname[0];
+echo $facilityname[1];
 echo $startdate;
 echo $enddate;
 echo $facilitycosts[0];

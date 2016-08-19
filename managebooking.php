@@ -17,11 +17,9 @@ $custid = "";
 $getfacilitycommand = "SELECT f_id FROM samphire_facilities";
 $fetchfacilities = mysqli_query($db, $getfacilitycommand);
 $f_idarray = Array();
-if(!$fetchfacilities){
-    echo "nigga i aint working";
-}
+
 while ($row = mysqli_fetch_array($fetchfacilities, MYSQLI_NUM)) {
-    $f_idarray[] =  $row['f_id'];
+    $f_idarray[] =  $row;
 }
 foreach($f_idarray as $p){
     echo $p;

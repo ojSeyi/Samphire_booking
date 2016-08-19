@@ -43,6 +43,8 @@ if(empty($_POST['flow']) || empty($_POST['lastname'])) {
 </header>
 
 <?php
+    session_start();
+    include ("db_connection.php");
     $confirmation = $_POST['confirmation'];
     $firstname = $_POST['confirmation'];
     $lastname = $_POST['lastname'];
@@ -117,27 +119,13 @@ if(empty($_POST['flow']) || empty($_POST['lastname'])) {
         </div>
 
         <?php
-        $k = 0;
-        if(isset($_POST['rfacilityarray'])){
-            $facilityarrays = $_SESSION['facilityarray'];
-            foreach ($facilityarrays as $showfacility) {
-                if ($showfacility = $_POST['rfacilityarray']){
-                    $k = 1;
-                }else{}
-            }
-            if($k == 1){
-                $facilityarrays = array_diff($facilityarrays,[$_POST['rfacilityarray']]);
-                $facilityarrays = array_values($facilityarrays);
-                $_SESSION['facilityarray'] = $facilityarrays;
-                header('location: bookstate2.php');
-            }
 
-        }
         ?>
         <div>
+            <label>To remove facility, select facility and click remove</label><br>
         <?php $facilityarrays = $_SESSION['facilityarray'];?>
         <form method="post" action="removefacility.php">
-            <select name="rfacilityarray" id="facilityarray" size="<?php echo count($facilityarrays) ?>" required>
+            <select name="rfacility" id="facilityarray" size="<?php echo count($facilityname) ?>" required>
                 <?php
                 foreach ($facilityarrays as $showfacilityy) {
                     echo "<option>".$showfacilityy ."</option>";
@@ -149,16 +137,17 @@ if(empty($_POST['flow']) || empty($_POST['lastname'])) {
 
 
         <div id="editbooking">
-            <form method="post" action="editbooking.php">
+            <form method="post" action="addremove.php">
                 <input type="hidden" name="flow" value="flow">
-                <input type="submit" name="removefacility" value="Edit">
+                <input type="hidden" name="facilities" value="<?php echo $facilities  ?>">
+                <input type="submit" name="removefacility" value="Remove">
             </form>
         </div><br>
 
         <div id="Cancel booking">
-            <form method="post" action="editbooking.php">
+            <form method="post" action="addremove.php">
                 <input type="hidden" name="iliya" value="iliya">
-                <input type="submit" name="removefacility2" value="Cancel">
+                <input type="submit" name="removefacility2" value="Add">
             </form>
         </div><br><br>
         </div>

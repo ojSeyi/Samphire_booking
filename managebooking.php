@@ -43,7 +43,7 @@ $startdate = $dates['startdate'];
 $enddate = $dates['enddate'];
 $custid = $dates['cust_id'];
 
-$getfirstname = "SELECT firstname FROM samphire_facilities WHERE cust_id = '$custid'";
+$getfirstname = "SELECT firstname FROM customers WHERE cust_id = '$custid'";
 $fetchfirstname = mysqli_query($db, $getfirstname);
 $first = mysqli_fetch_array($fetchdates);
 $firstname = $dates['firstname'];

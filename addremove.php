@@ -23,6 +23,7 @@ if(isset($_POST['removefacility'])){
         $d = $_POST['removefacility'];
         $r = $_POST['confirmation'];
         $deleterecord = "DELETE FROM samphire_facilities WHERE f_name = '$d' AND reference = '$confirmation'";
+        $go = mysqli_query($db, $deleterecord);
         $_SESSION['facilities'] = $facilityname;
         header('location: editbooking.php');
     }
@@ -37,10 +38,37 @@ if(isset($_POST['removefacility2'])){
         }else{}
     }
     if($l != 1){
+
         $facilityname[] = $_POST['removefacility2'];
+        $confirmation = $_POST['confirmation'];
+        $firstname = $_POST['confirmation'];
+        $lastname = $_POST['lastname'];
+        $cusid = $_POST['cusid'];
+        $facilityname = $_POST['facilityname'];
+        $facilitycosts = $_POST['facilitycosts'];
+        $startdate = $_POST['startdate'];
+        $enddate = $_POST['enddate'];
         $d = $_POST['removefacility2'];
-        $r = $_POST['confirmation'];
-        $addrecord = "INSERT INTO samphire_facilities (reference, f_id, cust_id, startdate, enddate, price) VALUES ('$bookingconfirmationnumber', '$rows', '$custid', '$startdate', '$enddate', '$totalcost')";
+        $totalcost = 0;
+        foreach ($facilities as $showcost) {
+            $checkcost = $showcost;
+            $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+            $result = mysqli_query($db, $getfacilities);
+            $cost = mysqli_fetch_array($result);
+            $totalcost = $totalcost + $cost['cost'];
+        }
+        echo $totalcost;
+        $fac = "SELECT * FROM samphire_facilities WHERE f_name = '$d'";
+        $result = mysqli_query($db, $fac);
+        $rows = 0;
+        if (mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_array($result);
+            $rows = $row['f_id'];
+        }else{
+            header('location: index1.php');
+        }
+        $addrecord = "INSERT INTO samphire_facilities (reference, f_id, cust_id, startdate, enddate, price) VALUES ('$confirmation', '$rows', '$cusid', '$startdate', '$enddate', '$totalcost')";
+        $go = mysqli_query($db, $addrecord);
         $_SESSION['facilities'] = $facilityname;
         header('location: editbooking.php');
 

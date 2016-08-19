@@ -140,10 +140,30 @@ if(empty($_POST['flow']) || empty($_POST['lastname'])) {
         </form><br>
             </div>
 
+            <br><br>
+            <div id="line"></div>
 
         <div id="Cancel booking">
+            <label>To add facility, select facility and click remove</label><br>
+            <?php $facilities = $_SESSION['facilities'];?>
             <form method="post" action="addremove.php">
+                <select name="rfacility" id="facilityarray" size="<?php echo count($facilityname) ?>" required>
+                    <?php
+                    foreach ($facilityarrays as $showfacilityy) {
+                        echo "<option>".$showfacilityy ."</option>";
+                    }
+                    ?>
+                </select>
                 <input type="hidden" name="iliya" value="iliya">
+                <input type="hidden" name="iliya" value="iliya">
+                <input type="hidden" name="firstname" value="<?php echo $firstname  ?>">
+                <input type="hidden" name="lastname" value="<?php echo $lastname  ?>">
+                <input type="hidden" name="confirmation" value="<?php echo $confirmation  ?>">
+                <input type="hidden" name="startdate" value="<?php echo $startdate  ?>">
+                <input type="hidden" name="enddate" value="<?php echo $enddate  ?>">
+                <input type="hidden" name="custid" value="<?php echo $cusid  ?>">
+                <input type="hidden" name="facilities" value="<?php echo $facilities  ?>">
+                <input type="hidden" name="facilitycosts" value="<?php echo $facilitycosts  ?>">
                 <input type="submit" name="removefacility2" value="Add">
             </form>
         </div><br><br>

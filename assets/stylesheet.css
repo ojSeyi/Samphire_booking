@@ -320,3 +320,7 @@ nav>ul>li>a:hover{
     margin-bottom: 2px;
     border: solid 2px black;
 }
+
+#line{
+    border-top: black 1px solid;
+}

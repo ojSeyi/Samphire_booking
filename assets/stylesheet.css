@@ -243,6 +243,19 @@ input[name=removefacility] {
     margin-bottom: 10px;
 }
 
+input[name=removefacility] {
+    background-color: slategray;
+    border: solid 1px darkgray;
+    color: white;
+    padding: 9px 22px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 150px;
+    margin-right: 0px;
+    float: right;
+    margin-bottom: 10px;
+}
+
 #upnav{
     float: right;
 }

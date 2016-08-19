@@ -49,6 +49,7 @@ include ("db_connection.php");
 
     $lastname = $_POST['lastname'];
     $confirmation = $_POST['confirmation'];
+echo $lastname;
     $lastname = stripcslashes($lastname);
     $confirmation = stripcslashes($confirmation);
     $lastname = mysqli_real_escape_string($db, $lastname);

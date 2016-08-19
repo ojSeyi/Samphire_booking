@@ -20,6 +20,9 @@ if(isset($_POST['removefacility'])){
     if($k == 1){
         $facilityname = array_diff($facilityname,[$_POST['removefacility']]);
         $facilityname = array_values($facilityname);
+        $d = $_POST['removefacility'];
+        $r = $_POST['confirmation'];
+        $deleterecord = "SELECT * FROM samphire_facilities WHERE f_name = '$d' AND reference = '$confirmation'";
         $_SESSION['facilities'] = $facilityname;
         header('location: editbooking.php');
     }
@@ -37,6 +40,7 @@ if(isset($_POST['removefacility2'])){
         $facilityname[] = $_POST['removefacility'];
         $_SESSION['facilities'] = $facilityname;
         header('location: editbooking.php');
+
     }
 
 }

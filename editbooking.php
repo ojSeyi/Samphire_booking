@@ -122,9 +122,10 @@ if(empty($_POST['flow']) || empty($_POST['lastname'])) {
 
         ?>
         <div>
+            <div>
             <label>To remove facility, select facility and click remove</label><br>
-        <?php $facilityarrays = $_SESSION['facilityarray'];?>
-        <form method="post" action="removefacility.php">
+        <?php $facilities = $_SESSION['facilities'];?>
+        <form method="post" action="addremove.php">
             <select name="rfacility" id="facilityarray" size="<?php echo count($facilityname) ?>" required>
                 <?php
                 foreach ($facilityarrays as $showfacilityy) {
@@ -132,17 +133,13 @@ if(empty($_POST['flow']) || empty($_POST['lastname'])) {
                 }
                 ?>
             </select>
-            <input type="submit" value="remove">
-        </form>
+            <input type="hidden" name="flow" value="flow">
+            <input type="hidden" name="facilities" value="<?php echo $facilities  ?>">
+            <input type="hidden" name="confirmation" value="<?php echo $confirmation  ?>">
+            <input type="submit" name="removefacility" value="Remove">
+        </form><br>
+            </div>
 
-
-        <div id="editbooking">
-            <form method="post" action="addremove.php">
-                <input type="hidden" name="flow" value="flow">
-                <input type="hidden" name="facilities" value="<?php echo $facilities  ?>">
-                <input type="submit" name="removefacility" value="Remove">
-            </form>
-        </div><br>
 
         <div id="Cancel booking">
             <form method="post" action="addremove.php">

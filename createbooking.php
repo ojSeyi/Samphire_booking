@@ -20,7 +20,7 @@ session_start();
     echo $bookingconfirmationnumber;
     $_SESSION['confirmation'] = $bookingconfirmationnumber;
 
-    $availables = "SELECT * FROM guest_bookings WHERE reference = '$bookingconfirmationnumber'";
+    $availables = "SELECT * FROM customer_bookings WHERE reference = '$bookingconfirmationnumber'";
     $resultsavailables = mysqli_query($db, $availables) or die("failed");
     if(mysqli_num_rows($resultsavailables) > 0){
         header('location: createbooking.php');

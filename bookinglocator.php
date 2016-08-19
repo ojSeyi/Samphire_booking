@@ -1,3 +1,8 @@
+<?php
+if(empty($_POST['confirmation']) || empty($_POST['lastname'])) {
+echo "Enter Reference number and lastname";
+}else {$proceed = 1;}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,9 +46,7 @@
 
 include ("db_connection.php");
 
-if(empty($_POST['confirmation']) || empty($_POST['lastname'])) {
-    echo "Enter Reference number and lastname";
-}else {$proceed = 1;}
+
     $lastname = $_POST['lastname'];
     $confirmation = $_POST['confirmation'];
     $lastname = stripcslashes($lastname);

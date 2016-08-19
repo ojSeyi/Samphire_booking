@@ -66,7 +66,7 @@ echo $lastname;
 
     if(($cust = $customer->fetch_row())){
         $custid = $cust['cust_id'];
-        $firstname = $cust['firstname'];
+        echo $firstname = $cust['firstname'];
     }else{
         header('location: locatebooking.php?nocustomer=1');
     }

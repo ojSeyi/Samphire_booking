@@ -23,21 +23,26 @@ if(!$fetchfacilities){
 while ($row = mysqli_fetch_array($fetchfacilities, MYSQLI_ASSOC)) {
     $f_idarray[] =  $row['f_id'];
 }
-foreach($f_idarray as $p){
-    echo $p;
-}
+
 
 $facilities = array();
 foreach($f_idarray as $facili){
     $bookingcommand = "SELECT * FROM customer_bookings WHERE f_id = '$facili' AND reference = '$confirmation'";
     $fetchbookings = mysqli_query($db, $bookingcommand);
     if(mysqli_num_rows($fetchbookings) > 0){
-        $facilities[] = $facili;
+        while ($ross = mysqli_fetch_array($fetchbookings, MYSQLI_ASSOC)) {
+            $facilities[] =  $ross['f_id'];
+        }
     }else{
 
     }
 
 }
+
+foreach($facilities as $p){
+    echo $p;
+}
+
 $getdatescommand = "SELECT startdate, enddate FROM customer_bookings WHERE f_id = '$facilities[0]' AND reference = '$confirmation'";
 $fetchdates = mysqli_query($db, $getdatescommand);
 $dates = mysqli_fetch_array($fetchdates);

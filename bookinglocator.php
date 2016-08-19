@@ -94,7 +94,7 @@ $cusid = $id['cust_id'];
 $getfirstname = "SELECT firstname FROM customers WHERE cust_id = '$cusid'";
 $fetchfirstname = mysqli_query($db, $getfirstname) or die('shit aint work');
 $first = mysqli_fetch_array($fetchdates);
-$firstname = $dates['firstname'];
+$firstname = $first['firstname'];
 
 $facilitycosts = array();
 $facilityname = array();

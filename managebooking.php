@@ -29,7 +29,7 @@ $facilities = array();
 foreach($f_idarray as $facili){
     $bookingcommand = "SELECT * FROM customer_bookings WHERE f_id = '$facili' AND reference = '$confirmation'";
     $stmt = mysqli_prepare($db, "SELECT * FROM customer_bookings WHERE f_id = ? AND reference = ?");
-    mysqli_stmt_bind_param($stmt, 'ss', $facili, $confirmation);
+    mysqli_stmt_bind_param($stmt, 'is', $facili, $confirmation);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_bind_result($stmt, $ross);
     while(mysqli_stmt_fetch($stmt)){

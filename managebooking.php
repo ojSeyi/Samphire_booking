@@ -41,7 +41,7 @@ $fetchdates = mysqli_query($db, $getdatescommand);
 $dates = mysqli_fetch_array($fetchdates);
 $startdate = $dates['startdate'];
 $enddate = $dates['enddate'];
-$custid = $date['cust_id'];
+$custid = $dates['cust_id'];
 
 $facilitycosts = array();
 $facilityname = array();

@@ -29,7 +29,7 @@ $facilities = array();
 foreach($f_idarray as $facili){
     $bookingcommand = "SELECT * FROM customer_bookings WHERE f_id = '$facili' AND reference = '$confirmation'";
     $fetchbookings = mysqli_query($db, $bookingcommand);
-    if(mysqli_num_rows($fetchbookings) == 2){
+    if(mysqli_num_rows($fetchbookings) > 0){
         while ($ross = mysqli_fetch_array($fetchbookings, MYSQLI_ASSOC)) {
             $facilities[] =  $ross['f_id'];
         }

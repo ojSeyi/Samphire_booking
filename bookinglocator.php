@@ -58,7 +58,7 @@ if(empty($_POST['confirmation']) || empty($_POST['lastname'])) {
         $customerid ->bind_param('ss',$lastname);
         $customerid->execute();
         $customer = $customerid->get_result();
-    }
+    }else{}
 
     if(($cust = $customer->fetch_row())){
         $custid = $cust['cust_id'];

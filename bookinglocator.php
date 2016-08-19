@@ -113,7 +113,6 @@ foreach ($facilities as $showcost) {
 echo $lastname ;
 echo $confirmation;
 echo $firstname;
-echo $cusid;
 
 echo $startdate;
 echo $enddate;

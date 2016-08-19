@@ -70,11 +70,8 @@ echo $lastname;
     foreach($f_idarray as $facili){
         $bookingcommand = "SELECT * FROM customer_bookings WHERE f_id = '$facili' AND reference = '$confirmation'";
         $fetchbookings = mysqli_query($db, $bookingcommand);
-        if($fetchbookings > 0){
-            $facility = mysqli_fetch_array($fetchbookings);
-            foreach($facility as $bookedfacility){
-                $facilities[] = $bookedfacility;
-            }
+        if(mysqli_num_rows($fetchbookings) > 0){
+                $facilities[] = $facili;
         }else{
             header('location: locatebooking.php?norecord=1');
         }

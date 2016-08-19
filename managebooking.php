@@ -127,9 +127,7 @@ echo $facilitycosts[0];
         <div id="syscon">
             <div id="bookingconfirmation">
                 <table id="bookingdetails" class="grid-container">
-                    <tr>
-                        <td id="tablehead"> Here are the details of your booking </td>
-                    </tr>
+                    <caption id="tablehead"> Here are the details of your booking </caption>
                     <tr>
                         <td>Customer Name: </td>
                         <td><?php echo $firstname . " " . $lastname; ?></td>

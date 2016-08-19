@@ -34,7 +34,7 @@ foreach($f_idarray as $facili){
             $facilities[] =  $ross['f_id'];
         }
     }else{
-        echo "fish";
+
     }
 
 }

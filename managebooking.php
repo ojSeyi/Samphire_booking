@@ -32,11 +32,11 @@ foreach($f_idarray as $facili){
     if(mysqli_num_rows($fetchbookings) > 0){
         while ($ross = mysqli_fetch_array($fetchbookings, MYSQLI_ASSOC)) {
             $facilities[] =  $ross['f_id'];
+            $custid = $ross['cust_id'];
         }
     }else{
 
     }
-
 }
 
 

@@ -60,7 +60,12 @@ echo $lastname;
 
     $getfacilitycommand = "SELECT f_id FROM samphire_facilities";
     $fetchfacilities = mysqli_query($db, $getfacilitycommand);
-    $f_idarray = mysqli_fetch_array($fetchfacilities);
+    $f_idarray = Array();
+    while ($row = mysqli_fetch_array($fetchfacilities, MYSQLI_ASSOC)) {
+        $f_idarray[] =  $row['f_id'];
+    }
+
+
     $facilities = array();
     foreach($f_idarray as $facili){
         $bookingcommand = "SELECT * FROM customer_bookings WHERE f_id = '$facili' AND reference = '$confirmation'";

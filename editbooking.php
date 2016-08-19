@@ -54,6 +54,7 @@ if(empty($_POST['flow']) || empty($_POST['lastname'])) {
     $startdate = $_POST['startdate'];
     $enddate = $_POST['enddate'];
 
+    $facilityname = $_SESSION['facilities'];
 
 ?>
 
@@ -97,8 +98,12 @@ if(empty($_POST['flow']) || empty($_POST['lastname'])) {
                         </td>
                         <td>
                             <?php
-                            foreach ($facilitycosts as $costs) {
-                                echo $costs ."</br>";
+                            foreach ($facilityname as $showcost) {
+                                $checkcost = $showcost;
+                                $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+                                $result = mysqli_query($db, $getfacilities);
+                                $cost = mysqli_fetch_array($result);
+                                echo "£" . $cost['cost'] . "<br>";
                             }
                             ?>
                         </td>
@@ -107,10 +112,14 @@ if(empty($_POST['flow']) || empty($_POST['lastname'])) {
                         <td>Total: </td>
                         <td><?php
                             $totalcost = 0;
-                            foreach ($facilitycosts as $showcost) {
-                                $totalcost = $totalcost + $showcost;
+                            foreach ($facilityname as $showcost) {
+                                $checkcost = $showcost;
+                                $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+                                $result = mysqli_query($db, $getfacilities);
+                                $cost = mysqli_fetch_array($result);
+                                $totalcost = $totalcost + $cost['cost'];
                             }
-                            echo $totalcost;
+                            echo "£".$totalcost;
                             ?>
                         </td>
                     </tr>

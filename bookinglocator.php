@@ -46,7 +46,10 @@ if(empty($_POST['confirmation']) || empty($_POST['lastname'])) {
 }else {$proceed = 1;}
     $lastname = $_POST['lastname'];
     $confirmation = $_POST['confirmation'];
-
+    $lastname = stripcslashes($lastname);
+    $confirmation = stripcslashes($confirmation);
+    $lastname = mysqli_real_escape_string($db, $lastname);
+    $confirmation = mysqli_real_escape_string($db,$confirmation);
     $firstname = "";
     $custid = "";
     $customer = "";

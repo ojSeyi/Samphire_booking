@@ -56,7 +56,7 @@ echo $lastname;
     $confirmation = mysqli_real_escape_string($db,$confirmation);
     $firstname = "";
     $custid = "";
-    $customer = "";
+
 
     if($customerid=$db->prepare("SELECT * FROM customers WHERE lastname =?")){
         $customerid ->bind_param('ss',$lastname);

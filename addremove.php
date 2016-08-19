@@ -22,7 +22,7 @@ if(isset($_POST['removefacility'])){
         $facilityname = array_values($facilityname);
         $d = $_POST['removefacility'];
         $r = $_POST['confirmation'];
-        $deleterecord = "SELECT * FROM samphire_facilities WHERE f_name = '$d' AND reference = '$confirmation'";
+        $deleterecord = "DELETE FROM samphire_facilities WHERE f_name = '$d' AND reference = '$confirmation'";
         $_SESSION['facilities'] = $facilityname;
         header('location: editbooking.php');
     }
@@ -37,7 +37,10 @@ if(isset($_POST['removefacility2'])){
         }else{}
     }
     if($l != 1){
-        $facilityname[] = $_POST['removefacility'];
+        $facilityname[] = $_POST['removefacility2'];
+        $d = $_POST['removefacility2'];
+        $r = $_POST['confirmation'];
+        $addrecord = "INSERT INTO samphire_facilities (reference, f_id, cust_id, startdate, enddate, price) VALUES ('$bookingconfirmationnumber', '$rows', '$custid', '$startdate', '$enddate', '$totalcost')";
         $_SESSION['facilities'] = $facilityname;
         header('location: editbooking.php');
 

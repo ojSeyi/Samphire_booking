@@ -9,8 +9,8 @@ $lastname = stripcslashes($lastname);
 $confirmation = stripcslashes($confirmation);
 $lastname = mysqli_real_escape_string($db, $lastname);
 $confirmation = mysqli_real_escape_string($db,$confirmation);
-$firstname = "";
-$custid = "";
+$firstname = "a";
+$custid = 'a';
 
 
 

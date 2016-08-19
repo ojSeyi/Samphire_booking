@@ -48,7 +48,7 @@ if(is_null($_SESSION['startdate']) && ($_SESSION['facility'])){
 <div id="system">
 <main class="grid-container">
     <div id="syscon">
-
+        <div id="bookingconfirmation" class="grid-container">
         <?php
         session_start();
 
@@ -84,7 +84,7 @@ if(is_null($_SESSION['startdate']) && ($_SESSION['facility'])){
             <input type="submit" value="Check Availability"/>
         </form>
 
-
+    </div>
     </div>
 </main>
 </div>

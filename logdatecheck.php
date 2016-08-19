@@ -47,6 +47,7 @@ if(is_null($_SESSION['firstname'])){
     <main class="grid-container">
 
 <div id="syscon">
+    <div id="bookingconfirmation" class="grid-container">
 
     <?php
     session_start();
@@ -82,7 +83,7 @@ if(is_null($_SESSION['firstname'])){
     <form action="usavachk.php" method="post">
         <input type="submit" value="Check Availability"/>
     </form>
-
+    </div>
 </div>
 </main>
 </div>

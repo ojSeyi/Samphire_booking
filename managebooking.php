@@ -109,16 +109,6 @@ foreach ($facilities as $showcost) {
     $facilityname[] = $name;
 }
 
-
-echo $lastname ;
-echo $confirmation;
-echo $firstname;
-echo $cusid;
-echo $facilityname[1];
-echo $startdate;
-echo $enddate;
-echo $facilitycosts[0];
-
 ?>
 
 <div id="system">
@@ -184,13 +174,29 @@ echo $facilitycosts[0];
         <div id="editbooking">
             <form method="post" action="editbooking.php">
                 <input type="hidden" name="flow" value="flow">
+                <input type="hidden" name="firstname" value="<?php echo $firstname  ?>">
+                <input type="hidden" name="lastname" value="<?php echo $lastname  ?>">
+                <input type="hidden" name="confirmation" value="<?php echo $confirmation  ?>">
+                <input type="hidden" name="startdate" value="<?php echo $startdate  ?>">
+                <input type="hidden" name="enddate" value="<?php echo $enddate  ?>">
+                <input type="hidden" name="custid" value="<?php echo $cusid  ?>">
+                <input type="hidden" name="facilities" value="<?php echo $facilities  ?>">
+                <input type="hidden" name="facilitycosts" value="<?php echo $facilitycosts  ?>">
                 <input type="submit" name="removefacility" value="Edit">
             </form>
         </div><br>
 
         <div id="Cancel booking">
-            <form method="post" action="editbooking.php">
+            <form method="post" action="cancelbooking.php">
                 <input type="hidden" name="iliya" value="iliya">
+                <input type="hidden" name="firstname" value="<?php echo $firstname  ?>">
+                <input type="hidden" name="lastname" value="<?php echo $lastname  ?>">
+                <input type="hidden" name="confirmation" value="<?php echo $confirmation  ?>">
+                <input type="hidden" name="startdate" value="<?php echo $startdate  ?>">
+                <input type="hidden" name="enddate" value="<?php echo $enddate  ?>">
+                <input type="hidden" name="custid" value="<?php echo $cusid  ?>">
+                <input type="hidden" name="facilities" value="<?php echo $facilities  ?>">
+                <input type="hidden" name="facilitycosts" value="<?php echo $facilitycosts  ?>">
                 <input type="submit" name="removefacility2" value="Cancel">
             </form>
         </div><br><br>

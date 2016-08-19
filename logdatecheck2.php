@@ -48,6 +48,7 @@ if(is_null($_SESSION['firstname'])){
     <main class="grid-container">
 
      <div id="syscon">
+         <div id="bookingconfirmation" class="grid-container">
         <?php
 
             $startdate = $_POST['startdate'];
@@ -83,6 +84,7 @@ if(is_null($_SESSION['firstname'])){
             }
 
         ?>
+        </div>
     </div>
 </main>
 </div>

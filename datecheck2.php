@@ -49,6 +49,7 @@
     <main class="grid-container">
 
     <div id="syscon">
+        <div id="bookingconfirmation" class="grid-container">
         <?php
         session_start();
 
@@ -86,6 +87,7 @@
 
         ?>
     </div>
+  </div>
 </main>
 </div>
 <nav id="outnav">

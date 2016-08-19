@@ -61,6 +61,9 @@ echo $lastname;
     $getfacilitycommand = "SELECT f_id FROM samphire_facilities";
     $fetchfacilities = mysqli_query($db, $getfacilitycommand);
     $f_idarray = Array();
+    if(!$fetchfacilities){
+        echo "nigga i aint working";
+    }
     while ($row = mysqli_fetch_array($fetchfacilities, MYSQLI_NUM)) {
         $f_idarray[] =  $row['f_id'];
     }
@@ -73,7 +76,7 @@ echo $lastname;
         if(mysqli_num_rows($fetchbookings) > 0){
                 $facilities[] = $facili;
         }else{
-            header('location: locatebooking.php?norecord=1');
+
         }
 
     }

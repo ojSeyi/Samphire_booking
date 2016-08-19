@@ -21,7 +21,7 @@ if(!$fetchfacilities){
     echo "nigga i aint working";
 }
 while ($row = mysqli_fetch_array($fetchfacilities, MYSQLI_ASSOC)) {
-    $f_idarray[] =  $row;
+    $f_idarray[] =  $row['f_id'];
 }
 foreach($f_idarray as $p){
     echo $p;

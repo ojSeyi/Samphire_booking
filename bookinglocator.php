@@ -67,7 +67,9 @@ echo $lastname;
     while ($row = mysqli_fetch_array($fetchfacilities, MYSQLI_NUM)) {
         $f_idarray[] =  $row['f_id'];
     }
-
+    if(is_null($f_idarray)){
+        echo " nigga shii is empty";
+    }
 
     $facilities = array();
     foreach($f_idarray as $facili){

@@ -349,3 +349,7 @@ nav>ul>li>a:hover{
     border-radius: 3px;
     border: 1px solid black;
 }
+
+#registration * label{
+    width: 180px;
+}

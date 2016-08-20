@@ -61,6 +61,7 @@ if(isset($_SESSION['login'])){
                     <table id="registration" class="grid-container">
                         <br>
                         <tr>
+                            <th></th>
                             <th>Sorry the username or email address you entered is already in use<br></th>
                         </tr>
                         <caption>Please enter all your correct details below to Register<br><br></caption>

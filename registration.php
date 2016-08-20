@@ -142,7 +142,7 @@ if(isset($_SESSION['login'])){
                 <tr>
                     <td>
                         <labe>
-                            ------->
+                            Join us ------->
                         </labe>
                     </td>
                     <td>

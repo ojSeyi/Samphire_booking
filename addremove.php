@@ -10,7 +10,7 @@ include ("db_connection.php");
 
 //remove facility
 $k = 0;
-if(isset($_POST['removefacilityy'])){
+if(isset($_POST['rfacility'])){
     $facilityname = $_SESSION['facilitynam'];
     foreach ($facilityname as $showfacility) {
         if ($showfacility = $_POST['rfacility']){
@@ -28,11 +28,8 @@ if(isset($_POST['removefacilityy'])){
         header('location: editbooking.php');
     }
 
-}else{
-
-}
+}elseif(isset($_POST['afacility'])){
 $l = 0;
-if(isset($_POST['removefacility2'])){
     $facilityname = $_SESSION['facilitynam'];
     foreach ($facilityname as $showfacility) {
         if ($showfacility = $_POST['afacility']){

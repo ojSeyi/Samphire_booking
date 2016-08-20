@@ -110,7 +110,7 @@ foreach ($facilities as $showcost) {
 }
 
 $_SESSION['confirmation'] = $confirmation;
-$_SESSION['first'] = $firstname;
+$_SESSION['firstname'] = $firstname;
 $_SESSION['lastname'] = $lastname;
 $_SESSION['cusid'] = $cusid;
 $_SESSION['facilityname'] = $facilityname;
@@ -183,7 +183,7 @@ $_SESSION['enddate'] = $enddate;
         <div id="editbooking">
             <form method="post" action="editbooking.php">
                 <input type="hidden" name="flow" value="flow">
-                <input type="hidden" name="firstname" value="<?php $_SESSION['first'] ?>">
+                <input type="hidden" name="firstname" value="<?php $_SESSION['firstname'] ?>">
                 <input type="hidden" name="lastname" value="<?php $_SESSION['lastname']  ?>">
                 <input type="hidden" name="confirmation" value="<?php $_SESSION['confirmation']  ?>">
                 <input type="hidden" name="startdate" value="<?php $_SESSION['startdate'] ?>">

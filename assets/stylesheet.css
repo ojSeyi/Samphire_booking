@@ -337,3 +337,15 @@ nav>ul>li>a:hover{
 #line{
     border-top: black 1px solid;
 }
+
+#registrationdiv{
+    background-color: lightcyan;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+#registrationdiv:hover{
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid black;
+}

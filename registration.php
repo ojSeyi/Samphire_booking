@@ -56,6 +56,7 @@ if(isset($_SESSION['login'])){
     <main class="grid-container">
         <h1>Welcome to Samphire-Subsea Facility Booking</h1>
         <div id="syscon">
+            <div id="registrationdiv">
             <form method="post" action="processregistration.php">
             <table id="registration" class="grid-container">
                 <caption>Please enter all your correct details below to Register</caption>
@@ -150,6 +151,7 @@ if(isset($_SESSION['login'])){
                 </tr>
             </table>
             </form>
+            </div>
             <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
             <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
             <script type="text/javascript" src="JS/global.js"></script>

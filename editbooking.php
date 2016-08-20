@@ -1,6 +1,6 @@
 <?php
-if(empty($_POST['flow']) || empty($_POST['lastname'])) {
-    echo header('location: locatebooking.php');
+if(is_null($_POST['flow']) || is_null($_POST['lastname'])) {
+    header('location: locatebooking.php');
 }else {$proceed = 1;}
 ?>
 <!DOCTYPE html>

@@ -147,7 +147,7 @@ if(isset($_SESSION['login'])){
                         </labe><br><br>
                     </td>
                     <td>
-                        <input type="submit" name="register" value="register" required><br><br>
+                        <input type="submit" name="register" value="register" required><br><br><br><br>
                     </td>
                 </tr>
             </table>

@@ -13,7 +13,7 @@ $k = 0;
 if(isset($_POST['rfacility'])){
     $facilityname = $_SESSION['facilitynam'];
     foreach ($facilityname as $showfacility) {
-        if ($showfacility = $_POST['rfacility']){
+        if ($showfacility == $_POST['rfacility']){
             $k = 1;
         }else{}
     }
@@ -32,7 +32,7 @@ if(isset($_POST['rfacility'])){
 $l = 0;
     $facilityname = $_SESSION['facilitynam'];
     foreach ($facilityname as $showfacility) {
-        if ($showfacility = $_POST['afacility']){
+        if ($showfacility == $_POST['afacility']){
             $l = 1;
         }else{}
     }

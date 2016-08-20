@@ -22,12 +22,12 @@ if(isset($_POST['rfacility'])){
         $facilityname = array_diff($facilityname,[$_POST['rfacility']]);
         $facilityname = array_values($facilityname);
         $d = $_POST['rfacility'];
-        $r = $_SESSION['confirmatio'];
+        $confirmation = $_SESSION['confirmatio'];
         $getidcommand = "SELECT * FROM samphire_facilities WHERE f_name = '$d'";
         $fetchid = mysqli_query($db, $getidcommand);
         $id = mysqli_fetch_array($fetchid);
-        $id = $id['cust_id'];
-        $deleterecord = "DELETE FROM customer_bookings WHERE f_id = '$id' AND reference = '$r'";
+        $idd = $id['cust_id'];
+        $deleterecord = "DELETE FROM customer_bookings WHERE f_id = '$idd' AND reference = '$confirmation'";
         $go = mysqli_query($db, $deleterecord);
         $_SESSION['facilitynam'] = $facilityname;
         header('location: editbooking.php');

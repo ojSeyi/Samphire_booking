@@ -67,87 +67,87 @@ if(isset($_SESSION['login'])){
                     <td>
                         <labe>
                             Username:
-                        </labe>
-                    </td><br>
+                        </labe><br>
+                    </td>
                     <td>
-                        <input type="text" name="username" required>
-                    </td><br>
+                        <input type="text" name="username" required><br>
+                    </td>
                     <td>
-                        <div id="usernamecheck"></div>
-                    </td><br>
+                        <div id="usernamecheck"></div><br>
+                    </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
                             Password:
-                        </labe>
-                    </td><br>
+                        </labe><br>
+                    </td>
                     <td>
-                        <input type="password" name="password" required>
-                        <br>
+                        <input type="password" name="password" required><br>
+                    </td>
                     <td>
-                        <div id="passwordcheck"></div>
-                    </td><br>
+                        <div id="passwordcheck"></div><br>
+                    </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
                             First name:
-                        </labe>
-                    </td><br>
+                        </labe><br>
+                    </td>
                     <td>
-                        <input type="text" name="firstname" required>
-                    </td><br>
+                        <input type="text" name="firstname" required><br>
+                    </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
                             Last name:
-                        </labe>
-                    </td><br>
+                        </labe><br>
+                    </td>
                     <td>
-                        <input type="text" name="lastname" required>
-                    </td><br>
+                        <input type="text" name="lastname" required><br>
+                    </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
                             Email:
-                        </labe>
-                    </td><br>
+                        </labe><br>
+                    </td>
                     <td>
-                        <input type="text" name="email" required>
-                    </td><br>
+                        <input type="text" name="email" required><br>
+                    </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
                             Mobile number:
-                        </labe>
-                    </td><br>
+                        </labe><br>
+                    </td>
                     <td>
-                        <input type="tel" name="number" required>
-                    </td><br>
+                        <input type="tel" name="number" required><br>
+                    </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
                             Address:
-                        </labe>
-                    </td><br>
+                        </labe><br>
+                    </td>
                     <td>
-                        <input type="text" name="address" required>
-                    </td><br>
+                        <input type="text" name="address" required><br>
+                    </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
                             Join us ------->
-                        </labe>
-                    </td><br>
+                        </labe><br>
+                    </td>
                     <td>
-                        <input type="submit" name="register" value="register" required>
-                    </td><br>
+                        <input type="submit" name="register" value="register" required><br>
+                    </td>
                 </tr>
             </table>
             </form>

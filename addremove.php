@@ -24,7 +24,7 @@ if(isset($_POST['rfacility'])){
         $facilityname = array_values($facilityname);
         $d = $_POST['rfacility'];
         $r = $_SESSION['confirmatio'];
-        $deleterecord = "DELETE FROM samphire_facilities WHERE f_name = '$d' AND reference = '$confirmation'";
+        $deleterecord = "DELETE FROM customer_bookings WHERE f_name = '$d' AND reference = '$confirmation'";
         $go = mysqli_query($db, $deleterecord);
         $_SESSION['facilitynam'] = $facilityname;
         header('location: editbooking.php');

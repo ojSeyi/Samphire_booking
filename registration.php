@@ -59,9 +59,9 @@ if(isset($_SESSION['login'])){
             <div id="registrationdiv">
             <form method="post" action="processregistration.php">
             <table id="registration" class="grid-container">
-                <caption>Please enter all your correct details below to Register</caption><br>
+                <caption>Please enter all your correct details below to Register<br></caption>
                 <tr>
-                    <th>Note that all information on this form is required</th><br>
+                    <th>Note that all information on this form is required<br></th>
                 </tr>
                 <tr>
                     <td>

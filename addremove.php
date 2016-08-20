@@ -24,7 +24,11 @@ if(isset($_POST['rfacility'])){
         $facilityname = array_values($facilityname);
         $d = $_POST['rfacility'];
         $r = $_SESSION['confirmatio'];
-        $deleterecord = "DELETE FROM customer_bookings WHERE f_name = '$d' AND reference = '$confirmation'";
+        $getidcommand = "SELECT * FROM samphire_facilities WHERE f_name = '$d'";
+        $fetchid = mysqli_query($db, $getidcommand);
+        $id = mysqli_fetch_array($fetchid);
+        $cusid = $id['cust_id'];
+        $deleterecord = "DELETE FROM customer_bookings WHERE f_id = '$cusid' AND reference = '$confirmation'";
         $go = mysqli_query($db, $deleterecord);
         $_SESSION['facilitynam'] = $facilityname;
         header('location: editbooking.php');

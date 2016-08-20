@@ -44,7 +44,7 @@ $l = 0;
     }
     if($l != 1){
 
-        $facilityname[] = $_SESSION['facilitynam'];
+        $facilityname[] = $_POST['afacility'];
         $confirmation = $_SESSION['confirmation'];
         $firstname = $_SESSION['firstnam'];
         $lastname = $_SESSION['lastnam'];

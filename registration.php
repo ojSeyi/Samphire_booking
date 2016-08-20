@@ -47,9 +47,12 @@ if(isset($_SESSION['login'])){
 
 <div id="system">
     <main class="grid-container">
-
+        <h1>Welcome to Samphire-Subsea Facility Booking</h1>
         <div id="syscon">
+            <table id="registration" class="grid-container">
+                <caption>Please enter all your correct details below to Register</caption>
 
+            </table>
         </div>
 
     </main>

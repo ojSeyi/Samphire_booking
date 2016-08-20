@@ -52,6 +52,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
 
         <div id="biglogin">
             <table id="biglogintable">
+                <caption>You must be registered to use this system</caption>
                 <tr>
                     <td>
                         <table id="innerlogintable">

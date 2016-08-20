@@ -66,9 +66,9 @@ if(isset($_SESSION['login'])){
                 </tr>
                 <tr>
                     <td>
-                        <labe>
+                        <label for="usernamecheck">
                             Username:
-                        </labe><br><br>
+                        </label><br><br>
                     </td>
                     <td>
                         <input type="text" name="username" id="usernamea" required><br><br>
@@ -79,9 +79,9 @@ if(isset($_SESSION['login'])){
                 </tr>
                 <tr>
                     <td>
-                        <labe>
+                        <label for="passwordcheck">
                             Password:
-                        </labe><br><br>
+                        </label><br><br>
                     </td>
                     <td>
                         <input type="password" name="password" id="usernamea" min="6" required><br><br>
@@ -92,9 +92,9 @@ if(isset($_SESSION['login'])){
                 </tr>
                 <tr>
                     <td>
-                        <labe>
+                        <label>
                             First name:
-                        </labe><br><br>
+                        </label><br><br>
                     </td>
                     <td>
                         <input type="text" name="firstname" min="2" required><br><br>
@@ -102,9 +102,9 @@ if(isset($_SESSION['login'])){
                 </tr>
                 <tr>
                     <td>
-                        <labe>
+                        <label>
                             Last name:
-                        </labe><br><br>
+                        </label><br><br>
                     </td>
                     <td>
                         <input type="text" name="lastname" required><br><br>
@@ -112,9 +112,9 @@ if(isset($_SESSION['login'])){
                 </tr>
                 <tr>
                     <td>
-                        <labe>
+                        <label for="emailcheck">
                             Email:
-                        </labe><br><br>
+                        </label><br><br>
                     </td>
                     <td>
                         <input type="email" name="email" id="emaila" required><br><br>
@@ -125,9 +125,9 @@ if(isset($_SESSION['login'])){
                 </tr>
                 <tr>
                     <td>
-                        <labe>
+                        <label>
                             Mobile number:
-                        </labe><br><br>
+                        </label><br><br>
                     </td>
                     <td>
                         <input type="tel" name="mobile" required><br><br>
@@ -135,9 +135,9 @@ if(isset($_SESSION['login'])){
                 </tr>
                 <tr>
                     <td>
-                        <labe>
+                        <label>
                             Address:
-                        </labe><br><br>
+                        </label><br><br>
                     </td>
                     <td>
                         <input type="text" name="address" required><br><br>
@@ -145,9 +145,9 @@ if(isset($_SESSION['login'])){
                 </tr>
                 <tr>
                     <td>
-                        <labe>
+                        <label>
                             Join us ------->
-                        </labe><br><br>
+                        </label><br><br>
                     </td>
                     <td>
                         <input type="submit" name="register" value="register" required><br><br><br><br>
@@ -156,8 +156,8 @@ if(isset($_SESSION['login'])){
             </table>
             </form>
             </div>
-            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-            <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+            <script>$("#registration".validate())</script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
             <script type="text/javascript" src="JS/global.js"></script>
         </div>
 

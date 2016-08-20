@@ -45,14 +45,14 @@ if(is_null($_POST['flow']) && is_null($_POST['lastname'])) {
 <?php
     session_start();
     include ("db_connection.php");
-    $confirmation = $_POST['confirmation'];
-    $firstname = $_POST['confirmation'];
-    $lastname = $_POST['lastname'];
-    $cusid = $_POST['cusid'];
-    $facilityname = $_POST['facilityname'];
-    $facilitycosts = $_POST['facilitycosts'];
-    $startdate = $_POST['startdate'];
-    $enddate = $_POST['enddate'];
+    $confirmation = $_POST['confirmatio'];
+    $firstname = $_POST['firstnam'];
+    $lastname = $_POST['lastnam'];
+    $cusid = $_POST['cusi'];
+    $facilityname = $_POST['facilitynam'];
+    $facilitycosts = $_POST['facilitycost'];
+    $startdate = $_POST['startdat'];
+    $enddate = $_POST['enddat'];
 
     $facilityname = $_SESSION['facilities'];
 

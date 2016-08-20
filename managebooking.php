@@ -198,7 +198,7 @@ foreach ($facilities as $showcost) {
                 <input type="hidden" name="facilitycosts" value="<?php $_SESSION['facilitycost'] ?>">
                 <input type="submit" name="removefacility" value="Edit">
             </form>
-
+            <br><br><br>
 
 
             <form method="post" action="cancelbooking.php">

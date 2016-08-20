@@ -130,7 +130,7 @@ if(isset($_SESSION['login'])){
                         </labe><br><br>
                     </td>
                     <td>
-                        <input type="tel" name="number" required><br><br>
+                        <input type="tel" name="mobile" required><br><br>
                     </td>
                 </tr>
                 <tr>

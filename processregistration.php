@@ -88,6 +88,7 @@ if(mysqli_num_rows($usernamecheck) < 1){
 
             $login = $_POST['register'];
             $_SESSION['login'] = $login;
+            $_SESSION['firstname'] = $firstname;
             header('location: home1.php');
         }else{$t = 0;}
     }else{$t = 1;}

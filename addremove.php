@@ -52,7 +52,7 @@ $l = 0;
         $facilitycosts = $_SESSION['facilitycost'];
         $startdate = $_SESSION['startdat'];
         $enddate = $_SESSION['enddat'];
-        $d = $_SESSION['afacility'];
+        $d = $_POST['afacility'];
         $totalcost = 0;
         foreach ($facilityname as $showcost) {
             $checkcost = $showcost;

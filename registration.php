@@ -60,94 +60,94 @@ if(isset($_SESSION['login'])){
             <form method="post" action="processregistration.php">
             <table id="registration" class="grid-container">
                 <br>
-                <caption>Please enter all your correct details below to Register<br></caption>
+                <caption>Please enter all your correct details below to Register<br><br></caption>
                 <tr>
-                    <th>Note that all information on this form is required<br></th>
+                    <th>Note that all information on this form is required<br><br></th>
                 </tr>
                 <tr>
                     <td>
                         <labe>
                             Username:
-                        </labe><br>
+                        </labe><br><br>
                     </td>
                     <td>
-                        <input type="text" name="username" required><br>
+                        <input type="text" name="username" required><br><br>
                     </td>
                     <td>
-                        <div id="usernamecheck"></div><br>
+                        <div id="usernamecheck"></div><br><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
                             Password:
-                        </labe><br>
+                        </labe><br><br>
                     </td>
                     <td>
-                        <input type="password" name="password" required><br>
+                        <input type="password" name="password" required><br><br>
                     </td>
                     <td>
-                        <div id="passwordcheck"></div><br>
+                        <div id="passwordcheck"></div><br><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
                             First name:
-                        </labe><br>
+                        </labe><br><br>
                     </td>
                     <td>
-                        <input type="text" name="firstname" required><br>
+                        <input type="text" name="firstname" required><br><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
                             Last name:
-                        </labe><br>
+                        </labe><br><br>
                     </td>
                     <td>
-                        <input type="text" name="lastname" required><br>
+                        <input type="text" name="lastname" required><br><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
                             Email:
-                        </labe><br>
+                        </labe><br><br>
                     </td>
                     <td>
-                        <input type="text" name="email" required><br>
+                        <input type="text" name="email" required><br><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
                             Mobile number:
-                        </labe><br>
+                        </labe><br><br>
                     </td>
                     <td>
-                        <input type="tel" name="number" required><br>
+                        <input type="tel" name="number" required><br><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
                             Address:
-                        </labe><br>
+                        </labe><br><br>
                     </td>
                     <td>
-                        <input type="text" name="address" required><br>
+                        <input type="text" name="address" required><br><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
                             Join us ------->
-                        </labe><br>
+                        </labe><br><br>
                     </td>
                     <td>
-                        <input type="submit" name="register" value="register" required><br>
+                        <input type="submit" name="register" value="register" required><br><br>
                     </td>
                 </tr>
             </table>

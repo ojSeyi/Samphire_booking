@@ -59,10 +59,10 @@ if(isset($_SESSION['login'])){
             <div id="registrationdiv">
             <form method="post" action="processregistration.php">
             <table id="registration" class="grid-container">
-                <caption>Please enter all your correct details below to Register</caption>
+                <caption>Please enter all your correct details below to Register</caption><br>
                 <tr>
                     <th>Note that all information on this form is required</th>
-                </tr>
+                </tr><br>
                 <tr>
                     <td>
                         <labe>
@@ -75,7 +75,7 @@ if(isset($_SESSION['login'])){
                     <td>
                         <div id="usernamecheck"></div>
                     </td>
-                </tr>
+                </tr><br>
                 <tr>
                     <td>
                         <labe>
@@ -88,7 +88,7 @@ if(isset($_SESSION['login'])){
                     <td>
                         <div id="passwordcheck"></div>
                     </td>
-                </tr>
+                </tr><br>
                 <tr>
                     <td>
                         <labe>
@@ -98,7 +98,7 @@ if(isset($_SESSION['login'])){
                     <td>
                         <input type="text" name="firstname" required>
                     </td>
-                </tr>
+                </tr><br>
                 <tr>
                     <td>
                         <labe>
@@ -108,7 +108,7 @@ if(isset($_SESSION['login'])){
                     <td>
                         <input type="text" name="lastname" required>
                     </td>
-                </tr>
+                </tr><br>
                 <tr>
                     <td>
                         <labe>
@@ -118,7 +118,7 @@ if(isset($_SESSION['login'])){
                     <td>
                         <input type="text" name="email" required>
                     </td>
-                </tr>
+                </tr><br>
                 <tr>
                     <td>
                         <labe>
@@ -128,7 +128,7 @@ if(isset($_SESSION['login'])){
                     <td>
                         <input type="tel" name="number" required>
                     </td>
-                </tr>
+                </tr><br>
                 <tr>
                     <td>
                         <labe>
@@ -138,7 +138,7 @@ if(isset($_SESSION['login'])){
                     <td>
                         <input type="text" name="address" required>
                     </td>
-                </tr>
+                </tr><br>
                 <tr>
                     <td>
                         <labe>
@@ -148,7 +148,7 @@ if(isset($_SESSION['login'])){
                     <td>
                         <input type="submit" name="register" value="register" required>
                     </td>
-                </tr>
+                </tr><br>
             </table>
             </form>
             </div>
@@ -162,12 +162,3 @@ if(isset($_SESSION['login'])){
 
 </body>
 </html>
-
-$fetchbookings = mysqli_query($db, $bookingcommand);
-if(mysqli_num_rows($fetchbookings) > 0){
-while ($ross = mysqli_fetch_array($fetchbookings, MYSQLI_ASSOC)) {
-$facilities[] =  $ross['f_id'];
-}
-}else{
-
-}

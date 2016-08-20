@@ -28,6 +28,8 @@ if(isset($_POST['removefacility'])){
         header('location: editbooking.php');
     }
 
+}else{
+    header('location: editbooking.php');
 }
 $l = 0;
 if(isset($_POST['removefacility2'])){
@@ -74,6 +76,8 @@ if(isset($_POST['removefacility2'])){
 
     }
 
+}else{
+    header('location: editbooking.php');
 }
 
 ?>

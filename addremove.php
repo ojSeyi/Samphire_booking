@@ -15,7 +15,9 @@ if(isset($_POST['rfacility'])){
     foreach ($facilityname as $showfacility) {
         if ($showfacility == $_POST['rfacility']){
             $k = 1;
-        }else{}
+        }else{
+            $k = 0;
+        }
     }
     if($k == 1){
         $facilityname = array_diff($facilityname,[$_POST['rfacility']]);

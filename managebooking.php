@@ -53,7 +53,8 @@ $lastname = stripcslashes($lastname);
 $confirmation = stripcslashes($confirmation);
 $lastname = mysqli_real_escape_string($db, $lastname);
 $confirmation = mysqli_real_escape_string($db,$confirmation);
-
+$_SESSION['lastnam'] = $lastname;
+$_SESSION['confirmatio'] = $confirmation;
 
 $getfacilitycommand = "SELECT f_id FROM samphire_facilities";
 $fetchfacilities = mysqli_query($db, $getfacilitycommand);
@@ -85,16 +86,21 @@ $fetchdates = mysqli_query($db, $getdatescommand);
 $dates = mysqli_fetch_array($fetchdates);
 $startdate = $dates['startdate'];
 $enddate = $dates['enddate'];
+$_SESSION['startdat'] = $startdate;
+$_SESSION['enddat'] = $enddate;
+
 
 $getidcommand = "SELECT * FROM customer_bookings WHERE reference = '$confirmation' AND f_id = '$facilities[0]'";
 $fetchid = mysqli_query($db, $getidcommand);
 $id = mysqli_fetch_array($fetchid);
 $cusid = $id['cust_id'];
+$_SESSION['cusi'] = $cusid;
 
 $getfirstname = "SELECT firstname FROM customers WHERE cust_id = '$cusid'";
 $fetchfirstname = mysqli_query($db, $getfirstname) or die('shit aint work');
 $first = mysqli_fetch_array($fetchfirstname);
 $firstname = $first['firstname'];
+$_SESSION['firstnam'] = $firstname;
 
 $facilitycosts = array();
 $facilityname = array();
@@ -108,7 +114,8 @@ foreach ($facilities as $showcost) {
     $facilitycosts[] = $costs;
     $facilityname[] = $name;
 }
-
+$_SESSION['facilitynam'] = $facilityname;
+$_SESSION['facilitycost'] = $facilitycosts;
 
 
 ?>
@@ -173,17 +180,6 @@ foreach ($facilities as $showcost) {
             </div>
         </div>
 
-        <?php
-        $_SESSION['confirmatio'] = $confirmation;
-        $_SESSION['firstnam'] = $firstname;
-        $_SESSION['lastnam'] = $lastname;
-        $_SESSION['cusi'] = $cusid;
-        $_SESSION['facilitynam'] = $facilityname;
-        $_SESSION['facilitycost'] = $facilitycosts;
-        $_SESSION['startdat'] = $startdate;
-        $_SESSION['enddat'] = $enddate;
-
-        ?>
 
 
             <form method="post" action="editbooking.php">

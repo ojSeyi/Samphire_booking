@@ -71,7 +71,7 @@ if(is_null($_SESSION['firstname'])){
 
                 echo "<form method='post' action='logdatecheck.php'>" ."
                 <label>Reservation End Date : </label>
-                <input id='enddate' name='enddate' type='text' value='$currentnextdate'/><br><br>
+                <input id='enddate' name='enddate' type='text' value='Click here to pick a date'/><br><br>
                 <input type='submit' value='submit'/><br><br>
                 <script src= 'https://code.jquery.com/jquery-1.12.4.js'></script>
                 <script src= 'https://code.jquery.com/ui/1.12.0/jquery-ui.js'></script>

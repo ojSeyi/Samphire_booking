@@ -10,7 +10,7 @@ include ("db_connection.php");
 
 //remove facility
 $k = 0;
-if(isset($_POST['removefacility'])){
+if(isset($_POST['removefacilityy'])){
     $facilityname = $_SESSION['facilitynam'];
     foreach ($facilityname as $showfacility) {
         if ($showfacility = $_POST['removefacility']){

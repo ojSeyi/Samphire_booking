@@ -60,13 +60,16 @@ if(isset($_SESSION['login'])){
             <table id="registration" class="grid-container">
                 <caption>Please enter all your correct details below to Register</caption>
                 <tr>
+                    <th>Note that all information on this form is required</th>
+                </tr>
+                <tr>
                     <td>
                         <labe>
-
+                            Username:
                         </labe>
                     </td>
                     <td>
-
+                        <input type="text" name="username" required>
                     </td>
                     <td>
                         <div id="usernamecheck"></div>
@@ -75,11 +78,11 @@ if(isset($_SESSION['login'])){
                 <tr>
                     <td>
                         <labe>
-
+                            Password:
                         </labe>
                     </td>
                     <td>
-
+                        <input type="password" name="password" required>
                     </td>
                     <td>
                         <div id="passwordcheck"></div>
@@ -88,71 +91,61 @@ if(isset($_SESSION['login'])){
                 <tr>
                     <td>
                         <labe>
-
+                            First name:
                         </labe>
                     </td>
                     <td>
-
+                        <input type="text" name="firstname" required>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
-
+                            Last name:
                         </labe>
                     </td>
                     <td>
-
+                        <input type="text" name="lastname" required>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
-
+                            Email:
                         </labe>
                     </td>
                     <td>
-
+                        <input type="text" name="email" required>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
-
+                            Mobile number:
                         </labe>
                     </td>
                     <td>
-
+                        <input type="tel" name="number" required>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
-
+                            Address:
                         </labe>
                     </td>
                     <td>
-
+                        <input type="text" name="address" required>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <labe>
-
+                            ------->
                         </labe>
                     </td>
                     <td>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <labe>
-
-                        </labe>
-                    </td>
-                    <td>
-
+                        <input type="submit" name="register" value="register" required>
                     </td>
                 </tr>
             </table>

@@ -132,7 +132,7 @@ if(is_null($_POST['flow']) && is_null($_POST['lastname'])) {
         <div>
             <div>
             <label>To remove facility, select facility and click remove</label><br>
-        <?php $facilities = $_SESSION['facilities'];?>
+        <?php $facilities = $_SESSION['facilitynam'];?>
         <form method="post" action="addremove.php">
             <select name="rfacility" id="facilityarray" size="<?php echo count($facilityname) ?>" required>
                 <?php
@@ -153,7 +153,7 @@ if(is_null($_POST['flow']) && is_null($_POST['lastname'])) {
 
         <div id="Cancel booking">
             <label>To add facility, select facility and click remove</label><br>
-            <?php $facilities = $_SESSION['facilities'];?>
+            <?php $facilities = $_SESSION['facilitynam'];?>
             <form method="post" action="addremove.php">
                 <select name="rfacility" id="facilityarray" size="<?php echo count($facilityname) ?>" required>
                     <?php

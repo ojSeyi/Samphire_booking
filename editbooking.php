@@ -144,7 +144,7 @@ if(is_null($_POST['flow']) && is_null($_POST['lastname'])) {
             <input type="hidden" name="flow" value="flow">
             <input type="hidden" name="facilities" value="<?php echo $facilities  ?>">
             <input type="hidden" name="confirmation" value="<?php echo $confirmation  ?>">
-            <input type="submit" name="removefacility" value="Remove">
+            <input type="submit" name="removefacilityy" value="Remove">
         </form><br><br><br>
 
 

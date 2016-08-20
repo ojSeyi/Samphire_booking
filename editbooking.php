@@ -49,12 +49,11 @@ if(is_null($_POST['flow']) && is_null($_POST['lastname'])) {
     $firstname = $_POST['firstnam'];
     $lastname = $_POST['lastnam'];
     $cusid = $_POST['cusi'];
-    $facilityname = $_POST['facilitynam'];
     $facilitycosts = $_POST['facilitycost'];
     $startdate = $_POST['startdat'];
     $enddate = $_POST['enddat'];
 
-    $facilityname = $_SESSION['facilities'];
+    $facilityname = $_SESSION['facilitynam'];
 
 ?>
 

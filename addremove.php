@@ -11,7 +11,7 @@ include ("db_connection.php");
 //remove facility
 $k = 0;
 if(isset($_POST['removefacility'])){
-    $facilityname = $_POST['facilities'];
+    $facilityname = $_SESSION['facilitynam'];
     foreach ($facilityname as $showfacility) {
         if ($showfacility = $_POST['removefacility']){
             $k = 1;
@@ -24,14 +24,14 @@ if(isset($_POST['removefacility'])){
         $r = $_POST['confirmation'];
         $deleterecord = "DELETE FROM samphire_facilities WHERE f_name = '$d' AND reference = '$confirmation'";
         $go = mysqli_query($db, $deleterecord);
-        $_SESSION['facilities'] = $facilityname;
+        $_SESSION['facilitynam'] = $facilityname;
         header('location: editbooking.php');
     }
 
 }
 $l = 0;
 if(isset($_POST['removefacility2'])){
-    $facilityname = $_POST['facilities'];
+    $facilityname = $_SESSION['facilitynam'];
     foreach ($facilityname as $showfacility) {
         if ($showfacility = $_POST['removefacility2']){
             $l = 1;
@@ -44,7 +44,7 @@ if(isset($_POST['removefacility2'])){
         $firstname = $_POST['confirmation'];
         $lastname = $_POST['lastname'];
         $cusid = $_POST['cusid'];
-        $facilityname = $_POST['facilityname'];
+        $facilityname = $_SESSION['facilitynam'];
         $facilitycosts = $_POST['facilitycosts'];
         $startdate = $_POST['startdate'];
         $enddate = $_POST['enddate'];
@@ -69,7 +69,7 @@ if(isset($_POST['removefacility2'])){
         }
         $addrecord = "INSERT INTO samphire_facilities (reference, f_id, cust_id, startdate, enddate, price) VALUES ('$confirmation', '$rows', '$cusid', '$startdate', '$enddate', '$totalcost')";
         $go = mysqli_query($db, $addrecord);
-        $_SESSION['facilities'] = $facilityname;
+        $_SESSION['facilitynam'] = $facilityname;
         header('location: editbooking.php');
 
     }

@@ -43,7 +43,7 @@ if(empty($_POST['confirmation']) || empty($_POST['lastname'])) {
 </header>
 
 <?php
-
+session_start();
 include ("db_connection.php");
 
 

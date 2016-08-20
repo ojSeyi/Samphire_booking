@@ -35,11 +35,9 @@ $address = $_POST['address'];
 $address = stripcslashes($address);
 $address = mysqli_real_escape_string($db,$address);
 
-$usernamecheckcommand = "SELECT * FROM customer_login WHERE username = '$username'";
+$usernamecheckcommand = "SELECT username FROM customer_login WHERE username = '$username'";
 $usernamecheck = mysqli_query($db, $usernamecheckcommand);
-$result = mysqli_fetch_array($usernamecheck);
-$user = $result['username'];
-if($user != $username){
+if(mysqli_num_rows($usernamecheck) < 1){
     $command1 = "INSERT INTO customer_login (username, password) VALUES ('$username'. $password)";
     $executecommand1 = mysqli_query($db, $command1);
     if($executecommand1){
@@ -53,7 +51,7 @@ if($user != $username){
     }
 
 }else{
-    header('registration2.php');
+    header('Location: registration2.php');
 }
 
 

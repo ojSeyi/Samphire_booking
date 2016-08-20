@@ -134,9 +134,9 @@ if(is_null($_POST['flow']) && is_null($_POST['lastname'])) {
             <label>To remove facility, select facility and click remove</label><br>
         <?php $facilities = $_SESSION['facilitynam'];?>
         <form method="post" action="addremove.php">
-            <select name="rfacility" id="facilityarray" size="<?php echo count($facilityname) ?>" required>
+            <select name="rfacility" id="facilityarray" size="1" required>
                 <?php
-                foreach ($facilityarrays as $showfacilityy) {
+                foreach ($facilities as $showfacilityy) {
                     echo "<option>".$showfacilityy ."</option>";
                 }
                 ?>
@@ -148,16 +148,15 @@ if(is_null($_POST['flow']) && is_null($_POST['lastname'])) {
         </form><br><br><br>
 
 
-            <br><br>
             <div id="line"></div>
 
 
             <label>To add facility, select facility and click add</label><br>
             <?php $facilities = $_SESSION['facilitynam'];?>
             <form method="post" action="addremove.php">
-                <select name="rfacility" id="facilityarray" size="<?php echo count($facilityname) ?>" required>
+                <select name="rfacility" id="facilityarray" size="1" required>
                     <?php
-                    foreach ($facilityarrays as $showfacilityy) {
+                    foreach ($facilities as $showfacilityy) {
                         echo "<option>".$showfacilityy ."</option>";
                     }
                     ?>

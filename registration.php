@@ -53,7 +53,35 @@ if(isset($_SESSION['login'])){
                 <caption>Please enter all your correct details below to Register</caption>
                 <tr>
                     <td>
+                        <labe>
 
+                        </labe>
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="usernamecheck"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <labe>
+
+                        </labe>
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="passwordcheck"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <labe>
+
+                        </labe>
                     </td>
                     <td>
 
@@ -61,7 +89,9 @@ if(isset($_SESSION['login'])){
                 </tr>
                 <tr>
                     <td>
+                        <labe>
 
+                        </labe>
                     </td>
                     <td>
 
@@ -69,7 +99,9 @@ if(isset($_SESSION['login'])){
                 </tr>
                 <tr>
                     <td>
+                        <labe>
 
+                        </labe>
                     </td>
                     <td>
 
@@ -77,7 +109,9 @@ if(isset($_SESSION['login'])){
                 </tr>
                 <tr>
                     <td>
+                        <labe>
 
+                        </labe>
                     </td>
                     <td>
 
@@ -85,7 +119,9 @@ if(isset($_SESSION['login'])){
                 </tr>
                 <tr>
                     <td>
+                        <labe>
 
+                        </labe>
                     </td>
                     <td>
 
@@ -93,7 +129,9 @@ if(isset($_SESSION['login'])){
                 </tr>
                 <tr>
                     <td>
+                        <labe>
 
+                        </labe>
                     </td>
                     <td>
 
@@ -101,23 +139,9 @@ if(isset($_SESSION['login'])){
                 </tr>
                 <tr>
                     <td>
+                        <labe>
 
-                    </td>
-                    <td>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-
-                    </td>
-                    <td>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-
+                        </labe>
                     </td>
                     <td>
 

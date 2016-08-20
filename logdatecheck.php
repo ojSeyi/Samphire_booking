@@ -37,8 +37,8 @@ if(is_null($_SESSION['firstname'])){
     <nav id="upnav" class="grid-container">
         <ul>
             <li><a href='index.php'>Create Booking</a></li>
-            <li><a href='showbugs.php?bugcategory=android'>Manage Booking</a></li>
-            <li><a href='showbugs.php?bugcategory=ios'>Contact Us</a></li>
+            <li><a href='logmanagebooking.php'>Manage Booking</a></li>
+            <li><a href='contactus.php'>Contact Us</a></li>
         </ul>
     </nav>
 </header>

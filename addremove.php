@@ -10,7 +10,7 @@ include ("db_connection.php");
 
 //remove facility
 $k = 0;
-if(isset($_POST['rfacilityy'])){
+if(isset($_POST['removefacilityy'])){
     $facilityname = $_SESSION['facilitynam'];
     foreach ($facilityname as $showfacility) {
         if ($showfacility = $_POST['rfacility']){
@@ -20,8 +20,8 @@ if(isset($_POST['rfacilityy'])){
     if($k == 1){
         $facilityname = array_diff($facilityname,[$_POST['rfacility']]);
         $facilityname = array_values($facilityname);
-        $d = $_POST['removefacility'];
-        $r = $_POST['confirmation'];
+        $d = $_POST['rfacility'];
+        $r = $_SESSION['confirmatio'];
         $deleterecord = "DELETE FROM samphire_facilities WHERE f_name = '$d' AND reference = '$confirmation'";
         $go = mysqli_query($db, $deleterecord);
         $_SESSION['facilitynam'] = $facilityname;
@@ -29,30 +29,29 @@ if(isset($_POST['rfacilityy'])){
     }
 
 }else{
-    header('location: editbooking.php');
+
 }
 $l = 0;
 if(isset($_POST['removefacility2'])){
     $facilityname = $_SESSION['facilitynam'];
     foreach ($facilityname as $showfacility) {
-        if ($showfacility = $_POST['removefacility2']){
+        if ($showfacility = $_POST['afacility']){
             $l = 1;
         }else{}
     }
     if($l != 1){
 
-        $facilityname[] = $_POST['removefacility2'];
-        $confirmation = $_POST['confirmation'];
-        $firstname = $_POST['confirmation'];
-        $lastname = $_POST['lastname'];
-        $cusid = $_POST['cusid'];
-        $facilityname = $_SESSION['facilitynam'];
-        $facilitycosts = $_POST['facilitycosts'];
-        $startdate = $_POST['startdate'];
-        $enddate = $_POST['enddate'];
-        $d = $_POST['removefacility2'];
+        $facilityname[] = $_SESSION['facilitynam'];
+        $confirmation = $_SESSION['confirmation'];
+        $firstname = $_SESSION['firstnam'];
+        $lastname = $_SESSION['lastnam'];
+        $cusid = $_SESSION['cusi'];
+        $facilitycosts = $_SESSION['facilitycost'];
+        $startdate = $_SESSION['startdat'];
+        $enddate = $_SESSION['enddat'];
+        $d = $_SESSION['afacility'];
         $totalcost = 0;
-        foreach ($facilities as $showcost) {
+        foreach ($facilityname as $showcost) {
             $checkcost = $showcost;
             $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
             $result = mysqli_query($db, $getfacilities);
@@ -60,6 +59,8 @@ if(isset($_POST['removefacility2'])){
             $totalcost = $totalcost + $cost['cost'];
         }
         echo $totalcost;
+
+
         $fac = "SELECT * FROM samphire_facilities WHERE f_name = '$d'";
         $result = mysqli_query($db, $fac);
         $rows = 0;

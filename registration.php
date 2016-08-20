@@ -119,6 +119,9 @@ if(isset($_SESSION['login'])){
                     <td>
                         <input type="text" name="email" required><br><br>
                     </td>
+                    <td>
+                        <div id="emailcheck"></div><br><br>
+                    </td>
                 </tr>
                 <tr>
                     <td>

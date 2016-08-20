@@ -38,7 +38,7 @@ $address = mysqli_real_escape_string($db,$address);
 $usernamecheckcommand = "SELECT username FROM customer_login WHERE username = '$username'";
 $usernamecheck = mysqli_query($db, $usernamecheckcommand);
 if(mysqli_num_rows($usernamecheck) < 1){
-    $command1 = "INSERT INTO customer_login (username, password) VALUES ('$username'. $password)";
+    $command1 = "INSERT INTO customer_login (username, password) VALUES ('$username'. '$password')";
     $executecommand1 = mysqli_query($db, $command1) or die('error1');
     if($executecommand1){
         $command2 = "INSERT INTO customers (firstname, lastname, email, mobile, address) VALUES ('$firstname', '$lastname', '$email', '$mobile', '$address')";

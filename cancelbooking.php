@@ -6,7 +6,7 @@ session_start();
 include ("db_connection.php");
 
 $confirmation = $_SESSION['confirmatio'];
-$deleterecord = "DELETE FROM customer_bookings WHEREreference = '$confirmation'";
+$deleterecord = "DELETE FROM customer_bookings WHERE reference = '$confirmation'";
 $go = mysqli_query($db, $deleterecord);
 
 $_SESSION['confirmatio'] = null;

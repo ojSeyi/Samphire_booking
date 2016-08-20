@@ -1,3 +1,10 @@
+<?php
+session_start();
+include ("db_connection.php");
+if(is_null($_SESSION['login'])){
+    header('Location: index.php');
+};
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,6 +56,7 @@ if(isset($_SESSION['login'])){
     <main class="grid-container">
         <h1>Welcome to Samphire-Subsea Facility Booking</h1>
         <div id="syscon">
+            <form>
             <table id="registration" class="grid-container">
                 <caption>Please enter all your correct details below to Register</caption>
                 <tr>
@@ -148,6 +156,10 @@ if(isset($_SESSION['login'])){
                     </td>
                 </tr>
             </table>
+            </form>
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+            <script type="text/javascript" src="JS/global.js"></script>
         </div>
 
     </main>

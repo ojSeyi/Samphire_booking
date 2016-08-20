@@ -14,7 +14,7 @@ if(isset($_POST['rfacility'])){
     $l = 0;
     $facilityname = $_SESSION['facilitynam'];
     foreach ($facilityname as $showfacility) {
-        if ($showfacility == $_POST['afacility']){
+        if ($showfacility == $_POST['rfacility']){
             $l = 1;
         }else{}
     }

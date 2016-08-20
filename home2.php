@@ -2,7 +2,7 @@
 <html lang="en">
 <?php include ("db_connection.php"); ?>
 <?php session_start();
-if(is_null($_SESSION['login'])){
+if(isset($_SESSION['login'])){
     header('Location: index.php');
 }; ?>
 
@@ -25,12 +25,11 @@ if(is_null($_SESSION['login'])){
 <header class="grid-container">
     <img src="assets/images/logo_2016.jpg" id="logo"/>
     <div id="log">
-        <div id="logout">
-            <form method="post" action="logout.php">
-                <label><?php echo $_SESSION['firstname'];?></label>
-                <input type="submit" name="logout" value="logout" id="logoutbutton"/>
-            </form>
-        </div>
+        <form method="post" action="login.php">
+            <input type="text" name="username" id="usernamebox" placeholder="Username" required/>
+            <input type="password" name="password" id="passwordbox" placeholder="Password" required/>
+            <input type="submit" value="Login" name="login" id="loginb"/>
+        </form>
         <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
     </div>
     <nav id="upnav" class="grid-container">
@@ -47,7 +46,7 @@ if(is_null($_SESSION['login'])){
     <main class="grid-container">
 
     <div id="syscon">
-
+        <h4>Please enter a valid username and password</h4>
         <form id="search" method="post" action="datecheck2.php">
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>

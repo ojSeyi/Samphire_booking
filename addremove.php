@@ -32,6 +32,8 @@ if(isset($_POST['rfacility'])){
         $go = mysqli_query($db, $deleterecord);
         $_SESSION['facilitynam'] = $facilityname;
         header('location: editbooking.php');
+    }else{
+        header('location: editbooking.php');
     }
 
 }elseif(isset($_POST['afacility'])){

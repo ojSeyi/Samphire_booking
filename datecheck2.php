@@ -38,9 +38,9 @@
     <nav id="upnav" class="grid-container">
         <ul>
             <li><a href='index.php'>Create Booking</a></li>
-            <li><a href='showbugs.php?bugcategory=android'>Manage Booking</a></li>
-            <li><a href='showbugs.php?bugcategory=ios'>Contact Us</a></li>
-            <li><a href='showbugs.php?bugcategory=windows'>Register</a></li>
+            <li><a href='locatebooking.php'>Manage Booking</a></li>
+            <li><a href='contactus.php'>Contact Us</a></li>
+            <li><a href='registration.php'>Register</a></li>
         </ul>
     </nav>
 </header>
@@ -90,13 +90,6 @@
   </div>
 </main>
 </div>
-<nav id="outnav">
-    <ul>
-        <li><a href='index.php'>Create Booking</a></li>
-        <li><a href='showbugs.php?bugcategory=android'>Manage Booking</a></li>
-        <li><a href='showbugs.php?bugcategory=ios'>Contact Us</a></li>
-        <li><a href='showbugs.php?bugcategory=windows'>Register</a></li>
-    </ul>
-</nav>
+
 </body>
 </html>

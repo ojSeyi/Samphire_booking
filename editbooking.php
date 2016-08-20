@@ -142,7 +142,7 @@ if(is_null($_SESSION['facilitynam'])) {
                 }
                 ?>
             </select>
-            <input type="hidden" name="flow" value="flow">
+            <input type="hidden" name="iliya" value="iliya">
             <input type="submit" name="removefacilityy" value="Remove">
         </form><br><br><br>
 

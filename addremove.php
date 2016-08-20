@@ -1,4 +1,7 @@
 <?php
+if(empty($_POST['iliya'])) {
+    header('location: locatebooking.php');
+}else {$proceed = 1;}
 session_start();
 include ("db_connection.php");
 /**

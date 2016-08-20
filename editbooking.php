@@ -1,5 +1,5 @@
 <?php
-if(is_null($_SESSION['lastnam']) && is_null($_SESSION['facilitynam'])) {
+if(is_null($_SESSION['firstnam']) || is_null($_SESSION['facilitynam'])) {
     header('location: locatebooking.php');
 }else {$proceed = 1;}
 ?>

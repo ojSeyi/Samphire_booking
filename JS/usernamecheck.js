@@ -1,3 +1,4 @@
 function validateusername(){
-    var x =
+    var x = document.forms["registration"]["username"].value;
+
 }

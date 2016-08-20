@@ -84,7 +84,7 @@ if(isset($_SESSION['login'])){
                         </labe><br><br>
                     </td>
                     <td>
-                        <input type="password" name="password" id="usernamea" required><br><br>
+                        <input type="password" name="password" id="usernamea" min="6" required><br><br>
                     </td>
                     <td>
                         <div id="passwordcheck"></div><br><br>
@@ -97,7 +97,7 @@ if(isset($_SESSION['login'])){
                         </labe><br><br>
                     </td>
                     <td>
-                        <input type="text" name="firstname" required><br><br>
+                        <input type="text" name="firstname" min="2" required><br><br>
                     </td>
                 </tr>
                 <tr>
@@ -117,7 +117,7 @@ if(isset($_SESSION['login'])){
                         </labe><br><br>
                     </td>
                     <td>
-                        <input type="text" name="email" id="emaila" required><br><br>
+                        <input type="email" name="email" id="emaila" required><br><br>
                     </td>
                     <td>
                         <div id="emailcheck"></div><br><br>

@@ -155,9 +155,18 @@ if(is_null($_SESSION['facilitynam'])) {
             <form method="post" action="addremove.php">
                 <select name="afacility" id="facilityarray" size="1" required>
                     <?php
-                    foreach ($facilities as $showfacilityy) {
-                        echo "<option>".$showfacilityy ."</option>";
+                    $getfacilities = "SELECT * FROM samphire_facilities";
+                    $result = mysqli_query($db, $getfacilities);
+                    while ($row = mysqli_fetch_array($result)) {
+                        foreach ($facilities as $showfacilityy) {
+                            if($row['f_name'] = $showfacilityy) {
+
+                            }else{
+                                echo "<option>" . $row['f_name'] . "</option>";
+                            }
+                        }
                     }
+
                     ?>
                 </select>
                 <input type="hidden" name="iliya" value="iliya">

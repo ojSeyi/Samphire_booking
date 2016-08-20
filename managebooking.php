@@ -185,7 +185,7 @@ foreach ($facilities as $showcost) {
 
         ?>
 
-        <div id="editbooking">
+
             <form method="post" action="editbooking.php">
                 <input type="hidden" name="flow" value="flow">
                 <input type="hidden" name="firstname" value="<?php $_SESSION['firstnam'] ?>">
@@ -198,9 +198,9 @@ foreach ($facilities as $showcost) {
                 <input type="hidden" name="facilitycosts" value="<?php $_SESSION['facilitycost'] ?>">
                 <input type="submit" name="removefacility" value="Edit">
             </form>
-        </div><br>
 
-        <div id="Cancel booking">
+
+
             <form method="post" action="cancelbooking.php">
                 <input type="hidden" name="iliya" value="iliya">
                 <input type="hidden" name="firstname" value="<?php $_SESSION['first'] ?>">
@@ -213,7 +213,7 @@ foreach ($facilities as $showcost) {
                 <input type="hidden" name="facilitycosts" value="<?php $_SESSION['facilitycosts'] ?>">
                 <input type="submit" name="removefacility2" value="Cancel">
             </form>
-        </div><br><br>
+
 
     </main>
 </div>

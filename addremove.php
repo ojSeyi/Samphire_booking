@@ -73,7 +73,7 @@ $l = 0;
         }else{
             header('location: index1.php');
         }
-        $addrecord = "INSERT INTO samphire_facilities (reference, f_id, cust_id, startdate, enddate, price) VALUES ('$confirmation', '$rows', '$cusid', '$startdate', '$enddate', '$totalcost')";
+        $addrecord = "INSERT INTO customer_bookings (reference, f_id, cust_id, startdate, enddate, price) VALUES ('$confirmation', '$rows', '$cusid', '$startdate', '$enddate', '$totalcost')";
         $go = mysqli_query($db, $addrecord);
         $_SESSION['facilitynam'] = $facilityname;
         header('location: editbooking.php');

@@ -57,8 +57,8 @@ if(isset($_SESSION['login'])){
         <div class="grid-container"><h1>Welcome to Samphire-Subsea Facility Booking</h1></div>
         <div id="syscon">
             <div id="registrationdiv">
-            <form method="post" action="processregistration.php">
-            <table id="registration" class="grid-container">
+            <form id="registration" method="post" action="processregistration.php">
+            <table id="registrationt" class="grid-container">
                 <br>
                 <caption>Please enter all your correct details below to Register<br><br></caption>
                 <tr>
@@ -71,7 +71,7 @@ if(isset($_SESSION['login'])){
                         </labe><br><br>
                     </td>
                     <td>
-                        <input type="text" name="username" required><br><br>
+                        <input type="text" name="username" id="usernamea" required><br><br>
                     </td>
                     <td>
                         <div id="usernamecheck"></div><br><br>
@@ -84,7 +84,7 @@ if(isset($_SESSION['login'])){
                         </labe><br><br>
                     </td>
                     <td>
-                        <input type="password" name="password" required><br><br>
+                        <input type="password" name="password" id="usernamea" required><br><br>
                     </td>
                     <td>
                         <div id="passwordcheck"></div><br><br>
@@ -117,7 +117,7 @@ if(isset($_SESSION['login'])){
                         </labe><br><br>
                     </td>
                     <td>
-                        <input type="text" name="email" required><br><br>
+                        <input type="text" name="email" id="emaila" required><br><br>
                     </td>
                     <td>
                         <div id="emailcheck"></div><br><br>

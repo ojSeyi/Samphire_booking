@@ -26,7 +26,7 @@ if(isset($_POST['rfacility'])){
         $getidcommand = "SELECT * FROM samphire_facilities WHERE f_name = '$d'";
         $fetchid = mysqli_query($db, $getidcommand);
         $id = mysqli_fetch_array($fetchid);
-        $idd = $id['cust_id'];
+        $idd = $id['f_id'];
         $deleterecord = "DELETE FROM customer_bookings WHERE f_id = '$idd' AND reference = '$confirmation'";
         $go = mysqli_query($db, $deleterecord);
         $_SESSION['facilitynam'] = $facilityname;

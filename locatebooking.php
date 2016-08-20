@@ -45,7 +45,7 @@
         <div id="syscon">
             <form method="post" action="managebooking.php">
                 <table>
-                    <caption>Please enter your booking reference and your last name below</caption>
+                    <caption>Please enter your valid booking reference and your last name below</caption>
                     <tr>
                         <td>
                             Reference: <input type="text" name="confirmation" required>

@@ -35,9 +35,11 @@ $address = $_POST['address'];
 $address = stripcslashes($address);
 $address = mysqli_real_escape_string($db,$address);
 
-$usernamecheckcommand = "SELECT username FROM customer_login WHERE username = '$username'";
+$usernamecheckcommand = "SELECT * FROM customer_login WHERE username = '$username'";
 $usernamecheck = mysqli_query($db, $usernamecheckcommand);
-if(mysqli_num_rows($usernamecheck) < 1){
+$result = mysqli_fetch_array($usernamecheck);
+$user = $result['username'];
+if($user != $username){
     $command1 = "INSERT INTO customer_login (username, password) VALUES ('$username'. $password)";
     $executecommand1 = mysqli_query($db, $command1);
     if($executecommand1){

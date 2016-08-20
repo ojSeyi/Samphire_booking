@@ -110,7 +110,7 @@ foreach ($facilities as $showcost) {
 }
 
 $_SESSION['confirmation'] = $confirmation;
-$_SESSION['confirmation'] = $firstname;
+$_SESSION['first'] = $firstname;
 $_SESSION['lastname'] = $lastname;
 $_SESSION['cusid'] = $cusid;
 $_SESSION['facilityname'] = $facilityname;
@@ -183,14 +183,14 @@ $_SESSION['enddate'] = $enddate;
         <div id="editbooking">
             <form method="post" action="editbooking.php">
                 <input type="hidden" name="flow" value="flow">
-                <input type="hidden" name="firstname" value="<?php $firstname  ?>">
-                <input type="hidden" name="lastname" value="<?php $lastname  ?>">
-                <input type="hidden" name="confirmation" value="<?php $confirmation  ?>">
-                <input type="hidden" name="startdate" value="<?php $startdate  ?>">
-                <input type="hidden" name="enddate" value="<?php $enddate  ?>">
-                <input type="hidden" name="custid" value="<?php $cusid  ?>">
-                <input type="hidden" name="facilities" value="<?php $facilities  ?>">
-                <input type="hidden" name="facilitycosts" value="<?php $facilitycosts  ?>">
+                <input type="hidden" name="firstname" value="<?php $_SESSION['first'] ?>">
+                <input type="hidden" name="lastname" value="<?php $_SESSION['lastname']  ?>">
+                <input type="hidden" name="confirmation" value="<?php $_SESSION['confirmation']  ?>">
+                <input type="hidden" name="startdate" value="<?php $_SESSION['startdate'] ?>">
+                <input type="hidden" name="enddate" value="<?php $_SESSION['enddate'] ?>">
+                <input type="hidden" name="custid" value="<?php $_SESSION['cusid'] ?>">
+                <input type="hidden" name="facilities" value="<?php $_SESSION['facilityname']  ?>">
+                <input type="hidden" name="facilitycosts" value="<?php $_SESSION['facilitycosts'] ?>">
                 <input type="submit" name="removefacility" value="Edit">
             </form>
         </div><br>
@@ -198,14 +198,14 @@ $_SESSION['enddate'] = $enddate;
         <div id="Cancel booking">
             <form method="post" action="cancelbooking.php">
                 <input type="hidden" name="iliya" value="iliya">
-                <input type="hidden" name="firstname" value="<?php $firstname  ?>">
-                <input type="hidden" name="lastname" value="<?php $lastname  ?>">
-                <input type="hidden" name="confirmation" value="<?php $confirmation  ?>">
-                <input type="hidden" name="startdate" value="<?php $startdate  ?>">
-                <input type="hidden" name="enddate" value="<?php $enddate  ?>">
-                <input type="hidden" name="custid" value="<?php $cusid  ?>">
-                <input type="hidden" name="facilities" value="<?php $facilities  ?>">
-                <input type="hidden" name="facilitycosts" value="<?php $facilitycosts  ?>">
+                <input type="hidden" name="firstname" value="<?php $_SESSION['first'] ?>">
+                <input type="hidden" name="lastname" value="<?php $_SESSION['lastname']  ?>">
+                <input type="hidden" name="confirmation" value="<?php $_SESSION['confirmation']  ?>">
+                <input type="hidden" name="startdate" value="<?php $_SESSION['startdate'] ?>">
+                <input type="hidden" name="enddate" value="<?php $_SESSION['enddate'] ?>">
+                <input type="hidden" name="custid" value="<?php $_SESSION['cusid'] ?>">
+                <input type="hidden" name="facilities" value="<?php $_SESSION['facilityname']  ?>">
+                <input type="hidden" name="facilitycosts" value="<?php $_SESSION['facilitycosts'] ?>">
                 <input type="submit" name="removefacility2" value="Cancel">
             </form>
         </div><br><br>

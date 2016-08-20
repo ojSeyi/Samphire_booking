@@ -174,6 +174,12 @@ if(is_null($_SESSION['facilitynam'])) {
                 <input type="submit" name="removefacility2" value="Add">
             </form>
             <br><br>
+            <div id="bookcancel" class="grid-container">
+                <form method="post" action="cancelbooking.php">
+                    <input type="hidden" name="confirmation" value="<?php $_SESSION['confirmatio']  ?>">
+                    <input type="submit" name="removefacility2" value="Cancel">
+                </form>
+            </div>
         </div>
     </main>
 </div>

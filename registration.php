@@ -56,7 +56,7 @@ if(isset($_SESSION['login'])){
     <main class="grid-container">
         <h1>Welcome to Samphire-Subsea Facility Booking</h1>
         <div id="syscon">
-            <form>
+            <form method="post" action="processregistration.php">
             <table id="registration" class="grid-container">
                 <caption>Please enter all your correct details below to Register</caption>
                 <tr>

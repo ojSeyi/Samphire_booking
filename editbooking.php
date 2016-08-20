@@ -159,7 +159,7 @@ if(is_null($_SESSION['facilitynam'])) {
                     $result = mysqli_query($db, $getfacilities);
                     while ($row = mysqli_fetch_array($result)) {
                         foreach ($facilities as $showfacilityy) {
-                            if($row['f_name'] = $showfacilityy) {
+                            if($row['f_name'] == $showfacilityy) {
 
                             }else{
                                 echo "<option>" . $row['f_name'] . "</option>";

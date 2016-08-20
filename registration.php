@@ -1,7 +1,7 @@
 <?php
 session_start();
 include ("db_connection.php");
-if(is_null($_SESSION['login'])){
+if(isset($_SESSION['login'])){
     header('Location: index.php');
 };
 ?>

@@ -10,15 +10,15 @@ include ("db_connection.php");
 
 //remove facility
 $k = 0;
-if(isset($_POST['removefacilityy'])){
+if(isset($_POST['rfacilityy'])){
     $facilityname = $_SESSION['facilitynam'];
     foreach ($facilityname as $showfacility) {
-        if ($showfacility = $_POST['removefacility']){
+        if ($showfacility = $_POST['rfacility']){
             $k = 1;
         }else{}
     }
     if($k == 1){
-        $facilityname = array_diff($facilityname,[$_POST['removefacility']]);
+        $facilityname = array_diff($facilityname,[$_POST['rfacility']]);
         $facilityname = array_values($facilityname);
         $d = $_POST['removefacility'];
         $r = $_POST['confirmation'];

@@ -143,8 +143,6 @@ if(is_null($_SESSION['facilitynam'])) {
                 ?>
             </select>
             <input type="hidden" name="flow" value="flow">
-            <input type="hidden" name="facilities" value="<?php echo $facilities  ?>">
-            <input type="hidden" name="confirmation" value="<?php echo $confirmation  ?>">
             <input type="submit" name="removefacilityy" value="Remove">
         </form><br><br><br>
 
@@ -155,7 +153,7 @@ if(is_null($_SESSION['facilitynam'])) {
             <label>To add facility, select facility and click add</label><br>
             <?php $facilities = $_SESSION['facilitynam'];?>
             <form method="post" action="addremove.php">
-                <select name="rfacility" id="facilityarray" size="1" required>
+                <select name="afacility" id="facilityarray" size="1" required>
                     <?php
                     foreach ($facilities as $showfacilityy) {
                         echo "<option>".$showfacilityy ."</option>";
@@ -164,14 +162,6 @@ if(is_null($_SESSION['facilitynam'])) {
                 </select>
                 <input type="hidden" name="iliya" value="iliya">
                 <input type="hidden" name="iliya" value="iliya">
-                <input type="hidden" name="firstname" value="<?php echo $firstname  ?>">
-                <input type="hidden" name="lastname" value="<?php echo $lastname  ?>">
-                <input type="hidden" name="confirmation" value="<?php echo $confirmation  ?>">
-                <input type="hidden" name="startdate" value="<?php echo $startdate  ?>">
-                <input type="hidden" name="enddate" value="<?php echo $enddate  ?>">
-                <input type="hidden" name="custid" value="<?php echo $cusid  ?>">
-                <input type="hidden" name="facilities" value="<?php echo $facilities  ?>">
-                <input type="hidden" name="facilitycosts" value="<?php echo $facilitycosts  ?>">
                 <input type="submit" name="removefacility2" value="Add">
             </form>
             <br><br>

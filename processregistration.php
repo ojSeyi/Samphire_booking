@@ -44,6 +44,44 @@ if(mysqli_num_rows($usernamecheck) < 1){
         $command2 = "INSERT INTO customers (firstname, lastname, email, mobile, address) VALUES ('$firstname', '$lastname', '$email', '$mobile', '$address')";
         $executecommand2 = mysqli_query($db, $command2) or die('error2');
         if($executecommand2){
+
+            require_once 'swiftmailer-5.x/lib/swift_required.php';
+            $txt = "Dear $firstname,
+					<br><br>
+					Thank you for registering with Samphire-Subsea Facilities
+					<br>
+					Your username is: <h3> $username </h3>
+					and your password is: <h3> $password </h3>
+					<br><br>
+
+					We look forward to doing business with you!
+
+					<br><br>
+					Thank you for choosing Samphire-Subsea facilities!
+					<br>
+					Please contact the facilities department on nomail@samphire-subsea.com with any complaints or enquiries.
+					<br><br>
+					King Regards,
+					<br><br>
+					Samphire Subsea Facilities";
+
+            /**
+             * @var \Swift_Mime_Message $myMessage
+             */
+
+            $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
+                ->setUsername('ojtestall@gmail.com')
+                ->setPassword('Oluwas3yi');
+
+            $mailer = Swift_Mailer::newInstance($transport);
+            $myMessage = Swift_Message::newInstance('Samphire')
+                ->setFrom(array('ojtestall@gmail.com' => 'Samphire Subsea Facilities'))
+                ->setTo(array($email => $email))
+                ->setSubject('Samphire Subsea Facilities: Registration')
+                ->setBody($txt, 'text/html');
+
+            $result = $mailer->send($myMessage);
+
             $login = $_POST['register'];
             $_SESSION['login'] = $login;
             header('location: home1.php');

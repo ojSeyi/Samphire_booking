@@ -159,9 +159,15 @@ $_SESSION['facilitycost'] = $facilitycosts;
                         </td>
                         <td>
                             <?php
-                            foreach ($facilitycosts as $costs) {
-                                echo $costs ."</br>";
+                            $totalcost = 0;
+                            foreach ($facilityname as $showcost) {
+                                $checkcost = $showcost;
+                                $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+                                $result = mysqli_query($db, $getfacilities);
+                                $cost = mysqli_fetch_array($result);
+                                $totalcost = $totalcost + $cost['cost'];
                             }
+                            echo "£".$totalcost;
                             ?>
                         </td>
                     </tr><br><br>

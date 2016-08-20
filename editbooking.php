@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(is_null($_SESSION['facilitynam'])) {
     header('location: locatebooking.php');
 }else {$proceed = 1;}
@@ -43,7 +44,7 @@ if(is_null($_SESSION['facilitynam'])) {
 </header>
 
 <?php
-    session_start();
+
     include ("db_connection.php");
     $confirmation = $_SESSION['confirmatio'];
     $firstname = $_SESSION['firstnam'];

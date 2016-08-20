@@ -1,7 +1,23 @@
 <?php
+include ("db_connection.php");
 if(empty($_POST['confirmation']) || empty($_POST['lastname'])) {
-    echo "Enter Reference number and lastname";
+    header('location: locatebooking.php');
 }else {$proceed = 1;}
+$r = $_POST['confirmation'];
+$bookingcommand = "SELECT * FROM customer_bookings WHERE f_id = '$facili' AND reference = '$r'";
+$fetchr = mysqli_query($db, $bookingcommand);
+if(!$fetchr){
+    header('location: locatebooking.php');;
+}
+
+$l = $_POST['lastname'];
+$getidcommand = "SELECT * FROM customers WHERE lastname = '$l'";
+$fetchl = mysqli_query($db, $getidcommand);
+if($fetchl){
+    header('location: locatebooking.php');
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +60,6 @@ if(empty($_POST['confirmation']) || empty($_POST['lastname'])) {
 
 <?php
 session_start();
-include ("db_connection.php");
 
 
 $lastname = $_POST['lastname'];

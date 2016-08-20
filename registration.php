@@ -61,94 +61,94 @@ if(isset($_SESSION['login'])){
             <table id="registration" class="grid-container">
                 <caption>Please enter all your correct details below to Register</caption><br>
                 <tr>
-                    <th>Note that all information on this form is required</th>
-                </tr><br>
+                    <th>Note that all information on this form is required</th><br>
+                </tr>
                 <tr>
                     <td>
                         <labe>
                             Username:
                         </labe>
-                    </td>
+                    </td><br>
                     <td>
                         <input type="text" name="username" required>
-                    </td>
+                    </td><br>
                     <td>
                         <div id="usernamecheck"></div>
-                    </td>
-                </tr><br>
+                    </td><br>
+                </tr>
                 <tr>
                     <td>
                         <labe>
                             Password:
                         </labe>
-                    </td>
+                    </td><br>
                     <td>
                         <input type="password" name="password" required>
-                    </td>
+                        <br>
                     <td>
                         <div id="passwordcheck"></div>
-                    </td>
-                </tr><br>
+                    </td><br>
+                </tr>
                 <tr>
                     <td>
                         <labe>
                             First name:
                         </labe>
-                    </td>
+                    </td><br>
                     <td>
                         <input type="text" name="firstname" required>
-                    </td>
-                </tr><br>
+                    </td><br>
+                </tr>
                 <tr>
                     <td>
                         <labe>
                             Last name:
                         </labe>
-                    </td>
+                    </td><br>
                     <td>
                         <input type="text" name="lastname" required>
-                    </td>
-                </tr><br>
+                    </td><br>
+                </tr>
                 <tr>
                     <td>
                         <labe>
                             Email:
                         </labe>
-                    </td>
+                    </td><br>
                     <td>
                         <input type="text" name="email" required>
-                    </td>
-                </tr><br>
+                    </td><br>
+                </tr>
                 <tr>
                     <td>
                         <labe>
                             Mobile number:
                         </labe>
-                    </td>
+                    </td><br>
                     <td>
                         <input type="tel" name="number" required>
-                    </td>
-                </tr><br>
+                    </td><br>
+                </tr>
                 <tr>
                     <td>
                         <labe>
                             Address:
                         </labe>
-                    </td>
+                    </td><br>
                     <td>
                         <input type="text" name="address" required>
-                    </td>
-                </tr><br>
+                    </td><br>
+                </tr>
                 <tr>
                     <td>
                         <labe>
                             Join us ------->
                         </labe>
-                    </td>
+                    </td><br>
                     <td>
                         <input type="submit" name="register" value="register" required>
-                    </td>
-                </tr><br>
+                    </td><br>
+                </tr>
             </table>
             </form>
             </div>

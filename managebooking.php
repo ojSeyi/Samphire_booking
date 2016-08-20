@@ -198,15 +198,7 @@ $_SESSION['facilitycost'] = $facilitycosts;
 
 
             <form method="post" action="cancelbooking.php">
-                <input type="hidden" name="iliya" value="iliya">
-                <input type="hidden" name="firstname" value="<?php $_SESSION['firstnam'] ?>">
-                <input type="hidden" name="lastname" value="<?php $_SESSION['lastnam']  ?>">
                 <input type="hidden" name="confirmation" value="<?php $_SESSION['confirmatio']  ?>">
-                <input type="hidden" name="startdate" value="<?php $_SESSION['startdat'] ?>">
-                <input type="hidden" name="enddate" value="<?php $_SESSION['enddat'] ?>">
-                <input type="hidden" name="custid" value="<?php $_SESSION['cusi'] ?>">
-                <input type="hidden" name="facilities" value="<?php $_SESSION['facilitynam']  ?>">
-                <input type="hidden" name="facilitycosts" value="<?php $_SESSION['facilitycost'] ?>">
                 <input type="submit" name="removefacility2" value="Cancel">
             </form>
 

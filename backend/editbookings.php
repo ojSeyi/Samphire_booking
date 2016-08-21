@@ -183,7 +183,7 @@ if(isset($_POST['confirmation'])){
             </div>
             <div id="search">
                 <table>
-                    <form method="post" action="viewbookings.php">
+                    <form method="post" action="editbookings.php">
                         <tr>
                             <td><label>Enter start date: </label></td>
                             <td><input type="text" name="startdate" required><br></td>

@@ -183,10 +183,17 @@ if(isset($_POST['confirmation'])){
             </div>
             <div id="search">
                 <table>
-                    <form method="post" action="viewbookings.php">
+                    <form method="post" action="modifybookings.php">
                         <tr>
-                            <td><label>Enter reference number: </label></td>
-                            <td><input type="text" name="confirmation" required><br></td>
+                            <td><label>Select a facility: </label></td>
+                            <td><select name="facility" size="1" required>
+                                    <?php
+                                    $getfacilities = "SELECT * FROM samphire_facilities";
+                                    $result = mysqli_query($db, $getfacilities);
+                                    while ($row = mysqli_fetch_array($result))
+                                        echo "<option>". $row['f_name'] . "</option>";
+                                    ?>
+                                </select><br><br><br></td>
                             <td><input type="submit" value="search"><br></td>
                         </tr>
                     </form>

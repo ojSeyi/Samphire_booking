@@ -86,7 +86,7 @@ if(isset($_POST['confirmation'])){
                     <tr></tr>
                     <tr>
                         <th>
-                            All cancelled bookings can never be retrieved
+                            All cancelled bookings can never be retrieved<br>
                         </th>
 
                     </tr>";

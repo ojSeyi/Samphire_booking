@@ -115,72 +115,61 @@ if(isset($_POST['confirmation'])){
         <div id="system">
             <div id="screen" class="grid-container">
                 <table id="bookingdetails" class="grid-container">
-                    <?php
-                    if($k == 1){
-                    echo "<tr>
-                        <td>
-                                Username:
-                            <br><br>
-                        </td>
-                        <td>
-                            ".$username."<br><br>
-                        </td>
+                    <tr>
+                        <td id="o">Customer Name: </td>
+                        <td id="o"><?php echo $firstname . " " . $lastname; ?></td>
+                    </tr>
+                    <tr id="ref">
+                        <td>Booking Reference Number:</td>
+                        <td><?php echo $reference ?></td>
                     </tr>
                     <tr>
+                        <td>Booking Date(s): </td>
+                        <?php
+                        if($enddate == $startdate){
+                            echo "<td>".$startdate."</td>";
+                        }else{
+                            echo "<td> From: ".$startdate." to: " . $enddate . "</td>";
+                        }
+                        ?>
+                    </tr>
+                    <tr id="pins">
+                        <td>Facility(s)</td>
+                        <td>Price(s)</td>
+                    </tr>
+                    <tr id="pin">
                         <td>
-                                Password:
-                            <br><br>
+                            <?php
+                            foreach ($bookedfacilities as $showfacility) {
+                                echo $showfacility ."<br>";
+                            }
+                            ?>
                         </td>
-                        <td>
-                            ".$password."<br><br>
+                        <td>  <?php
+                            foreach ($bookedfacilities as $showcost) {
+                                $checkcost = $showcost;
+                                $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+                                $result = mysqli_query($db, $getfacilities);
+                                $cost = mysqli_fetch_array($result);
+                                echo "£".$cost['cost'] . "<br>";
+                            }
+                            ?>
+                        </td>
+                    </tr><br><br>
+                    <tr id="pind">
+                        <td>Total: </td>
+                        <td><?php
+                            $totalcost = 0;
+                            foreach ($bookedfacilities as $showcost) {
+                                $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$showcost'";
+                                $result = mysqli_query($db, $getfacilities);
+                                $cost = mysqli_fetch_array($result);
+                                $totalcost = $totalcost + $cost['cost'];
+                            }
+                            echo "£".$totalcost;
+                            ?>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                                First name:
-                            <br><br>
-                        </td>
-                        <td>
-                            ".$firstname."<br><br>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                                Last name:
-                            <br><br>
-                        </td>
-                        <td>
-                            ".$lastname."<br><br>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                                Email:
-                            <br><br>
-                        </td>
-                        <td>
-                            ".$email."<br><br>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                                Mobile number:
-                            <br><br>
-                        </td>
-                        <td>
-                            ".$mobile."<br><br>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                                Address:
-                            <br><br>
-                        </td>
-                        <td>
-                            ".$address."<br><br>
-                        </td>
-                    </tr>";}
-                    ?>
                 </table>
             </div>
             <div id="search">

@@ -137,8 +137,8 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
                             echo "</tr></table></div>";
                             echo "<form id='search' method='post' action='logdatecheck.php'>
                                     <label>Please select different dates: </label><br><br>
-                                    <input id='startdate' name='startdate' type='date' value='$currentdate'/><br><br>
-                                    <input id='enddate' name='enddate' type='date' value='$currentnextdate'/><br><br>
+                                    <input id='startdate' name='startdate' type='text' value='Click here to select a date'/><br><br>
+                                    <input id='enddate' name='enddate' type='text' value='Click here to select a date'/><br><br>
                                     <input type='submit' value='Check' />
                                     </form>";
                         }else{

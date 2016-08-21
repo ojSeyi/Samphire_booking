@@ -10,25 +10,6 @@ body{
     padding-right: 15px;
 }
 
-#logout>form>label{
-    display: block;
-    width: 100px;
-    margin-right: 0px;
-    float: left;
-    padding: 3px 6px;
-    font-size: 14pt;
-    color: white;
-}
-#logoutbutton{
-    width: 70px;
-    background-color: #999999;
-    border: 2px solid lightgray;
-    border-radius: 7px;
-    color: white;
-    padding: 5px 10px;
-    text-decoration: none;
-    margin-right: 0px;
-}
 
 nav{
     background-color: black;

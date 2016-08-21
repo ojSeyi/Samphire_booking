@@ -137,16 +137,8 @@ if(isset($_POST['username'])){
                     <?php
                     if($k == 1){
                         echo "
-                        <table id='bookingdetails' class='grid-container'>
-                        <tr>
-                        <td>
-                                Username:
-                            <br>
-                        </td>
-                        <td>
-                            ".$username."<br>
-                        </td>
-                    </tr>
+                        <table id='bookingdetail' class='grid-container'>
+                        <caption>Here are the full details of username:  <h4>" . $username . "</h4></caption>
                     <tr>
                         <td>
                                 Password:

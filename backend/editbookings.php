@@ -204,6 +204,8 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
                     </form>
                 </table>
             </div>
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
             <script type="text/javascript" src="JS/global.js"></script>
             <br>
             <div id='customers' class='grid-container'>

@@ -155,8 +155,8 @@ if(isset($_SESSION['login'])){
             </table>
             </form>
             </div>
-            <script src="JS/usernamecheck.js"></script>
             <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+            <script src="JS/usernamecheck.js"></script>
         </div>
 
     </main>

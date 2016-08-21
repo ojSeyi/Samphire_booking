@@ -1,7 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: OJ Pumping
- * Date: 21/08/2016
- * Time: 17:40
- */
+session_start();
+include ('db_connection.php');
+if(is_null($_SESSION['admin'])){
+    header('location: adminlogin.php');
+}
+
+$emailsarray = $_SESSION['emailarray'];
+$firstnamearray = $_SESSION['firstnamearray'];
+$lastnamearray = $_SESSION['lastnamearray'];
+$usernamearray = $_SESSION['usernamearray'];
+$passwordarray = $_SESSION['passwordarray'];
+$mobilearray = $_SESSION['mobilearray'];
+$addressarray = $_SESSION['addressarray'];
+
+?>

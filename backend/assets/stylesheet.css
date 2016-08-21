@@ -181,6 +181,7 @@ input[type=password]:focus {
     border-radius: 7px;
     border: 1px solid black;
     padding-bottom: 10px;
+    background-color: RGBa(128, 128, 128, 0.8);
 }
 
 select{
@@ -210,6 +211,6 @@ input[type=submit] {
 }
 
 section{
-    margin-left: 70px;
+    margin-left: 65px;
     padding-top: 100px;
 }

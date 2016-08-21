@@ -42,12 +42,19 @@ if(isset($_POST['bigusername'])){
           minimum-scale=1,
           maximum-scale=1"/>
 </head>
-<body>
+<body class="grid-container">
 <header>
-
-</header>
-
-<main class="grid-container">
+    <img src="assets/images/logo_2016.jpg" id="logo"/>
+    <div id="log">
+        <div id="logout">
+            <form method="post" action="adminlogout.php">
+                <label><?php echo $_SESSION['firstname'];?></label>
+                <input type="submit" name="logout" value="logout" id="logoutbutton"/>
+            </form>
+        </div>
+        <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System - Administrator</p></div>
+</header
+<main>
     <nav class="grid-30">
         <ul>
             <li><a href='viewbookings.php'>View Bookings</a></li>
@@ -57,12 +64,12 @@ if(isset($_POST['bigusername'])){
             <li><a href='viewcustomers.php'>View Customers</a></li>
         </ul>
     </nav>
-    <section>
+    <section class="grid-70">
     <div id="login" class="grid-container">
         <form method="post" action="adminlogin.php">
             <table>
                 <tr>
-                    <label>Please enter a valid username and password</label>
+                    <label>Please enter a valid username and password</label><br><br>
                 </tr>
                 <tr>
                     <td>

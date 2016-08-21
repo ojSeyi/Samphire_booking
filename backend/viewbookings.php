@@ -176,9 +176,6 @@ if(isset($_POST['confirmation'])){
                         <tr>
                             <td><label>Enter reference number: </label></td>
                             <td><input type="text" name="confirmation" required></td>
-                        </tr>
-                        <tr>
-                            <td></td>
                             <td><input type="submit" value="search"></td>
                         </tr>
                     </form>

@@ -268,7 +268,11 @@ section label{
     border: solid 2px black;
 }
 
-
+#search{
+    background-color: white;
+    border: 2px black solid;
+    padding-bottom: 5px;
+}
 
 #bookingdetails td{
     padding: 20px;

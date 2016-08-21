@@ -80,7 +80,7 @@ if(is_null($_SESSION['admin'])){
                 <table>
                     <form method="post" action="refreshsystem.php">
                         <tr>
-                            <td><label>Enter reference number: </label></td>
+                            <td><label> </label></td>
                             <td><input type="hidden" name="today" id="today" value="" required><br></td>
                             <td><input type="submit" onload="onload()" value="Cancel Booking"><br></td>
                         </tr>

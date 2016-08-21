@@ -119,7 +119,7 @@ if(isset($_POST['confirmation'])){
                     </tr>
                     <tr id="ref">
                         <td>Booking Reference Number:</td>
-                        <td><?php echo $confirmation ?></td>
+                        <td><?php echo $reference ?></td>
                     </tr>
                     <tr>
                         <td>Booking Date(s): </td>

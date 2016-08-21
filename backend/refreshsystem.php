@@ -8,11 +8,13 @@ if(isset($_POST['refresh'])){
     $k = 0;
     $today = $_POST['today'];
     $today = date("Y-m-d",strtotime($today));
+    echo $today;
     $refreshsystem = "DELETE FROM customer_bookings WHERE startdate < '$today'";
     $refresh = mysqli_query($db, $refreshsystem) or die('fuck');
     if($refresh){
         $k = 1;
     }
+
 }
 
 ?>

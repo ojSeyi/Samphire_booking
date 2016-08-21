@@ -253,7 +253,7 @@ if(isset($_POST['username'])){
                                     <td><input type="submit" name="searchperson" value="Search" required><br></td>
                                 </tr>
                             </table>
-                        </form>
+                        </form><br>
                     </tr>
                     <tr>
                         <form method="post" action="viewcustomers.php">
@@ -274,7 +274,7 @@ if(isset($_POST['username'])){
                                     <td><input type="submit" name="searchperson" value="Search" required><br></td>
                                 </tr>
                             </table>
-                        </form>
+                        </form><br>
                     </tr>
                     <tr>
                         <form method="post" action="viewcustomers.php">
@@ -295,7 +295,7 @@ if(isset($_POST['username'])){
                                     <td><input type="submit" name="searchperson" value="Search" required><br></td>
                                 </tr>
                             </table>
-                        </form>
+                        </form><br>
                     </tr>
                     <tr>
                         <form method="post" action="viewcustomers.php">
@@ -316,11 +316,10 @@ if(isset($_POST['username'])){
                                     <td><input type="submit" name="searchperson" value="Search" required><br></td>
                                 </tr>
                             </table>
-                        </form>
+                        </form><br>
                     </tr>
 
                 </table>
-                </form>
             </div>
 
         </div>

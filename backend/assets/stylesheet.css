@@ -309,7 +309,7 @@ section label{
 }
 
 input[type=email]{
-    width: 300px;
+    width: 480px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 1px solid #999;

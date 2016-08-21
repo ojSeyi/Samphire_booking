@@ -16,6 +16,8 @@ $k = 0;
 
 if(isset($_POST['username'])){
     $username = $_POST['username'];
+    $username = stripcslashes($username);
+    $username = mysqli_real_escape_string($db, $username);
     $query = "SELECT * FROM customer_login WHERE username = '$username'";
     $run = mysqli_query($db, $query);
     if($run){

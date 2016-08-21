@@ -71,7 +71,6 @@ if(isset($_POST['today'])){
                         </th>
 
                     </tr>";
-                        $confirmation = null;
                     }else {
                         echo
                         "<caption>The is the system refresh page</caption>

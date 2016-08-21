@@ -343,7 +343,7 @@ input[type=email]:focus {
     overflow-y: auto;
 }
 
-#bookingdetails{
+#bookingdetail{
     font-family: 'Montserrat', sans-serif;
     font-size: 11pt;
     padding-left: 20px;
@@ -352,7 +352,7 @@ input[type=email]:focus {
 
 }
 
-#bookingdetails td{
+#bookingdetail td{
     padding: 0px;
-    font-size: 1pt;
+    font-size: 12pt;
 }

@@ -204,7 +204,7 @@ if(isset($_POST['username'])){
                     </table><br><br>";
                     }elseif($k == 2){
                         echo "
-                            <div id='customers' class='grid-container'><table id='bookingdetails'>
+                            <div id='customers' class='grid-container'><table id='bookingdetail'>
                             <caption>Here's a list of customers with the name:  <h4>". $firstnamearray[0]." ".$lastnamearray[0]."</h4></caption>
                             <tr><th>Username</th><th>Password</th><th>Email</th><th>Mobile</th><th>Address</th></tr>";
                             $i = 0;

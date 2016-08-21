@@ -20,20 +20,7 @@ if(is_null($_SESSION['admin'])){
           initial-scale=1,
           minimum-scale=1,
           maximum-scale=1"/>
-    <script type="text/javascript">
-        function getDate()
-        {
-            var today = new Date();
-            var dd = today.getDate();
-            var mm = today.getMonth()+1; //January is 0!
-            var yyyy = today.getFullYear();
-            if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm}
-            today = yyyy+""+mm+""+dd;
 
-            document.getElementById("today").value = today;
-        }
-        window.onload = getDate();
-    </script>
 </head>
 <body>
 <header>
@@ -97,6 +84,20 @@ if(is_null($_SESSION['admin'])){
                             <td><label> </label></td>
                             <td><input type="hidden" name="today" id="today" required><br></td>
                             <td><input type="submit" onload="onload()" id="refresh" value="Refresh System"><br></td>
+                            <script type="text/javascript">
+                                function getDate()
+                                {
+                                    var today = new Date();
+                                    var dd = today.getDate();
+                                    var mm = today.getMonth()+1; //January is 0!
+                                    var yyyy = today.getFullYear();
+                                    if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm}
+                                    today = yyyy+""+mm+""+dd;
+
+                                    document.getElementById("today").value = today;
+                                }
+                                window.onload = getDate();
+                            </script>
                         </tr>
                     </form>
                 </table>

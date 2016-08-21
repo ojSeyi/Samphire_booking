@@ -143,3 +143,40 @@ header{
     text-decoration: none;
     margin-right: 0px;
 }
+
+label{
+    width: 288px;
+    display: block;
+    float: left;
+    padding-top: 20px;
+}
+
+input[type=text]{
+    width: 480px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    border-radius: 7px;
+    font-size: 11pt;
+}
+
+input[type=text]:focus {
+    border: 3px solid lightskyblue;
+    background-color: aliceblue;
+}
+
+input[type=password]{
+    width: 480px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    border-radius: 7px;
+}
+input[type=password]:focus {
+    border: 3px solid lightskyblue;
+    background-color: aliceblue;
+}
+
+#login{
+
+}

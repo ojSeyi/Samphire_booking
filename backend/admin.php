@@ -12,7 +12,7 @@
           minimum-scale=1,
           maximum-scale=1"/>
 </head>
-<body>
+<body class="grid-container">
     <header>
 
     </header>
@@ -27,8 +27,10 @@
                 <li><a href='viewcustomers.php'>View Customers</a></li>
             </ul>
         </nav>
-        <section>
+        <section class="grid-70">
+            <div id="system" class="grid-container">
 
+            </div>
         </section>
     </main>
 

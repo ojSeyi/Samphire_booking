@@ -113,8 +113,8 @@ if(isset($_POST['confirmation'])){
         <div id="system">
             <div id="screen" class="grid-container">
                 <table id="bookingdetails" class="grid-container">
-                    <tr>
-                        <td id="o">Customer Name: </td>
+                    <tr id="o">
+                        <td>Customer Name: </td>
                         <td><?php echo $firstname . " " . $lastname; ?></td>
                     </tr>
                     <tr>

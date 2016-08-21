@@ -21,13 +21,14 @@ nav>ul>li{
     background-color: white;
     opacity: 0.2;
     width: 300px;
+    padding-top:60px;
+    padding-bottom:60px;
 }
 
 nav>ul>li>a{
     text-decoration: none;
     text-align: center;
-    padding-top:60px;
-    padding-bottom:60px;
+
     color: black;
     font-family: 'Montserrat', sans-serif;
     font-size: 14pt;

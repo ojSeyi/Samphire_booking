@@ -293,7 +293,7 @@ section label{
     font-weight: bold;
 }
 
-section input[type=text]{
+#search input[type=text]{
     width: 400px;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -302,7 +302,7 @@ section input[type=text]{
     font-size: 11pt;
 }
 
-section input[type=text]:focus {
+#search input[type=text]:focus {
     border: 3px solid lightskyblue;
     background-color: aliceblue;
 }

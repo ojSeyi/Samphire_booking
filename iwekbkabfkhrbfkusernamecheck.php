@@ -5,6 +5,7 @@ if(isset($_POST['username'])=== true && empty($_POST['username']) === false){
     include ('db_connection.php');
     $query = "SELECT * FROM customer_login WHERE username = '$user'";
     $result = mysqli_query($db, $query);
-
-        echo (mysqli_num_rows($result) !== 0) ? 'this username already exists' : '';
+    if(mysqli_num_rows($result) == 1){
+        echo "this username already exists";
+    }
 }

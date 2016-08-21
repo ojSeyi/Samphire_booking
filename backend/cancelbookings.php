@@ -75,9 +75,9 @@ if(isset($_POST['confirmation'])){
 
                     </tr>";
                         $confirmation = null;
-                    }
-                    echo
-                    "<caption>The is the booking cancellation page</caption>
+                    }else {
+                        echo
+                        "<caption>The is the booking cancellation page</caption>
                     <tr></tr>
                     <tr></tr>
                     <tr>
@@ -86,6 +86,7 @@ if(isset($_POST['confirmation'])){
                         </th>
 
                     </tr>";
+                    }
                     ?>
                 </table>
             </div>

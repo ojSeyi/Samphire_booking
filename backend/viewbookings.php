@@ -155,8 +155,7 @@ if(isset($_POST['confirmation'])){
                         <td><?php
                             $totalcost = 0;
                             foreach ($bookedfacilities as $showcost) {
-                                $checkcost = $showcost;
-                                $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+                                $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$showcost'";
                                 $result = mysqli_query($db, $getfacilities);
                                 $cost = mysqli_fetch_array($result);
                                 $totalcost = $totalcost + $cost['cost'];

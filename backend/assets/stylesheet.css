@@ -180,6 +180,7 @@ input[type=password]:focus {
 #login{
     border-radius: 7px;
     border: 1px solid black;
+    margin-bottom: 10px;
 }
 
 select{
@@ -209,6 +210,6 @@ input[type=submit] {
 }
 
 section{
-    margin-left: 100px;
+    margin-left: 50px;
     padding-top: 100px;
 }

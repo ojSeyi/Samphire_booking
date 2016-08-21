@@ -70,14 +70,14 @@ if(isset($_POST['bigusername'])){
             <table>
                 <tr>
                     <td><label>Please enter a valid username and password</label><br><br></td>
-                    <td><br><br></td>
+                    <td><br><br><br><br></td>
                 </tr>
                 <tr>
                     <td>
                         <label>Username: </label><br><br>
                     </td>
                     <td>
-                        <input type="text" name="bigusername" id="bigusername" placeholder="Username..." required><br><br><br>
+                        <input type="text" name="bigusername" id="bigusername" placeholder="Username..." required><br><br>
                     </td>
                 </tr>
                 <tr>
@@ -85,7 +85,7 @@ if(isset($_POST['bigusername'])){
                         <label>Password: </label><br><br>
                     </td>
                     <td>
-                        <input type="password" name="bigpassword" id="bigpassword" placeholder="password..." required><br><br><br>
+                        <input type="password" name="bigpassword" id="bigpassword" placeholder="password..." required><br><br>
                     </td>
                 </tr>
                 <tr>

@@ -28,6 +28,7 @@ if(isset($_POST['username'])){
     $email = $fetch2['email'];
     $mobile = $fetch2['mobile'];
     $address = $fetch2['address'];
+    $k=1;
 
 }elseif(isset($_POST['firstname'])){
     $firstname = $_POST['firstname'];
@@ -56,6 +57,7 @@ if(isset($_POST['username'])){
     $fetch = mysqli_fetch_array($run2);
     $username = $fetch2['username'];
     $password = $fetch2['password'];
+    $k=1;
 }
 
 

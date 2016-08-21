@@ -50,7 +50,7 @@ body{
     opacity: 0.5;
 }
 
-#upnava>ul{
+#upnava>ul:hover{
     color: whitesmoke;
 }
 

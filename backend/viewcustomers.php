@@ -204,13 +204,13 @@ if(isset($_POST['username'])){
                     </table><br><br>";
                     }elseif($k == 2){
                         echo "
-                            <div id='customers'>";
+                            <div id='customers'> <table>";
                             $i = 0;
                             foreach($firstnamearray as $firstname){
-                            echo $firstname . "   ". $lastnamearray[$i] ."   ". $usernamearray[$i] ."   ". $passwordarray[$i] ."   ". $emailsarray[$i] ."   ". $mobilearray[$i] ."   ". $addressarray[$i];
+                            echo "<tr>"."<td>". $firstname ."<td>". $lastnamearray[$i] ."<td>". $usernamearray[$i] ."<td>". $passwordarray[$i] ."<td>". $emailsarray[$i] ."<td>". $mobilearray[$i] ."<td>". $addressarray[$i]."<tr>";
                             $i++;
                             }
-                        echo "</div>";
+                        echo "</table></div>";
                         $_SESSION['usernamearray'] = $usernamearray;
                         $_SESSION['passwordarray'] = $passwordarray;
                         $_SESSION['firstnamearray'] = $firstnamearray;

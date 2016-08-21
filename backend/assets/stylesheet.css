@@ -92,6 +92,10 @@ header{
     text-decoration: none;
     margin-right: 0px;
 }
+#logoutbutton:hover{
+    background-color: lightgray;
+    color: black;
+}
 
 #pagetitle{
     padding-top: 10px;

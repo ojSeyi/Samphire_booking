@@ -93,7 +93,7 @@ if(isset($_POST['confirmation'])){
                     }
                     ?>
                 </table>
-            </div>
+            </div><br><br>
             <div id="search">
                 <table>
                     <form method="post" action="cancelbookings.php">

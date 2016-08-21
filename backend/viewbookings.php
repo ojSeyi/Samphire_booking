@@ -27,9 +27,9 @@ if(isset($_POST['confirmation'])){
             $fetch = mysqli_fetch_array($run2);
             $firstname = $fetch['firstname'];
             $lastname = $fetch['lastname'];
-            $startdate = $row['startdate'];
-            $enddate = $row['enddate'];
-            $price = $row['price'];
+            $startdate = $o['startdate'];
+            $enddate = $o['enddate'];
+            $price = $o['price'];
 
             $fid =$o['f_id'];
             $query3 = "SELECT * FROM samphire_facilities WHERE f_id = '$fid'";

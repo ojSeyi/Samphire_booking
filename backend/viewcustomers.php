@@ -34,7 +34,7 @@ if(isset($_POST['username'])){
         }
 
     }
-
+echo $address;
 }elseif(isset($_POST['firstname'])){
     $firstname = $_POST['firstname'];
     $query = "SELECT * FROM customers WHERE firstname = '$firstname'";

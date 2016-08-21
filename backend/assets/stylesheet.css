@@ -84,7 +84,7 @@ header{
 }
 
 #log{
-    margin-top: 32px;
+    padding-top: 32px;
 }
 #logoutbutton{
     width: 70px;

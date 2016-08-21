@@ -27,7 +27,8 @@ nav>ul>li>a{
     text-decoration: none;
     text-align: center;
     display: block;
-    padding: 30px 30px 30px 30px;
+    padding-top:30px;
+    padding-bottom:30px;
     color: black;
     font-family: 'Montserrat', sans-serif;
     font-size: 14pt;

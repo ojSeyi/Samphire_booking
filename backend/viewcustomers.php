@@ -206,15 +206,18 @@ if(isset($_POST['username'])){
                         echo "
                             <form id='removeform' method='post' action='viewcustomers2.php'>
                             <table>
+                                <tr><td>
                                 <select name='customers' id='customers' size=".count($firstnamearray)." required>";
                                     $i = 0;
                                     foreach ($firstnamearray as $firstname) {
-                                        echo "<option><tr><td>".$firstname . " ". $lastnamearray[$i] ." ". $emailsarray[$i] ."</td></tr></option>";
+                                        echo "<option>".$firstname . " ". $lastnamearray[$i] ." ". $emailsarray[$i] ."</option>";
                                         $i++;
                                     }
                                 echo"
                                 </select>
+                                </td><td>
                                 <input type='submit' value='View Full Record'>
+                                </td></tr>
                             </table>
                             </form><br><br>";
 

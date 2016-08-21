@@ -198,7 +198,7 @@ if(isset($_POST['username'])){
                     }elseif($k == 2){
                         echo "
                             <div id='customers' class='grid-container'><br><table id='bookingdetail'>
-                            <caption>Here's a list of customers with the name:  <h4>". $firstnamearray[0]." ".$lastnamearray[0]."</h4></caption>
+                            <caption>Here's a list of customers with the name:  <h2>". $firstnamearray[0]." ".$lastnamearray[0]."</h2></caption>
                             <tr><th>Username</th><th>Password</th><th>Email</th><th>Mobile</th><th>Address</th></tr>";
                             $i = 0;
                             foreach($firstnamearray as $firstname){

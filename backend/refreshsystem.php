@@ -70,7 +70,7 @@ if(is_null($_SESSION['admin'])){
                         <th>
                             Please click refresh to update system!
                         </th><br><br>
-
+                        ".$_POST['today']."
                     </tr>";
                     }
                     ?>

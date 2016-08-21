@@ -335,3 +335,10 @@ input[type=email]:focus {
     max-height: 700px;
     overflow-y: auto;
 }
+
+#customers{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}

@@ -137,7 +137,7 @@ if(isset($_POST['username'])){
                     <?php
                     if($k == 1){
                         echo "
-                        <table id='bookingdetail' class='grid-container'>
+                        <div id='customers'><br><table id='bookingdetail' class='grid-container'>
                         <caption>Here are the full details of username:  <h4>" . $username . "</h4></caption>
                     <tr>
                         <td>
@@ -193,10 +193,10 @@ if(isset($_POST['username'])){
                             ".$address."<br>
                         </td>
                     </tr>
-                    </table><br><br>";
+                    </table></div><br><br>";
                     }elseif($k == 2){
                         echo "
-                            <div id='customers' class='grid-container'><table id='bookingdetail'>
+                            <div id='customers' class='grid-container'><br><table id='bookingdetail'>
                             <caption>Here's a list of customers with the name:  <h4>". $firstnamearray[0]." ".$lastnamearray[0]."</h4></caption>
                             <tr><th>Username</th><th>Password</th><th>Email</th><th>Mobile</th><th>Address</th></tr>";
                             $i = 0;

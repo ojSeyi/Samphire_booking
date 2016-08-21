@@ -73,7 +73,7 @@ if(isset($_POST['bigusername'])){
                 </tr>
                 <tr>
                     <td>
-                        Username:
+                        <label>Username: </label>
                     </td>
                     <td>
                         <input type="text" name="bigusername" id="bigusername" placeholder="Username..." required>
@@ -81,7 +81,7 @@ if(isset($_POST['bigusername'])){
                 </tr>
                 <tr>
                     <td>
-                        Password:
+                        <label>Password: </label>
                     </td>
                     <td>
                         <input type="password" name="bigpassword" id="bigpassword" placeholder="password..." required>

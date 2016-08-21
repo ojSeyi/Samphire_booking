@@ -13,6 +13,7 @@ if(isset($_POST['today'])){
     if($refresh){
         $k = 1;
     }
+    echo $today;
 }
 
 ?>

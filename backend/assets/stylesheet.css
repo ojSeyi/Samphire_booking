@@ -300,6 +300,7 @@ section label{
     border: 1px solid #999;
     border-radius: 7px;
     font-size: 11pt;
+    float: left;
 }
 
 #search input[type=text]:focus {
@@ -309,4 +310,5 @@ section label{
 
 #search label{
     text-align: center;
+    float: left;
 }

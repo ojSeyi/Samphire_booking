@@ -95,7 +95,7 @@ if(is_null($_SESSION['admin'])){
                     <form method="post" onload="getDate()" action="refreshsystem.php">
                         <tr>
                             <td><label> </label></td>
-                            <td><input type="hidden" name="today" id="today" value="" required><br></td>
+                            <td><input type="hidden" name="today" id="today" required><br></td>
                             <td><input type="submit" onload="onload()" id="refresh" value="Refresh System"><br></td>
                         </tr>
                     </form>

@@ -214,7 +214,7 @@ if(isset($_POST['username'])){
                                     }
                                 echo"
                                 </select>
-                                <input type='submit' value='remove'>
+                                <input type='submit' value='View Full Record'>
                             </table>
                             </form><br><br>";
 

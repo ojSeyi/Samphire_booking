@@ -242,6 +242,7 @@ section{
     font-size: 11pt;
     padding-left: 20px;
     padding-right: 20px;
+    margin-bottom: 10px;
 }
 
 #bookingdetails * #pin{
@@ -273,4 +274,8 @@ section{
 #bookingdetails td{
     padding: 15px;
     font-size: 13pt;
+}
+
+#bookingdetails #o {
+    border-bottom: black 1px solid;
 }

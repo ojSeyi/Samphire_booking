@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(is_null($_SESSION['admin'])){
+    header('location: adminlogin.php');
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +45,11 @@
     </nav>
     <section class="grid-70">
         <div id="system" class="grid-container">
+            <div id="screen" class="grid-container">
+                <div id="screen" class="grid-container">
 
+                </div>
+            </div>
         </div>
     </section>
 </main>

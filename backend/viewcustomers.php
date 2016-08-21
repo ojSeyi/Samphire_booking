@@ -205,11 +205,11 @@ if(isset($_POST['username'])){
                     }elseif($k == 2){
                         echo "
                             <div id='customers'><table>
-                            <caption>Here's a list of customers with the name". $firstname." and ".$lastname."</caption>
-                            <tr><th>Firstname</th><th>Lastname</th><th>Username</th><th>Password</th><th>Email</th><th>Mobile</th><th>Address</th></tr>";
+                            <caption>Here's a list of customers with the name". $firstnamearray[0]." and ".$lastnamearray[0]."</caption>
+                            <tr><th>Username</th><th>Password</th><th>Email</th><th>Mobile</th><th>Address</th></tr>";
                             $i = 0;
                             foreach($firstnamearray as $firstname){
-                            echo "<tr>"."<td>". $firstname ."<td>". $lastnamearray[$i] ."<td>". $usernamearray[$i] ."<td>". $passwordarray[$i] ."<td>". $emailsarray[$i] ."<td>". $mobilearray[$i] ."<td>". $addressarray[$i]."<tr>";
+                            echo "<tr>"."<td>". $usernamearray[$i] ."<td>". $passwordarray[$i] ."<td>". $emailsarray[$i] ."<td>". $mobilearray[$i] ."<td>". $addressarray[$i]."<tr>";
                             $i++;
                             }
                         echo "</table></div>";

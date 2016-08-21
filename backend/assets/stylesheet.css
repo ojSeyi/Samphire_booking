@@ -4,6 +4,12 @@ body{
     margin-right: auto;
 }
 
+#form{
+    padding-top: 35px;
+    float: right;
+    padding-right: 15px;
+}
+
 nav{
     background-color: black;
     max-width: 250px;

@@ -9,7 +9,6 @@ body{
     margin: 0;
     padding: 0px;
     overflow: hidden;
-    background-color: black;
 }
 
 #upnava>ul>li{
@@ -17,6 +16,7 @@ body{
     float: left;
     background-color: whitesmoke;
     opacity: 0.5;
+    width: 400px;
 }
 
 #upnava>ul>li>a{

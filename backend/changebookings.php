@@ -113,7 +113,7 @@ if(isset($_POST['confirmation'])){
         </ul>
     </nav>
     <section class="grid-70">
-        <nav id="upnav" class="grid-container">
+        <nav id="upnava" class="grid-container">
             <ul>
                 <li><a href='index.php'>Create Booking</a></li>
                 <li><a href='locatebooking.php'>Manage Booking</a></li>

@@ -4,19 +4,19 @@ body{
     margin-right: auto;
 }
 
-#upnav>ul{
+#upnava>ul{
     list-style-type: none;
     margin: 0;
     padding: 0px;
     overflow: hidden;
 }
 
-#upnav>ul>li{
+#upnava>ul>li{
     margin-top: 5px;
     float: left;
 }
 
-#upnav>ul>li>a{
+#upnava>ul>li>a{
     text-decoration: none;
     text-align: center;
     display: block;
@@ -26,7 +26,7 @@ body{
     font-size: 12pt;
 }
 
-#upnav>ul>li>a:hover{
+#upnava>ul>li>a:hover{
     color: deepskyblue;
     background-color: white;
     opacity: 0.5;

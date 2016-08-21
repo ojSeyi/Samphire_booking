@@ -260,3 +260,12 @@ section{
     margin-bottom: 2px;
     border: solid 2px black;
 }
+
+#search{
+    background-color: white;
+    margin-right: 15px;
+    border: 2px black solid;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}

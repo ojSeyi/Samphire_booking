@@ -38,8 +38,36 @@ if(isset($_POST['confirmation'])){
             $bookedfacilities[] = $fetch2['f_name'];
             $bookedfacilitiescost[] = $fetch2['cost'];
         }
+        $_SERVER['confirmation'] = $reference;
     }
 
+}else{
+    $reference = $_SESSION['confirmation'];
+    $query = "SELECT * FROM customer_bookings WHERE reference = '$reference'";
+    $run = mysqli_query($db, $query);
+    if(mysqli_num_rows($run) < 1){
+        $msg = 'No result';
+    }else{
+        $k = 1;
+        while($o = mysqli_fetch_array($run)){
+            $custid = $o['cust_id'];
+            $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
+            $run2 = mysqli_query($db, $query2);
+            $fetch = mysqli_fetch_array($run2);
+            $firstname = $fetch['firstname'];
+            $lastname = $fetch['lastname'];
+            $startdate = $row['startdate'];
+            $enddate = $row['enddate'];
+            $price = $row['price'];
+
+            $fid =$o['f_id'];
+            $query3 = "SELECT * FROM samphire_facilities WHERE f_id = '$fid'";
+            $run3 = mysqli_query($db, $query3);
+            $fetch2 = mysqli_fetch_array($run3);
+            $bookedfacilities[] = $fetch2['f_name'];
+            $bookedfacilitiescost[] = $fetch2['cost'];
+        }
+    }
 }
 
 

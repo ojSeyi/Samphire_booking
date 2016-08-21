@@ -4,6 +4,7 @@ include ('db_connection.php');
 if(is_null($_SESSION['admin'])){
     header('location: adminlogin.php');
 }
+$_SESSION['reference'] = $_POST['confirmation'];
 $run = 0;
 $firstname = "";
 $lastname = "";

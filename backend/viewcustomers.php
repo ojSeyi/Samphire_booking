@@ -116,7 +116,7 @@ if(isset($_POST['username'])){
                         <tr>
                         <td>
                                 Username:
-                            <br><br>
+                            <br>
                         </td>
                         <td>
                             ".$username."<br>
@@ -125,7 +125,7 @@ if(isset($_POST['username'])){
                     <tr>
                         <td>
                                 Password:
-                            <br><br>
+                            <br>
                         </td>
                         <td>
                             ".$password."<br>
@@ -134,7 +134,7 @@ if(isset($_POST['username'])){
                     <tr>
                         <td>
                                 First name:
-                            <br><br>
+                            <br>
                         </td>
                         <td>
                             ".$firstname."<br>

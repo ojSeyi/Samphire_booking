@@ -14,7 +14,15 @@
 </head>
 <body class="grid-container">
     <header>
-
+        <img src="assets/images/logo_2016.jpg" id="logo"/>
+        <div id="log">
+            <div id="logout">
+                <form method="post" action="logout.php">
+                    <label><?php echo $_SESSION['firstname'];?></label>
+                    <input type="submit" name="logout" value="logout" id="logoutbutton"/>
+                </form>
+            </div>
+            <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
     </header>
 
     <main>

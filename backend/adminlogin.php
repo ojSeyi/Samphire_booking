@@ -70,6 +70,7 @@ if(isset($_POST['bigusername'])){
             <table>
                 <tr>
                     <td><label>Please enter a valid username and password</label><br><br></td>
+                    <td><br><br></td>
                 </tr>
                 <tr>
                     <td>

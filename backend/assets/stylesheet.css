@@ -16,7 +16,6 @@ nav>ul{
 }
 
 nav>ul>li{
-    margin-top: 5px;
     float: left;
     background-color: white;
     opacity: 0.2;
@@ -27,8 +26,8 @@ nav>ul>li>a{
     text-decoration: none;
     text-align: center;
     display: block;
-    padding-top:30px;
-    padding-bottom:30px;
+    padding-top:45px;
+    padding-bottom:40px;
     color: black;
     font-family: 'Montserrat', sans-serif;
     font-size: 14pt;

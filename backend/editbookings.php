@@ -12,11 +12,11 @@ $enddate = "";
 $price = "";
 $bookedfacilities = array();
 $bookedfacilitiescost = array();
-if(isset($_POST['confirmation'])){
-    $reference = $_POST['confirmation'];
-    $reference = stripcslashes($reference);
-    $reference = mysqli_real_escape_string($db, $reference);
-    $query = "SELECT * FROM customer_bookings WHERE reference = '$reference'";
+if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
+    $startdate = $_POST['startdate'];
+    $startdate = stripcslashes($startdate);
+    $startdate = mysqli_real_escape_string($db, $startdate);
+    $query = "SELECT * FROM customer_bookings WHERE startdate = '$startdate'";
     $run = mysqli_query($db, $query);
     if(mysqli_num_rows($run) < 1){
         $msg = 'No result';
@@ -40,12 +40,16 @@ if(isset($_POST['confirmation'])){
             $bookedfacilities[] = $fetch2['f_name'];
             $bookedfacilitiescost[] = $fetch2['cost'];
         }
-        $_SESSION['confirmation'] = $reference;
     }
 
-}else{
-    $reference = $_SESSION['confirmation'];
-    $query = "SELECT * FROM customer_bookings WHERE reference = '$reference'";
+}elseif(isset($_POST['startdate']) && isset($_POST['enddate'])){
+    $startdate = $_POST['startdate'];
+    $startdate = stripcslashes($startdate);
+    $startdate = mysqli_real_escape_string($db, $startdate);
+    $enddate = $_POST['enddate'];
+    $enddate = stripcslashes($enddate);
+    $enddate = mysqli_real_escape_string($db, $enddate);
+    $query = "SELECT * FROM customer_bookings WHERE startdate = '$startdate' AND enddate = '$enddate'";
     $run = mysqli_query($db, $query);
     if(mysqli_num_rows($run) < 1){
         $msg = 'No result';
@@ -58,9 +62,9 @@ if(isset($_POST['confirmation'])){
             $fetch = mysqli_fetch_array($run2);
             $firstname = $fetch['firstname'];
             $lastname = $fetch['lastname'];
-            $startdate = $row['startdate'];
-            $enddate = $row['enddate'];
-            $price = $row['price'];
+            $startdate = $o['startdate'];
+            $enddate = $o['enddate'];
+            $price = $o['price'];
 
             $fid =$o['f_id'];
             $query3 = "SELECT * FROM samphire_facilities WHERE f_id = '$fid'";
@@ -187,11 +191,11 @@ if(isset($_POST['confirmation'])){
                     <form method="post" action="editbookings.php">
                         <tr>
                             <td><label>Enter start date: </label></td>
-                            <td><input type="text" name="startdate" required><br></td>
+                            <td><input type="text" id="startdate" name="startdate" required><br></td>
                         </tr>
                         <tr>
                             <td><label>Enter end date if there is one: </label></td>
-                            <td><input type="text" name="enddate" required><br></td>
+                            <td><input type="text" id="enddate" name="enddate" required><br></td>
                         </tr>
                         <tr>
                             <td></td>

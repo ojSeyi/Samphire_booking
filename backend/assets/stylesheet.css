@@ -342,3 +342,17 @@ input[type=email]:focus {
     max-height: 400px;
     overflow-y: auto;
 }
+
+#bookingdetails{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11pt;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+
+}
+
+#bookingdetails td{
+    padding: 0px;
+    font-size: 1pt;
+}

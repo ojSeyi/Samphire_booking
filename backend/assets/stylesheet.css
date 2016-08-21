@@ -316,3 +316,8 @@ section label{
     float: right;
     width: 250px;
 }
+
+#screen {
+    max-height: 700px;
+    overflow-y: auto;
+}

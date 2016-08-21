@@ -113,9 +113,9 @@ if(isset($_POST['confirmation'])){
         <div id="system">
             <div id="screen" class="grid-container">
                 <table id="bookingdetails" class="grid-container">
-                    <tr id="o">
-                        <td>Customer Name: </td>
-                        <td><?php echo $firstname . " " . $lastname; ?></td>
+                    <tr>
+                        <td id="o">Customer Name: </td>
+                        <td id="o"><?php echo $firstname . " " . $lastname; ?></td>
                     </tr>
                     <tr id="ref">
                         <td>Booking Reference Number:</td>

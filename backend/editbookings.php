@@ -112,6 +112,7 @@ if(isset($_POST['confirmation'])){
         </ul>
     </nav>
     <section class="grid-70">
+        <div><h3>Admin Booking Editor</h3></div>
         <div id="upnava" class="grid-container">
             <ul>
                 <li><a href='index.php'>Search Reference Number</a></li>

@@ -113,7 +113,7 @@ if(isset($_POST['confirmation'])){
         </ul>
     </nav>
     <section class="grid-70">
-        <div class="grid-container"><h3>Admin Booking Editor</h3></div>
+        <div id="g" class="grid-container"><h2>Admin Booking Editor</h2></div>
         <div id="upnava" class="grid-container">
             <ul>
                 <li><a href='changebookings.php'>Search Reference Number</a></li>
@@ -122,7 +122,7 @@ if(isset($_POST['confirmation'])){
             </ul>
         </div>
         <div id="system">
-            <div class="grid-container"><h4>View by Reference number</h4></div><br>
+            <div id="g" class="grid-container"><h3>View by Reference number</h3></div>
             <div id="screen" class="grid-container">
                 <table id="bookingdetails" class="grid-container">
                     <tr>

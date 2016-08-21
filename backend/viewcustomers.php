@@ -1,10 +1,39 @@
 <?php
 session_start();
+include ('db_connection.php');
 if(is_null($_SESSION['admin'])){
     header('location: adminlogin.php');
 }
 
+$username = "";
+$firstname = "";
+$lastname = "";
+$email = "";
+$k = 0;
 
+if(isset($_POST['username'])){
+    $username = $_POST['username'];
+
+
+}elseif(isset($_POST['firstname'])){
+    $firstname = $_POST['firstname'];
+    $query = "SELECT * FROM customers WHERE firstname = '$firstname'";
+    $run = mysqli_query($db, $query);
+    $fetch = mysqli_fetch_array($run);
+
+}elseif(isset($_POST['lastname'])){
+    $lastname = $_POST['lastname'];
+    $query = "SELECT * FROM customers WHERE lastname = '$lastname'";
+    $run = mysqli_query($db, $query);
+    $fetch = mysqli_fetch_array($run);
+
+}elseif(isset($_POST['email'])) {
+    $email = $_POST['email'];
+    $query = "SELECT * FROM customers WHERE email = '$email'";
+    $run = mysqli_query($db, $query);
+    $fetch = mysqli_fetch_array($run);
+
+}
 
 
 ?>
@@ -48,8 +77,140 @@ if(is_null($_SESSION['admin'])){
     <section class="grid-70">
         <div id="system" class="grid-container">
             <div id="screen" class="grid-container">
+                    <?php
+                    if($k == 1){
+                        echo "
+                        <table id='bookingdetails' class='grid-container'>
+                        <tr>
+                        <td>
+                                Username:
+                            <br><br>
+                        </td>
+                        <td>
+                            ".$username."<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                Password:
+                            <br><br>
+                        </td>
+                        <td>
+                            ".$password."<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                First name:
+                            <br><br>
+                        </td>
+                        <td>
+                            ".$firstname."<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                Last name:
+                            <br>
+                        </td>
+                        <td>
+                            ".$lastname."<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                Email:
+                            <br>
+                        </td>
+                        <td>
+                            ".$email."<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                Mobile number:
+                            <br>
+                        </td>
+                        <td>
+                            ".$mobile."<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                Address:
+                            <br>
+                        </td>
+                        <td>
+                            ".$address."<br>
+                        </td>
+                    </tr>
+                    </table><br><br>";}else{
 
+                    }
+                    ?>
+                <form method="post" action="viewcustomers.php">
+                <table id="bookingdetails" class="grid-container">
+                    <caption>Enter any of the items below to find the customer<br></caption>
+                    <tr>
+                        <th>Note that not all information in this form is required<br></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="usernamecheck">
+                                Username:
+                            </label>
+                        </td>
+                        <td>
+                            <input type="text" name="username" id="usernamea">
+                        </td>
+                        <td>
+                            <div id="usernamecheck"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                First name:
+                            </label>
+                        </td>
+                        <td>
+                            <input type="text" name="firstname" min="2">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                Last name:
+                            </label>
+                        </td>
+                        <td>
+                            <input type="text" name="lastname">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="emailcheck">
+                                Email:
+                            </label>
+                        </td>
+                        <td>
+                            <input type="email" name="email" id="emaila">
+                        </td>
+                        <td>
+                            <div id="emailcheck"></div>
+                        </td>
+                    </tr>
+                    <tr id="search">
+                        <td><label>Click to view All Customers</label></td>
+                        <td><input type="hidden" name="all" value="all" required><br></td>
+                        <td><input type="submit" name="searchperson" value="Search" required><br></td>
+
+                    </tr>
+
+                </table>
+                </form>
             </div>
+
         </div>
     </section>
 </main>

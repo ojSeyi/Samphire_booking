@@ -195,7 +195,7 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
                         </tr>
                         <tr>
                             <td><label>Enter end date if there is one: </label></td>
-                            <td><input type="text" id="enddate" name="enddate" required><br></td>
+                            <td><input type="text" id="enddate" name="enddate"><br></td>
                         </tr>
                         <tr>
                             <td></td>

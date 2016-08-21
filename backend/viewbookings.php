@@ -14,6 +14,8 @@ $bookedfacilities = array();
 $bookedfacilitiescost = array();
 if(isset($_POST['confirmation'])){
     $reference = $_POST['confirmation'];
+    $reference = stripcslashes($reference);
+    $reference = mysqli_real_escape_string($db, $reference);
     $query = "SELECT * FROM customer_bookings WHERE reference = '$reference'";
     $run = mysqli_query($db, $query);
     if(mysqli_num_rows($run) < 1){

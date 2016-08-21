@@ -121,7 +121,7 @@ if(isset($_POST['confirmation'])){
             </ul>
         </div>
         <div id="system">
-            <div class="grid-container"><h4>View by dates</h4></div><br>
+            <div class="grid-container"><h4>View by facility</h4></div><br>
             <div id="screen" class="grid-container">
                 <table id="bookingdetails" class="grid-container">
                     <tr>

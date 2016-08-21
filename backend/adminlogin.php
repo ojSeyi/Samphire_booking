@@ -84,7 +84,7 @@ if(isset($_POST['bigusername'])){
                         <label>Password: </label>
                     </td>
                     <td>
-                        <input type="password" name="bigpassword" id="bigpassword" placeholder="password..." required>
+                        <input type="password" name="bigpassword" id="bigpassword" placeholder="password..." required><br>
                     </td>
                 </tr>
                 <tr>

@@ -1,7 +1,45 @@
 <?php
 session_start();
+include ('db_connection.php');
 if(is_null($_SESSION['admin'])){
     header('location: adminlogin.php');
+}
+$run = 0;
+$firstname = "";
+$lastname = "";
+$startdate = "";
+$enddate = "";
+$price = "";
+$bookedfacilities = array();
+$bookedfacilitiescost = array();
+if(isset($_POST['confirmation'])){
+    $reference = $_POST['confirmation'];
+    $query = "SELECT * FROM customer_bookings WHERE reference = '$reference'";
+    $run = mysqli_query($db, $query);
+    if(mysqli_num_rows($run) < 1){
+        $msg = 'No result';
+    }else{
+        $k = 1;
+        while($o = mysqli_fetch_array($run)){
+            $custid = $o['cust_id'];
+            $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
+            $run2 = mysqli_query($db, $query2);
+            $fetch = mysqli_fetch_array($run2);
+            $firstname = $fetch['firstname'];
+            $lastname = $fetch['lastname'];
+            $startdate = $row['startdate'];
+            $enddate = $row['enddate'];
+            $price = $row['price'];
+
+            $fid =$o['f_id'];
+            $query3 = "SELECT * FROM samphire_facilities WHERE f_id = '$fid'";
+            $run3 = mysqli_query($db, $query3);
+            $fetch2 = mysqli_fetch_array($run3);
+            $bookedfacilities[] = $fetch2['f_name'];
+            $bookedfacilitiescost[] = $fetch2['cost'];
+        }
+    }
+
 }
 
 
@@ -46,7 +84,74 @@ if(is_null($_SESSION['admin'])){
     <section class="grid-70">
         <div id="system" class="grid-container">
             <div id="screen" class="grid-container">
-
+                <table>
+                    <tr>
+                        <td>Customer Name: </td>
+                        <td><?php echo $firstname . " " . $lastname; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Booking Date(s): </td>
+                        <?php
+                        if($enddate == $startdate){
+                            echo "<td>".$startdate."</td>";
+                        }else{
+                            echo "<td> From: ".$startdate." to: " . $enddate . "</td>";
+                        }
+                        ?>
+                    </tr>
+                    <tr id="pins">
+                        <td>Facility(s)</td>
+                        <td>Price(s)</td>
+                    </tr>
+                    <tr id="pin">
+                        <td>
+                            <?php
+                            foreach ($bookedfacilities as $showfacility) {
+                                echo $showfacility ."<br>";
+                            }
+                            ?>
+                        </td>
+                        <td>  <?php
+                            foreach ($bookedfacilities as $showcost) {
+                                $checkcost = $showcost;
+                                $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+                                $result = mysqli_query($db, $getfacilities);
+                                $cost = mysqli_fetch_array($result);
+                                echo "£".$cost['cost'] . "<br>";
+                            }
+                            ?>
+                        </td>
+                    </tr><br><br>
+                    <tr id="pind">
+                        <td>Total: </td>
+                        <td><?php
+                            $totalcost = 0;
+                            foreach ($bookedfacilities as $showcost) {
+                                $checkcost = $showcost;
+                                $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
+                                $result = mysqli_query($db, $getfacilities);
+                                $cost = mysqli_fetch_array($result);
+                                $totalcost = $totalcost + $cost['cost'];
+                            }
+                            echo "£".$totalcost;
+                            ?>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="search">
+                <table>
+                    <form method="post" action="viewbookings.php">
+                        <tr>
+                            <td><label>Enter reference number: </label></td>
+                            <td><input id="text" name="confirmation" required></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="search">/td>
+                        </tr>
+                    </form>
+                </table>
             </div>
         </div>
     </section>

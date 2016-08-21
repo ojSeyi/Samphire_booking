@@ -284,6 +284,8 @@ section{
 
 #screen{
     background-color: RGBa(128, 128, 128, 0.2);
+    border-radius: 5px;
+    border: 1px solid darkgray;
 }
 
 #bookingdetails #ref{

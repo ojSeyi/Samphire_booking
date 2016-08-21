@@ -4,6 +4,34 @@ body{
     margin-right: auto;
 }
 
+#upnav>ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    overflow: hidden;
+}
+
+#upnav>ul>li{
+    margin-top: 5px;
+    float: left;
+}
+
+#upnav>ul>li>a{
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 5px 5px;
+    color: White;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12pt;
+}
+
+#upnav>ul>li>a:hover{
+    color: deepskyblue;
+    background-color: white;
+    opacity: 0.5;
+}
+
 #form{
     padding-top: 35px;
     float: right;

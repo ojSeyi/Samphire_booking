@@ -69,7 +69,7 @@ if(isset($_POST['bigusername'])){
         <form method="post" action="adminlogin.php">
             <table>
                 <tr>
-                    <label>Please enter a valid username and password</label><br><br>
+                    <td><label>Please enter a valid username and password</label><br><br></td>
                 </tr>
                 <tr>
                     <td>

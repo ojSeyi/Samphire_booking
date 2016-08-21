@@ -305,8 +305,9 @@ if(isset($_POST['username'])){
                                     <td><input type="submit" name="searchperson" value="Search" required><br></td>
                                 </tr>
                             </table>
-                        </form><br>
+                        </form>
                     </tr>
+                    <tr></tr>
 
                 </table>
             </div>

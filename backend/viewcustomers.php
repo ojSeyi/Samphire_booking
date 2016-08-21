@@ -203,7 +203,6 @@ if(isset($_POST['username'])){
                     </tr>
                     </table><br><br>";
                     }elseif($k == 2){
-                        echo $k;
                         echo "
                             <form id='removeform' method='post' action='viewcustomers2.php'>
                             <table>

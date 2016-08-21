@@ -37,20 +37,27 @@ if(isset($_POST['username'])){
         }
 
     }
-}elseif(isset($_POST['firstname'])){
+}elseif(isset($_POST['firstname']) && isset($_POST['lastname'])){
     $firstname = $_POST['firstname'];
+    $firstname = stripcslashes($firstname);
+    $firstname = mysqli_real_escape_string($db, $firstname);
+    $lastname = $_POST['lastname'];
+    $lastname = stripcslashes($lastname);
+    $lastname = mysqli_real_escape_string($db, $lastname);
     $query = "SELECT * FROM customers WHERE firstname = '$firstname'";
     $run = mysqli_query($db, $query);
     $fetch = mysqli_fetch_array($run);
 
 }elseif(isset($_POST['lastname'])){
-    $lastname = $_POST['lastname'];
+
     $query = "SELECT * FROM customers WHERE lastname = '$lastname'";
     $run = mysqli_query($db, $query);
     $fetch = mysqli_fetch_array($run);
 
 }elseif(isset($_POST['email'])) {
     $email = $_POST['email'];
+    $email = stripcslashes($email);
+    $email = mysqli_real_escape_string($db, $email);
     $query = "SELECT * FROM customers WHERE email = '$email'";
     $run = mysqli_query($db, $query);
     $fetch = mysqli_fetch_array($run);

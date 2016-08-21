@@ -9,6 +9,7 @@ body{
     margin: 0;
     padding: 0px;
     overflow: hidden;
+    background-color: black;
 }
 
 #upnava>ul>li{
@@ -30,7 +31,7 @@ body{
 
 #upnava>ul>li>a:hover{
     color: deepskyblue;
-    background-color: white;
+    background-color: lightgray;
     opacity: 0.5;
 }
 

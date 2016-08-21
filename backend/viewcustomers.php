@@ -225,7 +225,7 @@ if(isset($_POST['username'])){
                     </tr>
                     <tr id="search">
                         <td><label>Click to view All Customers</label></td>
-                        <td><input type="hidden" name="all" value="all" required><br></td>
+                        <input type="hidden" name="all" value="all" required>
                         <td><input type="submit" name="searchperson" value="Search" required><br></td>
 
                     </tr>

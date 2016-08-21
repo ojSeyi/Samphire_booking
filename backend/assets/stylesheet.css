@@ -243,6 +243,7 @@ section{
     padding-left: 20px;
     padding-right: 20px;
     margin-bottom: 10px;
+    background-color: RGBa(128, 128, 128, 0.2);
 }
 
 #bookingdetails * #pin{

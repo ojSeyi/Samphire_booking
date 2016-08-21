@@ -50,6 +50,10 @@ body{
     opacity: 0.5;
 }
 
+#upnava>ul{
+    color: whitesmoke;
+}
+
 #form{
     padding-top: 35px;
     float: right;

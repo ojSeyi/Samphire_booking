@@ -4,6 +4,16 @@ if(is_null($_SESSION['admin'])){
     header('location: adminlogin.php');
 }
 
+if(isset($_POST['today'])){
+    $k = 0;
+    $today = $_POST['today'];
+    $today = date("Y-m-d",strtotime($today));
+    $refreshsystem = "DELETE FROM customer_bookings WHERE startdate < '$today'";
+    $refresh = mysqli_query($db, $refreshsystem);
+    if($refresh){
+        $k = 1;
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -71,7 +81,7 @@ if(is_null($_SESSION['admin'])){
                         <th>
                             Please click refresh to update system!
                         </th><br><br>
-                        ".$_POST['today']."
+
                     </tr>";
                     }
                     ?>

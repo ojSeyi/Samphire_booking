@@ -19,7 +19,32 @@
 
 <main>
     <div id="login" class="grid-container">
-
+        <form method="post" action="latelogin.php">
+            <table>
+                <tr>
+                    <label>Please enter a valid username and password</label>
+                </tr>
+                <tr>
+                    <td>
+                        Username:
+                    </td>
+                    <td>
+                        <input type="text" name="bigusername" id="bigusername" placeholder="Username..." required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password:
+                    </td>
+                    <td>
+                        <input type="password" name="bigpassword" id="bigpassword" placeholder="password..." required>
+                    </td>
+                </tr>
+                <tr>
+                    <input type="submit" name="login" value="Login">
+                </tr>
+            </table>
+        </form>
     </div>
 </main>
 

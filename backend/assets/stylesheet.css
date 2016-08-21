@@ -16,6 +16,7 @@ nav>ul{
 }
 
 nav>ul>li{
+    margin-top: 2px;
     float: left;
     background-color: white;
     opacity: 0.2;

@@ -82,6 +82,7 @@ if(isset($_POST['confirmation'])){
     <link rel="stylesheet" href="assets/stylesheet.css">
     <link rel="stylesheet" href="assets/unsemantic-grid-responsive-tablet.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
     <meta name="viewpoint"
           content="width=device-width,
           initial-scale=1,
@@ -199,6 +200,7 @@ if(isset($_POST['confirmation'])){
                     </form>
                 </table>
             </div>
+            <script type="text/javascript" src="JS/global.js"></script>
             <br>
             <div id='customers' class='grid-container'>
 

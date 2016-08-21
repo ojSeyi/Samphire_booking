@@ -71,7 +71,7 @@ if(isset($_SESSION['login'])){
                         </label><br><br>
                     </td>
                     <td>
-                        <input type="text" name="username" id="usernamea" oninput="validateusername()" required><br><br>
+                        <input type="text" name="username" id="usernamea" oninput="" required><br><br>
                     </td>
                     <td>
                         <div id="usernamecheck"></div><br><br>

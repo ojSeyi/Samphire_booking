@@ -308,7 +308,7 @@ section label{
     background-color: aliceblue;
 }
 
-input[type=emai]{
+input[type=email]{
     width: 480px;
     padding: 12px 20px;
     box-sizing: border-box;

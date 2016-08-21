@@ -23,12 +23,12 @@ if(isset($_POST['username'])){
     if($run){
         $fetch = mysqli_fetch_array($run);
         $logid = $fetch['log_id'];
-        echo $logid;
         $query2 = "SELECT * FROM customers WHERE log_id = '$logid'";
         $run2 = mysqli_query($db, $query);
         if($run2){
             $fetch2 = mysqli_fetch_array($run2);
             $firstname = $fetch2['firstname'];
+            echo $firstname;
             $lastname = $fetch2['lastname'];
             $email = $fetch2['email'];
             $mobile = $fetch2['mobile'];

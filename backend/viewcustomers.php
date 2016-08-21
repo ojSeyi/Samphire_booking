@@ -137,7 +137,7 @@ if(isset($_POST['username'])){
                     <?php
                     if($k == 1){
                         echo "
-                        <div id='customers' class='grid-container'><br><table id='bookingdetail'>
+                        <div id='customers'><br><table id='bookingdetail' class='grid-container'>
                         <caption>Here are the full details of username:  <h4>" . $username . "</h4></caption>
                     <tr>
                         <td>

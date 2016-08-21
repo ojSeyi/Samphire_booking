@@ -308,7 +308,7 @@ section label{
     background-color: aliceblue;
 }
 
-input[type=text]{
+input[type=emai]{
     width: 480px;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -317,7 +317,7 @@ input[type=text]{
     font-size: 11pt;
 }
 
-input[type=text]:focus {
+input[type=email]:focus {
     border: 3px solid lightskyblue;
     background-color: aliceblue;
 }

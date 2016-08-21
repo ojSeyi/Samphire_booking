@@ -24,11 +24,10 @@ if(isset($_POST['username'])){
         $fetch = mysqli_fetch_array($run);
         $logid = $fetch['log_id'];
         $query2 = "SELECT * FROM customers WHERE log_id = '$logid'";
-        $run2 = mysqli_query($db, $query);
+        $run2 = mysqli_query($db, $query2);
         if($run2){
             $fetch2 = mysqli_fetch_array($run2);
             $firstname = $fetch2['firstname'];
-            echo $firstname;
             $lastname = $fetch2['lastname'];
             $email = $fetch2['email'];
             $mobile = $fetch2['mobile'];
@@ -37,7 +36,6 @@ if(isset($_POST['username'])){
         }
 
     }
-echo $address;
 }elseif(isset($_POST['firstname'])){
     $firstname = $_POST['firstname'];
     $query = "SELECT * FROM customers WHERE firstname = '$firstname'";
@@ -62,7 +60,7 @@ echo $address;
     $logid = $fetch['log_id'];
     $query2 = "SELECT * FROM customer_login WHERE log_id = '$logid'";
     $run2 = mysqli_query($db, $query2);
-    $fetch = mysqli_fetch_array($run2);
+    $fetch2 = mysqli_fetch_array($run2);
     $username = $fetch2['username'];
     $password = $fetch2['password'];
     $k=1;

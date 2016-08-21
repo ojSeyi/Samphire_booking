@@ -228,63 +228,95 @@ if(isset($_POST['username'])){
                         $_SESSION['addressarray'] = $usernamearray;
                     }
                     ?>
-                <form method="post" action="viewcustomers.php">
+
                 <table id="bookingdetails" class="grid-container">
                     <caption>Enter any of the items below to find the customer<br></caption>
                     <tr>
                         <th>Note that not all information in this form is required<br></th>
                     </tr>
                     <tr>
-                        <td>
-                            <label for="usernamecheck">
-                                Username:
-                            </label>
-                        </td>
-                        <td>
-                            <input type="text" name="username" id="usernamea">
-                        </td>
-                        <td>
-                            <div id="usernamecheck"></div>
-                        </td>
+                        <form method="post" action="viewcustomers.php">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label>
+                                            Username:
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="username" id="usernamea">
+                                    </td>
+                                </tr>
+                                <tr id="search">
+                                    <td><label>Click to view All Customers</label></td>
+                                    <input type="hidden" name="all" value="all" required>
+                                    <td><input type="submit" name="searchperson" value="Search" required><br></td>
+                                </tr>
+                            </table>
+                        </form>
                     </tr>
                     <tr>
-                        <td>
-                            <label>
+                        <form method="post" action="viewcustomers.php">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label>
                                 First name:
-                            </label>
-                        </td>
-                        <td>
-                            <input type="text" name="firstname" min="2">
-                        </td>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="firstname" min="2">
+                                    </td>
+                                </tr>
+                                <tr id="search">
+                                    <td><label>Click to view All Customers</label></td>
+                                    <input type="hidden" name="all" value="all" required>
+                                    <td><input type="submit" name="searchperson" value="Search" required><br></td>
+                                </tr>
+                            </table>
+                        </form>
                     </tr>
                     <tr>
-                        <td>
-                            <label>
-                                Last name:
-                            </label>
-                        </td>
-                        <td>
-                            <input type="text" name="lastname">
-                        </td>
+                        <form method="post" action="viewcustomers.php">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label>
+                                            Last name:
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="lastname">
+                                    </td>
+                                </tr>
+                                <tr id="search">
+                                    <td><label>Click to view All Customers</label></td>
+                                    <input type="hidden" name="all" value="all" required>
+                                    <td><input type="submit" name="searchperson" value="Search" required><br></td>
+                                </tr>
+                            </table>
+                        </form>
                     </tr>
                     <tr>
-                        <td>
-                            <label for="emailcheck">
-                                Email:
-                            </label>
-                        </td>
-                        <td>
-                            <input type="email" name="email" id="emaila">
-                        </td>
-                        <td>
-                            <div id="emailcheck"></div>
-                        </td>
-                    </tr>
-                    <tr id="search">
-                        <td><label>Click to view All Customers</label></td>
-                        <input type="hidden" name="all" value="all" required>
-                        <td><input type="submit" name="searchperson" value="Search" required><br></td>
-
+                        <form method="post" action="viewcustomers.php">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label>
+                                            Email:
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="email" name="email" id="emaila">
+                                    </td>
+                                </tr>
+                                <tr id="search">
+                                    <td><label>Click to view All Customers</label></td>
+                                    <input type="hidden" name="all" value="all" required>
+                                    <td><input type="submit" name="searchperson" value="Search" required><br></td>
+                                </tr>
+                            </table>
+                        </form>
                     </tr>
 
                 </table>

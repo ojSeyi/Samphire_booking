@@ -248,7 +248,7 @@ if(isset($_POST['username'])){
                                     </td>
                                 </tr>
                                 <tr id="search">
-                                    <td><label>Click to view All Customers</label></td>
+                                    <td><label>Click to view a custumer using username</label></td>
                                     <input type="hidden" name="all" value="all" required>
                                     <td><input type="submit" name="searchperson" value="Search" required><br></td>
                                 </tr>
@@ -279,7 +279,7 @@ if(isset($_POST['username'])){
                                     </td>
                                 </tr>
                                 <tr id="search">
-                                    <td><label>Click to view All Customers</label></td>
+                                    <td><label>Click to view all custumers with these names</label></td>
                                     <input type="hidden" name="all" value="all" required>
                                     <td><input type="submit" name="searchperson" value="Search" required><br></td>
                                 </tr>
@@ -300,7 +300,7 @@ if(isset($_POST['username'])){
                                     </td>
                                 </tr>
                                 <tr id="search">
-                                    <td><label>Click to view All Customers</label></td>
+                                    <td><label>Click to view a custumer using email</label></td>
                                     <input type="hidden" name="all" value="all" required>
                                     <td><input type="submit" name="searchperson" value="Search" required><br></td>
                                 </tr>

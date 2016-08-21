@@ -92,7 +92,16 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                         </table>
                     </td>
                     <td>
-
+                        <table>
+                            <tr>
+                                <th>If you do not have a valid username and password please register</th>
+                            </tr>
+                            <tr>
+                                <form method="post" action="registration.php">
+                                    <input type="submit" name="search" value="REGISTER">
+                                </form>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
             </table>

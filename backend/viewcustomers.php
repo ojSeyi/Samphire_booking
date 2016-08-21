@@ -204,23 +204,13 @@ if(isset($_POST['username'])){
                     </table><br><br>";
                     }elseif($k == 2){
                         echo "
-                            <form id='removeform' method='post' action='viewcustomers2.php'>
-                            <table>
-                                <tr><td>
-                                <select name='customers' id='customers' size=".count($firstnamearray)." required>";
-                                    $i = 0;
-                                    foreach ($firstnamearray as $firstname) {
-                                        echo "<option>".$firstname . "   ". $lastnamearray[$i] ."   "."  - Email: ". $emailsarray[$i] ."</option>";
-                                        $i++;
-                                    }
-                                echo"
-                                </select>
-                                </td><td>
-                                <input type='submit' value='View Full Record'>
-                                </td></tr>
-                            </table>
-                            </form><br><br>";
-
+                            <div id='customers'>";
+                            $v = 0;
+                            foreach($firstnamearray as $firstname){
+                            echo $firstname . "   ". $lastnamearray[$i] ."   ". $usernamearray[$i] ."   ". $passwordarray[$i] ."   ". $emailsarray[$i] ."   ". $mobilearray[$i] ."   ". $addressarray[$i];
+                            $v++;
+                            }
+                        echo "</div>";
                         $_SESSION['usernamearray'] = $usernamearray;
                         $_SESSION['passwordarray'] = $usernamearray;
                         $_SESSION['firstnamearray'] = $usernamearray;

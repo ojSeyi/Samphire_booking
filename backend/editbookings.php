@@ -114,10 +114,9 @@ if(isset($_POST['confirmation'])){
     <section class="grid-70">
         <div id="upnava" class="grid-container">
             <ul>
-                <li><a href='index.php'>Create Booking</a></li>
-                <li><a href='locatebooking.php'>Manage Booking</a></li>
-                <li><a href='contactus.php'>Contact Us</a></li>
-                <li><a href='registration.php'>Register</a></li>
+                <li><a href='index.php'>Search Reference Number</a></li>
+                <li><a href='locatebooking.php'>Search by dates</a></li>
+                <li><a href='contactus.php'>Search by Facility</a></li>
             </ul>
         </div>
         <div id="system">

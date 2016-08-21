@@ -82,6 +82,10 @@ header{
     font-size: 14pt;
     color: white;
 }
+
+#log{
+    margin-top: 32px;
+}
 #logoutbutton{
     width: 70px;
     background-color: #999999;

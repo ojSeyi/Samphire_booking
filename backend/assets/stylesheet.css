@@ -4,6 +4,10 @@ body{
     margin-right: auto;
 }
 
+#g{
+    margin-left: 300px;
+}
+
 #upnava>ul{
     list-style-type: none;
     margin: 0;

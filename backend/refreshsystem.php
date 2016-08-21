@@ -45,7 +45,47 @@ if(is_null($_SESSION['admin'])){
     </nav>
     <section class="grid-70">
         <div id="system" class="grid-container">
+            <div id="screen" class="grid-container">
+                <table id="intro">
+                    <?php
 
+                    if($k == 1){
+                        echo "<caption>The is the system refresh page</caption>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr>
+                        <th>
+                            The system has been refreshed and records have been updated to resume with today.
+                        </th>
+
+                    </tr>";
+                        $confirmation = null;
+                    }else {
+                        echo
+                        "<caption>The is the system refresh page</caption>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr>
+                        <th>
+                            Please click refresh to update system!
+                        </th><br><br>
+
+                    </tr>";
+                    }
+                    ?>
+                </table>
+            </div><br>
+            <div id="search">
+                <table>
+                    <form method="post" action="cancelbookings.php">
+                        <tr>
+                            <td><label>Enter reference number: </label></td>
+                            <td><input type="text" name="confirmation" required><br></td>
+                            <td><input type="submit" value="Cancel Booking"><br></td>
+                        </tr>
+                    </form>
+                </table>
+            </div>
         </div>
     </section>
 </main>

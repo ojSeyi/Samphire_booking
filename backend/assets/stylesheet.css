@@ -14,9 +14,9 @@ body{
 #upnava>ul>li{
     margin-top: 5px;
     float: left;
-    background-color: whitesmoke;
+    background-color: black;
     opacity: 0.5;
-    width: 400px;
+    width: 300px;
 }
 
 #upnava>ul>li>a{
@@ -25,6 +25,7 @@ body{
     display: block;
     padding: 5px 5px;
     color: black;
+    background-color: whitesmoke;
     font-family: 'Montserrat', sans-serif;
     font-size: 12pt;
 }

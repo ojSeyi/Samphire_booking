@@ -46,10 +46,11 @@ if(isset($_POST['bigusername'])){
 <header>
     <img src="assets/images/logo_2016.jpg" id="logo"/>
     <div id="log">
-        <div id="logout">
-            <form method="post" action="adminlogout.php">
-                <label><?php echo $_SESSION['firstname'];?></label>
-                <input type="submit" name="logout" value="logout" id="logoutbutton"/>
+        <div id="form">
+            <form method="post" action="adminlogin.php">
+                <input type="text" name="bigusername" id="usernamebox" placeholder="Username" required/>
+                <input type="password" name="bigpassword" id="passwordbox" placeholder="Password" required/>
+                <input type="submit" value="Login" name="login" id="loginb"/>
             </form>
         </div>
         <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System - Administrator</p></div>

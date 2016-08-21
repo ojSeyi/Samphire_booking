@@ -84,7 +84,7 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
                                             </td>
                                         </tr>
                                         <tr>
-                                            <input type="submit" name="login" value="Login">
+                                            <td><input type="submit" name="login" value="Login"></td>
                                         </tr>
                                     </table>
                                 </form>

@@ -4,7 +4,7 @@ if(is_null($_SESSION['admin'])){
     header('location: adminlogin.php');
 }
 
-if(isset($_POST['today'])){
+if(isset($_POST['refresh'])){
     $k = 0;
     $today = $_POST['today'];
     $today = date("Y-m-d",strtotime($today));
@@ -92,7 +92,7 @@ if(isset($_POST['today'])){
                         <tr>
                             <td><label> </label></td>
                             <td><input type="hidden" name="today" id="today" required><br></td>
-                            <td><input type="submit" onload="onload()" id="refresh" value="Refresh System"><br></td>
+                            <td><input type="submit" onload="onload()" name="refresh" id="refresh" value="Refresh System"><br></td>
                             <script type="text/javascript">
                                 function getDate()
                                 {

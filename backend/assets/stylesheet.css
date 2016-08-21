@@ -269,3 +269,7 @@ section{
     padding-right: 20px;
     padding-bottom: 20px;
 }
+
+#bookingdetails td{
+    padding: 15px;
+}

@@ -6,14 +6,28 @@ if(is_null($_SESSION['admin'])){
 }
 
 $username = "";
+$password = "";
 $firstname = "";
 $lastname = "";
 $email = "";
+$mobile = "";
+$address = "";
 $k = 0;
 
 if(isset($_POST['username'])){
     $username = $_POST['username'];
-
+    $query = "SELECT * FROM customer_login WHERE username = '$username'";
+    $run = mysqli_query($db, $query);
+    $fetch = mysqli_fetch_array($run);
+    $logid = $fetch['log_id'];
+    $query2 = "SELECT * FROM customers WHERE log_id = '$logid'";
+    $run2 = mysqli_query($db, $query);
+    $fetch2 = mysqli_fetch_array($run2);
+    $firstname = $fetch2['firstname'];
+    $lastname = $fetch2['lastname'];
+    $email = $fetch2['email'];
+    $mobile = $fetch2['mobile'];
+    $address = $fetch2['address'];
 
 }elseif(isset($_POST['firstname'])){
     $firstname = $_POST['firstname'];
@@ -32,7 +46,16 @@ if(isset($_POST['username'])){
     $query = "SELECT * FROM customers WHERE email = '$email'";
     $run = mysqli_query($db, $query);
     $fetch = mysqli_fetch_array($run);
-
+    $firstname = $fetch['firstname'];
+    $lastname = $fetch['lastname'];
+    $mobile = $fetch['mobile'];
+    $address = $fetch['address'];
+    $logid = $fetch['log_id'];
+    $query2 = "SELECT * FROM customer_login WHERE log_id = '$logid'";
+    $run2 = mysqli_query($db, $query2);
+    $fetch = mysqli_fetch_array($run2);
+    $username = $fetch2['username'];
+    $password = $fetch2['password'];
 }
 
 

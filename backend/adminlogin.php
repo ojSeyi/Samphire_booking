@@ -47,7 +47,17 @@ if(isset($_POST['bigusername'])){
 
 </header>
 
-<main>
+<main class="grid-container">
+    <nav class="grid-30">
+        <ul>
+            <li><a href='viewbookings.php'>View Bookings</a></li>
+            <li><a href='changebookings.php'>Change Bookings</a></li>
+            <li><a href='cancelbookings.php'>Cancel Bookings</a></li>
+            <li><a href='refreshsystem.php'>Refresh System</a></li>
+            <li><a href='viewcustomers.php'>View Customers</a></li>
+        </ul>
+    </nav>
+    <section>
     <div id="login" class="grid-container">
         <form method="post" action="adminlogin.php">
             <table>
@@ -76,10 +86,9 @@ if(isset($_POST['bigusername'])){
             </table>
         </form>
     </div>
+    </section>
 </main>
 
-
-<
 
 
 

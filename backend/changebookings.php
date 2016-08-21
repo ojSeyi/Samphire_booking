@@ -184,7 +184,7 @@ if(isset($_POST['confirmation'])){
             </div>
             <div id="search">
                 <table>
-                    <form method="post" action="viewbookings.php">
+                    <form method="post" action="changebookings.php">
                         <tr>
                             <td><label>Enter reference number: </label></td>
                             <td><input type="text" name="confirmation" required><br></td>

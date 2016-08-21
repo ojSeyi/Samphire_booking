@@ -185,8 +185,15 @@ if(isset($_POST['confirmation'])){
                 <table>
                     <form method="post" action="viewbookings.php">
                         <tr>
-                            <td><label>Enter reference number: </label></td>
-                            <td><input type="text" name="confirmation" required><br></td>
+                            <td><label>Enter start date: </label></td>
+                            <td><input type="text" name="startdate" required><br></td>
+                        </tr>
+                        <tr>
+                            <td><label>Enter end date if there is one: </label></td>
+                            <td><input type="text" name="enddate" required><br></td>
+                        </tr>
+                        <tr>
+                            <td></td>
                             <td><input type="submit" value="search"><br></td>
                         </tr>
                     </form>

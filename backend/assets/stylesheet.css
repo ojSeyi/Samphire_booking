@@ -19,10 +19,10 @@ nav>ul>li>a{
     text-decoration: none;
     text-align: center;
     display: block;
-    padding: 5px 5px;
+    padding: 15px 15px;
     color: White;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12pt;
+    font-size: 14pt;
 }
 
 nav>ul>li>a:hover{

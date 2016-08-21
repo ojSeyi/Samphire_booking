@@ -43,6 +43,10 @@ nav>ul>li>a:hover{
     opacity: 0.5;
 }
 
+nav>ul>li:hover{
+    opacity: 1;
+}
+
 header{
     height: 120px;
     padding-left: 350px;

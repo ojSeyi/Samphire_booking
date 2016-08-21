@@ -78,13 +78,26 @@ if(is_null($_SESSION['admin'])){
             </div><br>
             <div id="search">
                 <table>
-                    <form method="post" action="refreshsystem.php">
+                    <form method="post" onload="getDate()" action="refreshsystem.php">
                         <tr>
                             <td><label> </label></td>
                             <td><input type="hidden" name="today" id="today" value="" required><br></td>
                             <td><input type="submit" onload="onload()" value="Cancel Booking"><br></td>
                         </tr>
-                        <script type="text/javascript" src="JS/global.js"></script>
+                        <script type="text/javascript">
+                            function getDate()
+                            {
+                                var today = new Date();
+                                var dd = today.getDate();
+                                var mm = today.getMonth()+1; //January is 0!
+                                var yyyy = today.getFullYear();
+                                if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm}
+                                today = yyyy+""+mm+""+dd;
+
+                                document.getElementById("today").value = today;
+                            }
+                        </script>
+
                     </form>
                 </table>
             </div>

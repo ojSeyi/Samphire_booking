@@ -72,9 +72,11 @@ if(isset($_SESSION['login'])){
                     <td>
                         <input type="text" name="username" id="usernamea"  required><br><br>
                     </td>
+                    <tr>
                     <td>
                         <div id="usernamecheck"></div><br><br>
                     </td>
+                    </tr>
                 </tr>
                 <tr>
                     <td>

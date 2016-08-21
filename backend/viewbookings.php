@@ -38,7 +38,7 @@ if(isset($_POST['confirmation'])){
             $bookedfacilities[] = $fetch2['f_name'];
             $bookedfacilitiescost[] = $fetch2['cost'];
         }
-        $_SERVER['confirmation'] = $reference;
+        $_SESSION['confirmation'] = $reference;
     }
 
 }else{

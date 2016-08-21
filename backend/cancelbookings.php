@@ -4,6 +4,37 @@ if(is_null($_SESSION['admin'])){
     header('location: adminlogin.php');
 }
 
+if(isset($_POST['confirmation'])){
+    $confirmation = $_SESSION['confirmation'];
+    $deleterecord = "DELETE FROM customer_bookings WHERE reference = '$confirmation'";
+    $go = mysqli_query($db, $deleterecord);
+
+    $_SESSION['confirmatio'] = null;
+    $_SESSION['firstnam'] = null;
+    $_SESSION['lastnam'] = null;
+    $_SESSION['cusi'] = null;
+    $_SESSION['facilitynam'] = null;
+    $_SESSION['facilitycost'] = null;
+    $_SESSION['startdat'] = null;
+    $_SESSION['enddat'] = null;
+}else{
+    $confirmation = $_SESSION['confirmation'];
+    $deleterecord = "DELETE FROM customer_bookings WHERE reference = '$confirmation'";
+    $go = mysqli_query($db, $deleterecord);
+
+    $_SESSION['confirmatio'] = null;
+    $_SESSION['firstnam'] = null;
+    $_SESSION['lastnam'] = null;
+    $_SESSION['cusi'] = null;
+    $_SESSION['facilitynam'] = null;
+    $_SESSION['facilitycost'] = null;
+    $_SESSION['startdat'] = null;
+    $_SESSION['enddat'] = null;
+
+}
+
+
+header('location: index.php');
 
 ?>
 <!DOCTYPE html>
@@ -47,6 +78,17 @@ if(is_null($_SESSION['admin'])){
         <div id="system" class="grid-container">
             <div id="screen" class="grid-container">
 
+            </div>
+            <div id="search">
+                <table>
+                    <form method="post" action="cancelbookings.php">
+                        <tr>
+                            <td><label>Enter reference number: </label></td>
+                            <td><input type="text" name="confirmation" required><br></td>
+                            <td><input type="submit" value="search"><br></td>
+                        </tr>
+                    </form>
+                </table>
             </div>
         </div>
     </section>

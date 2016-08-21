@@ -176,7 +176,7 @@ if(isset($_POST['confirmation'])){
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="submit" value="search">/td>
+                            <td><input type="submit" value="search"></td>
                         </tr>
                     </form>
                 </table>

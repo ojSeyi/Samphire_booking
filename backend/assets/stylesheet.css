@@ -306,3 +306,7 @@ section label{
     border: 3px solid lightskyblue;
     background-color: aliceblue;
 }
+
+#search label{
+    text-align: center;
+}

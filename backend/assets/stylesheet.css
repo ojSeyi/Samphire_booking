@@ -236,3 +236,27 @@ section{
 #intro caption{
     font-size: 26pt;
 }
+
+#bookingdetails{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11pt;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#bookingdetails * #pin{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#pins > td{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border: solid 1px black;
+}
+
+#pind > td{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border: solid 2px black;
+}

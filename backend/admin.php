@@ -26,7 +26,7 @@ if(is_null($_SESSION['admin'])){
         <div id="log">
             <div id="logout">
                 <form method="post" action="adminlogout.php">
-                    <label><?php echo $_SESSION['firstname'];?></label>
+                    <label><?php echo $_SESSION['firstname']."  ";?></label>
                     <input type="submit" name="logout" value="logout" id="logoutbutton"/>
                 </form>
             </div>

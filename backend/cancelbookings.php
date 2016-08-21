@@ -1,5 +1,6 @@
 <?php
 session_start();
+include ('db_connection.php');
 if(is_null($_SESSION['admin'])){
     header('location: adminlogin.php');
 }

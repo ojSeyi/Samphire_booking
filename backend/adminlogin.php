@@ -76,7 +76,7 @@ if(isset($_POST['bigusername'])){
                         <label>Username: </label>
                     </td>
                     <td>
-                        <input type="text" name="bigusername" id="bigusername" placeholder="Username..." required>
+                        <input type="text" name="bigusername" id="bigusername" placeholder="Username..." required><br><br>
                     </td>
                 </tr>
                 <tr>

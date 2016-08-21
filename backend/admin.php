@@ -22,7 +22,7 @@
                     <input type="submit" name="logout" value="logout" id="logoutbutton"/>
                 </form>
             </div>
-            <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System</p></div>
+            <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System - Administrator</p></div>
     </header>
 
     <main>

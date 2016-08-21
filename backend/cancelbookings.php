@@ -9,13 +9,17 @@ if(isset($_POST['confirmation'])){
     $confirmation = $_POST['confirmation'];
     $deleterecord = "DELETE FROM customer_bookings WHERE reference = '$confirmation'";
     $go = mysqli_query($db, $deleterecord);
-    $k = 1;
+    if($go){
+        $k = 1;
+    }
     $_SESSION['confirmation'] = null;
 }else{
     $confirmation = $_SESSION['confirmation'];
     $deleterecord = "DELETE FROM customer_bookings WHERE reference = '$confirmation'";
     $go = mysqli_query($db, $deleterecord);
-    $k = 1;
+    if($go){
+        $k = 1;
+    }
     $_SESSION['confirmation'] = null;
 
 }

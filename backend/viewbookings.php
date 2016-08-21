@@ -110,9 +110,9 @@ if(isset($_POST['confirmation'])){
         </ul>
     </nav>
     <section class="grid-70">
-        <div id="system" class="grid-container">
+        <div id="system">
             <div id="screen" class="grid-container">
-                <table id="bookingdetails">
+                <table id="bookingdetails" class="grid-container">
                     <tr>
                         <td>Customer Name: </td>
                         <td><?php echo $firstname . " " . $lastname; ?></td>

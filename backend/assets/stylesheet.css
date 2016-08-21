@@ -294,7 +294,7 @@ section label{
 }
 
 #search input[type=text]{
-    width: 350px;
+    width: 300px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 1px solid #999;
@@ -313,4 +313,5 @@ section label{
 
 #search input[type=submit]{
     float: right;
+    width: 250px;
 }

@@ -45,7 +45,7 @@ if(is_null($_SESSION['admin'])){
         </nav>
         <section class="grid-70">
             <div id="system" class="grid-container">
-                <table>
+                <table id="intro">
                     <caption>Hello Welcome to admin...</caption>
                     <tr></tr>
                     <tr></tr>

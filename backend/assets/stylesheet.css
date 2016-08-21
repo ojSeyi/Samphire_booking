@@ -222,6 +222,10 @@ section{
     padding-top: 100px;
 }
 
+section label{
+    font-size: 12pt;
+}
+
 #intro{
     background-color: RGBa(128, 128, 128, 0.2);
     margin-top: 150px;
@@ -290,4 +294,18 @@ section{
 
 #bookingdetails #ref{
     font-weight: bold;
+}
+
+section input[type=text]{
+    width: 480px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    border-radius: 7px;
+    font-size: 11pt;
+}
+
+section input[type=text]:focus {
+    border: 3px solid lightskyblue;
+    background-color: aliceblue;
 }

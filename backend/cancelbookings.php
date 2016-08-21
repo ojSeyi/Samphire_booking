@@ -103,7 +103,7 @@ if(isset($_POST['confirmation'])){
                         <tr>
                             <td><label>Enter reference number: </label></td>
                             <td><input type="text" name="confirmation" required><br></td>
-                            <td><input type="submit" value="search"><br></td>
+                            <td><input type="submit" value="Cancel Booking"><br></td>
                         </tr>
                     </form>
                 </table>

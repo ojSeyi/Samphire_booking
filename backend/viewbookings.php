@@ -117,6 +117,10 @@ if(isset($_POST['confirmation'])){
                         <td>Customer Name: </td>
                         <td><?php echo $firstname . " " . $lastname; ?></td>
                     </tr>
+                    <tr id="ref">
+                        <td>Booking Reference Number:</td>
+                        <td><?php echo $confirmation ?></td>
+                    </tr>
                     <tr>
                         <td>Booking Date(s): </td>
                         <?php

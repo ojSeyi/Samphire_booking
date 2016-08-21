@@ -285,3 +285,7 @@ section{
 #screen{
     background-color: RGBa(128, 128, 128, 0.2);
 }
+
+#bookingdetails #ref{
+    font-weight: bold;
+}

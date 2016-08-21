@@ -3,33 +3,20 @@ session_start();
 if(is_null($_SESSION['admin'])){
     header('location: adminlogin.php');
 }
-
+$k = 0;
+$confirmation = "";
 if(isset($_POST['confirmation'])){
-    $confirmation = $_SESSION['confirmation'];
+    $confirmation = $_POST['confirmation'];
     $deleterecord = "DELETE FROM customer_bookings WHERE reference = '$confirmation'";
     $go = mysqli_query($db, $deleterecord);
-
-    $_SESSION['confirmatio'] = null;
-    $_SESSION['firstnam'] = null;
-    $_SESSION['lastnam'] = null;
-    $_SESSION['cusi'] = null;
-    $_SESSION['facilitynam'] = null;
-    $_SESSION['facilitycost'] = null;
-    $_SESSION['startdat'] = null;
-    $_SESSION['enddat'] = null;
+    $k = 1;
+    $_SESSION['confirmation'] = null;
 }else{
     $confirmation = $_SESSION['confirmation'];
     $deleterecord = "DELETE FROM customer_bookings WHERE reference = '$confirmation'";
     $go = mysqli_query($db, $deleterecord);
-
-    $_SESSION['confirmatio'] = null;
-    $_SESSION['firstnam'] = null;
-    $_SESSION['lastnam'] = null;
-    $_SESSION['cusi'] = null;
-    $_SESSION['facilitynam'] = null;
-    $_SESSION['facilitycost'] = null;
-    $_SESSION['startdat'] = null;
-    $_SESSION['enddat'] = null;
+    $k = 1;
+    $_SESSION['confirmation'] = null;
 
 }
 
@@ -77,7 +64,33 @@ header('location: index.php');
     <section class="grid-70">
         <div id="system" class="grid-container">
             <div id="screen" class="grid-container">
+                <table id="intro">
+                    <?php
 
+                    if($k == 1){
+                        echo "<caption>The is the booking cancellation page</caption>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr>
+                        <th>
+                            The booking with reference ".$confirmation." has been cancelled and all recorde deleted.
+                        </th>
+
+                    </tr>";
+                        $confirmation = null;
+                    }
+                    echo
+                    "<caption>The is the booking cancellation page</caption>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr>
+                        <th>
+                            Any cancelled bookings can never be retrieved
+                        </th>
+
+                    </tr>";
+                    ?>
+                </table>
             </div>
             <div id="search">
                 <table>

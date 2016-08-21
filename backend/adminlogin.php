@@ -1,9 +1,30 @@
 <?php
 session_start();
+include ('db_connection.php');
 if(isset($_SESSION['admin'])){
     header('location: admin.php');
 }
 
+if(isset($_POST['bigusername'])){
+    $username = $_POST['bigusername'];
+    $password = $_POST['bigpassword'];
+    $username = stripcslashes($username);
+    $password = stripcslashes($password);
+    $username = mysqli_real_escape_string($db, $username);
+    $password = mysqli_real_escape_string($db, $password);
+
+    $login = $_POST['login'];
+    $_SESSION['admin'] = $login;
+
+    $login = "SELECT * FROM admin WHERE username = '$username' AND password = '$password'";
+    $result = mysqli_query($db, $login) or die("Invalid Query");
+    if (mysqli_num_rows($result) == 1) {
+        $_SESSION['firstname'] = $username;
+        header('Location: admin.php');
+    } else {
+        header('Location: adminlogin.php');
+    }
+}
 
 ?>
 

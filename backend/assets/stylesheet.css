@@ -365,3 +365,16 @@ input[type=email]:focus {
     padding: 10px;
     font-size: 12pt;
 }
+#bookingdetai{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11pt;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+
+}
+
+#bookingdetai td{
+    padding: 10px;
+    font-size: 12pt;
+}

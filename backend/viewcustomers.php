@@ -210,7 +210,7 @@ if(isset($_POST['username'])){
                                 <select name='customers' id='customers' size=".count($firstnamearray)." required>";
                                     $i = 0;
                                     foreach ($firstnamearray as $firstname) {
-                                        echo "<option>".$firstname . " ". $lastnamearray[$i] ." ". $emailsarray[$i] ."</option>";
+                                        echo "<option>".$firstname . "   ". $lastnamearray[$i] ."   ". $emailsarray[$i] ."</option>";
                                         $i++;
                                     }
                                 echo"

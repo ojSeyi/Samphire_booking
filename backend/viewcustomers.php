@@ -14,6 +14,15 @@ $mobile = "";
 $address = "";
 $k = 0;
 
+$emailsarray = array();
+$firstnamearray = array();
+$lastnamearray = array();
+$logidarray = array();
+$usernamearray = array();
+$passwordarray = array();
+$mobilearray = array();
+$addressarray = array();
+
 if(isset($_POST['username'])){
     $username = $_POST['username'];
     $username = stripcslashes($username);
@@ -44,15 +53,24 @@ if(isset($_POST['username'])){
     $lastname = $_POST['lastname'];
     $lastname = stripcslashes($lastname);
     $lastname = mysqli_real_escape_string($db, $lastname);
-    $query = "SELECT * FROM customers WHERE firstname = '$firstname'";
+    $query = "SELECT * FROM customers WHERE firstname = '$firstname' AND lastname = '$lastname'";
     $run = mysqli_query($db, $query);
-    $fetch = mysqli_fetch_array($run);
+    while($fetch = mysqli_fetch_array($run)){
+        $a = $fetch['log_id'];
+        $logidarray[] = $fetch['log_id'];
+        $firstnamearray[] = $fetch['firstname'];
+        $lastnamearray[] = $fetch['lastname'];
+        $emailsarray[] = $fetch['email'];
+        $mobile[] = $fetch['mobile'];
+        $addressarray[] = $fetch['address'];
+        $query2 = "SELECT * FROM customer_login WHERE log_id = '$a'";
+        $run2 = mysqli_query($db, $query2);
+        $fetch2 = mysqli_fetch_array($run2);
+        $usernamearray[] = $fetch2['username'];
+        $passwordarray[] = $fetch2['password'];
+        $k = 2;
+    }
 
-}elseif(isset($_POST['lastname'])){
-
-    $query = "SELECT * FROM customers WHERE lastname = '$lastname'";
-    $run = mysqli_query($db, $query);
-    $fetch = mysqli_fetch_array($run);
 
 }elseif(isset($_POST['email'])) {
     $email = $_POST['email'];
@@ -183,8 +201,31 @@ if(isset($_POST['username'])){
                             ".$address."<br>
                         </td>
                     </tr>
-                    </table><br><br>";}else{
+                    </table><br><br>";
+                    }elseif($k == 2){
 
+                        echo "
+                            <form id='removeform' method='post' action='viewcustomers2.php'>
+                            <table>
+                                <select name='customers' id='customers' size=".count($firstnamearray)." required>";
+                                    $i = 0;
+                                    foreach ($firstnamearray as $firstname) {
+                                        echo "<tr><option><td>".$firstname ."</td>". "<td>". $lastnamearray[$i] ."</td>". "<td>". $emailsarray[$i] ."</td>"."</option></tr>";
+                                        $i++;
+                                    }
+                                echo"
+                                </select>
+                                <input type='submit' value='remove'>
+                            </table>
+                            </form><br><br>";
+
+                        $_SESSION['usernamearray'] = $usernamearray;
+                        $_SESSION['passwordarray'] = $usernamearray;
+                        $_SESSION['firstnamearray'] = $usernamearray;
+                        $_SESSION['lastnamearray'] = $usernamearray;
+                        $_SESSION['emailarray'] = $usernamearray;
+                        $_SESSION['mobilearray'] = $usernamearray;
+                        $_SESSION['addressarray'] = $usernamearray;
                     }
                     ?>
                 <form method="post" action="viewcustomers.php">

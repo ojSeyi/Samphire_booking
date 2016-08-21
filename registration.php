@@ -67,7 +67,7 @@ if(isset($_SESSION['login'])){
                     <td>
                         <label for="usernamecheck">
                             Username:
-                        </label><br><br>
+                        </label><br><br><br>
                     </td>
                     <td>
                         <input type="text" name="username" id="usernamea"  required><br><br><br>
@@ -80,7 +80,7 @@ if(isset($_SESSION['login'])){
                     <td>
                         <label for="passwordcheck">
                             Password:
-                        </label><br><br>
+                        </label><br><br><br><br>
                     </td>
                     <td>
                         <input type="password" name="password" id="usernamea" min="6" required><br><br><br>
@@ -93,7 +93,7 @@ if(isset($_SESSION['login'])){
                     <td>
                         <label>
                             First name:
-                        </label><br><br><br>
+                        </label><br><br><br><br>
                     </td>
                     <td>
                         <input type="text" name="firstname" min="2" required><br><br><br>

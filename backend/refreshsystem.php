@@ -14,6 +14,7 @@ if(is_null($_SESSION['admin'])){
     <link rel="stylesheet" href="assets/stylesheet.css">
     <link rel="stylesheet" href="assets/unsemantic-grid-responsive-tablet.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
     <meta name="viewpoint"
           content="width=device-width,
           initial-scale=1,
@@ -77,12 +78,13 @@ if(is_null($_SESSION['admin'])){
             </div><br>
             <div id="search">
                 <table>
-                    <form method="post" action="cancelbookings.php">
+                    <form method="post" action="refreshsystem.php">
                         <tr>
                             <td><label>Enter reference number: </label></td>
-                            <td><input type="text" name="confirmation" required><br></td>
-                            <td><input type="submit" value="Cancel Booking"><br></td>
+                            <td><input type="hidden" name="today" id="today" value="" required><br></td>
+                            <td><input type="submit" onload="onload()" value="Cancel Booking"><br></td>
                         </tr>
+                        <script type="text/javascript" src="JS/global.js"></script>
                     </form>
                 </table>
             </div>

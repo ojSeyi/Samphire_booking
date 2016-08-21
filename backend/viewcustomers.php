@@ -213,7 +213,7 @@ if(isset($_POST['username'])){
                             $i++;
                             }
                         echo "</table></div>";
-                        echo "<div id=a></div>";
+                        echo "<div id=a></div><br>";
                         $_SESSION['usernamearray'] = $usernamearray;
                         $_SESSION['passwordarray'] = $passwordarray;
                         $_SESSION['firstnamearray'] = $firstnamearray;

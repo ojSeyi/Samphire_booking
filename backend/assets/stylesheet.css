@@ -376,6 +376,8 @@ input[type=email]:focus {
 }
 
 #bookingdetai td{
-    padding: 20px;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
     font-size: 12pt;
 }

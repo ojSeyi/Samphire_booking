@@ -88,7 +88,7 @@ if(isset($_POST['bigusername'])){
                     </td>
                 </tr>
                 <tr>
-                    <input type="submit" name="login" value="Login">
+                    <td><input type="submit" name="login" value="Login"></td>
                 </tr>
             </table>
         </form>

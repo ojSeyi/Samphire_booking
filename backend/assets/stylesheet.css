@@ -228,3 +228,11 @@ section{
     margin-left: 200px;
 
 }
+
+#intro th{
+    font-size: 35pt;
+}
+
+#intro caption{
+    font-size: 28pt;
+}

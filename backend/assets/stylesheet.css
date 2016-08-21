@@ -4,7 +4,7 @@ body{
 }
 
 nav{
-    background-color: black;
+
     width: 300px;
 }
 
@@ -13,6 +13,7 @@ nav>ul{
     margin: 0;
     padding: 0px;
     overflow: hidden;
+    background-color: black;
 }
 
 nav>ul>li{

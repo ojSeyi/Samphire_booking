@@ -10,7 +10,7 @@ if(isset($_POST['confirmation'])){
     $confirmation = $_POST['confirmation'];
     $deleterecord = "DELETE FROM customer_bookings WHERE reference = '$confirmation'";
     $go = mysqli_query($db, $deleterecord) or die('crap');
-    if($go){
+    if(!$go){
         $k = 1;
     }
     $_SESSION['confirmation'] = null;

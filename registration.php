@@ -67,61 +67,59 @@ if(isset($_SESSION['login'])){
                     <td>
                         <label for="usernamecheck">
                             Username:
-                        </label><br><br>
+                        </label><br><br><br>
                     </td>
                     <td>
-                        <input type="text" name="username" id="usernamea"  required><br><br>
+                        <input type="text" name="username" id="usernamea"  required><br><br><br>
                     </td>
-                    <tr>
                     <td>
                         <div id="usernamecheck"></div><br><br>
                     </td>
-                    </tr>
                 </tr>
                 <tr>
                     <td>
                         <label for="passwordcheck">
                             Password:
-                        </label><br><br>
+                        </label><br><br><br>
                     </td>
                     <td>
-                        <input type="password" name="password" id="usernamea" min="6" required><br><br>
+                        <input type="password" name="password" id="usernamea" min="6" required><br><br><br>
                     </td>
                     <td>
-                        <div id="passwordcheck"></div><br><br>
+                        <div id="passwordcheck"></div><br><br><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label>
                             First name:
-                        </label><br><br>
+                        </label><br><br><br>
                     </td>
                     <td>
-                        <input type="text" name="firstname" min="2" required><br><br>
+                        <input type="text" name="firstname" min="2" required><br><br><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label>
                             Last name:
-                        </label><br><br>
+                        </label><br><br><br>
                     </td>
                     <td>
-                        <input type="text" name="lastname" required><br><br>
+                        <input type="text" name="lastname" required><br><br><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label for="emailcheck">
                             Email:
-                        </label><br><br>
+                        </label><br><br><br>
                     </td>
                     <td>
-                        <input type="email" name="email" id="emaila" required><br><br>
+                        <input type="email" name="email" id="emaila" required><br><br><br>
                     </td>
                     <td>
-                        <div id="emailcheck"></div><br><br>
+                        <div id="emailcheck"></div><br><br><br>
                     </td>
                 </tr>
                 <tr>
@@ -131,7 +129,7 @@ if(isset($_SESSION['login'])){
                         </label><br><br>
                     </td>
                     <td>
-                        <input type="tel" name="mobile" required><br><br>
+                        <input type="tel" name="mobile" required><br><br><br>
                     </td>
                 </tr>
                 <tr>
@@ -141,14 +139,14 @@ if(isset($_SESSION['login'])){
                         </label><br><br>
                     </td>
                     <td>
-                        <input type="text" name="address" required><br><br>
+                        <input type="text" name="address" required><br><br><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label>
                             Join us ------->
-                        </label><br><br>
+                        </label><br><br><br>
                     </td>
                     <td>
                         <input type="submit" name="register" value="register" required><br><br><br><br>

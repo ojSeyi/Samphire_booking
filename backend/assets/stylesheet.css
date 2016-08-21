@@ -5,7 +5,7 @@ body{
 
 nav{
     background-color: black;
-    width: 150px;
+    width: 300px;
 }
 
 nav>ul{
@@ -21,7 +21,7 @@ nav>ul>li{
     background-color: white;
     opacity: 0.2;
     padding: 15px 15px 5px 5px;
-    width: 150px;
+    width: 300px;
 }
 
 nav>ul>li>a{
@@ -32,7 +32,7 @@ nav>ul>li>a{
     color: black;
     font-family: 'Montserrat', sans-serif;
     font-size: 14pt;
-    width: 150px;
+    width: 300px;
 }
 
 nav>ul>li>a:hover{

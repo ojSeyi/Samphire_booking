@@ -268,17 +268,6 @@ if(isset($_POST['username'])){
                                         <input type="text" name="firstname" min="2">
                                     </td>
                                 </tr>
-                                <tr id="search">
-                                    <td><label>Click to view All Customers</label></td>
-                                    <input type="hidden" name="all" value="all" required>
-                                    <td><input type="submit" name="searchperson" value="Search" required><br></td>
-                                </tr>
-                            </table>
-                        </form><br>
-                    </tr>
-                    <tr>
-                        <form method="post" action="viewcustomers.php">
-                            <table>
                                 <tr>
                                     <td>
                                         <label>
@@ -307,7 +296,7 @@ if(isset($_POST['username'])){
                                         </label>
                                     </td>
                                     <td>
-                                        <input type="email" name="email" id="emaila">
+                                        <input type="email" name="email">
                                     </td>
                                 </tr>
                                 <tr id="search">

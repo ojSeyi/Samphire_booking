@@ -61,7 +61,7 @@ if(isset($_POST['username'])){
         $firstnamearray[] = $fetch['firstname'];
         $lastnamearray[] = $fetch['lastname'];
         $emailsarray[] = $fetch['email'];
-        $mobile[] = $fetch['mobile'];
+        $mobilearray[] = $fetch['mobile'];
         $addressarray[] = $fetch['address'];
         $query2 = "SELECT * FROM customer_login WHERE log_id = '$a'";
         $run2 = mysqli_query($db, $query2);

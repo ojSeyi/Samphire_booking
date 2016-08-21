@@ -13,27 +13,16 @@
           maximum-scale=1"/>
 </head>
 <body>
-    <header>
+<header>
 
-    </header>
+</header>
 
-    <main>
-        <nav class="grid-30">
-            <ul>
-                <li><a href='viewbookings.php'>View Bookings</a></li>
-                <li><a href='changebookings.php'>Change Bookings</a></li>
-                <li><a href='cancelbookings.php'>Cancel Bookings</a></li>
-                <li><a href='refreshsystem.php'>Refresh System</a></li>
-                <li><a href='viewcustomers.php'>View Customers</a></li>
-            </ul>
-        </nav>
-        <section>
+<main>
 
-        </section>
-    </main>
+</main>
 
 
-    <
+<
 
 
 

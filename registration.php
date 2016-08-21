@@ -71,7 +71,7 @@ if(isset($_SESSION['login'])){
                         </label><br><br>
                     </td>
                     <td>
-                        <input type="text" name="username" id="usernamea" required><br><br>
+                        <input type="text" name="username" id="usernamea" oninput="validateusername()" required><br><br>
                     </td>
                     <td>
                         <div id="usernamecheck"></div><br><br>
@@ -158,7 +158,7 @@ if(isset($_SESSION['login'])){
             </div>
             <script>$("#registration".validate())</script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-            <script type="text/javascript" src="JS/global.js"></script>
+            <script type="text/javascript" src="JS/usernamecheck.js"></script>
         </div>
 
     </main>

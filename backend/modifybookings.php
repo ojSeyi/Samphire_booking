@@ -125,6 +125,9 @@ if(isset($_POST['facility'])){
                                         echo "<option>". $row['f_name'] . "</option>";
                                     ?>
                                 </select><br><br><br></td>
+                        </tr>
+                        <tr>
+                            <td></td>
                             <td><input type="submit" value="search"><br></td>
                         </tr>
                     </form>

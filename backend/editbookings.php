@@ -163,7 +163,25 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
             <script type="text/javascript" src="JS/global.js"></script>
             <br>
             <div id='customers' class='grid-container'>
-
+                <table>
+                    <form method="post" action="modifybookings.php">
+                        <tr>
+                            <td><label>Select a facility: </label></td>
+                            <td><select name="facility" size="1" required>
+                                    <?php
+                                    $getfacilities = "SELECT * FROM samphire_facilities";
+                                    $result = mysqli_query($db, $getfacilities);
+                                    while ($row = mysqli_fetch_array($result))
+                                        echo "<option>". $row['f_name'] . "</option>";
+                                    ?>
+                                </select><br><br><br></td>
+                        </tr>
+                        <tr>
+                            <td><input type="hidden" name="iliya" value="iliya"></td>
+                            <td><input type="submit" name="removefacility2" value="Add"><br></td>
+                        </tr>
+                    </form>
+                </table>
             </div>
         </div>
     </section>

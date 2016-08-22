@@ -130,10 +130,10 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
                 echo "
                     <div id='customers' class='grid-container'><br><table id='bookingdetail'>
                     <caption>Here's a list bookings from date:  <h2>". $startdate ."</h2> - <h2>".$enddate."</h3></caption>
-                    <tr><th>first name</th><th>Last name</th><th>Reference No</th><th>Facility</th><th>Booking Total</th></tr>";
+                    <tr><th>first name</th><th>Last name</th><th>Reference No</th><th>Facility</th><th>Booking Total</th><th>End date</th></tr>";
                 $i = 0;
                 foreach($firstnamee as $firstname){
-                    echo "<tr>"."<td>". $firstname ."<td>". $lastname[$i] ."<td>". $confirmation[$i] ."<td>". $bookedfacilities[$i] ."<td>". $bookedfacilitiescost[$i]."<tr>";
+                    echo "<tr>"."<td>". $firstname ."<td>". $lastname[$i] ."<td>". $confirmation[$i] ."<td>". $bookedfacilities[$i] ."<td>". $bookedfacilitiescost[$i] ."<td>". $enddate."<tr>";
                     $i++;
                 }
                 echo "</table></div>";

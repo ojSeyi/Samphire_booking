@@ -195,6 +195,7 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
                         <tr>
 
                         </tr>
+                        <form method='post' action='editor2.php'>
                         <tr>
                             <td><label>Select a facility to ADD: </label></td>
                             <td><select name='afacility' size='1' required>";

@@ -16,12 +16,7 @@ $k = 0;
 if(isset($_POST['rfacility'])){
     $l = 0;
     $facilityname = $_SESSION['bookedfacilities'];
-    foreach ($facilityname as $showfacility) {
-        if ($showfacility == $_POST['rfacility']){
-            $l = 1;
-        }else{}
-    }
-    if($l == 1){
+
         $facilityname = array_diff($facilityname,[$_POST['rfacility']]);
         $facilityname = array_values($facilityname);
         $d = $_POST['rfacility'];
@@ -36,19 +31,10 @@ if(isset($_POST['rfacility'])){
         $go = mysqli_query($db, $deleterecord);
         $_SESSION['bookedfacilities'] = $facilityname;
         header('location: editbookings.php');
-    }else{
-        header('location: editbookings.php');
-    }
-
+   =
 }elseif(isset($_POST['afacility'])){
     $l = 0;
     $facilityname = $_SESSION['bookedfacilities'];
-    foreach ($facilityname as $showfacility) {
-        if ($showfacility == $_POST['afacility']){
-            $l = 1;
-        }else{}
-    }
-    if($l != 1){
 
         $facilityname[] = $_POST['afacility'];
         $confirmation = $_POST['confirmation'];
@@ -92,7 +78,7 @@ if(isset($_POST['rfacility'])){
         $_SESSION['bookedfacilities'] = $facilityname;
         header('location: editbookings.php');
 
-    }
+
 
 }else{
     header('location: editbookings.php');

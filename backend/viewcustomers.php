@@ -207,13 +207,6 @@ if(isset($_POST['username'])){
                             }
                         echo "</table></div>";
                         echo "<div id=a></div><br>";
-                        $_SESSION['usernamearray'] = $usernamearray;
-                        $_SESSION['passwordarray'] = $passwordarray;
-                        $_SESSION['firstnamearray'] = $firstnamearray;
-                        $_SESSION['lastnamearray'] = $lastnamearray;
-                        $_SESSION['emailarray'] = $emailsarray;
-                        $_SESSION['mobilearray'] = $mobilearray;
-                        $_SESSION['addressarray'] = $addressarray;
                     }
                     ?>
 

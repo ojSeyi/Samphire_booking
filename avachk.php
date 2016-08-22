@@ -77,7 +77,7 @@ if(is_null($_SESSION['startdates'])){
                 $rows = $row['f_id'];
                 echo $rows;
                 if(is_null($enddates)){
-                    $availables = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND (startdate <= '$startdates' AND enddate >= '$startdates')";
+                    $availables = "SELECT * FROM customer_bookings WHERE f_id = '$rows' AND (startdate <= '$startdates' AND enddate >= '$startdates')";
                     $results = mysqli_query($db, $availables) or die("failed");
                         if(mysqli_num_rows($results) > 0){
                             $notavailable = 1;
@@ -128,7 +128,7 @@ if(is_null($_SESSION['startdates'])){
                     }else{
                     $unavailabledates = array();
                         foreach($datesinrange as $date){
-                            $availablerange = "SELECT * FROM guest_bookings WHERE f_id = '$rows' AND (startdate <= '$date' AND enddate >= '$date')";
+                            $availablerange = "SELECT * FROM customer_bookings WHERE f_id = '$rows' AND (startdate <= '$date' AND enddate >= '$date')";
                             $results = mysqli_query($db, $availablerange) or die("failed");
                             if(mysqli_num_rows($results) > 0){
                                 $unavailabledates[] = $date;

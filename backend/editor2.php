@@ -54,12 +54,17 @@ if(isset($_POST['facility'])){
         $confirmation = $_POST['confirmation'];
         $confirmation = stripcslashes($confirmation);
         $confirmation = mysqli_real_escape_string($db, $confirmation);
-        $firstname = $_SESSION['firstname'];
-        $lastname = $_SESSION['lastname'];
-        $cusid = $_SESSION['cusid'];
-        $facilitycosts = $_SESSION['facilitycost'];
-        $startdate = $_SESSION['startdate'];
-        $enddate = $_SESSION['enddate'];
+        $startdate = "";
+        $enddate = "";
+        $cusid = "";
+        $getter = "SELECT * FROM customer_bookings WHERE reference = '$confirmation'";
+        $rungetter = mysqli_query($db, $getter);
+        while($t = mysqli_fetch_array($rungetter)){
+            $startdate = $t['startdate'];
+            $enddate = $t['enddate'];
+        }
+
+        $facilitycosts = $_SESSION['bookedfacilitiescost'];
         $d = $_POST['afacility'];
         $totalcost = 0;
         foreach ($facilityname as $showcost) {

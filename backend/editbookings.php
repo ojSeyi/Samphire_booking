@@ -10,6 +10,7 @@ $firstnamee = array();
 $lastname = array();
 $startdate = "";
 $enddate = "";
+$custid = "";
 $confirmation = array();
 $bookedfacilities = array();
 $bookedfacilitiescost = array();
@@ -49,6 +50,7 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
             $bookedfacilities[] = $fetch2['f_name'];
         }
         $_SESSION['bookedfacilities'] = $bookedfacilities;
+        $_SESSION['bookedfacilitiescost'] = $bookedfacilitiescost;
     }
 
 }elseif(isset($_POST['startdate']) && isset($_POST['enddate'])){
@@ -74,6 +76,7 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
             $bookedfacilities[] = $fetch2['f_name'];
         }
         $_SESSION['bookedfacilities'] = $bookedfacilities;
+        $_SESSION['bookedfacilitiescost'] = $bookedfacilitiescost;
     }
 
 }

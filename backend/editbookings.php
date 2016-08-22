@@ -48,8 +48,9 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
             $fetch2 = mysqli_fetch_array($run3);
             $bookedfacilities[] = $fetch2['f_name'];
         }
+        $_SESSION['bookedfacilities'] = $bookedfacilities;
     }
-    $_SESSION['bookedfacilities'] = $bookedfacilities;
+
 }elseif(isset($_POST['startdate']) && isset($_POST['enddate'])){
     $query = "SELECT * FROM customer_bookings WHERE startdate = '$startdate' AND enddate = '$enddate'";
     $run = mysqli_query($db, $query);
@@ -72,8 +73,9 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
             $fetch2 = mysqli_fetch_array($run3);
             $bookedfacilities[] = $fetch2['f_name'];
         }
+        $_SESSION['bookedfacilities'] = $bookedfacilities;
     }
-    $_SESSION['bookedfacilities'] = $bookedfacilities;
+
 }
 
 

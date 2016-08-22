@@ -17,11 +17,8 @@ if(isset($_POST['startdate'])){
     $startdate = date("Y-m-d",strtotime($_POST['startdate']));
 }
 if(isset($_POST['enddate'])){
-    if(($_POST['enddate'] < $_POST['startdate']) && ($_POST['enddate'] != $_POST['startdate'])) {
-        $_POST['enddate'] = null;
-    }else{
-        $enddate = date("Y-m-d",strtotime($_POST['enddate']));
-    }
+    $enddate = date("Y-m-d",strtotime($_POST['enddate']));
+
 }
 
 

@@ -390,7 +390,7 @@ input[type=email]:focus {
     padding-top: 20px;
     padding-bottom: 20px;
     max-height: 400px;
-    overflow-y: auto;
+    overflow: auto;
     background-color: white;
     border: 1px solid darkgray;
     border-radius: 5px;

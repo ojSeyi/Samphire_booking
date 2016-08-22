@@ -182,7 +182,7 @@ if(isset($_POST['confirmation'])){
             while ($row = mysqli_fetch_array($result))
                 echo "<option>". $row['f_name'] . "</option>";
             echo
-            "</select><br><br><br></td>
+            "</select></td>
                         </tr>
                         <tr>
                             <td><input type='hidden' name='iliya' value='iliya'></td>

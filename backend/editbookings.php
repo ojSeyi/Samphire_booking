@@ -5,7 +5,7 @@ if(is_null($_SESSION['admin'])){
     header('location: adminlogin.php');
 }
 $run = 0;
-$firstname = array();
+$firstnamee = array();
 $lastname = array();
 $startdate = "";
 $enddate = "";
@@ -128,7 +128,7 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
                     <caption>Here's a list bookings from date:  <h2>". $startdate ."</h2> - <h2>".$enddate."</h3></caption>
                     <tr><th>first name</th><th>Last name</th><th>Reference No</th><th>Facility</th><th>Booking Total</th></tr>";
                 $i = 0;
-                foreach($firstnamearray as $firstname){
+                foreach($firstnamee as $firstname){
                     echo "<tr>"."<td>". $firstname[$i] ."<td>". $lastname[$i] ."<td>". $confirmation[$i] ."<td>". $bookedfacilities[$i] ."<td>". $bookedfacilitiescost[$i]."<tr>";
                     $i++;
                 }

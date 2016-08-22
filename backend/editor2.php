@@ -13,7 +13,7 @@ include ("db_connection.php");
 
 //remove facility
 $k = 0;
-if(isset($_POST['facility'])){
+if(isset($_POST['rfacility'])){
     $l = 0;
     $facilityname = $_SESSION['bookedfacilities'];
     foreach ($facilityname as $showfacility) {

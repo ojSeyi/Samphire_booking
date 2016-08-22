@@ -15,7 +15,7 @@ include ("db_connection.php");
 $k = 0;
 if(isset($_POST['facility'])){
     $l = 0;
-    $facilityname = $_SESSION['facilitynam'];
+    $facilityname = $_SESSION['bookedfacilities'];
     foreach ($facilityname as $showfacility) {
         if ($showfacility == $_POST['rfacility']){
             $l = 1;
@@ -25,22 +25,22 @@ if(isset($_POST['facility'])){
         $facilityname = array_diff($facilityname,[$_POST['rfacility']]);
         $facilityname = array_values($facilityname);
         $d = $_POST['rfacility'];
-        $confirmation = $_SESSION['confirmatio'];
+        $confirmation = $_SESSION['confirmation'];
         $getidcommand = "SELECT * FROM samphire_facilities WHERE f_name = '$d'";
         $fetchid = mysqli_query($db, $getidcommand);
         $id = mysqli_fetch_array($fetchid);
         $idd = $id['f_id'];
         $deleterecord = "DELETE FROM customer_bookings WHERE f_id = '$idd' AND reference = '$confirmation'";
         $go = mysqli_query($db, $deleterecord);
-        $_SESSION['facilitynam'] = $facilityname;
-        header('location: editbooking.php');
+        $_SESSION['bookedfacilities'] = $facilityname;
+        header('location: editbookings.php');
     }else{
-        header('location: editbooking.php');
+        header('location: editbookings.php');
     }
 
 }elseif(isset($_POST['afacility'])){
     $l = 0;
-    $facilityname = $_SESSION['facilitynam'];
+    $facilityname = $_SESSION['bookedfacilities'];
     foreach ($facilityname as $showfacility) {
         if ($showfacility == $_POST['afacility']){
             $l = 1;
@@ -49,13 +49,13 @@ if(isset($_POST['facility'])){
     if($l != 1){
 
         $facilityname[] = $_POST['afacility'];
-        $confirmation = $_SESSION['confirmatio'];
-        $firstname = $_SESSION['firstnam'];
-        $lastname = $_SESSION['lastnam'];
-        $cusid = $_SESSION['cusi'];
+        $confirmation = $_SESSION['confirmation'];
+        $firstname = $_SESSION['firstname'];
+        $lastname = $_SESSION['lastname'];
+        $cusid = $_SESSION['cusid'];
         $facilitycosts = $_SESSION['facilitycost'];
-        $startdate = $_SESSION['startdat'];
-        $enddate = $_SESSION['enddat'];
+        $startdate = $_SESSION['startdate'];
+        $enddate = $_SESSION['enddate'];
         $d = $_POST['afacility'];
         $totalcost = 0;
         foreach ($facilityname as $showcost) {
@@ -75,15 +75,15 @@ if(isset($_POST['facility'])){
             $row = mysqli_fetch_array($result);
             $rows = $row['f_id'];
         }else{
-            header('location: index1.php');
+            header('location: changebookings.php');
         }
         $addrecord = "INSERT INTO customer_bookings (reference, f_id, cust_id, startdate, enddate, price) VALUES ('$confirmation', '$rows', '$cusid', '$startdate', '$enddate', '$totalcost')";
         $go = mysqli_query($db, $addrecord);
-        $_SESSION['facilitynam'] = $facilityname;
-        header('location: editbooking.php');
+        $_SESSION['bookedfacilities'] = $facilityname;
+        header('location: editbookings.php');
 
     }
 
 }else{
-    header('location: editbooking.php');
+    header('location: editbookings.php');
 }

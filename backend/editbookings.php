@@ -12,12 +12,21 @@ $enddate = "";
 $confirmation = array();
 $bookedfacilities = array();
 $bookedfacilitiescost = array();
-if(($_POST['enddate'] < $_POST['startdate']) && ($_POST['enddate'] != $_POST['startdate'])){
-    $_POST['enddate'] = null;
+
+if(isset($_POST['startdate'])){
+    $startdate = date("Y-m-d",strtotime($_POST['startdate']));
+}
+if(isset($_POST['enddate'])){
+    if(($_POST['enddate'] < $_POST['startdate']) && ($_POST['enddate'] != $_POST['startdate'])) {
+        $_POST['enddate'] = null;
+    }else{
+        $enddate = date("Y-m-d",strtotime($_POST['enddate']));
+    }
 }
 
+
+
 if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
-    $startdate = $_POST['startdate'];
     $query = "SELECT * FROM customer_bookings WHERE startdate = '$startdate'";
     $run = mysqli_query($db, $query);
     if(mysqli_num_rows($run) < 1){
@@ -42,8 +51,6 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
     }
 
 }elseif(isset($_POST['startdate']) && isset($_POST['enddate'])){
-    $startdate = $_POST['startdate'];
-    $enddate = $_POST['enddate'];
     $query = "SELECT * FROM customer_bookings WHERE startdate = '$startdate' AND enddate = '$enddate'";
     $run = mysqli_query($db, $query);
     if(mysqli_num_rows($run) < 1){

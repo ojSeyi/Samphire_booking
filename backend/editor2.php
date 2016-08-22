@@ -62,6 +62,7 @@ if(isset($_POST['facility'])){
         while($t = mysqli_fetch_array($rungetter)){
             $startdate = $t['startdate'];
             $enddate = $t['enddate'];
+            $cusid = $t['cust_id'];
         }
 
         $facilitycosts = $_SESSION['bookedfacilitiescost'];

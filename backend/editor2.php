@@ -25,7 +25,9 @@ if(isset($_POST['facility'])){
         $facilityname = array_diff($facilityname,[$_POST['rfacility']]);
         $facilityname = array_values($facilityname);
         $d = $_POST['rfacility'];
-        $confirmation = $_SESSION['confirmation'];
+        $confirmation = $_POST['confirmation'];
+        $confirmation = stripcslashes($confirmation);
+        $confirmation = mysqli_real_escape_string($db, $confirmation);
         $getidcommand = "SELECT * FROM samphire_facilities WHERE f_name = '$d'";
         $fetchid = mysqli_query($db, $getidcommand);
         $id = mysqli_fetch_array($fetchid);
@@ -49,7 +51,9 @@ if(isset($_POST['facility'])){
     if($l != 1){
 
         $facilityname[] = $_POST['afacility'];
-        $confirmation = $_SESSION['confirmation'];
+        $confirmation = $_POST['confirmation'];
+        $confirmation = stripcslashes($confirmation);
+        $confirmation = mysqli_real_escape_string($db, $confirmation);
         $firstname = $_SESSION['firstname'];
         $lastname = $_SESSION['lastname'];
         $cusid = $_SESSION['cusid'];

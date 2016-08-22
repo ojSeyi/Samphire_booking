@@ -29,7 +29,7 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
             $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
             $run2 = mysqli_query($db, $query2);
             $fetch = mysqli_fetch_array($run2);
-            $firstname[] = $fetch['firstname'];
+            $firstnamee[] = $fetch['firstname'];
             $lastname[] = $fetch['lastname'];
             $fid = $o['f_id'];
             $query3 = "SELECT * FROM samphire_facilities WHERE f_id = '$fid'";
@@ -59,7 +59,7 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
             $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
             $run2 = mysqli_query($db, $query2);
             $fetch = mysqli_fetch_array($run2);
-            $firstname[] = $fetch['firstname'];
+            $firstnamee[] = $fetch['firstname'];
             $lastname[] = $fetch['lastname'];
             $fid = $o['f_id'];
             $query3 = "SELECT * FROM samphire_facilities WHERE f_id = '$fid'";
@@ -129,7 +129,7 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
                     <tr><th>first name</th><th>Last name</th><th>Reference No</th><th>Facility</th><th>Booking Total</th></tr>";
                 $i = 0;
                 foreach($firstnamee as $firstname){
-                    echo "<tr>"."<td>". $firstname[$i] ."<td>". $lastname[$i] ."<td>". $confirmation[$i] ."<td>". $bookedfacilities[$i] ."<td>". $bookedfacilitiescost[$i]."<tr>";
+                    echo "<tr>"."<td>". $firstname ."<td>". $lastname[$i] ."<td>". $confirmation[$i] ."<td>". $bookedfacilities[$i] ."<td>". $bookedfacilitiescost[$i]."<tr>";
                     $i++;
                 }
                 echo "</table></div>";

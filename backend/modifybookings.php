@@ -39,7 +39,7 @@ if(isset($_POST['facility'])){
             $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
             $run2 = mysqli_query($db, $query2);
             $fetch = mysqli_fetch_array($run2);
-            $firstname[] = $fetch['firstname'];
+            $firstnamee[] = $fetch['firstname'];
             $lastname[] = $fetch['lastname'];
         }
 
@@ -105,7 +105,7 @@ if(isset($_POST['facility'])){
                     <tr><th>first name</th><th>Last name</th><th>Reference No</th><th>Start date</th><th>End date</th></tr>";
                 $i = 0;
                 foreach($firstnamee as $firstname){
-                    echo "<tr>"."<td>". $firstname[$i] ."<td>". $lastname[$i] ."<td>". $confirmation[$i] ."<td>". $startdate[$i] ."<td>". $enddate[$i]."<tr>";
+                    echo "<tr>"."<td>". $firstname ."<td>". $lastname[$i] ."<td>". $confirmation[$i] ."<td>". $startdate[$i] ."<td>". $enddate[$i]."<tr>";
                     $i++;
                 }
                 echo "</table></div>";

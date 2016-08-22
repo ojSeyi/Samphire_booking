@@ -14,8 +14,6 @@ $bookedfacilities = array();
 $bookedfacilitiescost = array();
 if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
     $startdate = $_POST['startdate'];
-    $startdate = stripcslashes($startdate);
-    $startdate = mysqli_real_escape_string($db, $startdate);
     $query = "SELECT * FROM customer_bookings WHERE startdate = '$startdate'";
     $run = mysqli_query($db, $query);
     if(mysqli_num_rows($run) < 1){
@@ -41,11 +39,7 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
 
 }elseif(isset($_POST['startdate']) && isset($_POST['enddate'])){
     $startdate = $_POST['startdate'];
-    $startdate = stripcslashes($startdate);
-    $startdate = mysqli_real_escape_string($db, $startdate);
     $enddate = $_POST['enddate'];
-    $enddate = stripcslashes($enddate);
-    $enddate = mysqli_real_escape_string($db, $enddate);
     $query = "SELECT * FROM customer_bookings WHERE startdate = '$startdate' AND enddate = '$enddate'";
     $run = mysqli_query($db, $query);
     if(mysqli_num_rows($run) < 1){

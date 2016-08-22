@@ -102,7 +102,7 @@ if(isset($_POST['facility'])){
                 echo "
                     <div id='customers' class='grid-container'><br><table id='bookingdetail'>
                     <caption>Here's a list bookings for facility:  <h2>". $facility ."</h2> at the price:  <h3>".$facilitycost."</h3></caption>
-                    <tr><th>Username</th><th>first name</th><th>Last name</th><th>Reference No</th><th>Start date</th><th>End date</th></tr>";
+                    <tr><th>first name</th><th>Last name</th><th>Reference No</th><th>Start date</th><th>End date</th></tr>";
                 $i = 0;
                 foreach($firstnamearray as $firstname){
                     echo "<tr>"."<td>". $firstname[$i] ."<td>". $lastname[$i] ."<td>". $confirmation[$i] ."<td>". $startdate[$i] ."<td>". $enddate[$i]."<tr>";

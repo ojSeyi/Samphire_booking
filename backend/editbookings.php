@@ -5,11 +5,11 @@ if(is_null($_SESSION['admin'])){
     header('location: adminlogin.php');
 }
 $run = 0;
-$firstname = "";
-$lastname = "";
+$firstname = array();
+$lastname = array();
 $startdate = "";
 $enddate = "";
-$price = "";
+$confirmation = array();
 $bookedfacilities = array();
 $bookedfacilitiescost = array();
 if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
@@ -24,21 +24,18 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
         $k = 1;
         while($o = mysqli_fetch_array($run)){
             $custid = $o['cust_id'];
+            $confirmation[] =$o['reference'];
+            $bookedfacilitiescost[] = $o['price'];
             $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
             $run2 = mysqli_query($db, $query2);
             $fetch = mysqli_fetch_array($run2);
-            $firstname = $fetch['firstname'];
-            $lastname = $fetch['lastname'];
-            $startdate = $o['startdate'];
-            $enddate = $o['enddate'];
-            $price = $o['price'];
-
-            $fid =$o['f_id'];
+            $firstname[] = $fetch['firstname'];
+            $lastname[] = $fetch['lastname'];
+            $fid = $o['f_id'];
             $query3 = "SELECT * FROM samphire_facilities WHERE f_id = '$fid'";
             $run3 = mysqli_query($db, $query3);
             $fetch2 = mysqli_fetch_array($run3);
             $bookedfacilities[] = $fetch2['f_name'];
-            $bookedfacilitiescost[] = $fetch2['cost'];
         }
     }
 
@@ -57,21 +54,18 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
         $k = 1;
         while($o = mysqli_fetch_array($run)){
             $custid = $o['cust_id'];
+            $confirmation[] =$o['reference'];
+            $bookedfacilitiescost[] = $o['price'];
             $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
             $run2 = mysqli_query($db, $query2);
             $fetch = mysqli_fetch_array($run2);
-            $firstname = $fetch['firstname'];
-            $lastname = $fetch['lastname'];
-            $startdate = $o['startdate'];
-            $enddate = $o['enddate'];
-            $price = $o['price'];
-
-            $fid =$o['f_id'];
+            $firstname[] = $fetch['firstname'];
+            $lastname[] = $fetch['lastname'];
+            $fid = $o['f_id'];
             $query3 = "SELECT * FROM samphire_facilities WHERE f_id = '$fid'";
             $run3 = mysqli_query($db, $query3);
             $fetch2 = mysqli_fetch_array($run3);
             $bookedfacilities[] = $fetch2['f_name'];
-            $bookedfacilitiescost[] = $fetch2['cost'];
         }
     }
 }
@@ -128,63 +122,19 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
         <div id="system">
             <div id="gl" class="grid-container"><h3>View by dates</h3></div>
             <div id="screen" class="grid-container">
-                <table id="bookingdetails" class="grid-container">
-                    <tr>
-                        <td id="o">Customer Name: </td>
-                        <td id="o"><?php echo $firstname . " " . $lastname; ?></td>
-                    </tr>
-                    <tr id="ref">
-                        <td>Booking Reference Number:</td>
-                        <td><?php echo $reference ?></td>
-                    </tr>
-                    <tr>
-                        <td>Booking Date(s): </td>
-                        <?php
-                        if($enddate == $startdate){
-                            echo "<td>".$startdate."</td>";
-                        }else{
-                            echo "<td> From: ".$startdate." to: " . $enddate . "</td>";
-                        }
-                        ?>
-                    </tr>
-                    <tr id="pins">
-                        <td>Facility(s)</td>
-                        <td>Price(s)</td>
-                    </tr>
-                    <tr id="pin">
-                        <td>
-                            <?php
-                            foreach ($bookedfacilities as $showfacility) {
-                                echo $showfacility ."<br>";
-                            }
-                            ?>
-                        </td>
-                        <td>  <?php
-                            foreach ($bookedfacilities as $showcost) {
-                                $checkcost = $showcost;
-                                $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
-                                $result = mysqli_query($db, $getfacilities);
-                                $cost = mysqli_fetch_array($result);
-                                echo "£".$cost['cost'] . "<br>";
-                            }
-                            ?>
-                        </td>
-                    </tr><br><br>
-                    <tr id="pind">
-                        <td>Total: </td>
-                        <td><?php
-                            $totalcost = 0;
-                            foreach ($bookedfacilities as $showcost) {
-                                $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$showcost'";
-                                $result = mysqli_query($db, $getfacilities);
-                                $cost = mysqli_fetch_array($result);
-                                $totalcost = $totalcost + $cost['cost'];
-                            }
-                            echo "£".$totalcost;
-                            ?>
-                        </td>
-                    </tr>
-                </table>
+                <?php
+                echo "
+                    <div id='customers' class='grid-container'><br><table id='bookingdetail'>
+                    <caption>Here's a list bookings from date:  <h2>". $startdate ."</h2> - <h2>".$enddate."</h3></caption>
+                    <tr><th>first name</th><th>Last name</th><th>Reference No</th><th>Facility</th><th>Booking Total</th></tr>";
+                $i = 0;
+                foreach($firstnamearray as $firstname){
+                    echo "<tr>"."<td>". $firstname[$i] ."<td>". $lastname[$i] ."<td>". $confirmation[$i] ."<td>". $bookedfacilities[$i] ."<td>". $bookedfacilitiescost[$i]."<tr>";
+                    $i++;
+                }
+                echo "</table></div>";
+                echo "<div id=a></div><br>";
+                ?>
             </div>
             <div id="search">
                 <table>

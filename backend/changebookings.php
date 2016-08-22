@@ -175,7 +175,7 @@ if(isset($_POST['confirmation'])){
                 <table>
                     <form method='post' action='modifybookings.php'>
                         <tr>
-                            <td><label>Select a facility: </label></td>
+                            <td><label>Select a facility to add: </label></td>
                             <td><select name='facility' size='1' required>";
             $getfacilities = "SELECT * FROM samphire_facilities";
             $result = mysqli_query($db, $getfacilities);

@@ -49,7 +49,7 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
             $bookedfacilities[] = $fetch2['f_name'];
         }
     }
-
+    $_SESSION['bookedfacilities'] = $bookedfacilities;
 }elseif(isset($_POST['startdate']) && isset($_POST['enddate'])){
     $query = "SELECT * FROM customer_bookings WHERE startdate = '$startdate' AND enddate = '$enddate'";
     $run = mysqli_query($db, $query);
@@ -73,6 +73,7 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
             $bookedfacilities[] = $fetch2['f_name'];
         }
     }
+    $_SESSION['bookedfacilities'] = $bookedfacilities;
 }
 
 
@@ -167,9 +168,9 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
                 echo
                 "<div id='customers' class='grid-container'>
                 <table>
-                    <form method='post' action='modifybookings.php'>
+                    <form method='post' action='editor2.php'>
                         <tr>
-                            <td><label>Select a facility: </label></td>
+                            <td><label>Select a facility to add: </label></td>
                             <td><select name='facility' size='1' required>";
                 $getfacilities = "SELECT * FROM samphire_facilities";
                 $result = mysqli_query($db, $getfacilities);
@@ -177,6 +178,10 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
                     echo "<option>" . $row['f_name'] . "</option>";
                 echo
                 "</select></td>
+                        </tr>
+                        <tr>
+                            <td><label>Please enter a valid reference number: </label></td>
+                            <td><input type='text' name='confirmation' required><br></td>
                         </tr>
                         <tr>
                             <td><input type='hidden' name='iliya' value='iliya'></td>

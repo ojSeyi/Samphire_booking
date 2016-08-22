@@ -386,6 +386,10 @@ input[type=email]:focus {
     overflow-y: auto;
 }
 
+#system{
+    overflow-y: auto;
+}
+
 #customers{
     padding-top: 20px;
     padding-bottom: 20px;

@@ -114,7 +114,7 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
             <li><a href='viewcustomers.php'>View Customers</a></li>
         </ul>
     </nav>
-    <section class="grid-70">
+    <section id="play" class="grid-70">
         <div id="g" class="grid-container"><h2>Admin Booking Editor</h2></div>
         <div id="upnava" class="grid-container">
             <ul>

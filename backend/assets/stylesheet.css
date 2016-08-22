@@ -269,7 +269,7 @@ input[type=submit] {
 
 section{
     margin-left: 65px;
-    padding-top: 70px;
+    padding-top: 100px;
 }
 
 section label{
@@ -435,4 +435,8 @@ input[type=email]:focus {
     padding-right: 20px;
     padding-left: 20px;
     font-size: 12pt;
+}
+
+#play{
+    padding-top: 30px;
 }

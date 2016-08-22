@@ -100,7 +100,7 @@ if(isset($_POST['facility'])){
             <div id="screen" class="grid-container">
                 <?php
                 echo "
-                    <div id='customers' class='grid-container'><br><table id='bookingdetail'>
+                    <div id='customers' class='grid-container'><br><table class='grid-container' id='bookingdetail'>
                     <caption>Here's a list bookings for facility:  <h2>". $facility ."</h2> at the price:  <h3>".$facilitycost."</h3></caption>
                     <tr><th>first name</th><th>Last name</th><th>Reference No</th><th>Start date</th><th>End date</th></tr>";
                 $i = 0;

@@ -128,7 +128,7 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
             <div id="screen" class="grid-container">
                 <?php
                 echo "
-                    <div id='customers' class='grid-container'><br><table id='bookingdetail'>
+                    <div id='customers' class='grid-container'><br><table class='grid-container' id='bookingdetail'>
                     <caption>Here's a list bookings from date:  <h2>". $startdate ."</h2> - <h2>".$enddate."</h3></caption>
                     <tr><th>first name</th><th>Last name</th><th>Reference No</th><th>Facility</th><th>Booking Total</th><th>End date</th></tr>";
                 $i = 0;

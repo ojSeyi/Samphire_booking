@@ -12,6 +12,10 @@ $enddate = "";
 $confirmation = array();
 $bookedfacilities = array();
 $bookedfacilitiescost = array();
+if(($_POST['enddate'] < $_POST['startdate']) && ($_POST['enddate'] != $_POST['startdate'])){
+    $_POST['enddate'] = null;
+}
+
 if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
     $startdate = $_POST['startdate'];
     $query = "SELECT * FROM customer_bookings WHERE startdate = '$startdate'";

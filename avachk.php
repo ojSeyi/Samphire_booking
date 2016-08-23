@@ -84,12 +84,8 @@ if(is_null($_SESSION['startdates'])){
                                     <label>Please select a different date: </label><br><br>
                                     <input id='facility' name='facility' type='hidden' value='$facility'/><br><br>
                                     <input id='startdate' name='startdate' type='text' placeholder='Click here to select a date' required/><br><br>
-                                    <input type='submit' value='Check' />
+                                    <input type='submit' onload='onload()' value='Check' />
                                     </form>
-                                    <input type=\"submit\" onload=\"onload()\" value=\"submit\" /><br><br>
-            <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
-            <script src='https://code.jquery.com/ui/1.12.0/jquery-ui.js'></script>
-            <script type='text/javascript\' src='JS/global.js'></script>
                                 </div>";
                         }else{
                             $_SESSION['start'] = $startdates;
@@ -150,11 +146,10 @@ if(is_null($_SESSION['startdates'])){
                                     <label>Please select different dates: </label><br><br>
                                     <input id='startdate' name='startdate' type='text' placeholder='Click here to select a date' required/><br><br>
                                     <input id='enddate' name='enddate' type='text' placeholder='Click here to select a date' required/><br><br>
-                                    <input type='submit' value='Check' />
-                                    <input type=\"submit\" onload=\"onload()\" value=\"submit\" /><br><br>
+                                    <input type='submit' onload='onload()' value='Check' />
             <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
             <script src='https://code.jquery.com/ui/1.12.0/jquery-ui.js'></script>
-            <script type='text/javascript\' src='JS/global.js'></script>
+            <script type='text/javascript' src='JS/global.js'></script>
                                     </form>";
                         }else{
                             $_SESSION['Start'] = $startdates;

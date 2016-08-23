@@ -80,7 +80,7 @@ if(is_null($_SESSION['startdates'])){
                             echo "<div>
                                 <br>
                                     <div id='screen' class='grid-container'><br><br><div id='bookingdetails' class='grid-container'>Sorry, the <b>$facility</b> facility is unavailable on ".date('d-m-Y',strtotime($startdates))."</div></div><br><br>
-                                    <form id='search' method='post' action='datecheck2.php'>
+                                    <form id='search' method='post' action='datecheck.php'>
                                     <label>Please select a different date: </label><br><br>
                                     <input id='facility' name='facility' type='hidden' value='$facility'/><br><br>
                                     <input id='startdate' name='startdate' type='text' placeholder='Click here to select a date' required/><br><br>
@@ -145,7 +145,7 @@ if(is_null($_SESSION['startdates'])){
                                 echo "<td>".date("d-m-Y",strtotime($showdate))."</td>";
                             }
                             echo "</tr></table></div></div></div>";
-                            echo "<form id='search' method='post' action='logdatecheck2.php'>
+                            echo "<form id='search' method='post' action='datecheck2.php'>
                                     <label>Please select different dates: </label><br><br>
                                     <input id='startdate' name='startdate' type='text' placeholder='Click here to select a date' required/><br><br>
                                     <input id='enddate' name='enddate' type='text' placeholder='Click here to select a date' required/><br><br>

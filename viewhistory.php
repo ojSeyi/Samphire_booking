@@ -83,7 +83,7 @@ if(isset($_SESSION['custid'])) {
 </header>
 <div id="system">
     <main class="grid-container">
-        <div id="screen" class="grid-container">
+        <div id="screens" class="grid-container">
             <?php
             echo "
                     <div id='customers' class='grid-container'><br><table class='grid-container' id='bookingdetail'>

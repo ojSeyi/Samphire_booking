@@ -373,3 +373,13 @@ nav>ul>li>a:hover{
 #registration label{
     width: 180px;
 }
+
+#screens{
+    background-color: RGBa(128, 128, 128, 0.2);
+    border-radius: 5px;
+    border: 1px solid darkgray;
+}
+#screens {
+    max-height: 700px;
+    overflow-y: auto;
+}

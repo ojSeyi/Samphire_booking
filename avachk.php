@@ -13,6 +13,7 @@ if(is_null($_SESSION['startdates'])){
     <link rel="stylesheet" href="assets/stylesheet.css">
     <link rel="stylesheet" href="assets/unsemantic-grid-responsive-tablet.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
     <meta name="viewpoint"
           content="width=device-width,
           initial-scale=1,
@@ -79,12 +80,16 @@ if(is_null($_SESSION['startdates'])){
                             echo "<div>
                                 <br>
                                     <div id='screen' class='grid-container'><br><br><div id='bookingdetails' class='grid-container'>Sorry, the <b>$facility</b> facility is unavailable on ".date('d-m-Y',strtotime($startdates))."</div></div><br><br>
-                                    <form id='search' method='post' action='datecheck2.php'>
+                                    <form id='search' method='post' action='datecheck.php'>
                                     <label>Please select a different date: </label><br><br>
                                     <input id='facility' name='facility' type='hidden' value='$facility'/><br><br>
-                                    <input id='startdate' name='startdate' type='text' value='Click here to select a date'/><br><br>
+                                    <input id='startdate' name='startdate' type='text' placeholder='Click here to select a date'/><br><br>
                                     <input type='submit' value='Check' />
                                     </form>
+                                    <input type=\"submit\" onload=\"onload()\" value=\"submit\" /><br><br>
+            <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
+            <script src='https://code.jquery.com/ui/1.12.0/jquery-ui.js'></script>
+            <script type='text/javascript\' src='JS/global.js'></script>
                                 </div>";
                         }else{
                             $_SESSION['start'] = $startdates;
@@ -143,9 +148,13 @@ if(is_null($_SESSION['startdates'])){
                             echo "</tr></table></div></div></div>";
                             echo "<form id='search' method='post' action='logdatecheck.php'>
                                     <label>Please select different dates: </label><br><br>
-                                    <input id='startdate' name='startdate' type='text' value='Click here to select a date'/><br><br>
-                                    <input id='enddate' name='enddate' type='text' value='Click here to select a date'/><br><br>
+                                    <input id='startdate' name='startdate' type='text' placeholder='Click here to select a date'/><br><br>
+                                    <input id='enddate' name='enddate' type='text' placeholder='Click here to select a date'/><br><br>
                                     <input type='submit' value='Check' />
+                                    <input type=\"submit\" onload=\"onload()\" value=\"submit\" /><br><br>
+            <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
+            <script src='https://code.jquery.com/ui/1.12.0/jquery-ui.js'></script>
+            <script type='text/javascript\' src='JS/global.js'></script>
                                     </form>";
                         }else{
                             $_SESSION['Start'] = $startdates;

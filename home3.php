@@ -12,6 +12,7 @@ if(is_null($_SESSION['login'])){
     <link rel="stylesheet" href="assets/stylesheet.css">
     <link rel="stylesheet" href="assets/unsemantic-grid-responsive-tablet.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
     <meta name="viewpoint"
           content="width=device-width,
           initial-scale=1,
@@ -46,7 +47,7 @@ if(is_null($_SESSION['login'])){
             <p>Sorry, that failitity is not available on <?php $_SESSION['startdates'] ?></p>
         </div>
 
-        <form id="search" method="post" action="logdatecheck2.php">
+        <form id="search" method="post" action="logdatecheck.php">
             <br>
             <input id="startdate" name="startdate" type="date" value="2016-07-01"/><br>
             <label>If you would require the facility for more than one day tick this box</label><br>

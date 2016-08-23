@@ -56,7 +56,7 @@ if(is_null($_POST['startdate']) && ($_POST['facility'])){
         $startdate = date("Y-m-d",strtotime($startdate));
         $facility = $_POST['facility'];
 
-        if(isset($_POST['enddate'])){
+        if($_POST['enddate'] > $_POST['startdate']){
             $enddate = $_POST['enddate'];
             $enddate = date("Y-m-d",strtotime($enddate));;
             echo "<div id='reservationdetails'>

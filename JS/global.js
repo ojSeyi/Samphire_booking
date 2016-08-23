@@ -10,7 +10,7 @@ var showHiddenDiv = function(){
         $('#enddate').datepicker({dateformt: 'dd/mm/yy', minDate: 0 });
         enddate.required = true;
         if(enddate.required = true){
-            $('#enddate').datepicker({dateformt: 'dd/mm/yy', minDate: 0 });
+            $('#enddate').datepicker({dateformt: 'dd/mm/yy', minDate: 0 }).willValidate;
         }
     } else {
         delivery_div.style['display'] = 'none';

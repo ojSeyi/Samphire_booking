@@ -122,6 +122,16 @@ function total(){
     return $totalcost;
 }
 
+$_SESSION['facilityarrayss'] = null;
+$_SESSION['startdates'] = null;
+$_SESSION['start'] = null;
+$_SESSION['startdat'] = null;
+$_SESSION['enddates'] = null;
+$_SESSION['end'] = null;
+$_SESSION['enddat'] = null;
+$_SESSION['confirmationa'] = null;
+
+
 ?>
 <div id="system">
     <main class="grid-container">
@@ -143,14 +153,6 @@ function total(){
                     <tr>
                         <td>
                             <form method="post" action="invoice.php">
-                                <input type="hidden" name="firstname" value="<?php $_SESSION['firstname']?>">
-                                <input type="hidden" name="firstname" value="<?php $_SESSION['lastname']?>">
-                                <input type="hidden" name="firstname" value="<?php $_SESSION['confirmationa']?>">
-                                <input type="hidden" name="firstname" value="<?php $_SESSION['facilityarrayss']?>">
-                                <input type="hidden" name="firstname" value="<?php $_SESSION['facilitycosts']?>">
-                                <input type="hidden" name="firstname" value="<?php $_SESSION['total']?>">
-                                <input type="hidden" name="firstname" value="<?php $_SESSION['start']?>">
-                                <input type="hidden" name="firstname" value="<?php $_SESSION['end']?>">
                                 <input type="submit" name="invoice" value="Print Invoice">
                             </form>
                         </td>

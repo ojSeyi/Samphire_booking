@@ -82,7 +82,7 @@ if(isset($_SESSION['custid'])) {
     </nav>
 </header>
 <div id="system">
-    <main class="grid-container">
+    <main class="grid-container"><br><br><br>
         <div id="screens" class="grid-container">
             <?php
             echo "

@@ -375,7 +375,7 @@ nav>ul>li>a:hover{
 }
 
 #screens{
-    background-color: RGBa(128, 128, 128, 0.2);
+    background-color: RGBa(128, 128, 128, 0.8);
     border-radius: 5px;
     border: 1px solid darkgray;
 }

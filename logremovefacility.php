@@ -4,7 +4,7 @@
 <?php
 session_start();
 if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
-    header('location: bookstate.php');
+    header('location: index.php');
 };
 ?>
 <head>
@@ -51,7 +51,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
     <div id="syscon">
         <?php
         if(is_null($_POST['flow'])){
-            header('location: bookstate2.php');
+            header('location: logbookstate2.php');
         };?>
 
         <?php
@@ -67,14 +67,14 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
                 $facilityarrays = array_diff($facilityarrays,[$_POST['rfacilityarray']]);
                 $facilityarrays = array_values($facilityarrays);
                 $_SESSION['facilityarrayss'] = $facilityarrays;
-                header('location: bookstate2.php');
+                header('location: logbookstate2.php');
             }
 
         }
         ?>
 
         <?php $facilityarrays = $_SESSION['facilityarrayss'];?>
-        <form method="post" action="removefacility.php">
+        <form method="post" action="logremovefacility.php">
             <select name="rfacilityarray" id="facilityarray" size="<?php echo count($facilityarrays) ?>" required>
                 <?php
                 foreach ($facilityarrays as $showfacilityy) {

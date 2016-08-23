@@ -60,14 +60,14 @@ if(is_null($_SESSION['firstname'])){
     if(isset($_POST['enddateC'])){
         $enddate = $_POST['enddate'];
         $enddate = date("Y-m-d",strtotime($enddate));;
-        echo "<div id='reservationdetails'>
+        echo "<br><br><div id='reservationdetails'>
                 <label>Facility: " . $facility . "</label><br><br><br>
                 <label>Start Date: " . date("d-m-Y",strtotime($startdate)) . "</label><br><br><br>
                 <label>Reservation End Date: " . date("d-m-Y",strtotime($enddate)) . "</label><br><br><br>
             </div>";
         $_SESSION['enddates'] = $enddate;
     }else{
-        echo "<div id='reservationdetails'>
+        echo "<br><br><div id='reservationdetails'>
                 <label>Facility: " . $facility . "</label><br><br><br>
                 <label>Reservation Date: " . date("d-m-Y",strtotime($startdate)) . "</label><br><br><br>
             </div>";

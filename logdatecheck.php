@@ -51,7 +51,6 @@ if(is_null($_SESSION['firstname'])){
     <div id="bookingconfirmation" class="grid-container">
 
     <?php
-    session_start();
 
     $startdate = $_POST['startdate'];
     $startdate = date("Y-m-d",strtotime($startdate));

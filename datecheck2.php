@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include ("db_connection.php");
+session_start();
 if(is_null($_POST['startdate']) && ($_SESSION['facility'])){
     header('Location: index.php');
 };
@@ -50,7 +51,7 @@ if(is_null($_POST['startdate']) && ($_SESSION['facility'])){
         <div id="syscon">
             <div id="bookingconfirmation" class="grid-container">
                 <?php
-                session_start();
+
 
                 $startdate = $_POST['startdate'];
                 $startdate = date("Y-m-d",strtotime($startdate));

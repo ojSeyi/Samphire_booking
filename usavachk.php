@@ -87,7 +87,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
                                     </form>
             <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
             <script src='https://code.jquery.com/ui/1.12.0/jquery-ui.js'></script>
-            <script type='text/javascript\' src='JS/global.js'></script>
+            <script type='text/javascript' src='JS/global.js'></script>
                                 </div>";
                 }else{
                     $_SESSION['start'] = $startdates;
@@ -151,7 +151,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
                                     <input type='submit' onload='onload()' value='Check' />
             <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
             <script src='https://code.jquery.com/ui/1.12.0/jquery-ui.js'></script>
-            <script type='text/javascript\' src='JS/global.js'></script>
+            <script type='text/javascript' src='JS/global.js'></script>
                                     </form>";
                     }else{
                         $_SESSION['Start'] = $startdates;

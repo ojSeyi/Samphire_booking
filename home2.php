@@ -48,8 +48,9 @@ if(isset($_SESSION['login'])){
     <div id="syscon">
         <h4>Please enter a valid username and password</h4>
         <form id="search" method="post" action="datecheck2.php">
+            <br>
             <label>Reservation Date : </label>
-            <input id="startdate" name="startdate" type="text" value=" " required/><br><br>
+            <input id="startdate" name="startdate" type="text" value=" " required/><br>
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <Label>Please select a facility</Label>

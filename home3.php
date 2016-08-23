@@ -47,7 +47,8 @@ if(is_null($_SESSION['login'])){
         </div>
 
         <form id="search" method="post" action="logdatecheck2.php">
-            <input id="startdate" name="startdate" type="date" value="2016-07-01"/><br><br>
+            <br>
+            <input id="startdate" name="startdate" type="date" value="2016-07-01"/><br>
             <label>If you would require the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddate" name="enddate" value="yes"/><br><br><br>
             <Label>Please select a facility</Label>

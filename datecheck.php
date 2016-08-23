@@ -61,14 +61,14 @@ if(is_null($_SESSION['startdate']) && ($_SESSION['facility'])){
             $enddate = date("Y-m-d",strtotime($enddate));;
             echo "<div id='reservationdetails'>
                 <label>Facility: " . $facility . "</label><br><br><br>
-                <label>Start Date: " . date("d-m-Y",strtotime($_SESSION['startdate'])) . "</label><br><br><br>
+                <label>Start Date: " . date("d-m-Y",strtotime($startdate)) . "</label><br><br><br>
                 <label>Reservation End Date: " . date("d-m-Y",strtotime($enddate)) . "</label><br><br><br>
             </div>";
             $_SESSION['enddates'] = $enddate;
         }else{
             echo "<div id='reservationdetails'>
                 <label>Facility: " . $facility . "</label><br><br><br>
-                <label>Reservation Date: " . date("d-m-Y",strtotime($_SESSION['startdate'])) . "</label><br><br><br>
+                <label>Reservation Date: " . date("d-m-Y",strtotime($startdate)) . "</label><br><br><br>
             </div>";
             $_SESSION['enddates'] = null;
         }

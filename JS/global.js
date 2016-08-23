@@ -44,3 +44,20 @@ function checkPass()
         message.innerHTML = "Passwords Do Not Match!"
     }
 }
+
+function returncolour(){
+    var pass2 = document.getElementById('pass2');
+    var message = document.getElementById('confirmMessage');
+
+    var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+    if(message.style.color = goodColor){
+        pass2.style.backgroundColor = null;
+        message.style.color = null;
+        message.innerHTML = null;
+    }else{
+        pass2.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = "Passwords Do Not Match!"
+    }
+}

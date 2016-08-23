@@ -53,10 +53,10 @@ if(!is_null($_SESSION['end'])){
     $enddate =  date("Y-m-d",strtotime($enddate));
     echo $enddate;
 }
-$confirmationnumber = $_SESSION['confirmation'];
+$confirmationnumber = $_SESSION['confirmationa'];
 $firstname = $_SESSION['firstname'];
 $lastname = $_SESSION['lastname'];
-$facilities = $_SESSION['facilityarray'];
+$facilities = $_SESSION['facilityarrayss'];
 $facilitycost = array();
 foreach ($facilities as $showcost) {
     $checkcost = $showcost;

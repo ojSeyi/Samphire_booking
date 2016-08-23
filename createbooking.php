@@ -18,7 +18,7 @@ session_start();
 
     $bookingconfirmationnumber = generateRandomString();
     echo $bookingconfirmationnumber;
-    $_SESSION['confirmation'] = $bookingconfirmationnumber;
+    $_SESSION['confirmationa'] = $bookingconfirmationnumber;
 
     $availables = "SELECT * FROM customer_bookings WHERE reference = '$bookingconfirmationnumber'";
     $resultsavailables = mysqli_query($db, $availables) or die("failed");
@@ -28,7 +28,7 @@ session_start();
 
     }
 
-    $facilities = $_SESSION['facilityarray'];
+    $facilities = $_SESSION['facilityarrayss'];
     $startdate = date("Y-m-d",strtotime($_SESSION['start']));
     echo $startdate;
     if(!is_null($_SESSION['end'])){

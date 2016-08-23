@@ -90,16 +90,16 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
                 </tr>
                 <tr id="pin">
                     <td>
-                        <?php $facilityarrays = $_SESSION['facilityarray'];?>
+                        <?php $facilityarrayssss = $_SESSION['facilityarrayss'];?>
                         <?php
-                        foreach ($facilityarrays as $showfacility) {
+                        foreach ($facilityarrayssss as $showfacility) {
                             echo $showfacility ."<br>";
                         }
                         ?>
                     </td>
                     <td>  <?php
-                        $facilityarrays = $_SESSION['facilityarray'];
-                        foreach ($facilityarrays as $showcost) {
+                        $facilityarrayssss = $_SESSION['facilityarrayss'];
+                        foreach ($facilityarrayssss as $showcost) {
                             $checkcost = $showcost;
                             $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
                             $result = mysqli_query($db, $getfacilities);

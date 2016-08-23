@@ -88,10 +88,10 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facili']) && is_null($_
                     <td><?php
                         echo $_SESSION['facili'];
                         $_SESSION['count'] = 0;
-                        $facilityarray = array();
+                        $facilityarrayss = array();
                         $facili = $_SESSION['facili'];
-                        $facilityarray[] = $facili;
-                        $_SESSION['facilityarray'] = $facilityarray;
+                        $facilityarrayss[] = $facili;
+                        $_SESSION['facilityarrayss'] = $facilityarrayss;
                         ?>
                     </td>
                     <td><?php

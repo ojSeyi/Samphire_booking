@@ -46,8 +46,8 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
 
 <div id="system">
     <main class="grid-container">
-        <div id="bookingconfirmation" class="grid-container">
     <div id="syscon">
+        <div id="bookingconfirmation" class="grid-container">
         <?php
         //availabililty check start
         $facility = $_SESSION['facility'];

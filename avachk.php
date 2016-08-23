@@ -67,11 +67,9 @@ if(is_null($_SESSION['startdates'])){
             $available = "SELECT * FROM samphire_facilities WHERE f_name = '$facility'";
             $result = mysqli_query($db, $available);
             $show = mysqli_num_rows($result);
-            echo $show;
             if(mysqli_num_rows($result) > 0) {
                 $row = mysqli_fetch_array($result);
                 $rows = $row['f_id'];
-                echo $rows;
                 if(is_null($enddates)){
                     $availables = "SELECT * FROM customer_bookings WHERE f_id = '$rows' AND (startdate <= '$startdates' AND enddate >= '$startdates')";
                     $results = mysqli_query($db, $availables) or die("failed");

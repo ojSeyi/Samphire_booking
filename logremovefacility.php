@@ -4,7 +4,7 @@
 <?php
 session_start();
 if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
-    header('location: index.php');
+    header('location: bookstate.php');
 };
 ?>
 <head>

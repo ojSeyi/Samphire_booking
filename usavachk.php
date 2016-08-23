@@ -37,8 +37,9 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
     <nav id="upnav" class="grid-container">
         <ul>
             <li><a href='index.php'>Create Booking</a></li>
+            <li><a href='logmanagebooking.php'>Manage Booking</a></li>
+            <li><a href='viewhistory.php'>View Past Bookings</a></li>
             <li><a href='contactus.php'>Contact Us</a></li>
-            <li><a href='registration.php'>Register</a></li>
         </ul>
     </nav>
 </header>

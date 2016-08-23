@@ -63,7 +63,6 @@ if(is_null($_SESSION['startdates'])){
             $currentdate = date('d-m-Y');
             $currentnextdate = date('d-m-Y', ($currentdate + 1));
 
-
             //Upgrade code to search through date range too
             $available = "SELECT * FROM samphire_facilities WHERE f_name = '$facility'";
             $result = mysqli_query($db, $available);

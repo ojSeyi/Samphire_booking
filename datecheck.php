@@ -54,7 +54,7 @@ if(is_null($_POST['startdate']) && ($_SESSION['facility'])){
 
         $startdate = $_POST['startdate'];
         $startdate = date("Y-m-d",strtotime($startdate));
-        $facility = $_SESSION['facility'];
+        $facility = $_POST['facility'];
 
         if(isset($_POST['enddateC'])){
             $enddate = $_POST['enddate'];

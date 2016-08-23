@@ -55,7 +55,7 @@ if(is_null($_SESSION['firstname'])){
 
                 $startdate = $_POST['startdate'];
                 $startdate = date("Y-m-d",strtotime($startdate));
-                $facility = $_POST['facility'];
+                $facility = $_SESSION['facility'];
 
                     $enddate = $_POST['enddate'];
                     $enddate = date("Y-m-d",strtotime($enddate));;

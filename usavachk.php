@@ -154,7 +154,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
             <script type='text/javascript' src='JS/global.js'></script>
                                     </form>";
                     }else{
-                        $_SESSION['Start'] = $startdates;
+                        $_SESSION['start'] = $startdates;
                         $_SESSION['end'] = $enddates;
                         $_SESSION['facili'] = $facility;
                         header('location: logbookstate.php');

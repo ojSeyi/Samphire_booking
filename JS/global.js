@@ -10,6 +10,7 @@ var showHiddenDiv = function(){
         enddate.required = true;
     } else {
         delivery_div.style['display'] = 'none';
+        enddate.required = false;
     }
 }
 checkbox.onclick = showHiddenDiv;

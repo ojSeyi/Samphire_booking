@@ -76,7 +76,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
                 if(mysqli_num_rows($results) > 0){
                     $notavailable = 1;
                     echo "<div>
-                                    <div id='screen'><div id='bookingdetails' class='grid-container'> Sorry, the <h4>$facility</h4> is unavailable on $startdates</div></div><br><br>
+                                    <div id='screen'><div id='bookingdetail' class='grid-container'> Sorry, the <h4>$facility</h4> is unavailable on $startdates</div></div><br><br>
                                     <form id='search' method='post' action='logdatecheck2.php'>
                                     <label>Please select a different date: </label><br><br>
                                     <input id='facility' name='facility' type='hidden' value='$facility'/><br><br>
@@ -126,12 +126,12 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
                         $results = mysqli_query($db, $availablerange) or die("failed");
                         if(mysqli_num_rows($results) > 0){
                             $unavailabledates[] = $date;
-                            echo "<div id='filled dates'><label>The <h4>$facility</h4> is unavailable on the following dates: </label><br>";
+                            echo "<div id='filled dates'><div id='bookingdetail'>The <h4>$facility</h4> is unavailable on the following dates: <br>";
                             echo "<table><tr>";
                             foreach($unavailabledates as $showdate){
                                 echo "<td>".$showdate."</td>";
                             }
-                            echo "</tr></table></div>";
+                            echo "</tr></table></div></div>";
                             echo "<form id='search' method='post' action='logdatecheck.php'>
                                     <label>Please select different dates: </label><br><br>
                                     <input id='startdate' name='startdate' type='text' value='Click here to select a date'/><br><br>

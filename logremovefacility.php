@@ -57,7 +57,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
         <?php
         $k = 0;
         if(isset($_POST['rfacilityarray'])){
-            $facilityarrays = $_SESSION['facilityarray'];
+            $facilityarrays = $_SESSION['facilityarrayss'];
             foreach ($facilityarrays as $showfacility) {
                 if ($showfacility = $_POST['rfacilityarray']){
                     $k = 1;
@@ -66,14 +66,14 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
             if($k == 1){
                 $facilityarrays = array_diff($facilityarrays,[$_POST['rfacilityarray']]);
                 $facilityarrays = array_values($facilityarrays);
-                $_SESSION['facilityarray'] = $facilityarrays;
+                $_SESSION['facilityarrayss'] = $facilityarrays;
                 header('location: bookstate2.php');
             }
 
         }
         ?>
 
-        <?php $facilityarrays = $_SESSION['facilityarray'];?>
+        <?php $facilityarrays = $_SESSION['facilityarrayss'];?>
         <form method="post" action="removefacility.php">
             <select name="rfacilityarray" id="facilityarray" size="<?php echo count($facilityarrays) ?>" required>
                 <?php
@@ -88,12 +88,6 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
     </div>
 </main>
 </div>
-<nav id="outnav">
-    <ul>
-        <li><a href='index.php'>Create Booking</a></li>
-        <li><a href='showbugs.php?bugcategory=android'>Manage Booking</a></li>
-        <li><a href='showbugs.php?bugcategory=ios'>Contact Us</a></li>
-    </ul>
-</nav>
+
 </body>
 </html>

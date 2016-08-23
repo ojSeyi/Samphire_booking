@@ -6,7 +6,7 @@ if(is_null($_POST['bounce'])){
 };
 
 $newfacility = $_POST['facilityarray'];
-$facilityarray = $_SESSION['facilityarray'];
+$facilityarray = $_SESSION['facilityarrayss'];
 
 //availabililty check start
 $facility = $_SESSION['facility'];
@@ -78,9 +78,9 @@ if(mysqli_num_rows($result) > 0) {
 
                 if ($addfacility == 1) {
                     $facilityarray[] = $newfacility;
-                    $_SESSION['facilityarray'] = $facilityarray;
+                    $_SESSION['facilityarrayss'] = $facilityarray;
                 } else {
-                    $_SESSION['facilityarray'] = $facilityarray;
+                    $_SESSION['facilityarrayss'] = $facilityarray;
                 }
 
             }
@@ -169,9 +169,9 @@ if(mysqli_num_rows($result) > 0) {
 
                 if ($addfacility == 1) {
                     $facilityarray[] = $newfacility;
-                    $_SESSION['facilityarray'] = $facilityarray;
+                    $_SESSION['facilityarrayss'] = $facilityarray;
                 } else {
-                    $_SESSION['facilityarray'] = $facilityarray;
+                    $_SESSION['facilityarrayss'] = $facilityarray;
                 }
 
             }

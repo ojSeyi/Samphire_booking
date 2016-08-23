@@ -76,7 +76,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
                 if(mysqli_num_rows($results) > 0){
                     $notavailable = 1;
                     echo "<div>
-                                    <div id='screen'>Sorry, the $facilitys facility is unavailable on $startdates</div><br><br>
+                                    <div id='screen'><div id='bookingdetails' class='grid-container'> Sorry, the $facilitys facility is unavailable on $startdates</div></div><br><br>
                                     <form id='search' method='post' action='logdatecheck2.php'>
                                     <label>Please select a different date: </label><br><br>
                                     <input id='facility' name='facility' type='hidden' value='$facility'/><br><br>

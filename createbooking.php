@@ -78,7 +78,7 @@ function displayprices(){
     define('db_name', "samphire_subsea");
 
     $db = mysqli_connect(db_server, db_username, db_password, db_name);
-    $facilities = $_SESSION['facilityarray'];
+    $facilities = $_SESSION['facilityarrayss'];
     $facilitycosts = array();
     foreach ($facilities as $showcost) {
         $checkcost = $showcost;
@@ -98,7 +98,7 @@ function total(){
     define('db_name', "samphire_subsea");
 
     $db = mysqli_connect(db_server, db_username, db_password, db_name);
-    $facilities = $_SESSION['facilityarray'];
+    $facilities = $_SESSION['facilityarrayss'];
     $totalcost = 0;
     foreach ($facilities as $showcost) {
         $checkcost = $showcost;
@@ -111,7 +111,7 @@ function total(){
 }
 
 function displayfacilities(){
-    $facilities = $_SESSION['facilityarray'];
+    $facilities = $_SESSION['facilityarrayss'];
     return implode('<br>',$facilities);
 }
 

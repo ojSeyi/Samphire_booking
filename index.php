@@ -53,12 +53,12 @@ if(isset($_SESSION['login'])){
         <form id="search" name="search" method="post" action="datecheck.php">
             <br>
             <label>Reservation Date : </label>
-            <input type="text" name="startdate" id="startdate" min="2016-08-14" value="Click here to select a date"required/><br>
+            <input type="text" name="startdate" id="startdate" min="2016-08-14" placeholder="Click here to select a date"required/><br>
             <label>If you would like to book the facility for more than one day tick this box</label><br>
             <input type="checkbox" id="enddatec" name="enddateC" value="yes"/><br><br><br>
             <div id="showend" style="display: none;">
             <label>Reservation End Date : </label>
-            <input id='enddate' name='enddate' type='text' value='Click here to pick a booking end date'/><br><br>
+            <input id='enddate' name='enddate' type='text' placeholder='Click here to pick a booking end date'/><br><br>
             </div>
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>

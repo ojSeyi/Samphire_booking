@@ -151,7 +151,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['start'])  && is_null($_
         <br><br><br>
 
         <div id="book">
-            <form method="post" action="createbooking.php">
+            <form method="post" action="createbooking2.php">
                 <input type="submit" value="Book">
             </form>
         </div>

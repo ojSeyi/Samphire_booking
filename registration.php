@@ -67,7 +67,7 @@ if(isset($_SESSION['login'])){
                 <tr>
                     <td>
                         <label for="usernamecheck">
-                            Username:
+                            *Username:
                         </label><br><br>
                     </td>
                     <td>
@@ -80,7 +80,7 @@ if(isset($_SESSION['login'])){
                 <tr>
                     <td>
                         <label for="passwordcheck">
-                            Password:
+                            *Password:
                         </label><br><br>
                     </td>
                     <td>
@@ -97,11 +97,14 @@ if(isset($_SESSION['login'])){
                         <input type="password" id="repassword" name="password" onkeyup="checkPass(); return false;" required><br><br>
                         <span id="confirmMessage" class="confirmMessage"></span>
                     </td>
+                    <td>
+                        <div id="usernamecheck"></div><br><br>
+                    </td>
                 </tr>
                 <tr>
                     <td>
                         <label>
-                            First name:
+                            *First name:
                         </label><br><br>
                     </td>
                     <td>
@@ -111,7 +114,7 @@ if(isset($_SESSION['login'])){
                 <tr>
                     <td>
                         <label>
-                            Last name:
+                            *Last name:
                         </label><br><br>
                     </td>
                     <td>
@@ -121,7 +124,7 @@ if(isset($_SESSION['login'])){
                 <tr>
                     <td>
                         <label for="emailcheck">
-                            Email:
+                            *Email:
                         </label><br><br>
                     </td>
                     <td>
@@ -134,7 +137,7 @@ if(isset($_SESSION['login'])){
                 <tr>
                     <td>
                         <label>
-                            Mobile number:
+                            *Mobile number:
                         </label><br><br>
                     </td>
                     <td>
@@ -144,7 +147,7 @@ if(isset($_SESSION['login'])){
                 <tr>
                     <td>
                         <label>
-                            Address:
+                            *Address:
                         </label><br><br>
                     </td>
                     <td>

@@ -135,8 +135,8 @@ function total(){
                         <td>Your Booking has been created and an email of your booking details has been sent to your email.</td>
                     </tr>
                     <tr>
-                        <td>Booking Reference Number:</td>
-                        <td><h3><?php echo $confirmationnumber ?></h3></td>
+                        <td>Booking Reference Number:  <h3><?php echo $confirmationnumber ?></h3></td>
+                        <td></td>
                     </tr><br><br>
                     <tr>
                         <td><label>Click this link view, print and save your invoice</label></td>

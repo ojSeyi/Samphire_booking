@@ -47,12 +47,16 @@ if(isset($_SESSION['login'])){
 
     <div id="syscon">
         <h4>Please enter a valid username and password</h4>
-        <form id="search" method="post" action="datecheck2.php">
+        <form id="search" method="post" action="datecheck.php">
             <br>
             <label>Reservation Date : </label>
-            <input id="startdate" name="startdate" type="text" value=" " required/><br>
-            <label>If you would require the facility for more than one day tick this box</label><br>
-            <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
+            <input type="text" name="startdate" id="startdate" min="2016-08-14" placeholder="Click here to select a date"required/><br>
+            <label>If you would like to book the facility for more than one day tick this box</label><br>
+            <input type="checkbox" id="enddatec" name="enddateC" value="yes"/><br><br><br>
+            <div id="showend" style="display: none;">
+                <label>Reservation End Date : </label>
+                <input id='enddate' name='enddate' type='text' placeholder='Click here to pick a booking end date'/><br><br>
+            </div>
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>
                 <?php
@@ -62,7 +66,7 @@ if(isset($_SESSION['login'])){
                     echo "<option>". $row['f_name'] . "</option>";
                 ?>
             </select><br><br>
-            <input type="submit" value="submit"/><br><br>
+            <input type="submit" onload="onload()" value="submit" /><br><br>
             <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
             <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
             <script type="text/javascript" src="JS/global.js"></script>

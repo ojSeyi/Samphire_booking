@@ -63,8 +63,6 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
 
 
 
-        echo "was good<br>";
-        echo "$facilitys <br>";
         //Upgrade code to search through date range too
         $available = "SELECT * FROM samphire_facilities WHERE f_name = '$facility'";
         $result = mysqli_query($db, $available);

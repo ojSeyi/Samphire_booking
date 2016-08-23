@@ -158,7 +158,7 @@ if(is_null($_SESSION['startdates'])){
                             $_SESSION['start'] = $startdates;
                             $_SESSION['end'] = $enddates;
                             $_SESSION['facili'] = $facility;
-                            header('location: logbookstate.php');
+                            header('location: bookstate.php');
                         }
                     }
 

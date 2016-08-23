@@ -52,20 +52,15 @@ if(is_null($_SESSION['startdate']) && ($_SESSION['facility'])){
         <?php
         session_start();
 
-        if(isset($_POST['startdate'])){
-            $startdate = date("Y-m-d",strtotime($_POST['startdate']));
-        }else{
-        $startdate = date("Y-m-d",strtotime($_SESSION['startdate']));
-        }
-        $enddate1 = $_POST['enddate'];
-        $enddate = date("Y-m-d",strtotime($enddate1));
-        $facility = $_SESSION['facility'];
+        $startdate = date("Y-m-d",strtotime($_POST['startdate']));
+        $facility = $_POST['facility'];
 
-        if(isset($enddate1)) {
+        if(isset($_POST['enddate'])){
+            $enddate = $enddate = date("Y-m-d",strtotime($enddate));;
             echo "<div id='reservationdetails'>
                 <label>Facility: " . $facility . "</label><br><br><br>
                 <label>Start Date: " . date("d-m-Y",strtotime($_SESSION['startdate'])) . "</label><br><br><br>
-                <label>Reservation End Date: " . date("d-m-Y",strtotime($enddate1)) . "</label><br><br><br>
+                <label>Reservation End Date: " . date("d-m-Y",strtotime($enddate)) . "</label><br><br><br>
             </div>";
             $_SESSION['enddates'] = $enddate;
         }else{
@@ -77,6 +72,7 @@ if(is_null($_SESSION['startdate']) && ($_SESSION['facility'])){
         }
 
         $_SESSION['startdates'] = $startdate;
+        $_SESSION['facility'] = $facility;
 
         ?>
 

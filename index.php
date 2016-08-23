@@ -50,7 +50,7 @@ if(isset($_SESSION['login'])){
 
     <div id="syscon">
 
-        <form id="search" name="search" method="post" action="datecheck2.php">
+        <form id="search" name="search" method="post" action="datecheck.php">
             <br>
             <label>Reservation Date : </label>
             <input type="text" name="startdate" id="startdate" min="2016-08-14" value="Click here to select a date"required/><br>

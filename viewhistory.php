@@ -11,7 +11,7 @@ $firstname = "";
 $lastname = "";
 $startdate = array();
 $enddate = array();
-$price = "";
+$price = array();
 $reference = array();
 $bookedfacilities = array();
 $bookedfacilitiescost = array();
@@ -27,7 +27,7 @@ if(isset($_SESSION['custid'])) {
             $custid = $o['cust_id'];
             $startdate[] = $o['startdate'];
             $enddate[] = $o['enddate'];
-            $price = $o['price'];
+            $price[] = $o['price'];
             $reference[] = $o['reference'];
             $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
             $run2 = mysqli_query($db, $query2);

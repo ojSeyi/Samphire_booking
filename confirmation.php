@@ -45,13 +45,11 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
 </header>
 <?php
 $startdate = date("Y-m-d",strtotime($_SESSION['start']));
-echo $startdate;
 if(!is_null($_SESSION['end'])){
     $enddate =  date("Y-m-d",strtotime($_SESSION['end']));
 }else{
     $enddate = $startdate;
     $enddate =  date("Y-m-d",strtotime($enddate));
-    echo $enddate;
 }
 $confirmationnumber = $_SESSION['confirmationa'];
 $firstname = $_SESSION['firstname'];
@@ -146,8 +144,8 @@ function total(){
                             <form method="post" action="invoice.php">
                                 <input type="hidden" name="firstname" value="<?php $_SESSION['firstname']?>">
                                 <input type="hidden" name="firstname" value="<?php $_SESSION['lastname']?>">
-                                <input type="hidden" name="firstname" value="<?php $_SESSION['confirmation']?>">
-                                <input type="hidden" name="firstname" value="<?php $_SESSION['facilityarray']?>">
+                                <input type="hidden" name="firstname" value="<?php $_SESSION['confirmationa']?>">
+                                <input type="hidden" name="firstname" value="<?php $_SESSION['facilityarrayss']?>">
                                 <input type="hidden" name="firstname" value="<?php $_SESSION['facilitycosts']?>">
                                 <input type="hidden" name="firstname" value="<?php $_SESSION['total']?>">
                                 <input type="hidden" name="firstname" value="<?php $_SESSION['start']?>">

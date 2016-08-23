@@ -7,7 +7,7 @@ var enddate = document.getElementById('enddate');
 var showHiddenDiv = function(){
     if(checkbox.checked) {
         delivery_div.style['display'] = 'block';
-        enddate.getAttribute('required', true);
+        enddate.getAttribute("required", true);
     } else {
         delivery_div.style['display'] = 'none';
     }

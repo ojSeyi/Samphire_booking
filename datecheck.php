@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include ("db_connection.php");
-if(is_null($_POST['startdate']) && ($_POST['facility'])){
+if(is_null($_POST['startdate']) && ($_SESSION['facility'])){
     header('Location: index.php');
 };
 ?>
@@ -54,9 +54,9 @@ if(is_null($_POST['startdate']) && ($_POST['facility'])){
 
         $startdate = $_POST['startdate'];
         $startdate = date("Y-m-d",strtotime($startdate));
-        $facility = $_POST['facility'];
+        $facility = $_SESSION['facility'];
 
-        if(isset($_POST['enddate'])){
+        if(isset($_POST['enddateC'])){
             $enddate = $_POST['enddate'];
             $enddate = date("Y-m-d",strtotime($enddate));;
             echo "<br><br><div id='reservationdetails'>

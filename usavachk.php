@@ -144,7 +144,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
                             echo "<td>".date("d-m-Y",strtotime($showdate))."</td>";
                         }
                         echo "</tr></table></div></div></div>";
-                        echo "<form id='search' method='post' action='logdatecheck.php'>
+                        echo "<form id='search' method='post' action='logdatecheck2.php'>
                                     <label>Please select different dates: </label><br><br>
                                     <input id='startdate' name='startdate' type='text' placeholder='Click here to select a date' required/><br><br>
                                     <input id='enddate' name='enddate' type='text' placeholder='Click here to select a date' required/><br><br>

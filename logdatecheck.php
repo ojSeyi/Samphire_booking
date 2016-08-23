@@ -57,7 +57,7 @@ if(is_null($_SESSION['firstname'])){
     $startdate = date("Y-m-d",strtotime($startdate));
     $facility = $_POST['facility'];
 
-    if(isset($_POST['enddate'])){
+    if(isset($_POST['enddateC'])){
         $enddate = $_POST['enddate'];
         $enddate = date("Y-m-d",strtotime($enddate));;
         echo "<br><br><div id='reservationdetails'>

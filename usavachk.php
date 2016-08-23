@@ -82,7 +82,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
                                     <form id='search' method='post' action='logdatecheck.php'>
                                     <label>Please select a different date: </label><br><br>
                                     <input id='facility' name='facility' type='hidden' value='$facility'/><br><br>
-                                    <input id='startdate' name='startdate' type='date' placeholder='Click here to select a date'/><br><br>
+                                    <input id='startdate' name='startdate' type='date' placeholder='Click here to select a date' required /><br><br>
                                     <input type='submit' value='Check' />
                                     </form>
                                     <input type=\"submit\" onload=\"onload()\" value=\"submit\" /><br><br>
@@ -147,8 +147,8 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
                         echo "</tr></table></div></div></div>";
                         echo "<form id='search' method='post' action='logdatecheck.php'>
                                     <label>Please select different dates: </label><br><br>
-                                    <input id='startdate' name='startdate' type='text' placeholder='Click here to select a date'/><br><br>
-                                    <input id='enddate' name='enddate' type='text' placeholder='Click here to select a date'/><br><br>
+                                    <input id='startdate' name='startdate' type='text' placeholder='Click here to select a date' required/><br><br>
+                                    <input id='enddate' name='enddate' type='text' placeholder='Click here to select a date' required/><br><br>
                                     <input type='submit' value='Check' />
                                     <input type=\"submit\" onload=\"onload()\" value=\"submit\" /><br><br>
             <script src='https://code.jquery.com/jquery-1.12.4.js'></script>

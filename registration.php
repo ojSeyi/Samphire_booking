@@ -14,6 +14,7 @@ if(isset($_SESSION['login'])){
     <link rel="stylesheet" href="assets/unsemantic-grid-responsive-tablet.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
     <meta name="viewpoint"
           content="width=device-width,
           initial-scale=1,
@@ -83,10 +84,18 @@ if(isset($_SESSION['login'])){
                         </label><br><br>
                     </td>
                     <td>
-                        <input type="password" name="password" id="usernamea" min="6" required><br><br>
+                        <input type="password" id="password" name="password" min="6" required><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <labe>
+                            *Confirm Password:
+                        </labe><br><br>
                     </td>
                     <td>
-                        <div id="passwordcheck"></div><br><br>
+                        <input type="password" id="repassword" name="password" onkeyup="checkPass(); return false;" required><br><br>
+                        <span id="confirmMessage" class="confirmMessage"></span>
                     </td>
                 </tr>
                 <tr>
@@ -155,8 +164,9 @@ if(isset($_SESSION['login'])){
             </table>
             </form>
             </div>
-            <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
-            <script src="JS/usernamecheck.js"></script>
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+            <script type="text/javascript" src="JS/global.js"></script>
         </div>
 
     </main>

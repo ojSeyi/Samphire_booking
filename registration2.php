@@ -14,6 +14,7 @@ if(isset($_SESSION['login'])){
     <link rel="stylesheet" href="assets/unsemantic-grid-responsive-tablet.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
     <meta name="viewpoint"
           content="width=device-width,
           initial-scale=1,
@@ -88,23 +89,18 @@ if(isset($_SESSION['login'])){
                                 </labe><br><br>
                             </td>
                             <td>
-                                <input type="password" name="password" required><br><br>
-                            </td>
-                            <td>
-                                <div id="passwordcheck"></div><br><br>
+                                <input type="password" id="pass1" name="password" required><br><br>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <labe>
-                                    *Re-Enter Password:
+                                    *Confirm Password:
                                 </labe><br><br>
                             </td>
                             <td>
-                                <input type="password" name="password" required><br><br>
-                            </td>
-                            <td>
-                                <div id="passwordcheck"></div><br><br>
+                                <input type="password" id="pass2" name="password" onkeyup="checkPass(); return false;" required><br><br>
+                                <span id="confirmMessage" class="confirmMessage"></span>
                             </td>
                         </tr>
                         <tr>

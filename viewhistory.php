@@ -3,9 +3,47 @@
 <?php include ("db_connection.php"); ?>
 <?php
 session_start();
-if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
-    header('location: bookstate.php');
+if(is_null($_SESSION['firstname'])){
+    header('location: index.php');
 };
+$run = 0;
+$firstname = "";
+$lastname = "";
+$startdate = array();
+$enddate = array();
+$price = "";
+$reference = array();
+$bookedfacilities = array();
+$bookedfacilitiescost = array();
+if(isset($_SESSION['custid'])) {
+    $custid = $_SESSION['custid'];
+    $query = "SELECT * FROM customer_bookings WHERE cust_id = '$custid'";
+    $run = mysqli_query($db, $query);
+    if (mysqli_num_rows($run) < 1) {
+        $msg = 'No result';
+    } else {
+        $k = 1;
+        while ($o = mysqli_fetch_array($run)) {
+            $custid = $o['cust_id'];
+            $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
+            $run2 = mysqli_query($db, $query2);
+            $fetch = mysqli_fetch_array($run2);
+            $firstname = $fetch['firstname'];
+            $lastname = $fetch['lastname'];
+            $startdate = $o['startdate'];
+            $enddate = $o['enddate'];
+            $price = $o['price'];
+            $reference[] = $o['reference'];
+
+            $fid = $o['f_id'];
+            $query3 = "SELECT * FROM samphire_facilities WHERE f_id = '$fid'";
+            $run3 = mysqli_query($db, $query3);
+            $fetch2 = mysqli_fetch_array($run3);
+            $bookedfacilities[] = $fetch2['f_name'];
+            $bookedfacilitiescost[] = $fetch2['cost'];
+        }
+    }
+}
 ?>
 <head>
     <meta charset="UTF-8">
@@ -46,63 +84,19 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
 <div id="system">
     <main class="grid-container">
         <div id="screen" class="grid-container">
-            <table id="bookingdetails" class="grid-container">
-                <tr>
-                    <td id="o">Customer Name: </td>
-                    <td id="o"><?php echo $firstname . " " . $lastname; ?></td>
-                </tr>
-                <tr id="ref">
-                    <td>Booking Reference Number:</td>
-                    <td><?php echo $reference ?></td>
-                </tr>
-                <tr>
-                    <td>Booking Date(s): </td>
-                    <?php
-                    if($enddate == $startdate){
-                        echo "<td>".$startdate."</td>";
-                    }else{
-                        echo "<td> From: ".$startdate." to: " . $enddate . "</td>";
-                    }
-                    ?>
-                </tr>
-                <tr id="pins">
-                    <td>Facility(s)</td>
-                    <td>Price(s)</td>
-                </tr>
-                <tr id="pin">
-                    <td>
-                        <?php
-                        foreach ($bookedfacilities as $showfacility) {
-                            echo $showfacility ."<br>";
-                        }
-                        ?>
-                    </td>
-                    <td>  <?php
-                        foreach ($bookedfacilities as $showcost) {
-                            $checkcost = $showcost;
-                            $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$checkcost'";
-                            $result = mysqli_query($db, $getfacilities);
-                            $cost = mysqli_fetch_array($result);
-                            echo "£".$cost['cost'] . "<br>";
-                        }
-                        ?>
-                    </td>
-                </tr><br><br>
-                <tr id="pind">
-                    <td>Total: </td>
-                    <td><?php
-                        $totalcost = 0;
-                        foreach ($bookedfacilities as $showcost) {
-                            $getfacilities = "SELECT * FROM samphire_facilities WHERE f_name = '$showcost'";
-                            $result = mysqli_query($db, $getfacilities);
-                            $cost = mysqli_fetch_array($result);
-                            $totalcost = $totalcost + $cost['cost'];
-                        }
-                        echo "£".$totalcost;
-                        ?>
-                    </td>
-                </tr>
-            </table>
+            <?php
+            echo "
+                    <div id='customers' class='grid-container'><br><table class='grid-container' id='bookingdetail'>
+                    <caption>Here's a list bookings made by:  <h2>". $firstname ."</h2> - <h2>".$lastname."</h3></caption>
+                    <tr><th>first name</th><th>Last name</th><th>Reference No</th><th>Facility</th><th>Booking Total</th><th>End date</th></tr>";
+            $i = 0;
+            foreach($reference as $referee){
+                echo "<tr>"."<td>". $referee ."<td>". $bookedfacilities[$i] ."<td>". $bookedfacilitiescost[$i] ."<td>". $startdate[$i] ."<td>". $enddate[$i]."<tr>";
+                $i++;
+            }
+            echo "</table></div>";
+            echo "<div id=a></div><br>";
+            ?>
         </div>
     </main>
 </div>

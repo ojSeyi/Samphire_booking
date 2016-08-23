@@ -134,7 +134,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
                         }
                     }
                     if($k > 0){
-                        echo "<br><br><div id='screen' class='grid-container'><div id='filled dates' class='grid-container'><div id='bookingdetail'>The <b>$facility</b> is unavailable on the following date(s): <br>";
+                        echo "<br><br><div id='screen' class='grid-container'><div id='bookingdetail'><div id='filled dates' class='grid-container'>The <b>$facility</b> is unavailable on the following date(s): <br>";
                         echo "<table><tr>";
                         foreach($unavailabledates as $showdate){
                             echo "<td>".date("d-m-Y",strtotime($showdate))."</td>";

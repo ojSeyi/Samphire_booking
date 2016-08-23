@@ -88,7 +88,7 @@ if(isset($_SESSION['custid'])) {
             echo "
                     <div id='customers' class='grid-container'><br><table class='grid-container' id='bookingdetail'>
                     <caption>Here's a list bookings made by:  <h3>". $firstname ."  ".$lastname."</h3></caption>
-                    <tr><th>first name</th><th>Last name</th><th>Reference No</th><th>Facility</th><th>Booking Total</th><th>End date</th></tr>";
+                    <tr><th>Reference No</th><th>Facility</th><th>Facility price</th><th>Start date</th><th>End date</th><th>Booking Total</th></tr>";
             $i = 0;
             foreach($reference as $referee){
                 echo "<tr>"."<td>". $referee ."<td>". $bookedfacilities[$i] ."<td>". $bookedfacilitiescost[$i] ."<td>". $startdate[$i] ."<td>". $enddate[$i]."<tr>";

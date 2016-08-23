@@ -61,7 +61,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
         //booking check start
         ?>
         <script type="text/javascript" src='http://code.jquery.com/jquery-1.8.0.min.js'></script>
-        <script type="text/javascript" src='JS/facilityarray.js.js'></script>
+        <script type="text/javascript" src='JS/facilityarray.js'></script>
 
 
 
@@ -186,12 +186,6 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facilityarraycheck'])){
         </div><br><br>
 </main>
 </div>
-<nav id="outnav">
-    <ul>
-        <li><a href='index.php'>Create Booking</a></li>
-        <li><a href='showbugs.php?bugcategory=android'>Manage Booking</a></li>
-        <li><a href='showbugs.php?bugcategory=ios'>Contact Us</a></li>
-    </ul>
-</nav>
+
 </body>
 </html>

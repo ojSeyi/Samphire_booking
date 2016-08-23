@@ -88,12 +88,6 @@ if(is_null($_SESSION['firstname'])){
 </div>
 </main>
 </div>
-<nav id="outnav">
-    <ul>
-        <li><a href='index.php'>Create Booking</a></li>
-        <li><a href='showbugs.php?bugcategory=android'>Manage Booking</a></li>
-        <li><a href='showbugs.php?bugcategory=ios'>Contact Us</a></li>
-    </ul>
-</nav>
+
 </body>
 </html>

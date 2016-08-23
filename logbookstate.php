@@ -39,6 +39,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facili']) && is_null($_
         <ul>
             <li><a href='index.php'>Create Booking</a></li>
             <li><a href='logmanagebooking.php'>Manage Booking</a></li>
+            <li><a href='viewhistory.php'>View Past Bookings</a></li>
             <li><a href='contactus.php'>Contact Us</a></li>
         </ul>
     </nav>
@@ -162,12 +163,6 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facili']) && is_null($_
     </div>
 </main>
 </div>
-<nav id="outnav">
-    <ul>
-        <li><a href='index.php'>Create Booking</a></li>
-        <li><a href='showbugs.php?bugcategory=android'>Manage Booking</a></li>
-        <li><a href='showbugs.php?bugcategory=ios'>Contact Us</a></li>
-    </ul>
-</nav>
+
 </body>
 </html>

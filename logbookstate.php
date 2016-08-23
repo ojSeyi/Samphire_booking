@@ -110,8 +110,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['facili']) && is_null($_
 
 
 
-        <div><label>To change facility or add another facility, select facility and click 'Edit':  </label></div><br><br><br><br>
-        <div id="warning"><label>You cannot select the same facility</label></div>
+        <div><label>To change facility or add another facility, select facility and click 'Edit':  </label></div><br><br>
         <div>
         <form method="post" action="logfacilitycount.php">
             <input type="hidden" name="bounce" value="bounce">

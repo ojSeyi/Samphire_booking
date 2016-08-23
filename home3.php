@@ -47,25 +47,29 @@ if(is_null($_SESSION['login'])){
             <p>Sorry, that failitity is not available on <?php $_SESSION['startdates'] ?></p>
         </div>
 
-        <form id="search" method="post" action="logdatecheck.php">
+        <form id="search" method="post" action="datecheck.php">
             <br>
-            <input id="startdate" name="startdate" type="date" value="2016-07-01"/><br>
-            <label>If you would require the facility for more than one day tick this box</label><br>
-            <input type="checkbox" id="enddate" name="enddate" value="yes"/><br><br><br>
+            <label>Reservation Date : </label>
+            <input type="text" name="startdate" id="startdate" min="2016-08-14" placeholder="Click here to select a date"required/><br>
+            <label>If you would like to book the facility for more than one day tick this box</label><br>
+            <input type="checkbox" id="enddatec" name="enddateC" value="yes"/><br><br><br>
+            <div id="showend" style="display: none;">
+                <label>Reservation End Date : </label>
+                <input id='enddate' name='enddate' type='text' placeholder='Click here to pick a booking end date'/><br><br>
+            </div>
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>
                 <?php
-                $getfacilities = "SELECT name FROM samphire_facilities";
+                $getfacilities = "SELECT * FROM samphire_facilities";
                 $result = mysqli_query($db, $getfacilities);
                 while ($row = mysqli_fetch_array($result))
-                    echo "<option>". $row['name'] . "</option>";
+                    echo "<option>". $row['f_name'] . "</option>";
                 ?>
             </select><br><br>
-            <label>Reservation Date : </label>
-            <input type="submit" value="submit"/><br><br>
-            <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
-            <script src='https://code.jquery.com/ui/1.12.0/jquery-ui.js'></script>
-            <script type='text/javascript' src='JS/global.js'></script>
+            <input type="submit" onload="onload()" value="submit" /><br><br>
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+            <script type="text/javascript" src="JS/global.js"></script>
         </form>
 
     </div>

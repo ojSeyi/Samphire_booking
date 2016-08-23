@@ -71,7 +71,7 @@ if(isset($_SESSION['login'])){
                         <tr>
                             <td>
                                 <labe>
-                                    Username:
+                                    *Username:
                                 </labe><br><br>
                             </td>
                             <td>
@@ -84,7 +84,7 @@ if(isset($_SESSION['login'])){
                         <tr>
                             <td>
                                 <labe>
-                                    Password:
+                                    *Password:
                                 </labe><br><br>
                             </td>
                             <td>
@@ -97,7 +97,20 @@ if(isset($_SESSION['login'])){
                         <tr>
                             <td>
                                 <labe>
-                                    First name:
+                                    *Re-Enter Password:
+                                </labe><br><br>
+                            </td>
+                            <td>
+                                <input type="password" name="password" required><br><br>
+                            </td>
+                            <td>
+                                <div id="passwordcheck"></div><br><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <labe>
+                                    *First name:
                                 </labe><br><br>
                             </td>
                             <td>
@@ -107,7 +120,7 @@ if(isset($_SESSION['login'])){
                         <tr>
                             <td>
                                 <labe>
-                                    Last name:
+                                    *Last name:
                                 </labe><br><br>
                             </td>
                             <td>
@@ -117,7 +130,7 @@ if(isset($_SESSION['login'])){
                         <tr>
                             <td>
                                 <labe>
-                                    Email:
+                                    *Email:
                                 </labe><br><br>
                             </td>
                             <td>
@@ -130,7 +143,7 @@ if(isset($_SESSION['login'])){
                         <tr>
                             <td>
                                 <labe>
-                                    Mobile number:
+                                    *Mobile number:
                                 </labe><br><br>
                             </td>
                             <td>
@@ -140,7 +153,7 @@ if(isset($_SESSION['login'])){
                         <tr>
                             <td>
                                 <labe>
-                                    Address:
+                                    *Address:
                                 </labe><br><br>
                             </td>
                             <td>

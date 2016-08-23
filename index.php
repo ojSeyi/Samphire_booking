@@ -58,7 +58,7 @@ if(isset($_SESSION['login'])){
             <input type="checkbox" id="enddatec" name="enddateC" value="yes"/><br><br><br><br>
             <div id="showend" style="display: none;">
             <label>Reservation End Date : </label>
-            <input id='enddate' name='enddate' type='date' value='Click here to pick a date'/><br><br><br>
+            <input id='enddate' name='enddate' type='text' value='Click here to pick a date'/><br><br><br>
             </div>
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>

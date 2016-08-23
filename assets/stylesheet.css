@@ -383,3 +383,17 @@ nav>ul>li>a:hover{
     max-height: 700px;
     overflow-y: auto;
 }
+
+#bookingdetail{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11pt;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+
+}
+
+#bookingdetail td{
+    padding: 10px;
+    font-size: 12pt;
+}

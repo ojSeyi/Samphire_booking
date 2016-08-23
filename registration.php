@@ -84,7 +84,7 @@ if(isset($_SESSION['login'])){
                         </label><br><br>
                     </td>
                     <td>
-                        <input type="password" id="password" name="password" min="6" required><br><br>
+                        <input type="password" id="pass1" name="password" min="6" required><br><br>
                     </td>
                 </tr>
                 <tr>
@@ -94,7 +94,7 @@ if(isset($_SESSION['login'])){
                         </labe><br><br>
                     </td>
                     <td>
-                        <input type="password" id="repassword" name="password" onkeyup="checkPass(); return false;" required><br><br>
+                        <input type="password" id="pass2" name="password" onkeyup="checkPass(); return false;" required><br><br>
                         <span id="confirmMessage" class="confirmMessage"></span>
                     </td>
                     <td>

@@ -76,8 +76,8 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
                 if(mysqli_num_rows($results) > 0){
                     $notavailable = 1;
                     echo "<div>
-                                <br><br>
-                                    <div id='screen' class='grid-container'><div id='bookingdetail' class='grid-container'>Sorry, the <b>$facility</b> is unavailable on ".date('d-m-Y',strtotime($startdates))."</div></div><br><br>
+                                <br>
+                                    <div id='screen' class='grid-container'><br><br><div id='bookingdetail' class='grid-container'>Sorry, the <b>$facility</b> is unavailable on ".date('d-m-Y',strtotime($startdates))."</div></div><br><br>
                                     <form id='search' method='post' action='logdatecheck2.php'>
                                     <label>Please select a different date: </label><br><br>
                                     <input id='facility' name='facility' type='hidden' value='$facility'/><br><br>
@@ -134,7 +134,7 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
                         }
                     }
                     if($k > 0){
-                        echo "<br><br><div id='screen' class='grid-container'><div id='bookingdetail'><div id='filled dates' class='grid-container'>The <b>$facility</b> is unavailable on the following date(s): <br>";
+                        echo "<br><div id='screen' class='grid-container'><div id='bookingdetail'><br><br><div id='filled dates' class='grid-container'>The <b>$facility</b> is unavailable on the following date(s): <br>";
                         echo "<table><tr>";
                         foreach($unavailabledates as $showdate){
                             echo "<td>".date("d-m-Y",strtotime($showdate))."</td>";

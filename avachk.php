@@ -77,8 +77,8 @@ if(is_null($_SESSION['startdates'])){
                         if(mysqli_num_rows($results) > 0){
                             $notavailable = 1;
                             echo "<div>
-                                <br><br>
-                                    <div id='screen' class='grid-container'><div id='bookingdetails' class='grid-container'>Sorry, the <b>$facility</b> facility is unavailable on ".date('d-m-Y',strtotime($startdates))."</div></div><br><br>
+                                <br>
+                                    <div id='screen' class='grid-container'><br><br><div id='bookingdetails' class='grid-container'>Sorry, the <b>$facility</b> facility is unavailable on ".date('d-m-Y',strtotime($startdates))."</div></div><br><br>
                                     <form id='search' method='post' action='datecheck2.php'>
                                     <label>Please select a different date: </label><br><br>
                                     <input id='facility' name='facility' type='hidden' value='$facility'/><br><br>

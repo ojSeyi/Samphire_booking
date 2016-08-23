@@ -47,6 +47,10 @@ if(is_null($_SESSION['firstname'])){
     <div id="syscon">
 
         <form id="search" method="post" action="logdatecheck2.php">
+            <label>Reservation Date : </label>
+            <input id="startdate" name="startdate" type="text" value=" " required/><br><br>
+            <label>If you would require the facility for more than one day tick this box</label><br>
+            <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <Label>Please select a facility</Label>
             <select name="facility" size="1" required>
                 <?php
@@ -56,10 +60,6 @@ if(is_null($_SESSION['firstname'])){
                     echo "<option>". $row['f_name'] . "</option>" ;
                 ?>
             </select><br><br>
-            <label>Reservation Date : </label>
-            <input id="startdate" name="startdate" type="text" value=" " required/><br><br>
-            <label>If you would require the facility for more than one day tick this box</label><br>
-            <input type="checkbox" id="enddate" name="enddateC" value="yes"/><br><br><br>
             <input type="submit" value="submit"/><br><br>
             <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
             <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>

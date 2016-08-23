@@ -78,7 +78,7 @@ if(is_null($_SESSION['startdates'])){
                             $notavailable = 1;
                             echo "<div>
                                 <br><br>
-                                    <div id='screen'><div id='bookingdetails' class='grid-container'>         Sorry, the $facility facility is unavailable on ".date('d-m-Y',strtotime($startdates))."</div></div><br><br>
+                                    <div id='screen' class='grid-container'><div id='bookingdetails' class='grid-container'>Sorry, the <b>$facility</b> facility is unavailable on ".date('d-m-Y',strtotime($startdates))."</div></div><br><br>
                                     <form id='search' method='post' action='datecheck2.php'>
                                     <label>Please select a different date: </label><br><br>
                                     <input id='facility' name='facility' type='hidden' value='$facility'/><br><br>
@@ -135,7 +135,7 @@ if(is_null($_SESSION['startdates'])){
                             }
                         }
                         if($k > 0){
-                            echo "<div id='screen'><div id='filled dates'><div id='bookingdetail'>          The <h4>$facility</h4> is unavailable on the following dates: <br>";
+                            echo "<div id='screen' class='grid-container'><div id='filled dates'><div id='bookingdetail' class='grid-container'>The <b>$facility</b> is unavailable on the following dates: <br>";
                             echo "<table><tr>";
                             foreach($unavailabledates as $showdate){
                                 echo "<td>".date("d-m-Y",strtotime($showdate))."</td>";

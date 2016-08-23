@@ -128,12 +128,12 @@ if(is_null($_SESSION['startdates'])){
                             $results = mysqli_query($db, $availablerange) or die("failed");
                             if(mysqli_num_rows($results) > 0){
                                 $unavailabledates[] = $date;
-                                echo "<div id='filled dates'><label>The $facility facility is unavailable on the following dates: </label><br>";
+                                echo "<div id='screen'><div id='filled dates'><div id='bookingdetail'>          The <h4>$facility</h4> is unavailable on the following dates: </label><br>";
                                 echo "<table><tr>";
                                 foreach($unavailabledates as $showdate){
                                     echo "<td>".$showdate."</td>";
                                 }
-                                echo "</tr></table></div>";
+                                echo "</tr></table></div></div></div>";
                                 echo "<form id='search' method='post' action='datecheck.php'>
                                     <label>Please select different dates: </label><br><br>
                                     <input id='startdate' name='startdate' type='date' value='$currentdate'/><br><br>

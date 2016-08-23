@@ -25,15 +25,15 @@ if(isset($_SESSION['custid'])) {
         $k = 1;
         while ($o = mysqli_fetch_array($run)) {
             $custid = $o['cust_id'];
+            $startdate[] = $o['startdate'];
+            $enddate[] = $o['enddate'];
+            $price = $o['price'];
+            $reference[] = $o['reference'];
             $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
             $run2 = mysqli_query($db, $query2);
             $fetch = mysqli_fetch_array($run2);
             $firstname = $fetch['firstname'];
             $lastname = $fetch['lastname'];
-            $startdate = $o['startdate'];
-            $enddate = $o['enddate'];
-            $price = $o['price'];
-            $reference[] = $o['reference'];
 
             $fid = $o['f_id'];
             $query3 = "SELECT * FROM samphire_facilities WHERE f_id = '$fid'";
@@ -91,7 +91,7 @@ if(isset($_SESSION['custid'])) {
                     <tr><th>Reference No</th><th>Facility</th><th>Facility price</th><th>Start date</th><th>End date</th><th>Booking Total</th></tr>";
             $i = 0;
             foreach($reference as $referee){
-                echo "<tr>"."<td>". $referee ."<td>". $bookedfacilities[$i] ."<td>". $bookedfacilitiescost[$i] ."<td>". $startdate[$i] ."<td>". $enddate[$i]."<tr>";
+                echo "<tr>"."<td>". $referee ."<td>". $bookedfacilities[$i] ."<td>". $bookedfacilitiescost[$i] ."<td>". $startdate[$i] ."<td>". $enddate[$i]."<td>". $price[$i]."<tr>";
                 $i++;
             }
             echo "</table></div>";

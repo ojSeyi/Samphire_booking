@@ -90,6 +90,7 @@ if(isset($_POST['facility'])){
         <div id="g" class="grid-container"><h2>Admin Booking Editor</h2></div>
         <div id="upnava" class="grid-container">
             <ul>
+                <li><a href='adminbookcancel.php'>Cancel a booking</a></li>
                 <li><a href='changebookings.php'>Search Reference Number</a></li>
                 <li><a href='editbookings.php'>Search by dates</a></li>
                 <li><a href='modifybookings.php'>Search by Facility</a></li>

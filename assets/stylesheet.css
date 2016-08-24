@@ -398,7 +398,11 @@ nav>ul>li>a:hover{
     font-size: 12pt;
 }
 
+header{
+    border: solid whitesmoke 2px;
+}
+
 footer{
-    background-color: white;
+    background-color: whitesmoke;
     height: 100%;
 }

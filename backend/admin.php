@@ -33,7 +33,7 @@ if(is_null($_SESSION['admin'])){
             <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System - Administrator</p></div>
     </header>
 
-    <main class="grid-container">
+    <main>
         <nav class="grid-30">
             <ul>
                 <li><a href='viewbookings.php'>View Bookings</a></li>
@@ -60,6 +60,8 @@ if(is_null($_SESSION['admin'])){
         </section>
     </main>
 
+
+    <br>
     <footer>
         <div id="base"><p>&#169; Oluwaseyi Jason Nojimu-Yusuf, 2016</p></div>
     </footer>

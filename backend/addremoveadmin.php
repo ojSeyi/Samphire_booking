@@ -76,7 +76,7 @@ if(isset($_POST['rfacilityarray'])){
             </div>
             <div id="search01" style="display: block">
                 <table>
-                    <form method="post" action="addremoveadmin.php.php">
+                    <form method="post" action="addremoveadmin.php">
                         <tr>
                             <td><label>Enter new facility name: </label></td>
                             <td><input type="text" name="facilityname" required><br></td>

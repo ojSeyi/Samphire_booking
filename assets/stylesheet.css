@@ -406,7 +406,6 @@ footer{
     background-color: whitesmoke;
     height: 100%;
 }
-#base p{
-    margin-left: auto;
-    margin-right: auto;
+#base{
+    text-align: center;
 }

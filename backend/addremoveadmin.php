@@ -21,8 +21,10 @@ if(isset($_POST['rfacility'])){
     $geta = mysqli_query($db, $getall);
     while($r = mysqli_fetch_array($geta)){
         $w = $r['f_name'];
-        if($w == $input){
-            $k = 9;
+        if($w != $input){
+            $k = 0;
+        }else{
+            $k++;
         }
     }
     if($k == 0){

@@ -92,7 +92,7 @@ if(isset($_POST['rfacility'])){
     $run = mysqli_query($db, $removecmd)or die('lol2');
     $y = 3;
 }elseif(isset($_POST['afacility'])){
-    $cus = "";
+    $cus = 0;
     $facid = "";
     $startdates = "";
     $enddates = "";

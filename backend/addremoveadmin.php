@@ -6,20 +6,28 @@ if(is_null($_SESSION['admin'])){
 }
 
 $k = 0;
-if(isset($_POST['rfacilityarray'])){
-    $facilityarrays = $_SESSION['facilityarrayss'];
-    foreach ($facilityarrays as $showfacility) {
-        if ($showfacility = $_POST['rfacilityarray']){
-            $k = 1;
-        }else{}
-    }
-    if($k == 1){
-        $facilityarrays = array_diff($facilityarrays,[$_POST['rfacilityarray']]);
-        $facilityarrays = array_values($facilityarrays);
-        $_SESSION['facilityarrayss'] = $facilityarrays;
-        header('location: logbookstate2.php');
-    }
+if(isset($_POST['rfacility'])){
+    $input = $_POST['rfacility'];
+    $input = stripcslashes($input);
+    $input = mysqli_real_escape_string($db, $input);
+    $removecmd = "DELETE FROM samphire_facilities WHERE f_name = '$input'";
+    $run = mysqli_query($db, $removecmd);
+}elseif(isset($_POST['afacility'])){
+    $input = $_POST['rfacility'];
+    $input = stripcslashes($input);
+    $input = mysqli_real_escape_string($db, $input);
+    $cost = $_POST['cost'];
+    $addcmd = "INSERT INTO samphire_facilities (f_name, cost) VALUES ('$input', '$cost')";
+    $run = mysqli_query($db, $addcmd);
+}
 
+$facilities = array();
+$prices = array();
+$getall = "SELECT * FROM samphire_facilities";
+$get = mysqli_query($db, $getall);
+while($f = mysqli_fetch_array($get)){
+    $facilities[] = $f['f_name'];
+    $prices[] = $f['cost'];
 }
 
 ?>
@@ -66,7 +74,22 @@ if(isset($_POST['rfacilityarray'])){
     <section class="grid-70">
         <div id="system" class="grid-container" onload="open()">
             <div id="screen" class="grid-container">
+                <table id="bookingdetail">
+                    <caption>List of All Facilities on the system</caption>
+                    <tr>
+                        <th>Facility</th>
+                        <th>Price</th>
+                    </tr>
+                    <?php
+                    $s = 0;
+                    foreach ($facilities as $facility) {
+                        echo "<tr><td>".$facility ."</td>"."<td>".$prices[$s] ."</td>"."</tr>";
+                        $s++;
+                    }
 
+                    ?>
+                    <tr></tr>
+                </table>
             </div>
             <div id="upnava" class="grid-container">
                 <ul>

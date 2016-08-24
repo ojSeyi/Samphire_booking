@@ -96,8 +96,8 @@ if(isset($_POST['rfacility'])){
     $facid = "";
     $startdates = "";
     $enddates = "";
-    $priceee = "";
-    $ku = "";
+    $priceee = 0;
+    $ku = 0;
     $newt = $priceee + $ku;
     $reference = $_POST['reference'];
     $input = $_POST['afacility'];

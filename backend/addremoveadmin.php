@@ -76,21 +76,18 @@ if(isset($_POST['rfacilityarray'])){
             </div>
             <div id="search01" style="display: block">
                 <table>
-                    <form method="post" action="addremoveadmin.php">
+                    <form method="post" action="addremoveadmin.php.php">
                         <tr>
-                            <td><label>Select a facility: </label></td>
-                            <td><select name="facility" size="1" required>
-                                    <?php
-                                    $getfacilities = "SELECT * FROM samphire_facilities";
-                                    $result = mysqli_query($db, $getfacilities);
-                                    while ($row = mysqli_fetch_array($result))
-                                        echo "<option>". $row['f_name'] . "</option>";
-                                    ?>
-                                </select><br><br><br></td>
+                            <td><label>Enter new facility name: </label></td>
+                            <td><input type="text" name="facilityname" required><br></td>
+                        </tr>
+                        <tr>
+                            <td><label>Enter new facility price: </label></td>
+                            <td><input type="number" name="cost" required><br></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="submit" value="Delete"><br></td>
+                            <td><input type="submit" value="search"><br></td>
                         </tr>
                     </form>
                 </table>

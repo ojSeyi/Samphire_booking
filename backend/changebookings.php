@@ -4,7 +4,7 @@ include ('db_connection.php');
 if(is_null($_SESSION['admin'])){
     header('location: adminlogin.php');
 }
-$_SESSION['reference'] = $_POST['confirmation'];
+$sendref = "";
 $run = 0;
 $firstname = "";
 $lastname = "";
@@ -15,6 +15,7 @@ $bookedfacilities = array();
 $bookedfacilitiescost = array();
 if(isset($_POST['confirmation'])){
     $reference = $_POST['confirmation'];
+    $sendref = $_POST['confirmation'];
     $reference = stripcslashes($reference);
     $reference = mysqli_real_escape_string($db, $reference);
     $query = "SELECT * FROM customer_bookings WHERE reference = '$reference'";
@@ -43,7 +44,7 @@ if(isset($_POST['confirmation'])){
         }
 
     }
-
+$_SESSION['reference'] = $sendref;
 }elseif(isset($_SESSION['reference'])){
     $reference = $_SESSION['reference'];
     $reference = stripcslashes($reference);
@@ -79,7 +80,7 @@ if(isset($_POST['confirmation'])){
 $kilo = 0;
 $y = 0;
 if(isset($_POST['rfacility'])){
-    $reference = $_SESSION['reference'];
+    $reference = $_POST['reference'];
     $input = $_POST['rfacility'];
     $input = stripcslashes($input);
     $input = mysqli_real_escape_string($db, $input);
@@ -98,7 +99,7 @@ if(isset($_POST['rfacility'])){
     $priceee = "";
     $ku = "";
     $newt = $priceee + $ku;
-    $reference = $_SESSION['reference'];
+    $reference = $_POST['reference'];
     $input = $_POST['afacility'];
     $input = stripcslashes($input);
     $input = mysqli_real_escape_string($db, $input);
@@ -276,6 +277,7 @@ if(isset($_POST['rfacility'])){
                         </tr>
                         <tr>
                             <td><input type='hidden' name='iliya' value='iliya'></td>
+                            <input type='hidden' name='reference' value='$sendref'>
                             <td><input type='submit' name='removefacility2' value='Add'><br></td>
                         </tr>
                     </form>
@@ -292,6 +294,7 @@ if(isset($_POST['rfacility'])){
                         </tr>
                         <tr>
                             <td><input type='hidden' name='iliya' value='iliya'></td>
+                            <input type='hidden' name='reference' value='$sendref'>
                             <td><input type='submit' name='removefacility2' value='Remove'><br></td>
                         </tr>
                     </form>

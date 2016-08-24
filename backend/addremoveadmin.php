@@ -18,7 +18,7 @@ if(isset($_POST['rfacility'])){
     $input = mysqli_real_escape_string($db, $input);
     $cost = $_POST['cost'];
     $get = "SELECT * FROM samphire_facilities";
-    $geta = mysqli_query($db, $getall);
+    $geta = mysqli_query($db, $get);
     while($r = mysqli_fetch_array($geta)){
         $w = $r['f_name'];
         if($w == $input){

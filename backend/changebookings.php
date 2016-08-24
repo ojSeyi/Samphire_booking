@@ -84,11 +84,11 @@ if(isset($_POST['rfacility'])){
     $input = stripcslashes($input);
     $input = mysqli_real_escape_string($db, $input);
     $getfacid = "SELECT * FROM samphire_facilities WHERE f_name = $input";
-    $hitit = mysqli_query($db, $getfacid);
+    $hitit = mysqli_query($db, $getfacid) or die('lol');
     $arr = mysqli_fetch_array($hitit);
     $x = $arr['f_id'];
     $removecmd = "DELETE FROM samphire_bookings WHERE f_id = '$x' AND reference = $reference";
-    $run = mysqli_query($db, $removecmd);
+    $run = mysqli_query($db, $removecmd)or die('lol2');
     $y = 3;
 }elseif(isset($_POST['afacility'])){
     $cus = "";
@@ -104,12 +104,12 @@ if(isset($_POST['rfacility'])){
     $input = mysqli_real_escape_string($db, $input);
     $cost = $_POST['cost'];
     $getfacid = "SELECT * FROM samphire_facilities WHERE f_name = $input";
-    $hitit = mysqli_query($db, $getfacid);
+    $hitit = mysqli_query($db, $getfacid)or die('lol3');
     $arr = mysqli_fetch_array($hitit);
     $x = $arr['f_id'];
     $ku = $arr['cost'];
     $get = "SELECT * FROM samphire_bookings WHERE reference = $reference";
-    $geta = mysqli_query($db, $get);
+    $geta = mysqli_query($db, $get)or die('lol4');
     while($r = mysqli_fetch_array($geta)){
         $cus = $r['cust'];
         $startdate = $r['startdate'];
@@ -125,8 +125,9 @@ if(isset($_POST['rfacility'])){
         $y = 0;
     }else{
         $addcmd = "INSERT INTO samphire_bookings (reference, f_id, cust_id, startdate, endate, price) VALUES ('$reference', '$x', '$cus', '$startdate', $enddate, '$newt')";
-        $run = mysqli_query($db, $addcmd);
+        $run = mysqli_query($db, $addcmd)or die('lol5');
         $sqll = "UPDATE samphire_bookings SET price='$newt' WHERE reference= $reference";
+        $runsql = mysqli_query($db, $sqll) or die('lol6');
         $y = 7;
     }
 }

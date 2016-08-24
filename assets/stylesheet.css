@@ -406,6 +406,7 @@ header{
 
 footer{
     background-color: whitesmoke;
+    opacity: 0.5;
     height: 300px;
 }
 #base{
@@ -415,5 +416,5 @@ footer{
     text-align: center;
     font-family: 'Arvo', serif;
     color: white;
-    opacity: 0.8;
+    opacity: 0.5;
 }

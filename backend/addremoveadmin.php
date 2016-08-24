@@ -5,7 +5,7 @@ if(is_null($_SESSION['admin'])){
     header('location: adminlogin.php');
 }
 
-$k = 0;
+$y = 0;
 if(isset($_POST['rfacility'])){
     $input = $_POST['rfacility'];
     $input = stripcslashes($input);
@@ -17,8 +17,18 @@ if(isset($_POST['rfacility'])){
     $input = stripcslashes($input);
     $input = mysqli_real_escape_string($db, $input);
     $cost = $_POST['cost'];
-    $addcmd = "INSERT INTO samphire_facilities (f_name, cost) VALUES ('$input', '$cost')";
-    $run = mysqli_query($db, $addcmd);
+    $get = "SELECT * FROM samphire_facilities";
+    $geta = mysqli_query($db, $getall);
+    while($r = mysqli_fetch_array($geta)){
+        $w = $r['f_name'];
+        if($w != $input){
+            $addcmd = "INSERT INTO samphire_facilities (f_name, cost) VALUES ('$input', '$cost')";
+            $run = mysqli_query($db, $addcmd);
+            $y = 7;
+        }else{
+            $y = 0;
+        }
+    }
 }
 
 $facilities = array();
@@ -87,7 +97,9 @@ while($f = mysqli_fetch_array($get)){
                         echo "<tr><td>".$facility ."</td>"."<td>".$prices[$s] ."</td>"."</tr>";
                         $s++;
                     }
-
+                    if($y == 0){
+                        echo "<tr></tr><tr><h4>The facility you just tried to add is already on the system</h4></tr>";
+                    }
                     ?>
                     <tr></tr>
                 </table>

@@ -112,7 +112,7 @@ if(isset($_POST['rfacility'])){
     $get = "SELECT * FROM customer_bookings WHERE reference = '$reference'";
     $geta = mysqli_query($db, $get)or die('lol4');
     while($r = mysqli_fetch_array($geta)){
-        $cus = $r['cust'];
+        $cus = $r['cust_id'];
         $startdates = $r['startdate'];
         $enddates = $r['enddate'];
         $priceee = $r['price'];

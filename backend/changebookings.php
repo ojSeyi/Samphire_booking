@@ -93,8 +93,8 @@ if(isset($_POST['rfacility'])){
 }elseif(isset($_POST['afacility'])){
     $cus = "";
     $facid = "";
-    $startdate = "";
-    $enddate = "";
+    $startdates = "";
+    $enddates = "";
     $priceee = "";
     $ku = "";
     $newt = $priceee + $ku;
@@ -112,8 +112,8 @@ if(isset($_POST['rfacility'])){
     $geta = mysqli_query($db, $get)or die('lol4');
     while($r = mysqli_fetch_array($geta)){
         $cus = $r['cust'];
-        $startdate = $r['startdate'];
-        $enddate = $r['enddate'];
+        $startdates = $r['startdate'];
+        $enddates = $r['enddate'];
         $priceee = $r['price'];
         $w = $r['f_id'];
         if($w == $x){
@@ -124,7 +124,12 @@ if(isset($_POST['rfacility'])){
 
         $y = 0;
     }else{
-        $addcmd = "INSERT INTO customer_bookings (reference, f_id, cust_id, startdate, endate, price) VALUES ('$reference', '$x', '$cus', '$startdate', $enddate, '$newt')";
+        echo $reference;
+        echo $startdates;
+        echo $enddates;
+        echo $x;
+        echo $cus;
+        $addcmd = "INSERT INTO customer_bookings (reference, f_id, cust_id, startdate, endate, price) VALUES ('$reference', '$x', '$cus', '$startdates', $enddates, '$newt')";
         $run = mysqli_query($db, $addcmd)or die('lol5');
         $sqll = "UPDATE customer_bookings SET price='$newt' WHERE reference= $reference";
         $runsql = mysqli_query($db, $sqll) or die('lol6');

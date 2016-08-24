@@ -114,7 +114,7 @@ while($f = mysqli_fetch_array($get)){
                     <li><span class="fake-link" id="de">Remove Facility</span></li>
                 </ul>
             </div>
-            <div id="search01" style="display: block">
+            <div id="search01" style="display: none">
                 <table>
                     <form method="post" action="addremoveadmin.php">
                         <tr>

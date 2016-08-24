@@ -325,6 +325,20 @@ section label{
     padding-top: 15px;
 }
 
+#search01{
+    background-color: white;
+    border: 2px black solid;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+#search02{
+    background-color: white;
+    border: 2px black solid;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
 #bookingdetails td{
     padding: 20px;
     font-size: 15pt;
@@ -358,6 +372,34 @@ section label{
     background-color: aliceblue;
 }
 
+#search01 input[type=text]{
+    width: 300px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    border-radius: 7px;
+    font-size: 11pt;
+}
+
+#search01 input[type=text]:focus {
+    border: 3px solid lightskyblue;
+    background-color: aliceblue;
+}
+
+#search02 input[type=text]{
+    width: 300px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    border-radius: 7px;
+    font-size: 11pt;
+}
+
+#search02 input[type=text]:focus {
+    border: 3px solid lightskyblue;
+    background-color: aliceblue;
+}
+
 input[type=email]{
     width: 480px;
     padding: 12px 20px;
@@ -377,6 +419,24 @@ input[type=email]:focus {
 }
 
 #search input[type=submit]{
+    float: right;
+    width: 250px;
+}
+
+#search01 label{
+    text-align: center;
+}
+
+#search01 input[type=submit]{
+    float: right;
+    width: 250px;
+}
+
+#search02 label{
+    text-align: center;
+}
+
+#search02 input[type=submit]{
     float: right;
     width: 250px;
 }

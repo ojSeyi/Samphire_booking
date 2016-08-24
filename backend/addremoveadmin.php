@@ -5,6 +5,23 @@ if(is_null($_SESSION['admin'])){
     header('location: adminlogin.php');
 }
 
+$k = 0;
+if(isset($_POST['rfacilityarray'])){
+    $facilityarrays = $_SESSION['facilityarrayss'];
+    foreach ($facilityarrays as $showfacility) {
+        if ($showfacility = $_POST['rfacilityarray']){
+            $k = 1;
+        }else{}
+    }
+    if($k == 1){
+        $facilityarrays = array_diff($facilityarrays,[$_POST['rfacilityarray']]);
+        $facilityarrays = array_values($facilityarrays);
+        $_SESSION['facilityarrayss'] = $facilityarrays;
+        header('location: logbookstate2.php');
+    }
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -47,10 +64,61 @@ if(is_null($_SESSION['admin'])){
         </ul>
     </nav>
     <section class="grid-70">
-        <div id="system" class="grid-container">
+        <div id="system" class="grid-container" onload="open()">
             <div id="screen" class="grid-container">
 
             </div>
+            <nav class="grid-30">
+                <ul>
+                    <li><a href='#' id="ad">Add Facility</a></li>
+                    <li><a href='#' id="de">Remove Facility</a></li>
+                </ul>
+            </nav>
+            <div id="search01" style="display: none">
+                <table>
+                    <form method="post" action="addremoveadmin.php">
+                        <tr>
+                            <td><label>Select a facility: </label></td>
+                            <td><select name="facility" size="1" required>
+                                    <?php
+                                    $getfacilities = "SELECT * FROM samphire_facilities";
+                                    $result = mysqli_query($db, $getfacilities);
+                                    while ($row = mysqli_fetch_array($result))
+                                        echo "<option>". $row['f_name'] . "</option>";
+                                    ?>
+                                </select><br><br><br></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="Delete"><br></td>
+                        </tr>
+                    </form>
+                </table>
+            </div>
+            <div id="search02" style="display: none">
+                <table>
+                    <form method="post" action="addremoveadmin.php">
+                        <tr>
+                            <td><label>Select a facility: </label></td>
+                            <td><select name="facility" size="1" required>
+                                    <?php
+                                    $getfacilities = "SELECT * FROM samphire_facilities";
+                                    $result = mysqli_query($db, $getfacilities);
+                                    while ($row = mysqli_fetch_array($result))
+                                        echo "<option>". $row['f_name'] . "</option>";
+                                    ?>
+                                </select><br><br><br></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="Delete"><br></td>
+                        </tr>
+                    </form>
+                </table>
+            </div>
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+            <script type="text/javascript" src="JS/global.js"></script>
         </div>
     </section>
 </main>

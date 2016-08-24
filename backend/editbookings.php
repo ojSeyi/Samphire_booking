@@ -10,6 +10,8 @@ $firstnamee = array();
 $lastname = array();
 $startdate = "";
 $enddate = "";
+$startdates = array();
+$enddates = array();
 $custid = "";
 $confirmation = array();
 $bookedfacilities = array();
@@ -94,6 +96,8 @@ foreach($datesinrange as $date) {
         while ($o = mysqli_fetch_array($run)) {
             $custid = $o['cust_id'];
             $confirmation[] = $o['reference'];
+            $startdates[] = $o['startdate'];
+            $enddates[] = $o['enddate'];
             $bookedfacilitiescost[] = $o['price'];
             $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
             $run2 = mysqli_query($db, $query2);
@@ -170,10 +174,10 @@ foreach($datesinrange as $date) {
                 echo "
                     <div id='customers' class='grid-container'><br><table class='grid-container' id='bookingdetail'>
                     <caption>Here's a list bookings from date:  <h2>". $startdate ."</h2> - <h2>".$enddate."</h3></caption>
-                    <tr><th>first name</th><th>Last name</th><th>Reference No</th><th>Facility</th><th>Booking Total</th><th>End date</th></tr>";
+                    <tr><th>first name</th><th>Last name</th><th>Reference No</th><th>Facility</th><th>Booking Total</th><th>Start date</th><th>End date</th></tr>";
                 $i = 0;
                 foreach($firstnamee as $firstname){
-                    echo "<tr>"."<td>". $firstname ."<td>". $lastname[$i] ."<td>". $confirmation[$i] ."<td>". $bookedfacilities[$i] ."<td>". $bookedfacilitiescost[$i] ."<td>". $enddate."<tr>";
+                    echo "<tr>"."<td>". $firstname ."<td>". $lastname[$i] ."<td>". $confirmation[$i] ."<td>". $bookedfacilities[$i] ."<td>". $bookedfacilitiescost[$i] ."<td>". $startdates[$i]."<tr>"."<td>". $enddates[$i]."<tr>";
                     $i++;
                 }
                 echo "</table></div>";

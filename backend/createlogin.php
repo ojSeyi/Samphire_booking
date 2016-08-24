@@ -51,14 +51,10 @@ if(is_null($_SESSION['admin'])){
     </section>
 </main>
 
-
+<footer>
+    <div id="base"><p>&#169; Oluwaseyi Jason Nojimu-Yusuf, 2016</p></div>
+</footer>
 
 
 </body>
-</html><?php
-/**
- * Created by PhpStorm.
- * User: OJ Pumping
- * Date: 21/08/2016
- * Time: 02:10
- */
+</html>

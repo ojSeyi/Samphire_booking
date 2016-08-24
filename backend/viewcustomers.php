@@ -297,7 +297,9 @@ if(isset($_POST['username'])){
         </div>
     </section>
 </main>
-
+<footer>
+    <div id="base"><p>&#169; Oluwaseyi Jason Nojimu-Yusuf, 2016</p></div>
+</footer>
 
 
 

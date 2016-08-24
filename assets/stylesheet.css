@@ -397,3 +397,8 @@ nav>ul>li>a:hover{
     padding: 10px;
     font-size: 12pt;
 }
+
+footer{
+    background-color: white;
+    height: 100%;
+}

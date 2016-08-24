@@ -13,7 +13,7 @@ if(isset($_POST['rfacility'])){
     $removecmd = "DELETE FROM samphire_facilities WHERE f_name = '$input'";
     $run = mysqli_query($db, $removecmd);
 }elseif(isset($_POST['afacility'])){
-    $input = $_POST['rfacility'];
+    $input = $_POST['afacility'];
     $input = stripcslashes($input);
     $input = mysqli_real_escape_string($db, $input);
     $cost = $_POST['cost'];

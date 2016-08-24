@@ -87,7 +87,7 @@ if(isset($_POST['rfacilityarray'])){
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="submit" value="search"><br></td>
+                            <td><input type="submit" value="Add"><br></td>
                         </tr>
                     </form>
                 </table>
@@ -108,7 +108,7 @@ if(isset($_POST['rfacilityarray'])){
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="submit" value="Delete"><br></td>
+                            <td><input type="submit" value="Remove"><br></td>
                         </tr>
                     </form>
                 </table>

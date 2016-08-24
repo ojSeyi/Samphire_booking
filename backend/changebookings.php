@@ -85,6 +85,7 @@ if(isset($_POST['confirmation'])){
             <li><a href='cancelbookings.php'>Cancel Bookings</a></li>
             <li><a href='refreshsystem.php'>Refresh System</a></li>
             <li><a href='viewcustomers.php'>View Customers</a></li>
+            <li><a href='addremoveadmin.php'>View Customers</a></li>
         </ul>
     </nav>
     <section id="play" class="grid-70">

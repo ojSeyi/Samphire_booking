@@ -174,7 +174,7 @@ if(isset($_POST['confirmation'])){
             echo
             "<div id='customers' class='grid-container'>
                 <table>
-                    <form method='post' action='modifybookings.php'>
+                    <form method='post' action='changebookings.php'>
                         <tr>
                             <td><label>Select a facility to add: </label></td>
                             <td><select name='facility' size='1' required>";
@@ -188,6 +188,21 @@ if(isset($_POST['confirmation'])){
                         <tr>
                             <td><input type='hidden' name='iliya' value='iliya'></td>
                             <td><input type='submit' name='removefacility2' value='Add'><br></td>
+                        </tr>
+                    </form>
+                    <form method='post' action='changebookings.php'>
+                        <tr>
+                            <td><label>Select a facility to remove: </label></td>
+                            <td><select name='rfacility' size='1' required>";
+            foreach ($bookedfacilities as $showfacility) {
+                echo "<option>" . $showfacility . "</option>";
+            }
+            echo
+            "</select></td>
+                        </tr>
+                        <tr>
+                            <td><input type='hidden' name='iliya' value='iliya'></td>
+                            <td><input type='submit' name='removefacility3' value='Remove'><br></td>
                         </tr>
                     </form>
                 </table>

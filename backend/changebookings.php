@@ -256,7 +256,7 @@ if(isset($_POST['rfacility'])){
                     <form method='post' action='changebookings.php'>
                         <tr>
                             <td><label>Select a facility to add: </label></td>
-                            <td><select name='facility' size='1' required>";
+                            <td><select name='afacility' size='1' required>";
             $getfacilities = "SELECT * FROM samphire_facilities";
             $result = mysqli_query($db, $getfacilities);
             while ($row = mysqli_fetch_array($result))
@@ -282,7 +282,7 @@ if(isset($_POST['rfacility'])){
                         </tr>
                         <tr>
                             <td><input type='hidden' name='iliya' value='iliya'></td>
-                            <td><input type='submit' name='removefacility3' value='Remove'><br></td>
+                            <td><input type='submit' name='removefacility2' value='Remove'><br></td>
                         </tr>
                     </form>
                 </table>

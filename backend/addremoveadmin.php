@@ -68,12 +68,12 @@ if(isset($_POST['rfacilityarray'])){
             <div id="screen" class="grid-container">
 
             </div>
-            <nav class="grid-30">
+            <div id="upnava" class="grid-container">
                 <ul>
                     <li><a href='#' id="ad">Add Facility</a></li>
                     <li><a href='#' id="de">Remove Facility</a></li>
                 </ul>
-            </nav>
+            </div>
             <div id="search01" style="display: none">
                 <table>
                     <form method="post" action="addremoveadmin.php">

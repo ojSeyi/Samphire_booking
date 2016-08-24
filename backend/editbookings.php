@@ -109,6 +109,8 @@ foreach($datesinrange as $date) {
                     foreach ($bookedfacilities as $bf) {
                         if ($bf == $fb) {
                             $kilo = 1;
+                        }else{
+
                         }
                     }
                 }else{

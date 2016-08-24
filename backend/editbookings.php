@@ -54,15 +54,46 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
     }
 
 }elseif(isset($_POST['startdate']) && isset($_POST['enddate'])){
-    $query = "SELECT * FROM customer_bookings WHERE startdate = '$startdate' AND enddate = '$enddate'";
+
+    function createDateRangeArray($strDateFrom,$strDateTo)
+    {
+        // takes two dates formatted as YYYY-MM-DD and creates an
+        // inclusive array of the dates between the from and to dates.
+
+        // could test validity of dates here but I'm already doing
+        // that in the main script
+
+        $aryRange=array();
+
+        $iDateFrom=mktime(1,0,0,substr($strDateFrom,5,2),     substr($strDateFrom,8,2),substr($strDateFrom,0,4));
+        $iDateTo=mktime(1,0,0,substr($strDateTo,5,2),     substr($strDateTo,8,2),substr($strDateTo,0,4));
+
+        if ($iDateTo>=$iDateFrom)
+        {
+            array_push($aryRange,date('Y-m-d',$iDateFrom)); // first entry
+            while ($iDateFrom<$iDateTo)
+            {
+                $iDateFrom+=86400; // add 24 hours
+                array_push($aryRange,date('Y-m-d',$iDateFrom));
+            }
+        }
+        return $aryRange;
+    }
+
+    $datesinrange = createDateRangeArray($startdate, $enddate);
+
+
+foreach($datesinrange as $date) {
+
+    $query = "SELECT * FROM customer_bookings WHERE (startdate <= '$date' AND enddate >= '$date')";
     $run = mysqli_query($db, $query) or die('lol');
-    if(mysqli_num_rows($run) < 1){
+    if (mysqli_num_rows($run) < 1) {
         $msg = 'No result';
-    }else{
+    } else {
         $k = 1;
-        while($o = mysqli_fetch_array($run)){
+        while ($o = mysqli_fetch_array($run)) {
             $custid = $o['cust_id'];
-            $confirmation[] =$o['reference'];
+            $confirmation[] = $o['reference'];
             $bookedfacilitiescost[] = $o['price'];
             $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
             $run2 = mysqli_query($db, $query2);
@@ -78,6 +109,7 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
         $_SESSION['bookedfacilities'] = $bookedfacilities;
         $_SESSION['bookedfacilitiescost'] = $bookedfacilitiescost;
     }
+}
 
 }
 

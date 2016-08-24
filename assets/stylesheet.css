@@ -404,8 +404,12 @@ header{
 
 footer{
     background-color: whitesmoke;
-    height: 100%;
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    width: 100%;
 }
 #base{
+    background-color: black;
     text-align: center;
-}
+}p

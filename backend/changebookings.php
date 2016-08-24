@@ -83,7 +83,11 @@ if(isset($_POST['rfacility'])){
     $input = $_POST['rfacility'];
     $input = stripcslashes($input);
     $input = mysqli_real_escape_string($db, $input);
-    $removecmd = "DELETE FROM samphire_bookings WHERE f_name = '$input' AND reference = $reference";
+    $getfacid = "SELECT * FROM samphire_facilities WHERE f_name = $input";
+    $hitit = mysqli_query($db, $getfacid);
+    $arr = mysqli_fetch_array($hitit);
+    $x = $arr['f_id'];
+    $removecmd = "DELETE FROM samphire_bookings WHERE f_id = '$x' AND reference = $reference";
     $run = mysqli_query($db, $removecmd);
     $y = 3;
 }elseif(isset($_POST['afacility'])){

@@ -2,6 +2,8 @@ body{
     margin-left: auto;
     margin-right: auto;
     background-color: darkslategray;
+    font-family: 'Arvo', serif;
+    font-size: 13pt;
 }
 
 #system{
@@ -399,14 +401,16 @@ nav>ul>li>a:hover{
 }
 
 header{
-    border: solid whitesmoke 2px;
+    border: solid whitesmoke 3px;
 }
 
 footer{
     background-color: whitesmoke;
-
+    height: 400px;
 }
 #base{
     background-color: black;
     text-align: center;
-}p
+    font-family: 'Arvo', serif;
+    color: white;
+}

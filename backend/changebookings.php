@@ -129,7 +129,7 @@ if(isset($_POST['rfacility'])){
         echo $enddates;
         echo $x;
         echo $cus;
-        echo $price;
+        echo $priceee;
         echo $ku;
         $newt = $priceee + $ku;
         echo $newt;

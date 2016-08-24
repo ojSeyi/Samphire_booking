@@ -55,7 +55,7 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
 
 }elseif(isset($_POST['startdate']) && isset($_POST['enddate'])){
     $query = "SELECT * FROM customer_bookings WHERE startdate = '$startdate' AND enddate = '$enddate'";
-    $run = mysqli_query($db, $query);
+    $run = mysqli_query($db, $query) or die('lol');
     if(mysqli_num_rows($run) < 1){
         $msg = 'No result';
     }else{

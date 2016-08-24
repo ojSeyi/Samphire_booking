@@ -95,20 +95,34 @@ foreach($datesinrange as $date) {
         $k = 1;
         while ($o = mysqli_fetch_array($run)) {
             $custid = $o['cust_id'];
-            $confirmation[] = $o['reference'];
-            $startdates[] = $o['startdate'];
-            $enddates[] = $o['enddate'];
-            $bookedfacilitiescost[] = $o['price'];
             $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
             $run2 = mysqli_query($db, $query2);
             $fetch = mysqli_fetch_array($run2);
-            $firstnamee[] = $fetch['firstname'];
-            $lastname[] = $fetch['lastname'];
             $fid = $o['f_id'];
             $query3 = "SELECT * FROM samphire_facilities WHERE f_id = '$fid'";
             $run3 = mysqli_query($db, $query3);
             $fetch2 = mysqli_fetch_array($run3);
-            $bookedfacilities[] = $fetch2['f_name'];
+            $fb = $fetch2['f_name'];
+            $kilo = 0;
+            foreach($confirmation as $chi){
+                foreach($bookedfacilities as $bf){
+                    if($bf == $fb){
+                        $kilo = 1;
+                    }
+                }
+            }
+            if($kilo == 1){
+
+                $y = 0;
+            }else{
+                $bookedfacilities[] = $fetch2['f_name'];
+                $firstnamee[] = $fetch['firstname'];
+                $lastname[] = $fetch['lastname'];
+                $confirmation[] = $o['reference'];
+                $startdates[] = $o['startdate'];
+                $enddates[] = $o['enddate'];
+                $bookedfacilitiescost[] = $o['price'];
+            }
         }
         $_SESSION['bookedfacilities'] = $bookedfacilities;
         $_SESSION['bookedfacilitiescost'] = $bookedfacilitiescost;

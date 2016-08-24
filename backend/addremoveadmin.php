@@ -79,7 +79,7 @@ if(isset($_POST['rfacilityarray'])){
                     <form method="post" action="addremoveadmin.php">
                         <tr>
                             <td><label>Enter new facility name: </label></td>
-                            <td><input type="text" name="facilityname" required><br></td>
+                            <td><input type="text" name="afacility" required><br></td>
                         </tr>
                         <tr>
                             <td><label>Enter new facility price: </label></td>
@@ -97,7 +97,7 @@ if(isset($_POST['rfacilityarray'])){
                     <form method="post" action="addremoveadmin.php">
                         <tr>
                             <td><label>Select a facility: </label></td>
-                            <td><select name="facility" size="1" required>
+                            <td><select name="rfacility" size="1" required>
                                     <?php
                                     $getfacilities = "SELECT * FROM samphire_facilities";
                                     $result = mysqli_query($db, $getfacilities);

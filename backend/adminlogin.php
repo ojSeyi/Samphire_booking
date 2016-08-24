@@ -98,7 +98,6 @@ if(isset($_POST['bigusername'])){
         </form>
     </div>
     </section>
-    <br>
     <footer>
         <div id="base"><p>&#169; Oluwaseyi Jason Nojimu-Yusuf, 2016</p></div>
     </footer>

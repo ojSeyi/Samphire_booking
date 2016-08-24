@@ -72,9 +72,9 @@ while($f = mysqli_fetch_array($get)){
         </ul>
     </nav>
     <section class="grid-70">
-        <div id="system" class="grid-container" onload="open()">
+        <div id="system" class="grid-container">
             <div id="screen" class="grid-container">
-                <table id="bookingdetail">
+                <table id="bookingdetail" class="grid-container">
                     <caption>List of All Facilities on the system</caption>
                     <tr>
                         <th>Facility</th>

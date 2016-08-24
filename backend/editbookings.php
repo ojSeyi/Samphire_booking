@@ -84,27 +84,36 @@ if(isset($_POST['startdate']) && is_null($_POST['enddate'])){
 
     $datesinrange = createDateRangeArray($startdate, $enddate);
 
-
+    $unavailabledates = array();
 foreach($datesinrange as $date) {
+    $availablerange = "SELECT * FROM customer_bookings WHERE f_id = '$rows' AND (startdate <= '$date' AND enddate >= '$date')";
+    $results = mysqli_query($db, $availablerange) or die("failed");
+    if(mysqli_num_rows($results) > 0) {
+        $unavailabledates[] = $date;
+        $k++;
+    }else{
 
-    $query = "SELECT * FROM customer_bookings WHERE (startdate <= '$date' AND enddate >= '$date')";
-    $run = mysqli_query($db, $query) or die('lol');
-    if (mysqli_num_rows($run) < 1) {
-        $msg = 'No result';
-    } else {
-        $k = 1;
-        while ($o = mysqli_fetch_array($run)) {
-            $custid = $o['cust_id'];
-            $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
-            $run2 = mysqli_query($db, $query2);
-            $fetch = mysqli_fetch_array($run2);
-            $fid = $o['f_id'];
-            $query3 = "SELECT * FROM samphire_facilities WHERE f_id = '$fid'";
-            $run3 = mysqli_query($db, $query3);
-            $fetch2 = mysqli_fetch_array($run3);
-            $fb = $fetch2['f_name'];
-            $kilo = 0;
-            $galo = 0;
+    }
+}
+    foreach($unavailabledates as $date){
+        $query = "SELECT * FROM customer_bookings WHERE startdate = '$date'";
+        $run = mysqli_query($db, $query) or die('lol');
+        if (mysqli_num_rows($run) < 1) {
+            $msg = 'No result';
+        } else {
+            $k = 1;
+            while ($o = mysqli_fetch_array($run)) {
+                $custid = $o['cust_id'];
+                $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
+                $run2 = mysqli_query($db, $query2);
+                $fetch = mysqli_fetch_array($run2);
+                $fid = $o['f_id'];
+                $query3 = "SELECT * FROM samphire_facilities WHERE f_id = '$fid'";
+                $run3 = mysqli_query($db, $query3);
+                $fetch2 = mysqli_fetch_array($run3);
+                $fb = $fetch2['f_name'];
+                $kilo = 0;
+                $galo = 0;
 
                 $bookedfacilities[] = $fetch2['f_name'];
                 $firstnamee[] = $fetch['firstname'];
@@ -114,12 +123,11 @@ foreach($datesinrange as $date) {
                 $enddates[] = $o['enddate'];
                 $bookedfacilitiescost[] = $o['price'];
 
+            }
+            $_SESSION['bookedfacilities'] = $bookedfacilities;
+            $_SESSION['bookedfacilitiescost'] = $bookedfacilitiescost;
         }
-        $_SESSION['bookedfacilities'] = $bookedfacilities;
-        $_SESSION['bookedfacilitiescost'] = $bookedfacilitiescost;
     }
-}
-
 }
 
 

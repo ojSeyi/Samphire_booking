@@ -406,9 +406,11 @@ header{
 
 footer{
     background-color: whitesmoke;
-    height: 400px;
+    height: 300px;
 }
 #base{
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: black;
     text-align: center;
     font-family: 'Arvo', serif;

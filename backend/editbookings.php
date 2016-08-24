@@ -109,13 +109,7 @@ foreach($datesinrange as $date) {
                 if($chi == $o['reference']){
                     $galo = 1;
                 }else{
-                    $bookedfacilities[] = $fetch2['f_name'];
-                    $firstnamee[] = $fetch['firstname'];
-                    $lastname[] = $fetch['lastname'];
-                    $confirmation[] = $o['reference'];
-                    $startdates[] = $o['startdate'];
-                    $enddates[] = $o['enddate'];
-                    $bookedfacilitiescost[] = $o['price'];
+
                 }
             }
             if($galo != 1){
@@ -124,6 +118,14 @@ foreach($datesinrange as $date) {
                         $kilo = 1;
                     }
                 }
+            }else{
+                $bookedfacilities[] = $fetch2['f_name'];
+                $firstnamee[] = $fetch['firstname'];
+                $lastname[] = $fetch['lastname'];
+                $confirmation[] = $o['reference'];
+                $startdates[] = $o['startdate'];
+                $enddates[] = $o['enddate'];
+                $bookedfacilitiescost[] = $o['price'];
             }
             if($kilo == 1){
 

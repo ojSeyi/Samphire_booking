@@ -106,12 +106,19 @@ foreach($datesinrange as $date) {
             $kilo = 0;
             foreach($confirmation as $chi){
                 if($chi == $o['reference']) {
-
                     foreach ($bookedfacilities as $bf) {
                         if ($bf == $fb) {
                             $kilo = 1;
                         }
                     }
+                }else{
+                    $bookedfacilities[] = $fetch2['f_name'];
+                    $firstnamee[] = $fetch['firstname'];
+                    $lastname[] = $fetch['lastname'];
+                    $confirmation[] = $o['reference'];
+                    $startdates[] = $o['startdate'];
+                    $enddates[] = $o['enddate'];
+                    $bookedfacilitiescost[] = $o['price'];
                 }
             }
             if($kilo == 1){

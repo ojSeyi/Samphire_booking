@@ -75,7 +75,7 @@ while($f = mysqli_fetch_array($get)){
     <section class="grid-70">
         <div id="system" class="grid-container">
             <div id="screen" class="grid-container">
-                <table id="bookingdetai" class="grid-container">
+                <table id="bookingdetails" class="grid-container">
                     <caption>List of All Facilities on the system</caption>
                     <tr>
                         <th>Facility</th>

@@ -104,15 +104,10 @@ foreach($datesinrange as $date) {
             $fetch2 = mysqli_fetch_array($run3);
             $fb = $fetch2['f_name'];
             $kilo = 0;
+            $galo = 0;
             foreach($confirmation as $chi){
-                if($chi == $o['reference']) {
-                    foreach ($bookedfacilities as $bf) {
-                        if ($bf == $fb) {
-                            $kilo = 1;
-                        }else{
-
-                        }
-                    }
+                if($chi == $o['reference']){
+                    $galo = 1;
                 }else{
                     $bookedfacilities[] = $fetch2['f_name'];
                     $firstnamee[] = $fetch['firstname'];
@@ -121,6 +116,13 @@ foreach($datesinrange as $date) {
                     $startdates[] = $o['startdate'];
                     $enddates[] = $o['enddate'];
                     $bookedfacilitiescost[] = $o['price'];
+                }
+            }
+            if($galo != 1){
+                foreach($bookedfacilities as $bf){
+                    if($bf == $fb){
+                        $kilo = 1;
+                    }
                 }
             }
             if($kilo == 1){

@@ -106,6 +106,7 @@ if(isset($_POST['rfacility'])){
     $ku = $arr['cost'];
     $get = "SELECT * FROM samphire_bookings WHERE reference = $reference";
     $geta = mysqli_query($db, $get);
+    $kilo = "";
     while($r = mysqli_fetch_array($geta)){
         $cus = $r['cust'];
         $startdate = $r['startdate'];
@@ -113,10 +114,10 @@ if(isset($_POST['rfacility'])){
         $priceee = $r['price'];
         $w = $r['f_id'];
         if($w == $x){
-            $k = 1;
+            $kilo = 1;
         }
     }
-    if($k == 1){
+    if($kilo == 1){
 
         $y = 0;
     }else{

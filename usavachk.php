@@ -176,6 +176,8 @@ if(is_null($_SESSION['firstname']) && is_null($_SESSION['startdates'])){
         </div>
 </main>
 </div>
-
+<footer>
+    <div id="base"><p>&#169; Oluwaseyi Jason Nojimu-Yusuf, 2016</p></div>
+</footer>
 </body>
 </html>

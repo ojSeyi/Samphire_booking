@@ -79,6 +79,8 @@ if(is_null($_POST['startdate']) && ($_SESSION['facility'])){
         </div>
     </main>
 </div>
-
+<footer>
+    <div id="base"><p>&#169; Oluwaseyi Jason Nojimu-Yusuf, 2016</p></div>
+</footer>
 </body>
 </html>

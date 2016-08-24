@@ -114,13 +114,8 @@ if(is_null($_SESSION['facili']) && is_null($_SESSION['start'])){
 
 </main>
 </div>
-<nav id="outnav">
-    <ul>
-        <li><a href='index.php'>Create Booking</a></li>
-        <li><a href='showbugs.php?bugcategory=android'>Manage Booking</a></li>
-        <li><a href='showbugs.php?bugcategory=ios'>Contact Us</a></li>
-        <li><a href='showbugs.php?bugcategory=windows'>Register</a></li>
-    </ul>
-</nav>
+<footer>
+    <div id="base"><p>&#169; Oluwaseyi Jason Nojimu-Yusuf, 2016</p></div>
+</footer>
 </body>
 </html>

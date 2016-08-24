@@ -1,5 +1,5 @@
-$('#startdate').datepicker({dateformt: 'dd/mm/yy', minDate: 0 });
-$('#enddate').datepicker({dateformt: 'dd/mm/yy', minDate: 0 });
+$('#startdate').datepicker({dateformt: 'dd/mm/yy', minDate: 0 }).val('');
+$('#enddate').datepicker({dateformt: 'dd/mm/yy', minDate: 0,  }).val('');
 
 
     var add = document.getElementById('ad');

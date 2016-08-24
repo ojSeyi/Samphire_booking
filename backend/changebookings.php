@@ -124,11 +124,6 @@ if(isset($_POST['rfacility'])){
 
         $y = 0;
     }else{
-        echo $reference;
-        echo $startdates;
-        echo $enddates;
-        echo $x;
-        echo $cus;
         echo $priceee;
         echo $ku;
         $newt = $priceee + $ku;

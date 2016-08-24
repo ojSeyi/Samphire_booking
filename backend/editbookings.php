@@ -105,9 +105,12 @@ foreach($datesinrange as $date) {
             $fb = $fetch2['f_name'];
             $kilo = 0;
             foreach($confirmation as $chi){
-                foreach($bookedfacilities as $bf){
-                    if($bf == $fb){
-                        $kilo = 1;
+                if($chi == $o['reference']) {
+
+                    foreach ($bookedfacilities as $bf) {
+                        if ($bf == $fb) {
+                            $kilo = 1;
+                        }
                     }
                 }
             }

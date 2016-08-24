@@ -98,7 +98,6 @@ if(isset($_POST['rfacility'])){
     $enddates = "";
     $priceee = 0;
     $ku = 0;
-    $newt = $priceee + $ku;
     $reference = $_POST['reference'];
     $input = $_POST['afacility'];
     $input = stripcslashes($input);
@@ -130,6 +129,8 @@ if(isset($_POST['rfacility'])){
         echo $enddates;
         echo $x;
         echo $cus;
+        $newt = $priceee + $ku;
+        echo $newt;
         $addcmd = "INSERT INTO customer_bookings (reference, f_id, cust_id, startdate, endate, price) VALUES ('$reference', '$x', '$cus', '$startdates', $enddates, '$newt')";
         $run = mysqli_query($db, $addcmd)or die('lol5');
         $sqll = "UPDATE customer_bookings SET price='$newt' WHERE reference= $reference";

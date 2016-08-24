@@ -129,9 +129,11 @@ if(isset($_POST['rfacility'])){
         echo $enddates;
         echo $x;
         echo $cus;
+        echo $price;
+        echo $ku;
         $newt = $priceee + $ku;
         echo $newt;
-        $addcmd = "INSERT INTO customer_bookings (reference, f_id, cust_id, startdate, enddate, price) VALUES ('$reference', '$x', '$cus', '$startdates', '$enddates', '$priceee')";
+        $addcmd = "INSERT INTO customer_bookings (referenc, f_id, cust_id, startdate, enddate, price) VALUES ('$reference', '$x', '$cus', '$startdates', '$enddates', '$priceee')";
         $run = mysqli_query($db, $addcmd)or die('lol5');
         $sqll = "UPDATE customer_bookings SET price='$newt' WHERE reference= '$reference'";
         $runsql = mysqli_query($db, $sqll) or die('lol6');

@@ -79,8 +79,8 @@ if(isset($_SESSION['login'])){
 
 </main>
 </div>
-<footer class="grid-container">
-    <div class="grid-container"><p>&#169; Oluwaseyi Jason Nojimu-Yusuf, 2016</p></div>
+<footer>
+    <div id="base" class="grid-container"><p>&#169; Oluwaseyi Jason Nojimu-Yusuf, 2016</p></div>
 </footer>
 </body>
 </html>

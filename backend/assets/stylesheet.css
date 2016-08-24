@@ -475,6 +475,7 @@ input[type=email]:focus {
 #screen {
     max-height: 700px;
     overflow-y: auto;
+    overflow-x: auto;
 }
 
 #system{

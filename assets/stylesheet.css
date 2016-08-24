@@ -382,7 +382,6 @@ nav>ul>li>a:hover{
 #screens {
     max-height: 700px;
     overflow-y: auto;
-    overflow-x: auto;
 }
 
 #bookingdetail{

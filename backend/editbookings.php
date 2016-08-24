@@ -244,7 +244,7 @@ foreach($datesinrange as $date) {
                         </tr>
                         </form>
                         <tr>
-
+                        <tr></tr>
                         </tr>
                     <form method='post' action='editor2.php'>
                         <tr>

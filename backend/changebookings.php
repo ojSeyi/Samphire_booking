@@ -108,7 +108,7 @@ if(isset($_POST['rfacility'])){
     $arr = mysqli_fetch_array($hitit);
     $x = $arr['f_id'];
     $ku = $arr['cost'];
-    $get = "SELECT * FROM samphire_bookings WHERE reference = $reference";
+    $get = "SELECT * FROM samphire_bookings WHERE reference = '$reference'";
     $geta = mysqli_query($db, $get)or die('lol4');
     while($r = mysqli_fetch_array($geta)){
         $cus = $r['cust'];

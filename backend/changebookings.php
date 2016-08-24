@@ -44,8 +44,87 @@ if(isset($_POST['confirmation'])){
 
     }
 
-}else{
+}elseif(isset($_SESSION['reference'])){
+    $reference = $_SESSION['reference'];
+    $reference = stripcslashes($reference);
+    $reference = mysqli_real_escape_string($db, $reference);
+    $query = "SELECT * FROM customer_bookings WHERE reference = '$reference'";
+    $run = mysqli_query($db, $query);
+    if(mysqli_num_rows($run) < 1){
+        $msg = 'No result';
+    }else{
+        $k = 1;
+        while($o = mysqli_fetch_array($run)){
+            $custid = $o['cust_id'];
+            $query2 = "SELECT * FROM customers WHERE cust_id = '$custid'";
+            $run2 = mysqli_query($db, $query2);
+            $fetch = mysqli_fetch_array($run2);
+            $firstname = $fetch['firstname'];
+            $lastname = $fetch['lastname'];
+            $startdate = $o['startdate'];
+            $enddate = $o['enddate'];
+            $price = $o['price'];
 
+            $fid =$o['f_id'];
+            $query3 = "SELECT * FROM samphire_facilities WHERE f_id = '$fid'";
+            $run3 = mysqli_query($db, $query3);
+            $fetch2 = mysqli_fetch_array($run3);
+            $bookedfacilities[] = $fetch2['f_name'];
+            $bookedfacilitiescost[] = $fetch2['cost'];
+        }
+
+    }
+}
+
+$k = 0;
+$y = 0;
+if(isset($_POST['rfacility'])){
+    $reference = $_SESSION['reference'];
+    $input = $_POST['rfacility'];
+    $input = stripcslashes($input);
+    $input = mysqli_real_escape_string($db, $input);
+    $removecmd = "DELETE FROM samphire_bookings WHERE f_name = '$input' AND reference = $reference";
+    $run = mysqli_query($db, $removecmd);
+    $y = 3;
+}elseif(isset($_POST['afacility'])){
+    $cus = "";
+    $facid = "";
+    $startdate = "";
+    $enddate = "";
+    $priceee = "";
+    $ku = "";
+    $newt = $priceee + $ku;
+    $reference = $_SESSION['reference'];
+    $input = $_POST['afacility'];
+    $input = stripcslashes($input);
+    $input = mysqli_real_escape_string($db, $input);
+    $cost = $_POST['cost'];
+    $getfacid = "SELECT * FROM samphire_facilities WHERE f_name = $input";
+    $hitit = mysqli_query($db, $getfacid);
+    $arr = mysqli_fetch_array($hitit);
+    $x = $arr['f_id'];
+    $ku = $arr['cost'];
+    $get = "SELECT * FROM samphire_bookings WHERE reference = $reference";
+    $geta = mysqli_query($db, $get);
+    while($r = mysqli_fetch_array($geta)){
+        $cus = $r['cust'];
+        $startdate = $r['startdate'];
+        $enddate = $r['enddate'];
+        $priceee = $r['price'];
+        $w = $r['f_id'];
+        if($w == $x){
+            $k = 1;
+        }
+    }
+    if($k == 1){
+
+        $y = 0;
+    }else{
+        $addcmd = "INSERT INTO samphire_bookings (reference, f_id, cust_id, startdate, endate, price) VALUES ('$reference', '$x', '$cus', '$startdate', $enddate, '$newt')";
+        $run = mysqli_query($db, $addcmd);
+        $sqll = "UPDATE samphire_bookings SET price='$newt' WHERE reference= $reference";
+        $y = 7;
+    }
 }
 
 
@@ -190,6 +269,7 @@ if(isset($_POST['confirmation'])){
                             <td><input type='submit' name='removefacility2' value='Add'><br></td>
                         </tr>
                     </form>
+                    <br>
                     <form method='post' action='changebookings.php'>
                         <tr>
                             <td><label>Select a facility to remove: </label></td>

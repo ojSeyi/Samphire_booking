@@ -21,18 +21,17 @@ if(isset($_POST['rfacility'])){
     $geta = mysqli_query($db, $getall);
     while($r = mysqli_fetch_array($geta)){
         $w = $r['f_name'];
-        if($w != $input){
-            $k = 0;
-        }else{
-            $k++;
+        if($w == $input){
+            $k = 1;
         }
     }
-    if($k == 0){
+    if($k == 1){
+
+        $y = 0;
+    }else{
         $addcmd = "INSERT INTO samphire_facilities (f_name, cost) VALUES ('$input', '$cost')";
         $run = mysqli_query($db, $addcmd);
         $y = 7;
-    }else{
-        $y = 0;
     }
 }
 

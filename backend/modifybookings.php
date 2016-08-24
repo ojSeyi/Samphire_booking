@@ -135,9 +135,58 @@ if(isset($_POST['facility'])){
                 </table>
             </div>
             <br>
-            <div id='customers' class='grid-container'>
 
-            </div>
+            <br>
+            <?php if($k == 1) {
+                echo
+                "<div id='customers' class='grid-container'>
+                <table>
+                    <form method='post' action='editor3.php'>
+                        <tr>
+                            <td><label>Select a facility to REMOVE: </label></td>
+                            <td><select name='rfacility' size='1' required>";
+                $getfacilities = "SELECT * FROM samphire_facilities";
+                $result = mysqli_query($db, $getfacilities);
+                while ($row = mysqli_fetch_array($result))
+                    echo "<option>" . $row['f_name'] . "</option>";
+                echo
+                "</select></td>
+                        </tr>
+                        <tr>
+                            <td><label>Please enter a valid reference number: </label></td>
+                            <td><input type='text' name='confirmation' required><br></td>
+                        </tr>
+                        <tr>
+                            <td><input type='hidden' name='iliya' value='iliya'></td>
+                            <td><input type='submit' name='removefacility2' value='Remove'><br></td>
+                        </tr>
+                        </form>
+                        <tr>
+                        <tr></tr>
+                        </tr>
+                    <form method='post' action='editor3.php'>
+                        <tr>
+                            <td><label>Select a facility to ADD: </label></td>
+                            <td><select name='afacility' size='1' required>";
+                $getfacilities = "SELECT * FROM samphire_facilities";
+                $result = mysqli_query($db, $getfacilities);
+                while ($row = mysqli_fetch_array($result))
+                    echo "<option>" . $row['f_name'] . "</option>";
+                echo
+                "</select></td>
+                        </tr>
+                        <tr>
+                            <td><label>Please enter a valid reference number: </label></td>
+                            <td><input type='text' name='confirmation' required><br></td>
+                        </tr>
+                        <tr>
+                            <td><input type='hidden' name='iliya' value='iliya'></td>
+                            <td><input type='submit' name='removefacility2' value='Add'><br></td>
+                        </tr>
+                    </form>
+                </table>
+            </div>";
+            }?>
         </div>
     </section>
 </main>

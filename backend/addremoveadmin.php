@@ -70,11 +70,11 @@ if(isset($_POST['rfacilityarray'])){
             </div>
             <div id="upnava" class="grid-container">
                 <ul>
-                    <li><a href='#' id="ad">Add Facility</a></li>
-                    <li><a href='#' id="de">Remove Facility</a></li>
+                    <li><span class="fake-link" id="ad">Add Facility</span></li>
+                    <li><span class="fake-link" id="de">Remove Facility</span></li>
                 </ul>
             </div>
-            <div id="search01" style="display: none">
+            <div id="search01" style="display: block">
                 <table>
                     <form method="post" action="addremoveadmin.php">
                         <tr>

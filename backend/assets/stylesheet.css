@@ -54,6 +54,23 @@ body{
     color: whitesmoke;
 }
 
+.fake-link {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 5px 5px;
+    color: black;
+    background-color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12pt;
+}
+
+.fake-link:hover{
+    color: white;
+    background-color: lightgray;
+    opacity: 0.5;
+}
+
 #form{
     padding-top: 35px;
     float: right;

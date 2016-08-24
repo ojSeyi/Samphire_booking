@@ -55,7 +55,7 @@ if(isset($_POST['bigusername'])){
         </div>
         <div id="pagetitle"><h4>Samphire-Subsea</h4><p>Facilities Booking System - Administrator</p></div>
 </header
-<main class="grid-container">
+<main>
     <nav class="grid-30">
         <ul>
             <li><a href='viewbookings.php'>View Bookings</a></li>
@@ -98,12 +98,14 @@ if(isset($_POST['bigusername'])){
         </form>
     </div>
     </section>
+    <footer>
+        <div id="base"><p>&#169; Oluwaseyi Jason Nojimu-Yusuf, 2016</p></div>
+    </footer>
 </main>
 
-<footer>
-    <div id="base"><p>&#169; Oluwaseyi Jason Nojimu-Yusuf, 2016</p></div>
-</footer>
+
+
+
+
 </body>
-
-
 </html>

@@ -76,7 +76,7 @@ if(isset($_POST['confirmation'])){
     }
 }
 
-$k = 0;
+$kilo = 0;
 $y = 0;
 if(isset($_POST['rfacility'])){
     $reference = $_SESSION['reference'];
@@ -106,7 +106,6 @@ if(isset($_POST['rfacility'])){
     $ku = $arr['cost'];
     $get = "SELECT * FROM samphire_bookings WHERE reference = $reference";
     $geta = mysqli_query($db, $get);
-    $kilo = "";
     while($r = mysqli_fetch_array($geta)){
         $cus = $r['cust'];
         $startdate = $r['startdate'];

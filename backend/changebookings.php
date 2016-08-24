@@ -103,7 +103,7 @@ if(isset($_POST['rfacility'])){
     $input = stripcslashes($input);
     $input = mysqli_real_escape_string($db, $input);
     $cost = $_POST['cost'];
-    $getfacid = "SELECT * FROM samphire_facilities WHERE f_name = $input";
+    $getfacid = "SELECT * FROM samphire_facilities WHERE f_name = '$input'";
     $hitit = mysqli_query($db, $getfacid)or die('lol3');
     $arr = mysqli_fetch_array($hitit);
     $x = $arr['f_id'];

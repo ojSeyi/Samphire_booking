@@ -25,7 +25,7 @@ for ($n = $i; $n > 0; $n=$n-2){
         echo " *";
     }
 
-    echo "<br>";
+    echo " <br>";
 }
 
 ?>

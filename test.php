@@ -21,9 +21,10 @@ $n = 4;
 
 for ($i = 1; $i <= $n; $i++){
     for($k = 1; $k <= $i; $k++){
-        echo " * <br>";
+        echo " *";
     }
 
+    echo "<br>";
 }
 
 ?>

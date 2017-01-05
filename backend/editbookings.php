@@ -89,6 +89,8 @@ foreach($datesinrange as $date) {
     $availablerange = "SELECT * FROM customer_bookings WHERE startdate <= '$date' AND enddate >= '$date'";
     $results = mysqli_query($db, $availablerange) or die("failed");
     if(mysqli_num_rows($results) > 0) {
+
+
         $unavailabledates[] = $date;
         $k++;
     }else{

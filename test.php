@@ -47,7 +47,7 @@ echo "<br><br>";
 $rand = [3, 1, 6, 5, 7, 4, 2, 8];
 $n = count($rand);
 $randinv = [];
-$randinv = sort($rand);
+sort($rand);
 
 echo "<br><br>";
 $t = 0;

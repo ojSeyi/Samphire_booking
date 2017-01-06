@@ -52,7 +52,7 @@ sort($rand);
 echo "<br><br>";
 $t = 0;
 for($i=0; $i<=count($rand); $i++){
-    echo $randinv[$t];
+    echo $rand[$t];
     echo "<br>";
     $t++;
 }

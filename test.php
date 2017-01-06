@@ -44,6 +44,18 @@ for ($i=0; $i <= count($temperatures); $i++){
 
 echo "<br><br>";
 
+$rand = [3, 1, 6, 5, 7, 4, 2, 8];
+$n = count($rand);
+$randinv = [];
+$randinv = sort($rand);
+
+echo "<br><br>";
+$t = 0;
+for($i=0; $i<=count($rand); $i++){
+    echo $randinv[$t];
+    echo "<br>";
+    $t++;
+}
 
 
 

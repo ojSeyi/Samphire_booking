@@ -48,6 +48,19 @@ $rand = [3, 1, 6, 5, 7, 4, 2, 8];
 $n = count($rand);
 
 
+for($i=count($rand); $i>=0; $i-=1){
+    $randinv = [];
+    array_push($randinv, $rand[$n-1]);
+    $rand = $randinv;
+}
+
+echo "<br><br>";
+$t = 0;
+for($i=0; $i<=count($rand); $i++){
+    echo $rand[$t];
+    echo "<br>";
+    $t++;
+}
 
 
 

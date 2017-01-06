@@ -47,17 +47,12 @@ echo "<br><br>";
 $rand = [3, 1, 6, 5, 7, 4, 2, 8];
 $n = count($rand);
 $randinv = [];
-
-for($i=count($rand); $i>=1; $i--){
-    $nn = $n--;
-    array_push($randinv, $rand[$nn]);
-    $rand = $randinv;
-}
+$randinv = sort($rand);
 
 echo "<br><br>";
 $t = 0;
 for($i=0; $i<=count($rand); $i++){
-    echo $rand[$t];
+    echo $randinv[$t];
     echo "<br>";
     $t++;
 }

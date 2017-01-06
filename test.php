@@ -48,8 +48,9 @@ $rand = [3, 1, 6, 5, 7, 4, 2, 8];
 $n = count($rand);
 $randinv = [];
 
-for($i=count($rand); $i>=0; $i-=1){
-    array_push($randinv, $rand[$n-=1]);
+for($i=count($rand); $i>=1; $i--){
+    $nn = $n--;
+    array_push($randinv, $rand[$nn]);
     $rand = $randinv;
 }
 

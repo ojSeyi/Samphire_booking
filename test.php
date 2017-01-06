@@ -46,6 +46,7 @@ echo "<br><br>";
 
 $rand = [3, 1, 6, 5, 7, 4, 2, 8];
 $n = count($rand);
+echo $rand;
 for($i=count($rand); $i>=0; $i--){
     $randinv = [];
     array_push($randinv, $rand[($n-1)]);
@@ -53,10 +54,11 @@ for($i=count($rand); $i>=0; $i--){
 }
 
 echo "<br><br>";
-
+$t = 0;
 for($i=0; $i<=count($rand); $i++){
-    echo $rand[$i];
+    echo $rand[$t];
     echo "<br>";
+    $t++;
 }
 
 

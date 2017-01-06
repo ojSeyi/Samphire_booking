@@ -49,7 +49,7 @@ $n = count($rand);
 $randinv = [];
 
 for($i=count($rand); $i>=0; $i-=1){
-    array_push($randinv, $rand[$n-1]);
+    array_push($randinv, $rand[$n-=1]);
     $rand = $randinv;
 }
 

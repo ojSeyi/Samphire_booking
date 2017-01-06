@@ -28,6 +28,21 @@ for ($n = $i; $n > 0; $n=$n-2){
     echo " <br> ";
 }
 
+$temperatures = [];
+$day1 = 22;
+
+for ($i=0; $i<=10; $i++){
+    $temperatures += $day1;
+    $day1 += 3;
+}
+
+for ($i=0; $i <= count($temperatures); $i++){
+    echo $temperatures[i];
+    echo "<br>";
+}
+
+
+
 ?>
 
 </main>

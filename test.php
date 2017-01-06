@@ -44,6 +44,10 @@ for ($i=0; $i <= count($temperatures); $i++){
 
 echo "<br><br>";
 
+$rand = [3, 1, 6, 5, 7, 4, 2, 8];
+echo count($rand);
+
+
 
 ?>
 
